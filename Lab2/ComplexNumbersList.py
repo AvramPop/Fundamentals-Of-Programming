@@ -133,7 +133,7 @@ def longestSequenceWithStrictlyIncreasingRealPart(complexNumbersList):
     """
     longestSequence = []
     actualSequence = [complexNumbersList[0]]
-    print(complexNumbersList)
+    # print(complexNumbersList)
     i = 0
     while i < len(complexNumbersList) - 1:
         i += 1
