@@ -61,43 +61,50 @@ def setComplexPart(complexNumber, complexPart):
 
 
 def readComplexNumberFromConsole():
-    consoleInput = input("please insert your complex number in the format a + bi, or \"done\", if done :)\n")
-    realPartNegative = False
-    complexPartUnitary = True
-    realPart = 0
-    complexPart = 0
-    i = 0
-    realPartDone = False
-    complexPartNegative = False
-    if consoleInput == "done":
+    print("please insert the real part of your number, then hit \"ENTER\", then the complex part, or \"done\", "
+          "if done :)")
+    realPart = input("real part = ")
+    if realPart == "done":
         return False
-    if consoleInput[0] == '-':
-        realPartNegative = True
-        i = 1
-    while i < len(consoleInput):
-        if isDigit(consoleInput[i]) and not realPartDone:
-            realPart = realPart * 10 + int(consoleInput[i])
-        elif consoleInput[i] == 'i' and not realPartDone:
-            realPart = 1
-            realPartDone = True
-        elif consoleInput[i] == '+':
-            realPartDone = True
-        elif consoleInput[i] == '-':
-            realPartDone = True
-            complexPartNegative = True
-        elif realPartDone and consoleInput[i] == 'i' and complexPartUnitary:
-            complexPart = 1
-        elif realPartDone and isDigit(consoleInput[i]):
-            complexPart = complexPart * 10 + int(consoleInput[i])
-            complexPartUnitary = False
-        i += 1
-    if realPartNegative:
-        realPart *= -1
-    if complexPartNegative:
-        complexPart *= -1
+    complexPart = input("complex part = ")
+    # consoleInput = input("please insert your complex number in the format a + bi, or \"done\", if done :)\n")
+    # realPartNegative = False
+    # complexPartUnitary = True
+    # realPart = 0
+    # complexPart = 0
+    # i = 0
+    # realPartDone = False
+    # complexPartNegative = False
+    # if consoleInput == "done":
+    #     return False
+    # if consoleInput[0] == '-':
+    #     realPartNegative = True
+    #     i = 1
+    # while i < len(consoleInput):
+    #     if isDigit(consoleInput[i]) and not realPartDone:
+    #         realPart = realPart * 10 + int(consoleInput[i])
+    #     elif consoleInput[i] == 'i' and not realPartDone:
+    #         realPart = 1
+    #         realPartDone = True
+    #     elif consoleInput[i] == '+':
+    #         realPartDone = True
+    #     elif consoleInput[i] == '-':
+    #         realPartDone = True
+    #         complexPartNegative = True
+    #     elif realPartDone and consoleInput[i] == 'i' and complexPartUnitary:
+    #         complexPart = 1
+    #     elif realPartDone and isDigit(consoleInput[i]):
+    #         complexPart = complexPart * 10 + int(consoleInput[i])
+    #         complexPartUnitary = False
+    #     i += 1
+    # if realPartNegative:
+    #     realPart *= -1
+    # if complexPartNegative:
+    #     complexPart *= -1
     complexNumber = []
-    setRealPart(complexNumber, realPart)
-    setComplexPart(complexNumber, complexPart)
+    setRealPart(complexNumber, int(realPart))
+    setComplexPart(complexNumber, int(complexPart))
+    printComplexNumberToConsole(complexNumber)
     return complexNumber
 
 
@@ -137,6 +144,8 @@ def longestSequenceWithStrictlyIncreasingRealPart(complexNumbersList):
             if len(actualSequence) > len(longestSequence):
                 longestSequence = actualSequence
             actualSequence = [complexNumbersList[i]]
+    if len(actualSequence) > len(longestSequence):
+        longestSequence = actualSequence
     return longestSequence
 
 
@@ -153,11 +162,11 @@ def digitsInBase10(number):
     return digits
 
 
-def areRealAndComplexWithSameDigitsInBase10(complexNumber):
+def areRealAndComplexPartsWithSameDigits(complexNumber):
     return digitsInBase10(getRealPart(complexNumber)) == digitsInBase10(getComplexPart(complexNumber))
 
 
-def sequenceOfComplexNumbersWithSameDigitsInBase10ForBothRealAndComplexPart(complexNumbersList):
+def sequenceOfComplexNumbersWithSameDigitsOfRealAndComplexPart(complexNumbersList):
     """
     Print the sequence of numbers from complexNumberList of whom both real and complex part
     are written with the same digits
@@ -166,7 +175,7 @@ def sequenceOfComplexNumbersWithSameDigitsInBase10ForBothRealAndComplexPart(comp
     """
     sequence = []
     for complexNumber in complexNumbersList:
-        if areRealAndComplexWithSameDigitsInBase10(complexNumber):
+        if areRealAndComplexPartsWithSameDigits(complexNumber):
             sequence.append(complexNumber)
     return sequence
 
@@ -178,19 +187,20 @@ def main():
     while True:
         userInput = input('$')
         if userInput == "read":
-            print("reading list")
+            # print("reading list")
             complexNumbersList = complexNumbersListFromConsole(complexNumbersList)
         elif userInput == "print":
-            print("printing list")
+            # print("printing list")
             printComplexNumbersListToConsole(complexNumbersList)
         elif userInput == "increasing":
-            print("printing longest sequence with strictly increasing real part")
+            # print("printing longest sequence with strictly increasing real part")
             printComplexNumbersListToConsole(longestSequenceWithStrictlyIncreasingRealPart(complexNumbersList))
         elif userInput == "digits":
-            print("printing numbers of which real and complex parts can be written with same base 10 digits")
+            # print("printing numbers of which real and complex parts can be written with same base 10 digits")
             printComplexNumbersListToConsole(
-                sequenceOfComplexNumbersWithSameDigitsInBase10ForBothRealAndComplexPart(complexNumbersList))
+                sequenceOfComplexNumbersWithSameDigitsOfRealAndComplexPart(complexNumbersList))
         elif userInput == "exit":
+            print("Have a nice day!")
             return
         else:
             print("Invalid command. Please insert your command again!")
