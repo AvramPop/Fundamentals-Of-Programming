@@ -60,13 +60,14 @@ def setComplexPart(complexNumber, complexPart):
     complexNumber["complexPart"] = complexPart
 
 
-def readComplexNumberFromConsole():
+def complexNumberFromConsole():
     print("please insert the real part of your number, then hit \"ENTER\", then the complex part, or \"done\", "
           "if done :)")
     realPart = input("real part = ")
     if realPart == "done":
         return False
     complexPart = input("complex part = ")
+    return newComplexNumber(realPart, complexPart)
     # consoleInput = input("please insert your complex number in the format a + bi, or \"done\", if done :)\n")
     # realPartNegative = False
     # complexPartUnitary = True
@@ -101,10 +102,13 @@ def readComplexNumberFromConsole():
     #     realPart *= -1
     # if complexPartNegative:
     #     complexPart *= -1
+
+
+def newComplexNumber(realPart, complexPart):
     complexNumber = {}
     setRealPart(complexNumber, int(realPart))
     setComplexPart(complexNumber, int(complexPart))
-    printComplexNumberToConsole(complexNumber)
+    # printComplexNumberToConsole(complexNumber)
     return complexNumber
 
 
@@ -117,10 +121,10 @@ def getComplexPart(complexNumber):
 
 
 def complexNumbersListFromConsole(complexNumbersList):
-    complexNumber = readComplexNumberFromConsole()
+    complexNumber = complexNumberFromConsole()
     while complexNumber:
         addComplexNumberToList(complexNumber, complexNumbersList)
-        complexNumber = readComplexNumberFromConsole()
+        complexNumber = complexNumberFromConsole()
     return complexNumbersList
 
 
