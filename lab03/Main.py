@@ -1,7 +1,8 @@
-from datetime import date
+import datetime
 
 expenseTypeEnum = ("housekeeping", "food", "transport", " clothing", "internet", "others")
 commandsEnum = ("add", "insert", "remove", "remove", "list", "sum", "max", "sort", "filter", "undo", "exit")
+now = datetime.datetime.now()
 
 
 def test():
@@ -10,6 +11,8 @@ def test():
     isValidInsertCommandTest()
     isValidRemoveCommandTest()
     isValidListCommandTest()
+    removeExpensesForDayTest()
+    removeExpensesForExpenseTypeTest()
     print("testing done successfully")
 
 
@@ -18,8 +21,57 @@ def newExpenseTest():
     assert newExpense(25, 600, 'food') == {"day": 25, "amount": 600, "expenseType": "food"}
 
 
+def removeExpensesForExpenseType(expenseType, expensesList):
+    for expense in expensesList:
+        if getExpenseType(expense) == expenseType:
+            expensesList.remove(expense)
+
+
+def removeExpensesForDay(day, expensesList):
+    # TODO write doc
+    for expense in expensesList:
+        if getDay(expense) == day:
+            expensesList.remove(expense)
+
+
+def removeExpensesForDaysInterval(startDay, endDay, expensesList):
+    # TODO test
+    for day in range(startDay, endDay + 1):
+        removeExpensesForDay(day, expensesList)
+
+
+def removeExpensesForExpenseTypeTest():  # TODO check clothing error
+    expensesList = []
+    addExpenseToList(newExpense(25, 600, "food"), expensesList)
+    addExpenseToList(newExpense(20, 600, "internet"), expensesList)
+    addExpenseToList(newExpense(30, 600, "transport"), expensesList)
+    addExpenseToList(newExpense(25, 600, "food"), expensesList)
+    removeExpensesForExpenseType("food", expensesList)
+    expensesListCorrect = []
+    addExpenseToList(newExpense(20, 600, "internet"), expensesListCorrect)
+    addExpenseToList(newExpense(30, 600, "transport"), expensesListCorrect)
+    assert expensesList == expensesListCorrect
+
+
+def removeExpensesForDayTest():
+    expensesList = []
+    addExpenseToList(newExpense(25, 600, "food"), expensesList)
+    addExpenseToList(newExpense(20, 600, "food"), expensesList)
+    addExpenseToList(newExpense(30, 600, "food"), expensesList)
+    addExpenseToList(newExpense(25, 600, "food"), expensesList)
+    removeExpensesForDay(25, expensesList)
+    expensesListCorrect = []
+    addExpenseToList(newExpense(20, 600, "food"), expensesListCorrect)
+    addExpenseToList(newExpense(30, 600, "food"), expensesListCorrect)
+    assert expensesList == expensesListCorrect
+
+
+def toString(expense):
+    return "day:" + str(getDay(expense)) + " sum:" + str(getAmount(expense)) + " type:" + getExpenseType(expense)
+
+
 def printExpense(expense):
-    print("day:", getDay(expense), " sum:", getAmount(expense), " type:", getExpenseType(expense))
+    print(expense.toString())
 
 
 def isCommand(command):  # TODO test
@@ -51,33 +103,34 @@ def getExpenseType(expense):
     return expense.get("expenseType")
 
 
-def isDay(day):  # TODO test
+def isValidDay(day):  # TODO test
     # TODO write doc
     return type(day) == int and 0 <= day <= 30
 
 
-def isAmount(amount):  # TODO test
+def isValidAmount(amount):  # TODO test
     # TODO write doc
     return type(amount) == int and amount > 0
 
 
-def isExpenseType(expenseType):  # TODO test
+def isValidExpenseType(expenseType):  # TODO test
     # TODO write doc
     return expenseType in expenseTypeEnum
 
 
 def newExpense(day, amount, expenseType):
+    # TODO handle exceptions
     # TODO write doc
     expense = {}
-    if isDay(day):
+    if isValidDay(day):
         setDay(expense, day)
     else:
         raise TypeError
-    if isAmount(amount):
+    if isValidAmount(amount):
         setAmount(expense, amount)
     else:
         raise TypeError
-    if isExpenseType(expenseType):
+    if isValidExpenseType(expenseType):
         setExpenseType(expense, expenseType)
     else:
         raise TypeError
@@ -97,8 +150,8 @@ def isValidAddCommand(addCommand):
         return False
     if not addCommand[1].isdigit():
         return False
-    return isAmount(int(addCommand[1])) and \
-           isExpenseType(addCommand[2])
+    return isValidAmount(int(addCommand[1])) and \
+           isValidExpenseType(addCommand[2])
 
 
 def isValidAddCommandTest():
@@ -126,9 +179,9 @@ def isValidInsertCommand(insertCommand):
         return False
     if not insertCommand[2].isdigit():
         return False
-    return isDay(int(insertCommand[1])) and \
-           isAmount(int(insertCommand[2])) and \
-           isExpenseType(insertCommand[3])
+    return isValidDay(int(insertCommand[1])) and \
+           isValidAmount(int(insertCommand[2])) and \
+           isValidExpenseType(insertCommand[3])
 
 
 def isValidInsertCommandTest():
@@ -151,6 +204,7 @@ def isValidInsertCommandTest():
 
 def isValidRemoveCommand(removeCommand):
     # TODO write doc
+    # TODO check second day be greater than start day
     if removeCommand[0] != 'remove':
         return False
     if len(removeCommand) != 2 and len(removeCommand) != 4:
@@ -160,14 +214,14 @@ def isValidRemoveCommand(removeCommand):
             return False
     elif len(removeCommand) == 2:
         if removeCommand[1].isdigit():
-            if isDay(int(removeCommand[1])):
+            if isValidDay(int(removeCommand[1])):
                 return True
             else:
                 return False
         else:
-            return isExpenseType(removeCommand[1])
+            return isValidExpenseType(removeCommand[1])
 
-    return isDay(int(removeCommand[1])) and removeCommand[2] == "to" and isDay(int(removeCommand[3]))
+    return isValidDay(int(removeCommand[1])) and removeCommand[2] == "to" and isValidDay(int(removeCommand[3]))
 
 
 def isValidRemoveCommandTest():
@@ -198,21 +252,17 @@ def isValidListCommand(listCommand):
     if len(listCommand) == 1:
         return True
     if len(listCommand) == 2:
-        if isExpenseType(listCommand[1]):
+        if isValidExpenseType(listCommand[1]):
             return True
         else:
             return False
     if len(listCommand) != 4:
         return False
-    print(isExpenseType(listCommand[1]))
-    print((listCommand[2] == "<" or listCommand[2] == "=" or listCommand[2] == ">"))
-    # print(isAmount(int(listCommand[3])))
-    print()
     if not listCommand[3].isdigit():
         return False
-    return isExpenseType(listCommand[1]) and \
-            (listCommand[2] == "<" or listCommand[2] == "=" or listCommand[2] == ">") and \
-            isAmount(int(listCommand[3]))
+    return isValidExpenseType(listCommand[1]) and \
+           (listCommand[2] == "<" or listCommand[2] == "=" or listCommand[2] == ">") and \
+           isValidAmount(int(listCommand[3]))
 
 
 def isValidListCommandTest():
@@ -237,7 +287,7 @@ def isValidSumCommand(sumCommand):  # TODO test
         return False
     if len(sumCommand) == 1 or len(sumCommand) > 2:
         return False
-    return isExpenseType(sumCommand[1])
+    return isValidExpenseType(sumCommand[1])
 
 
 def isValidMaxCommand(maxCommand):  # TODO test
@@ -246,7 +296,7 @@ def isValidMaxCommand(maxCommand):  # TODO test
         return False
     if len(maxCommand) == 1 or len(maxCommand) > 2:
         return False
-    return isDay(maxCommand[1])
+    return isValidDay(maxCommand[1])
 
 
 def isValidSortCommand(sortCommand):  # TODO test
@@ -255,8 +305,8 @@ def isValidSortCommand(sortCommand):  # TODO test
         return False
     if len(sortCommand) == 1 or len(sortCommand) > 2:
         return False
-    return isDay(sortCommand[1]) or \
-           isExpenseType(sortCommand[1])
+    return isValidDay(sortCommand[1]) or \
+           isValidExpenseType(sortCommand[1])
 
 
 def isValidFilterCommand(filterCommand):  # TODO test
@@ -265,10 +315,10 @@ def isValidFilterCommand(filterCommand):  # TODO test
         return False
     if len(filterCommand) != 2 and len(filterCommand) != 4:
         return False
-    return isExpenseType(filterCommand[1]) or \
-           (isExpenseType(filterCommand[1]) and
+    return isValidExpenseType(filterCommand[1]) or \
+           (isValidExpenseType(filterCommand[1]) and
             (filterCommand[2] == "<" or filterCommand[2] == "=" or filterCommand[2] == ">") and
-            isAmount(filterCommand[3]))
+            isValidAmount(filterCommand[3]))
 
 
 def launchUI():
@@ -277,20 +327,23 @@ def launchUI():
     """
     print("Welcome to Expi!")
     expensesList = []
-    expense = newExpense(2, 5, "food")
-    printExpense(expense)
+    # TODO populate list of expenses
     while True:
         consoleInput = input(">")
         consoleInputWordsList = consoleInput.split()
         if isCommand(consoleInputWordsList[0]):
             if consoleInputWordsList[0] == "add":
-                if isValidAddCommand(consoleInputWordsList):
-                    addExpenseToList(newExpense(date.day, consoleInputWordsList[1], consoleInputWordsList[1]), expensesList)
+                if isValidAddCommand(consoleInputWordsList): # TODO fix case when day is 31
+                    expenseToAdd = newExpense(now.day, int(consoleInputWordsList[1]), consoleInputWordsList[2])
+                    addExpenseToList(expenseToAdd, expensesList)
+                    print("\"", toString(expenseToAdd), "\" expense successfully added to the expenses list!")
                 else:
                     print("wrong input. try again!")
             elif consoleInputWordsList[0] == "insert":
                 if isValidInsertCommand(consoleInputWordsList):
-                    print("insert")
+                    expenseToAdd = newExpense(int(consoleInputWordsList[1]), int(consoleInputWordsList[2]), consoleInputWordsList[3])
+                    addExpenseToList(expenseToAdd, expensesList)
+                    print("\"", toString(expenseToAdd), "\" expense successfully added to the expenses list!")
                 else:
                     print("wrong input. try again!")
             elif consoleInputWordsList[0] == "remove":
