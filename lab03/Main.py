@@ -1,6 +1,6 @@
 import datetime
 
-expenseTypeEnum = ("housekeeping", "food", "transport", " clothing", "internet", "others")
+expenseTypeEnum = ("housekeeping", "food", "transport", "clothing", "internet", "others")
 commandsEnum = ("add", "insert", "remove", "remove", "list", "sum", "max", "sort", "filter", "undo", "exit")
 now = datetime.datetime.now()
 
@@ -22,16 +22,14 @@ def newExpenseTest():
 
 
 def removeExpensesForExpenseType(expenseType, expensesList):
-    for expense in expensesList:
-        if getExpenseType(expense) == expenseType:
-            expensesList.remove(expense)
+    updatedExpensesList = [expense for expense in expensesList if getExpenseType(expense) != expenseType]
+    return updatedExpensesList
 
 
 def removeExpensesForDay(day, expensesList):
     # TODO write doc
-    for expense in expensesList:
-        if getDay(expense) == day:
-            expensesList.remove(expense)
+    updatedExpensesList = [expense for expense in expensesList if getDay(expense) != day]
+    return updatedExpensesList
 
 
 def removeExpensesForDaysInterval(startDay, endDay, expensesList):
@@ -40,15 +38,15 @@ def removeExpensesForDaysInterval(startDay, endDay, expensesList):
         removeExpensesForDay(day, expensesList)
 
 
-def removeExpensesForExpenseTypeTest():  # TODO check clothing error
+def removeExpensesForExpenseTypeTest():
     expensesList = []
     addExpenseToList(newExpense(25, 600, "food"), expensesList)
-    addExpenseToList(newExpense(20, 600, "internet"), expensesList)
+    addExpenseToList(newExpense(20, 600, "clothing"), expensesList)
     addExpenseToList(newExpense(30, 600, "transport"), expensesList)
     addExpenseToList(newExpense(25, 600, "food"), expensesList)
-    removeExpensesForExpenseType("food", expensesList)
+    expensesList = removeExpensesForExpenseType("food", expensesList)
     expensesListCorrect = []
-    addExpenseToList(newExpense(20, 600, "internet"), expensesListCorrect)
+    addExpenseToList(newExpense(20, 600, "clothing"), expensesListCorrect)
     addExpenseToList(newExpense(30, 600, "transport"), expensesListCorrect)
     assert expensesList == expensesListCorrect
 
@@ -59,7 +57,7 @@ def removeExpensesForDayTest():
     addExpenseToList(newExpense(20, 600, "food"), expensesList)
     addExpenseToList(newExpense(30, 600, "food"), expensesList)
     addExpenseToList(newExpense(25, 600, "food"), expensesList)
-    removeExpensesForDay(25, expensesList)
+    expensesList = removeExpensesForDay(25, expensesList)
     expensesListCorrect = []
     addExpenseToList(newExpense(20, 600, "food"), expensesListCorrect)
     addExpenseToList(newExpense(30, 600, "food"), expensesListCorrect)
@@ -71,7 +69,7 @@ def toString(expense):
 
 
 def printExpense(expense):
-    print(expense.toString())
+    print(toString(expense))
 
 
 def isCommand(command):  # TODO test
@@ -105,7 +103,7 @@ def getExpenseType(expense):
 
 def isValidDay(day):  # TODO test
     # TODO write doc
-    return type(day) == int and 0 <= day <= 30
+    return type(day) == int and 1 <= day <= 30
 
 
 def isValidAmount(amount):  # TODO test
@@ -321,19 +319,68 @@ def isValidFilterCommand(filterCommand):  # TODO test
             isValidAmount(filterCommand[3]))
 
 
+def populateListOfExpenses(expensesList):
+    addExpenseToList(newExpense(2, 25, "food"), expensesList)
+    addExpenseToList(newExpense(20, 150, "internet"), expensesList)
+    addExpenseToList(newExpense(1, 40, "others"), expensesList)
+    addExpenseToList(newExpense(30, 2, "transport"), expensesList)
+    addExpenseToList(newExpense(14, 1000, "food"), expensesList)
+    addExpenseToList(newExpense(15, 29, "housekeeping"), expensesList)
+    addExpenseToList(newExpense(16, 40, "food"), expensesList)
+    addExpenseToList(newExpense(17, 250, "transport"), expensesList)
+    addExpenseToList(newExpense(24, 2500, "internet"), expensesList)
+    addExpenseToList(newExpense(29, 25, "others"), expensesList)
+    addExpenseToList(newExpense(30, 250, "food"), expensesList)
+    addExpenseToList(newExpense(2, 250, "food"), expensesList)
+
+
+def printExpensesList(expensesList):
+    for expense in expensesList:
+        printExpense(expense)
+
+
+def printExpensesWithType(expenseType, expensesList):
+    for expense in expensesList:
+        if getExpenseType(expense) == expenseType:
+            printExpense(expense)
+
+
+def printExpensesWithTypeWhenAmountGreaterThan(expenseType, amount, expensesList):
+    for expense in expensesList:
+        if getExpenseType(expense) == expenseType:
+            if getAmount(expense) > amount:
+                printExpense(expense)
+
+
+def printExpensesWithTypeWhenAmountSmallerThan(expenseType, amount, expensesList):
+    for expense in expensesList:
+        if getExpenseType(expense) == expenseType:
+            if getAmount(expense) < amount:
+                printExpense(expense)
+
+
+def printExpensesWithTypeWhenAmountEquals(expenseType, amount, expensesList):
+    for expense in expensesList:
+        if getExpenseType(expense) == expenseType:
+            if getAmount(expense) == amount:
+                printExpense(expense)
+
+
 def launchUI():
     """
     Launch UI, living until user exits via a command
     """
     print("Welcome to Expi!")
     expensesList = []
-    # TODO populate list of expenses
+    populateListOfExpenses(expensesList)
+    printExpensesList(expensesList)
     while True:
         consoleInput = input(">")
+        # TODO handle empty input
         consoleInputWordsList = consoleInput.split()
         if isCommand(consoleInputWordsList[0]):
             if consoleInputWordsList[0] == "add":
-                if isValidAddCommand(consoleInputWordsList): # TODO fix case when day is 31
+                if isValidAddCommand(consoleInputWordsList):  # TODO fix case when day is 31
                     expenseToAdd = newExpense(now.day, int(consoleInputWordsList[1]), consoleInputWordsList[2])
                     addExpenseToList(expenseToAdd, expensesList)
                     print("\"", toString(expenseToAdd), "\" expense successfully added to the expenses list!")
@@ -348,12 +395,27 @@ def launchUI():
                     print("wrong input. try again!")
             elif consoleInputWordsList[0] == "remove":
                 if isValidRemoveCommand(consoleInputWordsList):
-                    print("remove")
+                    if isValidExpenseType(consoleInputWordsList[1]):
+                        expensesList = removeExpensesForExpenseType(consoleInputWordsList[1], expensesList)
+                    elif isValidDay(int(consoleInputWordsList[1])) and len(consoleInputWordsList) == 2:
+                        expensesList = removeExpensesForDay(int(consoleInputWordsList[1]), expensesList)
+                    elif isValidDay(int(consoleInputWordsList[1])) and consoleInputWordsList[2] == "to":
+                        print("remove day interval")
                 else:
                     print("wrong input. try again!")
             elif consoleInputWordsList[0] == "list":
                 if isValidListCommand(consoleInputWordsList):
-                    print("list")
+                    if len(consoleInputWordsList) == 1:
+                        printExpensesList(expensesList)
+                    elif len(consoleInputWordsList) == 2:
+                        printExpensesWithType(consoleInputWordsList[1], expensesList)
+                    else:
+                        if consoleInputWordsList[2] == ">":
+                            printExpensesWithTypeWhenAmountGreaterThan(consoleInputWordsList[1], int(consoleInputWordsList[3]), expensesList)
+                        elif consoleInputWordsList[2] == "=":
+                            printExpensesWithTypeWhenAmountEquals(consoleInputWordsList[1], int(consoleInputWordsList[3]), expensesList)
+                        elif consoleInputWordsList[2] == "<":
+                            printExpensesWithTypeWhenAmountSmallerThan(consoleInputWordsList[1], int(consoleInputWordsList[3]), expensesList)
                 else:
                     print("wrong input. try again!")
             elif consoleInputWordsList[0] == "sum":

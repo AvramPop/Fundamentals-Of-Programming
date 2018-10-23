@@ -16,32 +16,34 @@
     <session id="-1284817182">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="1" />
+          <entry key="project.closed" value="3" />
           <entry key="project.open.time.26" value="1" />
           <entry key="project.open.time.4" value="1" />
-          <entry key="project.opened" value="2" />
+          <entry key="project.open.time.45" value="1" />
+          <entry key="project.open.time.7" value="1" />
+          <entry key="project.opened" value="4" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="py" value="3" />
+          <entry key="py" value="4" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="Python" value="3" />
+          <entry key="Python" value="4" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="dummy" value="24" />
-          <entry key="py" value="5380" />
+          <entry key="py" value="6587" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="PLAIN_TEXT" value="24" />
-          <entry key="Python" value="5380" />
+          <entry key="Python" value="6587" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.vcs.git.usages" />
@@ -55,16 +57,16 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="342">
-              <caret line="19" column="39" lean-forward="true" selection-start-line="19" selection-start-column="39" selection-end-line="19" selection-end-column="39" />
+            <state relative-caret-position="671">
+              <caret line="361" column="34" selection-start-line="361" selection-start-column="34" selection-end-line="361" selection-end-column="34" />
               <folding>
-                <marker date="1540218309422" expanded="true" signature="216:249" ph="..." />
-                <marker date="1540218309422" expanded="true" signature="728:856" ph="..." />
-                <marker date="1540218309422" expanded="true" signature="1115:1819" ph="..." />
-                <marker date="1540218309422" expanded="true" signature="1872:2392" ph="..." />
-                <marker date="1540218309422" expanded="true" signature="2414:2419" ph="..." />
-                <marker date="1540218309422" expanded="true" signature="2414:2531" ph="..." />
-                <marker date="1540218309422" expanded="true" signature="2557:2590" ph="..." />
+                <marker date="1540321176072" expanded="true" signature="215:248" ph="..." />
+                <marker date="1540321176072" expanded="true" signature="833:864" ph="..." />
+                <marker date="1540321176072" expanded="true" signature="864:867" ph="..." />
+                <marker date="1540321176072" expanded="true" signature="11273:12066" ph="..." />
+                <marker date="1540321176072" expanded="true" signature="12102:12168" ph="..." />
+                <marker date="1540321176072" expanded="true" signature="12221:12342" ph="..." />
+                <marker date="1540321176072" expanded="true" signature="12424:12593" ph="..." />
               </folding>
             </state>
           </provider>
@@ -78,6 +80,12 @@
         <option value="Python Script" />
       </list>
     </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>clothing</find>
+      <find>toS</find>
+    </findStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
@@ -102,8 +110,8 @@
   <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="1735" />
     <option name="y" value="221" />
-    <option name="width" value="1346" />
-    <option name="height" value="764" />
+    <option name="width" value="1336" />
+    <option name="height" value="762" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -305,13 +313,13 @@
       <window_info id="Favorites" order="2" side_tool="true" weight="0.32999474" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32984293" />
-      <window_info anchor="bottom" x="1777" y="320" width="1180" height="413" id="Run" order="2" type="WINDOWED" weight="0.32984293" />
+      <window_info active="true" anchor="bottom" x="1494" y="260" width="1530" height="483" id="Run" order="2" type="WINDOWED" visible="true" weight="0.32984293" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32984293" />
       <window_info anchor="bottom" id="Version Control" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Terminal" order="8" weight="0.3294979" />
+      <window_info anchor="bottom" id="Terminal" order="8" weight="0.3277487" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" weight="0.32984293" />
       <window_info anchor="bottom" id="Python Console" order="10" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
@@ -323,18 +331,25 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file:///usr/lib/python3/dist-packages/apport_python_hook.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="869">
+          <caret line="55" selection-start-line="55" selection-end-line="55" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Main.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="342">
-          <caret line="19" column="39" lean-forward="true" selection-start-line="19" selection-start-column="39" selection-end-line="19" selection-end-column="39" />
+        <state relative-caret-position="671">
+          <caret line="361" column="34" selection-start-line="361" selection-start-column="34" selection-end-line="361" selection-end-column="34" />
           <folding>
-            <marker date="1540218309422" expanded="true" signature="216:249" ph="..." />
-            <marker date="1540218309422" expanded="true" signature="728:856" ph="..." />
-            <marker date="1540218309422" expanded="true" signature="1115:1819" ph="..." />
-            <marker date="1540218309422" expanded="true" signature="1872:2392" ph="..." />
-            <marker date="1540218309422" expanded="true" signature="2414:2419" ph="..." />
-            <marker date="1540218309422" expanded="true" signature="2414:2531" ph="..." />
-            <marker date="1540218309422" expanded="true" signature="2557:2590" ph="..." />
+            <marker date="1540321176072" expanded="true" signature="215:248" ph="..." />
+            <marker date="1540321176072" expanded="true" signature="833:864" ph="..." />
+            <marker date="1540321176072" expanded="true" signature="864:867" ph="..." />
+            <marker date="1540321176072" expanded="true" signature="11273:12066" ph="..." />
+            <marker date="1540321176072" expanded="true" signature="12102:12168" ph="..." />
+            <marker date="1540321176072" expanded="true" signature="12221:12342" ph="..." />
+            <marker date="1540321176072" expanded="true" signature="12424:12593" ph="..." />
           </folding>
         </state>
       </provider>
