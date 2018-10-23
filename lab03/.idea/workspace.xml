@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="dadd8702-a2e0-4d20-9cc3-e0505571500b" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/../Lab2/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab2/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Main.py" beforeDir="false" afterPath="$PROJECT_DIR$/Main.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -37,13 +36,13 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="dummy" value="24" />
-          <entry key="py" value="6587" />
+          <entry key="py" value="8538" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="PLAIN_TEXT" value="24" />
-          <entry key="Python" value="6587" />
+          <entry key="Python" value="8538" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.vcs.git.usages" />
@@ -57,16 +56,16 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="671">
-              <caret line="361" column="34" selection-start-line="361" selection-start-column="34" selection-end-line="361" selection-end-column="34" />
+            <state relative-caret-position="378">
+              <caret line="345" column="43" selection-start-line="345" selection-start-column="43" selection-end-line="345" selection-end-column="43" />
               <folding>
-                <marker date="1540321176072" expanded="true" signature="215:248" ph="..." />
-                <marker date="1540321176072" expanded="true" signature="833:864" ph="..." />
-                <marker date="1540321176072" expanded="true" signature="864:867" ph="..." />
-                <marker date="1540321176072" expanded="true" signature="11273:12066" ph="..." />
-                <marker date="1540321176072" expanded="true" signature="12102:12168" ph="..." />
-                <marker date="1540321176072" expanded="true" signature="12221:12342" ph="..." />
-                <marker date="1540321176072" expanded="true" signature="12424:12593" ph="..." />
+                <marker date="1540325512360" expanded="true" signature="215:248" ph="..." />
+                <marker date="1540325512360" expanded="true" signature="1190:1221" ph="..." />
+                <marker date="1540325512360" expanded="true" signature="1221:1224" ph="..." />
+                <marker date="1540325512360" expanded="true" signature="15130:15923" ph="..." />
+                <marker date="1540325512360" expanded="true" signature="16031:16115" ph="..." />
+                <marker date="1540325512360" expanded="true" signature="16168:16289" ph="..." />
+                <marker date="1540325512360" expanded="true" signature="16371:17038" ph="..." />
               </folding>
             </state>
           </provider>
@@ -85,6 +84,7 @@
     <findStrings>
       <find>clothing</find>
       <find>toS</find>
+      <find>printEx</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -307,13 +307,14 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="1366" y="-1" width="1920" height="1080" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" weight="0.25" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.19135477" />
       <window_info id="Favorites" order="2" side_tool="true" weight="0.32999474" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32984293" />
-      <window_info active="true" anchor="bottom" x="1494" y="260" width="1530" height="483" id="Run" order="2" type="WINDOWED" visible="true" weight="0.32984293" />
+      <window_info anchor="bottom" x="1399" y="317" width="1720" height="521" id="Run" order="2" type="WINDOWED" weight="0.32984293" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -322,6 +323,7 @@
       <window_info anchor="bottom" id="Terminal" order="8" weight="0.3277487" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" weight="0.32984293" />
       <window_info anchor="bottom" id="Python Console" order="10" />
+      <window_info anchor="right" x="0" y="0" width="430" height="880" id="Documentation" side_tool="true" weight="0.32977587" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -329,6 +331,22 @@
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="XDebuggerManager">
+    <watches-manager>
+      <configuration name="PythonConfigurationType">
+        <watch expression="removeCommand[3]" language="Python" />
+      </configuration>
+    </watches-manager>
+  </component>
+  <component name="debuggerHistoryManager">
+    <expressions id="watch">
+      <expression>
+        <expression-string>removeCommand[3]</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+    </expressions>
   </component>
   <component name="editorHistoryManager">
     <entry file="file:///usr/lib/python3/dist-packages/apport_python_hook.py">
@@ -340,16 +358,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Main.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="671">
-          <caret line="361" column="34" selection-start-line="361" selection-start-column="34" selection-end-line="361" selection-end-column="34" />
+        <state relative-caret-position="378">
+          <caret line="345" column="43" selection-start-line="345" selection-start-column="43" selection-end-line="345" selection-end-column="43" />
           <folding>
-            <marker date="1540321176072" expanded="true" signature="215:248" ph="..." />
-            <marker date="1540321176072" expanded="true" signature="833:864" ph="..." />
-            <marker date="1540321176072" expanded="true" signature="864:867" ph="..." />
-            <marker date="1540321176072" expanded="true" signature="11273:12066" ph="..." />
-            <marker date="1540321176072" expanded="true" signature="12102:12168" ph="..." />
-            <marker date="1540321176072" expanded="true" signature="12221:12342" ph="..." />
-            <marker date="1540321176072" expanded="true" signature="12424:12593" ph="..." />
+            <marker date="1540325512360" expanded="true" signature="215:248" ph="..." />
+            <marker date="1540325512360" expanded="true" signature="1190:1221" ph="..." />
+            <marker date="1540325512360" expanded="true" signature="1221:1224" ph="..." />
+            <marker date="1540325512360" expanded="true" signature="15130:15923" ph="..." />
+            <marker date="1540325512360" expanded="true" signature="16031:16115" ph="..." />
+            <marker date="1540325512360" expanded="true" signature="16168:16289" ph="..." />
+            <marker date="1540325512360" expanded="true" signature="16371:17038" ph="..." />
           </folding>
         </state>
       </provider>
