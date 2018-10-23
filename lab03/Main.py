@@ -13,6 +13,12 @@ def test():
     isValidListCommandTest()
     removeExpensesForDayTest()
     removeExpensesForExpenseTypeTest()
+    removeExpensesForDaysIntervalTest()
+    isCommandTest()
+    isValidDayTest()
+    isValidAmountTest()
+    isValidExpenseTypeTest()
+    addExpenseToListTest()
     print("testing done successfully")
 
 
@@ -51,10 +57,21 @@ def removeExpensesForDaysInterval(startDay, endDay, expensesList):
     :param expensesList: a list of expenses
     :return: the updated list, without the elements with day attribute in [startDay, endDay]
     """
-    # TODO test
     for day in range(startDay, endDay + 1):
         expensesList = removeExpensesForDay(day, expensesList)
     return expensesList
+
+
+def removeExpensesForDaysIntervalTest():
+    expensesList = []
+    addExpenseToList(newExpense(25, 600, "food"), expensesList)
+    addExpenseToList(newExpense(20, 600, "food"), expensesList)
+    addExpenseToList(newExpense(30, 600, "food"), expensesList)
+    addExpenseToList(newExpense(25, 600, "food"), expensesList)
+    expensesList = removeExpensesForDaysInterval(20, 25, expensesList)
+    expensesListCorrect = []
+    addExpenseToList(newExpense(30, 600, "food"), expensesListCorrect)
+    assert expensesList == expensesListCorrect
 
 
 def removeExpensesForExpenseTypeTest():
@@ -91,13 +108,21 @@ def printExpense(expense):
     print(toString(expense))
 
 
-def isCommand(command):  # TODO test
+def isCommand(command):
     """
     Check whether the command is a valid one (one of: "add", "insert", "remove", "remove", "list", "sum", "max", "sort", "filter", "undo", "exit")
     :param command: the command to be checked
     :return: True if command is valid, False otherwise
     """
     return command in commandsEnum
+
+
+def isCommandTest():
+    assert isCommand("add") == True
+    assert isCommand(55) == False
+    assert isCommand("addd") == False
+    assert isCommand("insert") == True
+    assert isCommand("") == False
 
 
 def setDay(expense, day):
@@ -124,7 +149,7 @@ def getExpenseType(expense):
     return expense.get("expenseType")
 
 
-def isValidDay(day):  # TODO test
+def isValidDay(day):
     """
     Checks whether day is a valid day (it is a natural number between 1 and 30)
     :param day: the day to be checked
@@ -133,7 +158,17 @@ def isValidDay(day):  # TODO test
     return type(day) == int and 1 <= day <= 30
 
 
-def isValidAmount(amount):  # TODO test
+def isValidDayTest():
+    assert isValidDay(5) == True
+    assert isValidDay(5.5) == False
+    assert isValidDay(-30) == False
+    assert isValidDay(0) == False
+    assert isValidDay("sad") == False
+    assert isValidDay([]) == False
+    assert isValidDay(202) == False
+
+
+def isValidAmount(amount):
     """
     Checks whether amount is a valid amount (it is a natural number)
     :param amount: the amount to be checked
@@ -142,13 +177,32 @@ def isValidAmount(amount):  # TODO test
     return type(amount) == int and amount > 0
 
 
-def isValidExpenseType(expenseType):  # TODO test
+def isValidAmountTest():
+    assert isValidAmount(5) == True
+    assert isValidAmount(5.5) == False
+    assert isValidAmount(300) == True
+    assert isValidAmount(0) == False
+    assert isValidAmount("sad") == False
+    assert isValidAmount([]) == False
+    assert isValidAmount(-202) == False
+
+
+def isValidExpenseType(expenseType):
     """
     Checks whether expenseType is a valid expenseType (one of: housekeeping, food, transport, clothing, internet, others)
     :param expenseType: the expenseType to be checked
     :return: True if expenseType is valid, False otherwise
     """
     return expenseType in expenseTypeEnum
+
+
+def isValidExpenseTypeTest():
+    assert isValidExpenseType("food") == True
+    assert isValidExpenseType(5.5) == False
+    assert isValidExpenseType(0) == False
+    assert isValidExpenseType("sad") == False
+    assert isValidExpenseType([]) == False
+    assert isValidExpenseType(-202) == False
 
 
 def newExpense(day, amount, expenseType):
@@ -177,13 +231,20 @@ def newExpense(day, amount, expenseType):
 
 
 def addExpenseToList(expense, expensesList):
-    # TODO test
     """
     Add expense to expenseList
     :param expense: the expense to add
     :param expensesList: the list to which expense should be added
     """
     expensesList.append(expense)
+
+
+def addExpenseToListTest():
+    expensesList = []
+    addExpenseToList(newExpense(25, 600, "food"), expensesList)
+    addExpenseToList(newExpense(20, 600, "food"), expensesList)
+    expensesListCorrect = [newExpense(25, 600, "food"), newExpense(20, 600, "food")]
+    assert expensesList == expensesListCorrect
 
 
 def isValidAddCommand(addCommand):
