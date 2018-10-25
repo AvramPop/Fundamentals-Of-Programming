@@ -1,6 +1,14 @@
 from BusinessLogic.Expense import *
 
 
+def test():
+    newExpenseTest()
+    removeExpensesForDaysIntervalTest()
+    removeExpensesForExpenseTypeTest()
+    removeExpensesForDayTest()
+    addExpenseToListTest()
+
+
 def newExpenseTest():
     # TODO check if exception is raised
     assert newExpense(25, 600, 'food') == {"day": 25, "amount": 600, "expenseType": "food"}

@@ -1,6 +1,12 @@
 from Validation.ExpenseValidation import *
 
 
+def test():
+    isValidAmountTest()
+    isValidDayTest()
+    isValidExpenseTypeTest()
+
+
 def isValidDayTest():
     assert isValidDay(5) is True
     assert isValidDay(5.5) is False

@@ -1,6 +1,18 @@
 from Validation.CommandsValidation import *
 
 
+def test():
+    isCommandTest()
+    isValidAddCommandTest()
+    isValidInsertCommandTest()
+    isValidRemoveCommandTest()
+    isValidListCommandTest()
+    isValidSumCommandTest()
+    isValidMaxCommandTest()
+    isValidSortCommandTest()
+    isValidFilterCommandTest()
+
+
 def isCommandTest():
     assert isCommand("add") is True
     assert isCommand(55) is False
@@ -77,3 +89,60 @@ def isValidListCommandTest():
     assert isValidListCommand(['list']) is True
     assert isValidListCommand(['list', 'food']) is True
     assert isValidListCommand(['list', 'food', '>', '5']) is True
+
+
+def isValidSumCommandTest():
+    assert isValidSumCommand(['sum', 'food', '>', '5']) is False
+    assert isValidSumCommand(['sum']) is False
+    assert isValidSumCommand(['sum', 'foodss']) is False
+    assert isValidSumCommand(['sume', 'food']) is False
+    assert isValidSumCommand(['sum', '5']) is False
+    assert isValidSumCommand(['sum', 'food', '55']) is False
+    assert isValidSumCommand(['sum', 5]) is False
+    assert isValidSumCommand(['sum', 5.5]) is False
+    assert isValidSumCommand(['sum', {}]) is False
+    assert isValidSumCommand(['sum', ['food']]) is False
+    assert isValidSumCommand(['sum', 'food']) is True
+    assert isValidSumCommand(['sum', 'others']) is True
+
+
+def isValidMaxCommandTest():
+    assert isValidMaxCommand(["max", 5]) is True
+    assert isValidMaxCommand(["max"]) is False
+    assert isValidMaxCommand(["max", 35]) is False
+    assert isValidMaxCommand(["max", []]) is False
+    assert isValidMaxCommand(["max", 5.5]) is False
+    assert isValidMaxCommand(["max", -5]) is False
+    assert isValidMaxCommand(["max", "5"]) is False
+    assert isValidMaxCommand(["max", "food"]) is False
+    assert isValidMaxCommand(["max", "clothing", 5]) is False
+
+
+def isValidSortCommandTest():
+    assert isValidSortCommand(["sort", 5]) is True
+    assert isValidSortCommand(["sort", "food"]) is True
+    assert isValidSortCommand(["sort", 35]) is False
+    assert isValidSortCommand(["sort"]) is False
+    assert isValidSortCommand(["sort", []]) is False
+    assert isValidSortCommand(["sort", {}]) is False
+    assert isValidSortCommand(["sort", 5.5]) is False
+    assert isValidSortCommand(["sort", -5]) is False
+    assert isValidSortCommand(["sort", "5"]) is False
+    assert isValidSortCommand(["sort", "fooding"]) is False
+    assert isValidSortCommand(["sort", "clothing", 5]) is False
+
+
+def isValidFilterCommandTest():
+    assert isValidFilterCommand(["filter", "food", "<", '5']) is True
+    assert isValidFilterCommand(["filter", "food", "=", '50']) is True
+    assert isValidFilterCommand(["filter", "food", ">", '500']) is True
+    assert isValidFilterCommand(["filter", "food"]) is True
+    assert isValidFilterCommand(["filter", 35]) is False
+    assert isValidFilterCommand(["filter"]) is False
+    assert isValidFilterCommand(["filter", []]) is False
+    assert isValidFilterCommand(["filter", {}]) is False
+    assert isValidFilterCommand(["filter", "food", 5]) is False
+    assert isValidFilterCommand(["filter", "food", "!", 5]) is False
+    assert isValidFilterCommand(["filter", "food", ">", "5"]) is False
+    assert isValidFilterCommand(["filter", "food", "<", 55.5]) is False
+    assert isValidFilterCommand(["filter", "clothing", 5]) is False

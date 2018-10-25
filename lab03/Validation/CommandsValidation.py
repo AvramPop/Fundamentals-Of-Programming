@@ -95,12 +95,14 @@ def isValidListCommand(listCommand):
            isValidAmount(int(listCommand[3]))
 
 
-def isValidSumCommand(sumCommand):  # TODO test
+def isValidSumCommand(sumCommand):
     """
     Check whether sumCommand is a valid sum command (of format: sum <category>)
     :param sumCommand: (string) the command to be checked
     :return: True if sumCommand is a valid sum command, False otherwise
     """
+    if len(sumCommand) != 2:
+        return False
     if sumCommand[0] != 'sum':
         return False
     if len(sumCommand) == 1 or len(sumCommand) > 2:
@@ -108,34 +110,38 @@ def isValidSumCommand(sumCommand):  # TODO test
     return isValidExpenseType(sumCommand[1])
 
 
-def isValidMaxCommand(maxCommand):  # TODO test
+def isValidMaxCommand(maxCommand):
     """
     Check whether maxCommand is a valid max command (of format: max <day>)
     :param maxCommand: (string) the command to be checked
     :return: True if maxCommand is a valid max command, False otherwise
     """
+    if len(maxCommand) != 2:
+        return False
     if maxCommand[0] != 'max':
         return False
     if len(maxCommand) == 1 or len(maxCommand) > 2:
         return False
-    return isValidDay(maxCommand[1])
+    return isValidDay(int(maxCommand[1]))
 
 
-def isValidSortCommand(sortCommand):  # TODO test
+def isValidSortCommand(sortCommand):
     """
     Check whether sortCommand is a valid sort command (of format: sort <day>, or: sort <category>)
     :param sortCommand: (string) the command to be checked
     :return: True if sortCommand is a valid sort command, False otherwise
     """
+    if len(sortCommand) != 2:
+        return False
     if sortCommand[0] != 'sort':
         return False
     if len(sortCommand) == 1 or len(sortCommand) > 2:
         return False
-    return isValidDay(sortCommand[1]) or \
-           isValidExpenseType(sortCommand[1])
+    return isValidDay(int(sortCommand[1])) or isValidExpenseType(sortCommand[1])
 
 
 def isValidFilterCommand(filterCommand):  # TODO test
+    # TODO check when converting to int to have string not [] or {}
     """
     Check whether filterCommand is a valid filter command (of format: filter <category>, or: filter <category> [ < | = | > ] <value>)
     :param filterCommand: (string) the command to be checked
@@ -145,7 +151,10 @@ def isValidFilterCommand(filterCommand):  # TODO test
         return False
     if len(filterCommand) != 2 and len(filterCommand) != 4:
         return False
+    if len(filterCommand) == 4:
+        if not filterCommand[3].isdigit():
+            return False
     return isValidExpenseType(filterCommand[1]) or \
            (isValidExpenseType(filterCommand[1]) and
             (filterCommand[2] == "<" or filterCommand[2] == "=" or filterCommand[2] == ">") and
-            isValidAmount(filterCommand[3]))
+            isValidAmount(int(filterCommand[3])))

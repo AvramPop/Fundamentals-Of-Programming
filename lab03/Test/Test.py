@@ -1,20 +1,10 @@
-from Test.CommandsTest import *
-from Test.ExpenseTest import *
-from Test.ExpenseValidationTest import *
+import Test.CommandsTest
+import Test.ExpenseTest
+import Test.ExpenseValidationTest
 
 
 def test():
-    newExpenseTest()
-    isValidAddCommandTest()
-    isValidInsertCommandTest()
-    isValidRemoveCommandTest()
-    isValidListCommandTest()
-    removeExpensesForDayTest()
-    removeExpensesForExpenseTypeTest()
-    removeExpensesForDaysIntervalTest()
-    isCommandTest()
-    isValidDayTest()
-    isValidAmountTest()
-    isValidExpenseTypeTest()
-    addExpenseToListTest()
+    Test.CommandsTest.test()
+    Test.ExpenseTest.test()
+    Test.ExpenseValidationTest.test()
     print("testing done successfully")
