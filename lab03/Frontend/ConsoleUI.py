@@ -61,16 +61,19 @@ def launchUI():
                         print("wrong input. try again!")
                 elif consoleInputWordsList[0] == "sum":
                     if isValidSumCommand(consoleInputWordsList):
-                        print("sum")
+                        printSumOfExpensesWithExpenseType(consoleInputWordsList[1], expensesList)
                     else:
                         print("wrong input. try again!")
                 elif consoleInputWordsList[0] == "max":
                     if isValidMaxCommand(consoleInputWordsList):
+                        # TODO ask someone about the assignment
+                        printDayWithMaximumExpenses(expensesList)
                         print("max")
                     else:
                         print("wrong input. try again!")
                 elif consoleInputWordsList[0] == "sort":
                     if isValidSortCommand(consoleInputWordsList):
+                        printExpensesForDayInAscendingOrder(int(consoleInputWordsList[1]), expensesList)
                         print("sort")
                     else:
                         print("wrong input. try again!")

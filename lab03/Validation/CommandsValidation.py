@@ -20,10 +20,11 @@ def isValidAddCommand(addCommand):
         return False
     if len(addCommand) != 3:
         return False
+    if not all(isinstance(item, str) for item in addCommand):
+        return False
     if not addCommand[1].isdigit():
         return False
-    return isValidAmount(int(addCommand[1])) and \
-           isValidExpenseType(addCommand[2])
+    return isValidAmount(int(addCommand[1])) and isValidExpenseType(addCommand[2])
 
 
 def isValidInsertCommand(insertCommand):
@@ -35,6 +36,8 @@ def isValidInsertCommand(insertCommand):
     if insertCommand[0] != 'insert':
         return False
     if len(insertCommand) != 4:
+        return False
+    if not all(isinstance(item, str) for item in insertCommand):
         return False
     if not insertCommand[1].isdigit():
         return False
@@ -54,6 +57,8 @@ def isValidRemoveCommand(removeCommand):
     if removeCommand[0] != 'remove':
         return False
     if len(removeCommand) != 2 and len(removeCommand) != 4:
+        return False
+    if not all(isinstance(item, str) for item in removeCommand):
         return False
     elif len(removeCommand) == 4:
         if not removeCommand[1].isdigit() or not removeCommand[3].isdigit():
@@ -81,6 +86,8 @@ def isValidListCommand(listCommand):
         return False
     if len(listCommand) == 1:
         return True
+    if not all(isinstance(item, str) for item in listCommand):
+        return False
     if len(listCommand) == 2:
         if isValidExpenseType(listCommand[1]):
             return True
@@ -107,6 +114,8 @@ def isValidSumCommand(sumCommand):
         return False
     if len(sumCommand) == 1 or len(sumCommand) > 2:
         return False
+    if not all(isinstance(item, str) for item in sumCommand):
+        return False
     return isValidExpenseType(sumCommand[1])
 
 
@@ -120,7 +129,9 @@ def isValidMaxCommand(maxCommand):
         return False
     if maxCommand[0] != 'max':
         return False
-    if len(maxCommand) == 1 or len(maxCommand) > 2:
+    if not all(isinstance(item, str) for item in maxCommand):
+        return False
+    if not maxCommand[1].isdigit():
         return False
     return isValidDay(int(maxCommand[1]))
 
@@ -137,11 +148,15 @@ def isValidSortCommand(sortCommand):
         return False
     if len(sortCommand) == 1 or len(sortCommand) > 2:
         return False
-    return isValidDay(int(sortCommand[1])) or isValidExpenseType(sortCommand[1])
+    if not all(isinstance(item, str) for item in sortCommand):
+        return False
+    if sortCommand[1].isdigit():
+        return isValidDay(int(sortCommand[1]))
+    else:
+        return isValidExpenseType(sortCommand[1])
 
 
-def isValidFilterCommand(filterCommand):  # TODO test
-    # TODO check when converting to int to have string not [] or {}
+def isValidFilterCommand(filterCommand):
     """
     Check whether filterCommand is a valid filter command (of format: filter <category>, or: filter <category> [ < | = | > ] <value>)
     :param filterCommand: (string) the command to be checked
@@ -150,6 +165,8 @@ def isValidFilterCommand(filterCommand):  # TODO test
     if filterCommand[0] != 'filter':
         return False
     if len(filterCommand) != 2 and len(filterCommand) != 4:
+        return False
+    if not all(isinstance(item, str) for item in filterCommand):
         return False
     if len(filterCommand) == 4:
         if not filterCommand[3].isdigit():
