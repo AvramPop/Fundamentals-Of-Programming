@@ -1,4 +1,3 @@
-from BusinessLogic.Expense import *
 from BusinessLogic.Utils.RepositoryUtils import *
 
 
@@ -8,11 +7,26 @@ def test():
     removeExpensesForExpenseTypeTest()
     removeExpensesForDayTest()
     addExpenseToListTest()
+    removeExpenseFromListTest()
 
 
 def newExpenseTest():
     # TODO check if exception is raised
     assert newExpense(25, 600, 'food') == {"day": 25, "amount": 600, "expenseType": "food"}
+
+
+def removeExpenseFromListTest():
+    expensesList = []
+    addExpenseToList(newExpense(1, 600, "food"), expensesList)
+    addExpenseToList(newExpense(2, 600, "food"), expensesList)
+    addExpenseToList(newExpense(3, 600, "food"), expensesList)
+    addExpenseToList(newExpense(4, 600, "food"), expensesList)
+    expensesList = removeExpenseFromList(newExpense(4, 600, "food"), expensesList)
+    expensesListCorrect = []
+    addExpenseToList(newExpense(1, 600, "food"), expensesListCorrect)
+    addExpenseToList(newExpense(2, 600, "food"), expensesListCorrect)
+    addExpenseToList(newExpense(3, 600, "food"), expensesListCorrect)
+    assert expensesList == expensesListCorrect
 
 
 def removeExpensesForDaysIntervalTest():

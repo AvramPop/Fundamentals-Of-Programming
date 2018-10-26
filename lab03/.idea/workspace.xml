@@ -2,12 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="dadd8702-a2e0-4d20-9cc3-e0505571500b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/BusinessLogic/Utils/PrintUtils.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BusinessLogic/Utils/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BusinessLogic/Model/UndoCommandsStack.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BusinessLogic/Model/__init__.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Lab2/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab2/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dictionaries/dani.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dictionaries/dani.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BusinessLogic/Expense.py" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessLogic/Expense.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BusinessLogic/Utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessLogic/Utils/RepositoryUtils.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BusinessLogic/Expense.py" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessLogic/Model/Expense.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BusinessLogic/Utils/RepositoryUtils.py" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessLogic/Utils/RepositoryUtils.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Constants.py" beforeDir="false" afterPath="$PROJECT_DIR$/Constants.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Frontend/ConsoleUI.py" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/ConsoleUI.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Test/ExpenseTest.py" beforeDir="false" afterPath="$PROJECT_DIR$/Test/ExpenseTest.py" afterDir="false" />
     </list>
@@ -35,24 +37,24 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="py" value="56" />
+          <entry key="py" value="65" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="Python" value="56" />
+          <entry key="Python" value="65" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="dummy" value="276" />
-          <entry key="py" value="13944" />
+          <entry key="dummy" value="278" />
+          <entry key="py" value="16781" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="PLAIN_TEXT" value="276" />
-          <entry key="Python" value="13944" />
+          <entry key="PLAIN_TEXT" value="278" />
+          <entry key="Python" value="16781" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.vcs.git.usages" />
@@ -64,68 +66,62 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Validation/CommandsValidation.py">
+        <entry file="file://$PROJECT_DIR$/Frontend/ConsoleUI.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="144">
-              <caret line="8" column="7" selection-start-line="8" selection-start-column="7" selection-end-line="8" selection-end-column="7" />
+            <state relative-caret-position="594">
+              <caret line="113" column="74" selection-start-line="113" selection-start-column="74" selection-end-line="113" selection-end-column="74" />
+              <folding>
+                <element signature="e#0#44#0" expanded="true" />
+                <element signature="e#515#1004#0" />
+                <element signature="e#1084#1586#0" />
+                <element signature="e#1666#2529#0" />
+                <element signature="e#2942#4522#0" />
+                <element signature="e#3076#3143#0" />
+                <element signature="e#3262#3359#0" />
+                <element signature="e#3574#3762#0" />
+                <element signature="e#4072#4250#0" />
+                <element signature="e#4349#4537#0" />
+                <element signature="e#5066#5316#0" />
+                <element signature="e#5393#5682#0" />
+                <element signature="e#5760#6206#0" />
+                <element signature="e#6884#7073#0" />
+                <element signature="e#7306#7775#0" />
+                <element signature="e#8696#9203#0" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/BusinessLogic/Utils/RepositoryUtils.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="77">
-              <caret line="61" column="21" selection-start-line="61" selection-start-column="21" selection-end-line="61" selection-end-column="21" />
+            <state relative-caret-position="743">
+              <caret line="165" column="44" selection-start-line="165" selection-start-column="44" selection-end-line="165" selection-end-column="44" />
               <folding>
-                <marker date="1540557153056" expanded="true" signature="922:2049" ph="..." />
-                <marker date="1540557153056" expanded="true" signature="2109:2312" ph="..." />
-                <marker date="1540557153056" expanded="true" signature="2312:2680" ph="..." />
-                <marker date="1540557153056" expanded="true" signature="3308:3313" ph="..." />
-                <marker date="1540557153056" expanded="true" signature="6014:6015" ph="..." />
+                <marker date="1540568075408" expanded="true" signature="928:2373" ph="..." />
+                <marker date="1540568075408" expanded="true" signature="2636:3004" ph="..." />
+                <marker date="1540568075408" expanded="true" signature="3632:3637" ph="..." />
+                <marker date="1540568075408" expanded="true" signature="6337:6338" ph="..." />
+                <marker date="1540568075408" expanded="true" signature="6683:6688" ph="..." />
+                <marker date="1540568075408" expanded="true" signature="6993:6998" ph="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Constants.py">
+        <entry file="file://$PROJECT_DIR$/BusinessLogic/Model/UndoCommandsStack.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="108">
-              <caret line="6" selection-start-line="6" selection-end-line="6" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/BusinessLogic/Utils/PrintUtils.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="563">
-              <caret line="40" column="46" lean-forward="true" selection-start-line="40" selection-start-column="46" selection-end-line="40" selection-end-column="46" />
+            <state relative-caret-position="113">
+              <caret line="37" column="29" selection-start-line="37" selection-start-column="29" selection-end-line="37" selection-end-column="29" />
               <folding>
-                <marker date="1540558438334" expanded="true" signature="1701:1710" ph="..." />
+                <marker date="1540567708141" expanded="true" signature="400:471" ph="..." />
+                <marker date="1540567708141" expanded="true" signature="522:665" ph="..." />
+                <marker date="1540567708141" expanded="true" signature="838:949" ph="..." />
+                <marker date="1540567708141" expanded="true" signature="989:2815" ph="..." />
+                <marker date="1540567708141" expanded="true" signature="2872:2876" ph="..." />
+                <marker date="1540567708141" expanded="true" signature="3070:3236" ph="..." />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Test/Test.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="108">
-              <caret line="6" column="17" selection-start-line="6" selection-start-column="17" selection-end-line="6" selection-end-column="17" />
-              <folding>
-                <element signature="e#0#24#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Test/ExpenseValidationTest.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="108">
-              <caret line="6" column="28" selection-start-line="6" selection-start-column="28" selection-end-line="6" selection-end-column="28" />
             </state>
           </provider>
         </entry>
@@ -133,40 +129,10 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Test/ExpenseTest.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="329">
-              <caret line="35" column="50" selection-start-line="35" selection-start-column="50" selection-end-line="35" selection-end-column="50" />
+            <state relative-caret-position="450">
+              <caret line="25" column="63" lean-forward="true" selection-start-line="25" selection-start-column="63" selection-end-line="25" selection-end-column="63" />
               <folding>
-                <element signature="e#0#35#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/BusinessLogic/Expense.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="18">
-              <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Frontend/ConsoleUI.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="504">
-              <caret line="28" column="55" selection-start-line="28" selection-start-column="55" selection-end-line="28" selection-end-column="55" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Test/CommandsTest.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="761">
-              <caret line="143" selection-start-line="143" selection-end-line="143" />
-              <folding>
-                <marker date="1540472983828" expanded="true" signature="57:315" ph="..." />
+                <marker date="1540564996644" expanded="true" signature="444:1090" ph="..." />
               </folding>
             </state>
           </provider>
@@ -189,6 +155,13 @@
       <find>True</find>
       <find>isCommand</find>
       <find>print</find>
+      <find>expenses</find>
+      <find>expenseType</find>
+      <find>expensesW</find>
+      <find>expensesWithDa</find>
+      <find>interval</find>
+      <find>Interval</find>
+      <find>Without</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -213,7 +186,6 @@
         <option value="$PROJECT_DIR$/ConsoleUI.py" />
         <option value="$PROJECT_DIR$/Validation/Validation.py" />
         <option value="$PROJECT_DIR$/Validation/ExpenseValidation.py" />
-        <option value="$PROJECT_DIR$/Constants.py" />
         <option value="$PROJECT_DIR$/Expense.py" />
         <option value="$PROJECT_DIR$/Test/ExpenseValidaion.py" />
         <option value="$PROJECT_DIR$/Test/ExpenseValidation.py" />
@@ -225,17 +197,20 @@
         <option value="$PROJECT_DIR$/BusinessLogic/Utils.py" />
         <option value="$PROJECT_DIR$/BusinessLogic/Expense.py" />
         <option value="$PROJECT_DIR$/BusinessLogic/Utils/Utils.py" />
-        <option value="$PROJECT_DIR$/Test/ExpenseTest.py" />
-        <option value="$PROJECT_DIR$/BusinessLogic/Utils/RepositoryUtils.py" />
         <option value="$PROJECT_DIR$/Validation/CommandsValidation.py" />
         <option value="$PROJECT_DIR$/BusinessLogic/Utils/PrintUtils.py" />
+        <option value="$PROJECT_DIR$/BusinessLogic/Model/undoCommandsStack.py" />
+        <option value="$PROJECT_DIR$/Constants.py" />
+        <option value="$PROJECT_DIR$/Test/ExpenseTest.py" />
         <option value="$PROJECT_DIR$/Frontend/ConsoleUI.py" />
+        <option value="$PROJECT_DIR$/BusinessLogic/Model/UndoCommandsStack.py" />
+        <option value="$PROJECT_DIR$/BusinessLogic/Utils/RepositoryUtils.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="1457" />
-    <option name="y" value="128" />
+    <option name="x" value="1447" />
+    <option name="y" value="228" />
     <option name="width" value="1356" />
     <option name="height" value="766" />
   </component>
@@ -280,23 +255,7 @@
             <path>
               <item name="lab03" type="b2602c69:ProjectViewProjectNode" />
               <item name="lab03" type="462c0819:PsiDirectoryNode" />
-              <item name="BusinessLogic" type="462c0819:PsiDirectoryNode" />
-              <item name="Utils" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="lab03" type="b2602c69:ProjectViewProjectNode" />
-              <item name="lab03" type="462c0819:PsiDirectoryNode" />
-              <item name="Frontend" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="lab03" type="b2602c69:ProjectViewProjectNode" />
-              <item name="lab03" type="462c0819:PsiDirectoryNode" />
               <item name="Test" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="lab03" type="b2602c69:ProjectViewProjectNode" />
-              <item name="lab03" type="462c0819:PsiDirectoryNode" />
-              <item name="Validation" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -313,11 +272,11 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/BusinessLogic/Model" />
       <recent name="$PROJECT_DIR$/BusinessLogic/Utils" />
       <recent name="$PROJECT_DIR$/BusinessLogic" />
       <recent name="$PROJECT_DIR$/Frontend" />
       <recent name="$PROJECT_DIR$/Test" />
-      <recent name="$PROJECT_DIR$/Validation" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -472,18 +431,18 @@
     <frame x="1366" y="-1" width="1920" height="1080" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.17659463" />
+      <window_info content_ui="combo" id="Project" order="0" weight="0.24934107" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.19061802" />
       <window_info id="Favorites" order="2" side_tool="true" weight="0.32999474" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32984293" />
-      <window_info anchor="bottom" x="1690" y="141" width="1475" height="603" id="Run" order="2" type="WINDOWED" weight="0.32984293" />
+      <window_info anchor="bottom" x="1737" y="204" width="1284" height="643" id="Run" order="2" type="WINDOWED" weight="0.32984293" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39968896" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32970452" />
       <window_info anchor="bottom" id="Version Control" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Terminal" order="8" weight="0.32453415" />
+      <window_info anchor="bottom" id="Terminal" order="8" weight="0.3235602" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" weight="0.32984293" />
       <window_info anchor="bottom" id="Python Console" order="10" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
@@ -537,30 +496,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Main.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="9" selection-start-line="9" selection-end-line="9" />
-          <folding>
-            <element signature="e#0#32#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Constants.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="6" selection-start-line="6" selection-end-line="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/BusinessLogic/Expense.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="18">
-          <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Test/Test.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="108">
@@ -571,50 +506,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Test/ExpenseTest.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="329">
-          <caret line="35" column="50" selection-start-line="35" selection-start-column="50" selection-end-line="35" selection-end-column="50" />
-          <folding>
-            <element signature="e#0#35#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Test/ExpenseValidationTest.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="6" column="28" selection-start-line="6" selection-start-column="28" selection-end-line="6" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Test/CommandsTest.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="761">
           <caret line="143" selection-start-line="143" selection-end-line="143" />
           <folding>
             <marker date="1540472983828" expanded="true" signature="57:315" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Validation/CommandsValidation.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="8" column="7" selection-start-line="8" selection-start-column="7" selection-end-line="8" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/BusinessLogic/Utils/RepositoryUtils.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="77">
-          <caret line="61" column="21" selection-start-line="61" selection-start-column="21" selection-end-line="61" selection-end-column="21" />
-          <folding>
-            <marker date="1540557153056" expanded="true" signature="922:2049" ph="..." />
-            <marker date="1540557153056" expanded="true" signature="2109:2312" ph="..." />
-            <marker date="1540557153056" expanded="true" signature="2312:2680" ph="..." />
-            <marker date="1540557153056" expanded="true" signature="3308:3313" ph="..." />
-            <marker date="1540557153056" expanded="true" signature="6014:6015" ph="..." />
           </folding>
         </state>
       </provider>
@@ -629,10 +526,106 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Validation/CommandsValidation.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="8" column="7" selection-start-line="8" selection-start-column="7" selection-end-line="8" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/BusinessLogic/Model/Expense.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="18">
+          <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Constants.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="108">
+          <caret line="6" column="39" selection-start-line="6" selection-start-column="39" selection-end-line="6" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Test/ExpenseValidationTest.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="108">
+          <caret line="6" column="28" selection-start-line="6" selection-start-column="28" selection-end-line="6" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Test/ExpenseTest.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="450">
+          <caret line="25" column="63" lean-forward="true" selection-start-line="25" selection-start-column="63" selection-end-line="25" selection-end-column="63" />
+          <folding>
+            <marker date="1540564996644" expanded="true" signature="444:1090" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Main.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
+          <folding>
+            <element signature="e#0#32#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/BusinessLogic/Model/UndoCommandsStack.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="113">
+          <caret line="37" column="29" selection-start-line="37" selection-start-column="29" selection-end-line="37" selection-end-column="29" />
+          <folding>
+            <marker date="1540567708141" expanded="true" signature="400:471" ph="..." />
+            <marker date="1540567708141" expanded="true" signature="522:665" ph="..." />
+            <marker date="1540567708141" expanded="true" signature="838:949" ph="..." />
+            <marker date="1540567708141" expanded="true" signature="989:2815" ph="..." />
+            <marker date="1540567708141" expanded="true" signature="2872:2876" ph="..." />
+            <marker date="1540567708141" expanded="true" signature="3070:3236" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Frontend/ConsoleUI.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="504">
-          <caret line="28" column="55" selection-start-line="28" selection-start-column="55" selection-end-line="28" selection-end-column="55" />
+        <state relative-caret-position="594">
+          <caret line="113" column="74" selection-start-line="113" selection-start-column="74" selection-end-line="113" selection-end-column="74" />
+          <folding>
+            <element signature="e#0#44#0" expanded="true" />
+            <element signature="e#515#1004#0" />
+            <element signature="e#1084#1586#0" />
+            <element signature="e#1666#2529#0" />
+            <element signature="e#2942#4522#0" />
+            <element signature="e#3076#3143#0" />
+            <element signature="e#3262#3359#0" />
+            <element signature="e#3574#3762#0" />
+            <element signature="e#4072#4250#0" />
+            <element signature="e#4349#4537#0" />
+            <element signature="e#5066#5316#0" />
+            <element signature="e#5393#5682#0" />
+            <element signature="e#5760#6206#0" />
+            <element signature="e#6884#7073#0" />
+            <element signature="e#7306#7775#0" />
+            <element signature="e#8696#9203#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/BusinessLogic/Utils/RepositoryUtils.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="743">
+          <caret line="165" column="44" selection-start-line="165" selection-start-column="44" selection-end-line="165" selection-end-column="44" />
+          <folding>
+            <marker date="1540568075408" expanded="true" signature="928:2373" ph="..." />
+            <marker date="1540568075408" expanded="true" signature="2636:3004" ph="..." />
+            <marker date="1540568075408" expanded="true" signature="3632:3637" ph="..." />
+            <marker date="1540568075408" expanded="true" signature="6337:6338" ph="..." />
+            <marker date="1540568075408" expanded="true" signature="6683:6688" ph="..." />
+            <marker date="1540568075408" expanded="true" signature="6993:6998" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>

@@ -1,4 +1,4 @@
-from BusinessLogic.Expense import *
+from BusinessLogic.Model.Expense import *
 
 
 def populateExpensesList(expensesList):
@@ -47,6 +47,15 @@ def expensesWithTypeWhenAmountEqualsList(expenseType, amount, expensesList):
     for expense in expensesList:
         if getExpenseType(expense) == expenseType:
             if getAmount(expense) == amount:
+                expensesWithType.append(expense)
+    return expensesWithType
+
+
+def expensesWithTypeWhenAmountDifferentThanList(expenseType, amount, expensesList):
+    expensesWithType = []
+    for expense in expensesList:
+        if getExpenseType(expense) == expenseType:
+            if getAmount(expense) != amount:
                 expensesWithType.append(expense)
     return expensesWithType
 
@@ -147,6 +156,31 @@ def expensesWithoutDayInIntervalList(startDay, endDay, expensesList):
     return expensesList
 
 
-def expensesWithoutBothExpenseTypeAndAmount(expenseType, amount, expensesList):
-    updatedExpensesList = [expense for expense in expensesList if not (getExpenseType(expense) == expenseType and getAmount(expense) == amount)]
-    return updatedExpensesList
+def expenseWithoutThatWithExpenseTypeButNotAmountList(expenseType, amount, expensesList):
+    expenses = []
+    for expense in expensesList:
+        if getExpenseType(expense) == expenseType:
+            if getAmount(expense) == amount:
+                expenses.append(expense)
+        else:
+            expenses.append(expense)
+    return expenses
+
+
+def addExpenseAtIndex(expense, index, expensesList):
+    expensesList.insert(index, expense)
+
+
+def removeExpenseFromList(expense, expensesList):
+    for i in range(len(expensesList) - 1, 0, -1):
+        if expensesList[i] == expense:
+            del expensesList[i]
+            return expensesList
+
+
+def expensesWithDayInInterval(startDay, endDay, expensesList):
+    expenses = []
+    for expense in expensesList:
+        if startDay <= getDay(expense) <= endDay:
+            expenses.append(expense)
+    return expenses
