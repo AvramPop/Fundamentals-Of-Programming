@@ -81,7 +81,7 @@ def dayWithMaximumExpenses(expensesList):
     return maxDay
 
 
-def sortExpensesList(expensesForDay):
+def sortExpensesListByAmount(expensesForDay):
     for i in range(0, len(expensesForDay) - 1):
         for j in range(i + 1, len(expensesForDay)):
             if getAmount(expensesForDay[i]) > getAmount(expensesForDay[j]):
@@ -107,7 +107,7 @@ def dailyExpensesForExpensesTypeSortedAscendingDictionary(expenseType, expensesL
             expensesForDayTemp.append(expense)
             dailyExpenses[str(getDay(expense))] = expensesForDayTemp
     for i in range(1, 31):
-        expensesForDayTemp = sortExpensesList(dailyExpenses.get(str(i)))
+        expensesForDayTemp = sortExpensesListByAmount(dailyExpenses.get(str(i)))
         dailyExpenses[str(i)] = expensesForDayTemp
     return dailyExpenses
 
@@ -165,10 +165,6 @@ def expenseWithoutThatWithExpenseTypeButNotAmountList(expenseType, amount, expen
         else:
             expenses.append(expense)
     return expenses
-
-
-def addExpenseAtIndex(expense, index, expensesList):
-    expensesList.insert(index, expense)
 
 
 def removeExpenseFromList(expense, expensesList):

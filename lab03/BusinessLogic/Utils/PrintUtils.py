@@ -31,7 +31,7 @@ def printExpensesWithTypeWhenAmountEquals(expenseType, amount, expensesList):
 
 
 def printExpensesForDayInAscendingOrder(day, expensesList):
-    printExpensesList(sortExpensesList(expensesWithDayList(day, expensesList)))
+    printExpensesList(sortExpensesListByAmount(expensesWithDayList(day, expensesList)))
 
 
 def printSumOfExpensesWithExpenseType(expenseType, expensesList):
