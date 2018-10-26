@@ -2,12 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="dadd8702-a2e0-4d20-9cc3-e0505571500b" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/BusinessLogic/Utils/PrintUtils.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BusinessLogic/Utils/__init__.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Lab2/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab2/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BusinessLogic/Utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessLogic/Utils.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BusinessLogic/Expense.py" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessLogic/Expense.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BusinessLogic/Utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessLogic/Utils/RepositoryUtils.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Frontend/ConsoleUI.py" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/ConsoleUI.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Test/CommandsTest.py" beforeDir="false" afterPath="$PROJECT_DIR$/Test/CommandsTest.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Validation/CommandsValidation.py" beforeDir="false" afterPath="$PROJECT_DIR$/Validation/CommandsValidation.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Test/ExpenseTest.py" beforeDir="false" afterPath="$PROJECT_DIR$/Test/ExpenseTest.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -19,38 +21,38 @@
     <session id="-1284817182">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="9" />
+          <entry key="project.closed" value="10" />
           <entry key="project.open.time.19" value="2" />
           <entry key="project.open.time.21" value="1" />
-          <entry key="project.open.time.26" value="2" />
+          <entry key="project.open.time.26" value="3" />
           <entry key="project.open.time.30" value="1" />
           <entry key="project.open.time.36" value="1" />
           <entry key="project.open.time.4" value="1" />
           <entry key="project.open.time.45" value="1" />
           <entry key="project.open.time.7" value="1" />
-          <entry key="project.opened" value="10" />
+          <entry key="project.opened" value="11" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="py" value="51" />
+          <entry key="py" value="56" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="Python" value="51" />
+          <entry key="Python" value="56" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="dummy" value="47" />
-          <entry key="py" value="11868" />
+          <entry key="dummy" value="276" />
+          <entry key="py" value="13944" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="PLAIN_TEXT" value="47" />
-          <entry key="Python" value="11868" />
+          <entry key="PLAIN_TEXT" value="276" />
+          <entry key="Python" value="13944" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.vcs.git.usages" />
@@ -64,35 +66,44 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Validation/CommandsValidation.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1458">
-              <caret line="153" selection-start-line="153" selection-end-line="153" />
+            <state relative-caret-position="144">
+              <caret line="8" column="7" selection-start-line="8" selection-start-column="7" selection-end-line="8" selection-end-column="7" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/BusinessLogic/Utils.py">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/BusinessLogic/Utils/RepositoryUtils.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="431">
-              <caret line="93" column="22" selection-start-line="93" selection-start-column="22" selection-end-line="93" selection-end-column="22" />
+            <state relative-caret-position="77">
+              <caret line="61" column="21" selection-start-line="61" selection-start-column="21" selection-end-line="61" selection-end-column="21" />
               <folding>
-                <element signature="e#0#35#0" expanded="true" />
-                <marker date="1540476225363" expanded="true" signature="2143:2148" ph="..." />
-                <marker date="1540476225363" expanded="true" signature="2445:2809" ph="..." />
-                <marker date="1540476225363" expanded="true" signature="2848:3145" ph="..." />
-                <marker date="1540476225363" expanded="true" signature="3204:3209" ph="..." />
+                <marker date="1540557153056" expanded="true" signature="922:2049" ph="..." />
+                <marker date="1540557153056" expanded="true" signature="2109:2312" ph="..." />
+                <marker date="1540557153056" expanded="true" signature="2312:2680" ph="..." />
+                <marker date="1540557153056" expanded="true" signature="3308:3313" ph="..." />
+                <marker date="1540557153056" expanded="true" signature="6014:6015" ph="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Main.py">
+        <entry file="file://$PROJECT_DIR$/Constants.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="162">
-              <caret line="9" selection-start-line="9" selection-end-line="9" />
+            <state relative-caret-position="108">
+              <caret line="6" selection-start-line="6" selection-end-line="6" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/BusinessLogic/Utils/PrintUtils.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="563">
+              <caret line="40" column="46" lean-forward="true" selection-start-line="40" selection-start-column="46" selection-end-line="40" selection-end-column="46" />
               <folding>
-                <element signature="e#0#32#0" expanded="true" />
+                <marker date="1540558438334" expanded="true" signature="1701:1710" ph="..." />
               </folding>
             </state>
           </provider>
@@ -101,8 +112,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Test/Test.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
+            <state relative-caret-position="108">
+              <caret line="6" column="17" selection-start-line="6" selection-start-column="17" selection-end-line="6" selection-end-column="17" />
               <folding>
                 <element signature="e#0#24#0" expanded="true" />
               </folding>
@@ -111,19 +122,40 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/BusinessLogic/Expense.py">
+        <entry file="file://$PROJECT_DIR$/Test/ExpenseValidationTest.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1764">
-              <caret line="98" selection-start-line="98" selection-end-line="98" />
+            <state relative-caret-position="108">
+              <caret line="6" column="28" selection-start-line="6" selection-start-column="28" selection-end-line="6" selection-end-column="28" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Test/ExpenseTest.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="329">
+              <caret line="35" column="50" selection-start-line="35" selection-start-column="50" selection-end-line="35" selection-end-column="50" />
+              <folding>
+                <element signature="e#0#35#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/BusinessLogic/Expense.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="18">
+              <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Frontend/ConsoleUI.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="233">
-              <caret line="75" column="104" selection-start-line="75" selection-start-column="104" selection-end-line="75" selection-end-column="104" />
+            <state relative-caret-position="504">
+              <caret line="28" column="55" selection-start-line="28" selection-start-column="55" selection-end-line="28" selection-end-column="55" />
             </state>
           </provider>
         </entry>
@@ -131,7 +163,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Test/CommandsTest.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="449">
+            <state relative-caret-position="761">
               <caret line="143" selection-start-line="143" selection-end-line="143" />
               <folding>
                 <marker date="1540472983828" expanded="true" signature="57:315" ph="..." />
@@ -156,6 +188,7 @@
       <find>printEx</find>
       <find>True</find>
       <find>isCommand</find>
+      <find>print</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -185,21 +218,26 @@
         <option value="$PROJECT_DIR$/Test/ExpenseValidaion.py" />
         <option value="$PROJECT_DIR$/Test/ExpenseValidation.py" />
         <option value="$PROJECT_DIR$/Frontend.py" />
-        <option value="$PROJECT_DIR$/Test/ExpenseTest.py" />
         <option value="$PROJECT_DIR$/Test/ExpenseValidationTest.py" />
         <option value="$PROJECT_DIR$/Main.py" />
         <option value="$PROJECT_DIR$/Test/CommandsTest.py" />
-        <option value="$PROJECT_DIR$/Validation/CommandsValidation.py" />
         <option value="$PROJECT_DIR$/Test/Test.py" />
-        <option value="$PROJECT_DIR$/Frontend/ConsoleUI.py" />
         <option value="$PROJECT_DIR$/BusinessLogic/Utils.py" />
+        <option value="$PROJECT_DIR$/BusinessLogic/Expense.py" />
+        <option value="$PROJECT_DIR$/BusinessLogic/Utils/Utils.py" />
+        <option value="$PROJECT_DIR$/Test/ExpenseTest.py" />
+        <option value="$PROJECT_DIR$/BusinessLogic/Utils/RepositoryUtils.py" />
+        <option value="$PROJECT_DIR$/Validation/CommandsValidation.py" />
+        <option value="$PROJECT_DIR$/BusinessLogic/Utils/PrintUtils.py" />
+        <option value="$PROJECT_DIR$/Frontend/ConsoleUI.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="y" value="-1" />
-    <option name="width" value="1366" />
-    <option name="height" value="768" />
+    <option name="x" value="1457" />
+    <option name="y" value="128" />
+    <option name="width" value="1356" />
+    <option name="height" value="766" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -242,6 +280,12 @@
             <path>
               <item name="lab03" type="b2602c69:ProjectViewProjectNode" />
               <item name="lab03" type="462c0819:PsiDirectoryNode" />
+              <item name="BusinessLogic" type="462c0819:PsiDirectoryNode" />
+              <item name="Utils" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="lab03" type="b2602c69:ProjectViewProjectNode" />
+              <item name="lab03" type="462c0819:PsiDirectoryNode" />
               <item name="Frontend" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -269,6 +313,7 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/BusinessLogic/Utils" />
       <recent name="$PROJECT_DIR$/BusinessLogic" />
       <recent name="$PROJECT_DIR$/Frontend" />
       <recent name="$PROJECT_DIR$/Test" />
@@ -424,21 +469,21 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="-1" width="1366" height="768" extended-state="6" />
+    <frame x="1366" y="-1" width="1920" height="1080" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" weight="0.24944155" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.17659463" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.19061802" />
       <window_info id="Favorites" order="2" side_tool="true" weight="0.32999474" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32984293" />
-      <window_info anchor="bottom" x="110" y="231" width="1145" height="537" id="Run" order="2" type="WINDOWED" weight="0.32984293" />
+      <window_info anchor="bottom" x="1690" y="141" width="1475" height="603" id="Run" order="2" type="WINDOWED" weight="0.32984293" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39968896" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32970452" />
       <window_info anchor="bottom" id="Version Control" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Terminal" order="8" weight="0.32608697" />
+      <window_info anchor="bottom" id="Terminal" order="8" weight="0.32453415" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" weight="0.32984293" />
       <window_info anchor="bottom" id="Python Console" order="10" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
@@ -477,66 +522,11 @@
     <entry file="file://$PROJECT_DIR$/Validation/__init__.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/Constants.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="6" selection-start-line="6" selection-end-line="6" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Frontend.py" />
-    <entry file="file://$PROJECT_DIR$/Test/ExpenseTest.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="8" column="25" selection-start-line="8" selection-start-column="25" selection-end-line="8" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Test/ExpenseValidationTest.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="6" column="28" selection-start-line="6" selection-start-column="28" selection-end-line="6" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Validation/ExpenseValidation.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="504">
           <caret line="28" selection-start-line="28" selection-end-line="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Test/CommandsTest.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="449">
-          <caret line="143" selection-start-line="143" selection-end-line="143" />
-          <folding>
-            <marker date="1540472983828" expanded="true" signature="57:315" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Validation/CommandsValidation.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1458">
-          <caret line="153" selection-start-line="153" selection-end-line="153" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/BusinessLogic/Expense.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1764">
-          <caret line="98" selection-start-line="98" selection-end-line="98" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Test/Test.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
-          <folding>
-            <element signature="e#0#24#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -557,24 +547,92 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Frontend/ConsoleUI.py">
+    <entry file="file://$PROJECT_DIR$/Constants.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="233">
-          <caret line="75" column="104" selection-start-line="75" selection-start-column="104" selection-end-line="75" selection-end-column="104" />
+        <state relative-caret-position="108">
+          <caret line="6" selection-start-line="6" selection-end-line="6" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/BusinessLogic/Utils.py">
+    <entry file="file://$PROJECT_DIR$/BusinessLogic/Expense.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="431">
-          <caret line="93" column="22" selection-start-line="93" selection-start-column="22" selection-end-line="93" selection-end-column="22" />
+        <state relative-caret-position="18">
+          <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Test/Test.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="108">
+          <caret line="6" column="17" selection-start-line="6" selection-start-column="17" selection-end-line="6" selection-end-column="17" />
+          <folding>
+            <element signature="e#0#24#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Test/ExpenseTest.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="329">
+          <caret line="35" column="50" selection-start-line="35" selection-start-column="50" selection-end-line="35" selection-end-column="50" />
           <folding>
             <element signature="e#0#35#0" expanded="true" />
-            <marker date="1540476225363" expanded="true" signature="2143:2148" ph="..." />
-            <marker date="1540476225363" expanded="true" signature="2445:2809" ph="..." />
-            <marker date="1540476225363" expanded="true" signature="2848:3145" ph="..." />
-            <marker date="1540476225363" expanded="true" signature="3204:3209" ph="..." />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Test/ExpenseValidationTest.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="108">
+          <caret line="6" column="28" selection-start-line="6" selection-start-column="28" selection-end-line="6" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Test/CommandsTest.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="761">
+          <caret line="143" selection-start-line="143" selection-end-line="143" />
+          <folding>
+            <marker date="1540472983828" expanded="true" signature="57:315" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Validation/CommandsValidation.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="8" column="7" selection-start-line="8" selection-start-column="7" selection-end-line="8" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/BusinessLogic/Utils/RepositoryUtils.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="77">
+          <caret line="61" column="21" selection-start-line="61" selection-start-column="21" selection-end-line="61" selection-end-column="21" />
+          <folding>
+            <marker date="1540557153056" expanded="true" signature="922:2049" ph="..." />
+            <marker date="1540557153056" expanded="true" signature="2109:2312" ph="..." />
+            <marker date="1540557153056" expanded="true" signature="2312:2680" ph="..." />
+            <marker date="1540557153056" expanded="true" signature="3308:3313" ph="..." />
+            <marker date="1540557153056" expanded="true" signature="6014:6015" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/BusinessLogic/Utils/PrintUtils.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="563">
+          <caret line="40" column="46" lean-forward="true" selection-start-line="40" selection-start-column="46" selection-end-line="40" selection-end-column="46" />
+          <folding>
+            <marker date="1540558438334" expanded="true" signature="1701:1710" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Frontend/ConsoleUI.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="504">
+          <caret line="28" column="55" selection-start-line="28" selection-start-column="55" selection-end-line="28" selection-end-column="55" />
         </state>
       </provider>
     </entry>

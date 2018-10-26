@@ -1,4 +1,5 @@
 from BusinessLogic.Expense import *
+from BusinessLogic.Utils.RepositoryUtils import *
 
 
 def test():
@@ -20,7 +21,7 @@ def removeExpensesForDaysIntervalTest():
     addExpenseToList(newExpense(20, 600, "food"), expensesList)
     addExpenseToList(newExpense(30, 600, "food"), expensesList)
     addExpenseToList(newExpense(25, 600, "food"), expensesList)
-    expensesList = removeExpensesForDaysInterval(20, 25, expensesList)
+    expensesList = expensesWithoutDayInIntervalList(20, 25, expensesList)
     expensesListCorrect = []
     addExpenseToList(newExpense(30, 600, "food"), expensesListCorrect)
     assert expensesList == expensesListCorrect
@@ -32,7 +33,7 @@ def removeExpensesForExpenseTypeTest():
     addExpenseToList(newExpense(20, 600, "clothing"), expensesList)
     addExpenseToList(newExpense(30, 600, "transport"), expensesList)
     addExpenseToList(newExpense(25, 600, "food"), expensesList)
-    expensesList = removeExpensesForExpenseType("food", expensesList)
+    expensesList = expensesWithoutExpenseTypeList("food", expensesList)
     expensesListCorrect = []
     addExpenseToList(newExpense(20, 600, "clothing"), expensesListCorrect)
     addExpenseToList(newExpense(30, 600, "transport"), expensesListCorrect)
@@ -45,7 +46,7 @@ def removeExpensesForDayTest():
     addExpenseToList(newExpense(20, 600, "food"), expensesList)
     addExpenseToList(newExpense(30, 600, "food"), expensesList)
     addExpenseToList(newExpense(25, 600, "food"), expensesList)
-    expensesList = removeExpensesForDay(25, expensesList)
+    expensesList = expensesWithoutDayList(25, expensesList)
     expensesListCorrect = []
     addExpenseToList(newExpense(20, 600, "food"), expensesListCorrect)
     addExpenseToList(newExpense(30, 600, "food"), expensesListCorrect)

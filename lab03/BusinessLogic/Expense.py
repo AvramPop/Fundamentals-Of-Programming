@@ -1,41 +1,6 @@
 from Validation.CommandsValidation import *
 
 
-def removeExpensesForExpenseType(expenseType, expensesList):
-    """
-    Return updated expenses list without every expense from expensesList that has the expense type attribute expenseType
-    :param expenseType: (string) the expense type with which expenses should be popped
-    :param expensesList: (list) a list of expenses
-    :return: the updated list, without the elements with expenseType attribute set to expenseType
-    """
-    updatedExpensesList = [expense for expense in expensesList if getExpenseType(expense) != expenseType]
-    return updatedExpensesList
-
-
-def removeExpensesForDay(day, expensesList):
-    """
-    Return updated expenses list without every expense from expensesList that has the day attribute set to day
-    :param day: (int) the day with which expenses should be popped
-    :param expensesList: (list) a list of expenses
-    :return: the updated list, without the elements with day attribute set to day
-    """
-    updatedExpensesList = [expense for expense in expensesList if getDay(expense) != day]
-    return updatedExpensesList
-
-
-def removeExpensesForDaysInterval(startDay, endDay, expensesList):
-    """
-    Return updated expenses list without every expense from expensesList that has the day attribute set to any day in the closed interval [startDay, endDay]
-    :param startDay: (int) the first day of the closed interval of days with which expenses should be popped from the list
-    :param endDay: (int) the last day of the closed interval of days with which expenses should be popped from the list
-    :param expensesList: (list) a list of expenses
-    :return: the updated list, without the elements with day attribute in [startDay, endDay]
-    """
-    for day in range(startDay, endDay + 1):
-        expensesList = removeExpensesForDay(day, expensesList)
-    return expensesList
-
-
 def toString(expense):
     return "day:" + str(getDay(expense)) + " sum:" + str(getAmount(expense)) + " type:" + getExpenseType(expense)
 
@@ -89,10 +54,3 @@ def newExpense(day, amount, expenseType):
     return expense
 
 
-def addExpenseToList(expense, expensesList):
-    """
-    Add expense to expenseList
-    :param expense: (dictionary) the expense to add
-    :param expensesList: (list) the list to which expense should be added
-    """
-    expensesList.append(expense)
