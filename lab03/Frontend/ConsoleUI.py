@@ -139,7 +139,10 @@ def launchUI():
                         print("wrong input. try again!")
                 elif consoleInputWordsList[0] == "undo":
                     # print(expensesListHistoryStack)
-                    expensesList = popExpensesListStack(expensesListHistoryStack)
+                    if expensesListHistoryStack:
+                        expensesList = popExpensesListStack(expensesListHistoryStack)
+                    else:
+                        print("nothing to undo")
                     # expensesList = undo(undoCommandsStack, expensesList)
                 elif consoleInputWordsList[0] == "exit":
                     return
