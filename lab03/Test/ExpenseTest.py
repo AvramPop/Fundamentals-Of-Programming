@@ -100,8 +100,45 @@ def expensesWithDayListTest():
     assert expensesList == expensesListCorrect
 
 
-def dailyExpensesForExpensesTypeSortedAscendingDictionaryTest():  # TODO write test
-    assert True is True
+def dailyExpensesForExpensesTypeSortedAscendingDictionaryTest():
+    expensesList = []
+    addExpenseToList(newExpense(1, 600, "food"), expensesList)
+    addExpenseToList(newExpense(1, 500, "food"), expensesList)
+    addExpenseToList(newExpense(2, 100, "food"), expensesList)
+    addExpenseToList(newExpense(2, 200, "others"), expensesList)
+    addExpenseToList(newExpense(3, 600, "food"), expensesList)
+    addExpenseToList(newExpense(4, 700, "transport"), expensesList)
+    addExpenseToList(newExpense(4, 600, "food"), expensesList)
+    addExpenseToList(newExpense(4, 500, "food"), expensesList)
+    dictionaryRightlyFormatted = {"1": [newExpense(1, 500, "food"), newExpense(1, 600, "food")], "2": [newExpense(2, 100, "food")],
+                                  "3": [newExpense(3, 600, "food")], "4": [newExpense(4, 500, "food"), newExpense(4, 600, "food")],
+                                  "5": [],
+                                  "6": [],
+                                  "7": [],
+                                  "8": [],
+                                  "9": [],
+                                  "10": [],
+                                  "11": [],
+                                  "12": [],
+                                  "13": [],
+                                  "14": [],
+                                  "15": [],
+                                  "16": [],
+                                  "17": [],
+                                  "18": [],
+                                  "19": [],
+                                  "20": [],
+                                  "21": [],
+                                  "22": [],
+                                  "23": [],
+                                  "24": [],
+                                  "25": [],
+                                  "26": [],
+                                  "27": [],
+                                  "28": [],
+                                  "29": [],
+                                  "30": []}
+    assert dailyExpensesForExpensesTypeSortedAscendingDictionary("food", expensesList) == dictionaryRightlyFormatted
 
 
 def expensesWithDayInIntervalTest():

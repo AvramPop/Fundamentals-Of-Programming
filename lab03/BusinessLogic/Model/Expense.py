@@ -2,6 +2,11 @@ from Validation.CommandsValidation import *
 
 
 def toString(expense):
+    """
+    Format components of expense into a string
+    :param expense: expense from which the string info to be taken
+    :return: (string) the formatted expense into a string (day: expense_day sum: expense_amount type: expense_type)
+    """
     return "day:" + str(getDay(expense)) + " sum:" + str(getAmount(expense)) + " type:" + getExpenseType(expense)
 
 

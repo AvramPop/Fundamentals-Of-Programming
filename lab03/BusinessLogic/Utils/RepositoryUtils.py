@@ -2,6 +2,10 @@ from BusinessLogic.Model.Expense import *
 
 
 def populateExpensesList(expensesList):
+    """
+    Populate expensesList with 10 arbitrary expenses
+    :param expensesList: the list to be populated
+    """
     addExpenseToList(newExpense(2, 25, "food"), expensesList)
     addExpenseToList(newExpense(20, 150, "internet"), expensesList)
     addExpenseToList(newExpense(1, 40, "others"), expensesList)
@@ -17,6 +21,12 @@ def populateExpensesList(expensesList):
 
 
 def expensesWithTypeList(expenseType, expensesList):
+    """
+    List of expenses with expenseType from expensesList
+    :param expenseType: the expenseType to find expenses with
+    :param expensesList: (list) the list of expenses to take expenses with expenseType from
+    :return: the list containing only elements from expensesList which have expenseType
+    """
     expensesWithType = []
     for expense in expensesList:
         if getExpenseType(expense) == expenseType:
@@ -25,6 +35,13 @@ def expensesWithTypeList(expenseType, expensesList):
 
 
 def expensesWithTypeWhenAmountGreaterThanList(expenseType, amount, expensesList):
+    """
+    List of expenses with expenseType from expensesList, if their amount is greater than amount
+    :param expenseType: the expenseType to find expenses with
+    :param expensesList: (list) the list of expenses to take expenses from
+    :param amount: (int) the amount to compare with
+    :return: the list containing only elements from expensesList which have expenseType and amount greater than amount
+    """
     expensesWithType = []
     for expense in expensesList:
         if getExpenseType(expense) == expenseType:
@@ -34,6 +51,13 @@ def expensesWithTypeWhenAmountGreaterThanList(expenseType, amount, expensesList)
 
 
 def expensesWithTypeWhenAmountSmallerThanList(expenseType, amount, expensesList):
+    """
+    List of expenses with expenseType from expensesList, if their amount is smaller than amount
+    :param expenseType: the expenseType to find expenses with
+    :param expensesList: (list) the list of expenses to take expenses from
+    :param amount: (int) the amount to compare with
+    :return: the list containing only elements from expensesList which have expenseType and amount smaller than amount
+    """
     expensesWithType = []
     for expense in expensesList:
         if getExpenseType(expense) == expenseType:
@@ -43,6 +67,13 @@ def expensesWithTypeWhenAmountSmallerThanList(expenseType, amount, expensesList)
 
 
 def expensesWithTypeWhenAmountEqualsList(expenseType, amount, expensesList):
+    """
+    List of expenses with expenseType from expensesList, if their amount is equal to amount
+    :param expenseType: the expenseType to find expenses with
+    :param expensesList: (list) the list of expenses to take expenses from
+    :param amount: (int) the amount to compare with
+    :return: the list containing only elements from expensesList which have expenseType and amount equal to amount
+    """
     expensesWithType = []
     for expense in expensesList:
         if getExpenseType(expense) == expenseType:
@@ -52,6 +83,13 @@ def expensesWithTypeWhenAmountEqualsList(expenseType, amount, expensesList):
 
 
 def expensesWithTypeWhenAmountDifferentThanList(expenseType, amount, expensesList):
+    """
+    List of expenses with expenseType from expensesList, if their amount is different from amount
+    :param expenseType: the expenseType to find expenses with
+    :param expensesList: (list) the list of expenses to take expenses from
+    :param amount: (int) the amount to compare with
+    :return: the list containing only elements from expensesList which have expenseType and amount different from amount
+    """
     expensesWithType = []
     for expense in expensesList:
         if getExpenseType(expense) == expenseType:
@@ -61,6 +99,12 @@ def expensesWithTypeWhenAmountDifferentThanList(expenseType, amount, expensesLis
 
 
 def sumOfExpensesWithExpenseType(expenseType, expensesList):
+    """
+    Sum of expenses from expensesList which have expenseType
+    :param expenseType:
+    :param expensesList:
+    :return:
+    """
     sumOfExpensesWithType = 0
     for expense in expensesList:
         if getExpenseType(expense) == expenseType:
@@ -69,6 +113,11 @@ def sumOfExpensesWithExpenseType(expenseType, expensesList):
 
 
 def dayWithMaximumExpenses(expensesList):
+    """
+    Day with maximum expenses from expensesList
+    :param expensesList: list of expenses
+    :return: day with maximum expenses
+    """
     expensesByDay = [0] * 31
     for expense in expensesList:
         expensesByDay[getDay(expense)] += getAmount(expense)
@@ -82,6 +131,11 @@ def dayWithMaximumExpenses(expensesList):
 
 
 def sortExpensesListByAmount(expensesForDay):
+    """
+    Sort expensesForDay by amount
+    :param expensesForDay: list of expenses for a day
+    :return: the list sorted by amount
+    """
     for i in range(0, len(expensesForDay) - 1):
         for j in range(i + 1, len(expensesForDay)):
             if getAmount(expensesForDay[i]) > getAmount(expensesForDay[j]):
@@ -90,6 +144,12 @@ def sortExpensesListByAmount(expensesForDay):
 
 
 def expensesWithDayList(day, expensesList):
+    """
+    List of expenses with day from expensesList
+    :param day: the day to find expenses with
+    :param expensesList: the list to take expenses from
+    :return: list of expenses with day
+    """
     expensesForDay = []
     for expense in expensesList:
         if getDay(expense) == day:
@@ -98,6 +158,13 @@ def expensesWithDayList(day, expensesList):
 
 
 def dailyExpensesForExpensesTypeSortedAscendingDictionary(expenseType, expensesList):
+    """
+    Dictionary having each key as a day of the month, and the value the list of expenses with expenseType for that day, sorted ascending
+
+    :param expenseType: the expenseType to get expenses with
+    :param expensesList: the list of expenses
+    :return: the dictionary with each day-key corresponding to list-sorted-ascending-value
+    """
     dailyExpenses = {}
     for i in range(1, 31):
         dailyExpenses[str(i)] = []
@@ -157,6 +224,13 @@ def expensesWithoutDayInIntervalList(startDay, endDay, expensesList):
 
 
 def expenseWithoutThatWithExpenseTypeButNotAmountList(expenseType, amount, expensesList):
+    """
+    List of expenses containing al expenses from expensesList excepting that with expenseType but not amount
+    :param expenseType: the expenseType for filtering
+    :param amount: the amount for filtering
+    :param expensesList: the list of expenses to filter
+    :return: the list containing all elements in expensesList without that with expenseType but not amount
+    """
     expenses = []
     for expense in expensesList:
         if getExpenseType(expense) == expenseType:
@@ -168,6 +242,12 @@ def expenseWithoutThatWithExpenseTypeButNotAmountList(expenseType, amount, expen
 
 
 def removeExpenseFromList(expense, expensesList):
+    """
+    Remove expense from expensesList, returning the updated list
+    :param expense: the expense to remove
+    :param expensesList: the list of expenses to remove expense from
+    :return: the updated list
+    """
     for i in range(len(expensesList) - 1, 0, -1):
         if expensesList[i] == expense:
             del expensesList[i]
@@ -175,6 +255,13 @@ def removeExpenseFromList(expense, expensesList):
 
 
 def expensesWithDayInInterval(startDay, endDay, expensesList):
+    """
+    List of expenses that have day in interval [startDay, endDay]
+    :param startDay: the first day of the interval
+    :param endDay: the last day of the interval
+    :param expensesList: the list of expenses to take expenses from
+    :return: the list containing expenses in expensesList with day in interval [startDay, endDay]
+    """
     expenses = []
     for expense in expensesList:
         if startDay <= getDay(expense) <= endDay:
