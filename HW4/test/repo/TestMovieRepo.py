@@ -1,5 +1,5 @@
 from unittest import TestCase
 
 
-class ClientRepoTests(TestCase):
+class TestMovieRepo(TestCase):
     pass
