@@ -1,9 +1,19 @@
 class RentalRepo:
     __shared_state = {}
+    __rentalList = []
 
     def __init__(self):
         self.__dict__ = self.__shared_state
-        self.__rentalList = []
 
     def hasRentalWithId(self, rentalId):
-        return True  # TODO rally change this please
+        for rental in self.__rentalList:
+            if rental.getRentalId() == rentalId:
+                return True
+        return False
+
+    def addRental(self, rental):
+        rental.setRentalId(len(self.__rentalList))
+        self.__rentalList.append(rental)
+
+    def getRentalList(self):
+        return self.__rentalList

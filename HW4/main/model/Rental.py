@@ -1,4 +1,4 @@
-from main.Exception import InvalidDateFormatException, ObjectNotInCollectionException, SetToNotNoneException, DatesNotOrderedException
+from main.Exception import ObjectNotInCollectionException, AlreadySetException, DatesNotOrderedException
 from main.repo.ClientRepo import ClientRepo
 from main.repo.MovieRepo import MovieRepo
 from main.model.Date import Date
@@ -13,6 +13,32 @@ class Rental:
         self.__rentalId = None
         self.__returnedDate = None
 
+        movieRepo = MovieRepo()
+        if type(movieId) == int:
+            if movieId >= 0:
+                if movieRepo.hasMovieWithId(movieId):
+                    self.__movieId = movieId
+                else:
+                    raise ObjectNotInCollectionException("movie with id does not exits")
+            else:
+                raise ValueError
+        else:
+            raise ValueError("invalid movie id")
+        del movieRepo
+
+        clientRepo = ClientRepo()
+        if type(clientId) == int:
+            if clientId >= 0:
+                if clientRepo.hasClientWithId(clientId):
+                    self.__clientId = clientId
+                else:
+                    raise ObjectNotInCollectionException("client with id does not exist")
+            else:
+                raise ValueError
+        else:
+            raise ValueError("invalid client id")
+        del clientRepo  # TODO potentially harmful?
+
         if type(rentedDate) == Date:
             self.__rentedDate = rentedDate
         else:
@@ -26,20 +52,6 @@ class Rental:
         else:
             raise ValueError
 
-        movieRepo = MovieRepo()
-        if movieRepo.hasMovieWithId(movieId):
-            self.__movieId = movieId
-        else:
-            raise ObjectNotInCollectionException("movie with id does not exits")
-        del movieRepo
-
-        clientRepo = ClientRepo()
-        if clientRepo.hasClientWithId(clientId):
-            self.__clientId = clientId
-        else:
-            raise ObjectNotInCollectionException("client with id does not exist")
-        del clientRepo  # TODO potentially harmful?
-
     def setRentalId(self, rentalId):
         """
         Set rentalId to rentalId, if not previously set. (Default None)
@@ -49,21 +61,23 @@ class Rental:
         :raises SetIdNotNoneException: rentalId already set
         """
         if self.__rentalId is None:
-            if type(rentalId) != int or rentalId <= 0:
+            if type(rentalId) != int:
                 raise ValueError("invalid id")
+            elif rentalId < 0:
+                raise ValueError
             else:
                 self.__rentalId = rentalId
         else:
-            raise SetToNotNoneException
+            raise AlreadySetException
 
     def setReturnedDate(self, returnedDate):
         if self.__returnedDate is None:
-            try:
+            if type(returnedDate) == Date:
                 self.__returnedDate = returnedDate
-            except InvalidDateFormatException as invalidDateFormatException:
-                raise invalidDateFormatException
+            else:
+                raise ValueError
         else:
-            raise SetToNotNoneException
+            raise AlreadySetException
 
     def getRentalId(self):
         rentalId = self.__rentalId
@@ -80,3 +94,16 @@ class Rental:
     def getMovieId(self):
         return self.__movieId
 
+    def getClientId(self):
+        return self.__clientId
+
+    def getRentedDate(self):
+        return self.__rentedDate
+
+    def getDueDate(self):
+        return self.__dueDate
+
+    def __eq__(self, other: "Rental"):
+        return self.__rentalId == other.getRentalId() and self.__movieId == other.getMovieId() and \
+               self.__clientId == other.getClientId() and self.__returnedDate == other.getReturnedDate() and \
+               self.__dueDate == other.getDueDate() and self.__rentedDate == other.getRentedDate()

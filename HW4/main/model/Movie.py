@@ -1,4 +1,4 @@
-from main.Exception import SetToNotNoneException
+from main.Exception import AlreadySetException
 
 
 class Movie:
@@ -49,9 +49,14 @@ class Movie:
         :raises SetIdNotNoneException: movieId already set
         """
         if self.__movieId is None:
-            if type(movieId) != int or movieId <= 0:
+            if type(movieId) != int:
                 raise ValueError("invalid id")
+            elif movieId < 0:
+                raise ValueError
             else:
                 self.__movieId = movieId
         else:
-            raise SetToNotNoneException
+            raise AlreadySetException
+
+    def __eq__(self, other: "Movie"):
+        return self.__genre == other.getGenre() and self.__description == other.getDescription() and self.__title == other.getTitle() and self.__movieId == other.getMovieId()  # TODO id can be none and throw exception

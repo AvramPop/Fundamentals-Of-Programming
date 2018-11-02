@@ -1,4 +1,4 @@
-from main.Exception import SetToNotNoneException
+from main.Exception import AlreadySetException
 
 
 class Client:
@@ -31,12 +31,14 @@ class Client:
         :raises SetIdNotNoneException: clientId already set
         """
         if self.__clientId is None:
-            if type(clientId) != int or clientId <= 0:
+            if type(clientId) != int:
                 raise ValueError("invalid id")
+            elif clientId < 0:
+                raise ValueError
             else:
                 self.__clientId = clientId
         else:
-            raise SetToNotNoneException
+            raise AlreadySetException
 
     def __eq__(self, otherClient: 'Client') -> bool:
         return self.__name == otherClient.getName() and self.__clientId == otherClient.getClientId()
