@@ -15,6 +15,9 @@ class Constants:
     __constants = ("mainMenu", "mainMenuCommands", "managerMenu", "clientMenu", "movieMenu", "rentalMenu")
 
     def currentDay(self):
+        """
+        :return: current day in own Date format (day, month, year)
+        """
         return Date(self.__now.day, self.__now.month, self.__now.year)
 
     def isConstant(self, constant):

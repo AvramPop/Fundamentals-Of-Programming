@@ -10,6 +10,10 @@ class ClientRepo:
         self.__dict__ = self.__shared_state
 
     def hasClientWithName(self, name):
+        """
+        Checks whether there is a client with name
+        :return: True it exists, False otherwise
+        """
         for client in self.__clientList:
             if client.getName() == name:
                 return True
@@ -22,12 +26,20 @@ class ClientRepo:
         raise ObjectNotInCollectionException
 
     def hasClientWithId(self, clientId):
+        """
+        Checks whether there is a client having clientId
+        """
         for client in self.__clientList:
             if client.getClientId() == clientId:
                 return True
         return False
 
-    def addClient(self, client):
+    def addClient(self, client):  # TODO check unicity
+        """
+        Add client to repo
+
+        :param client: the client to add
+        """
         if type(client).__name__ == 'Client':
             if not client.hasIdSet():
                 client.setClientId(len(self.__clientList))
@@ -46,6 +58,10 @@ class ClientRepo:
         raise ObjectNotInCollectionException
 
     def removeClientWithId(self, clientId):
+        """
+        Remove client with id
+        :param clientId: the clientId to remove client with
+        """
         indexOfClientToRemoveInList = -1
         for i in range(0, len(self.__clientList)):
             if (self.__clientList[i]).getClientId() == clientId:
@@ -57,6 +73,9 @@ class ClientRepo:
             del self.__clientList[indexOfClientToRemoveInList]
 
     def removeClientWithName(self, name):
+        """
+        Remove client with name from repo
+        """
         indexOfClientToRemoveInList = -1
         for i in range(0, len(self.__clientList)):
             if (self.__clientList[i]).getName() == name:
@@ -68,6 +87,9 @@ class ClientRepo:
             del self.__clientList[indexOfClientToRemoveInList]
 
     def updateClientWithId(self, clientId, updatedClient):
+        """
+        Override client with clientId with updatedClient
+        """
         if updatedClient.hasIdSet():
             if updatedClient.getClientId() != clientId:
                 raise UpdatingObjectWithDifferentIdException
@@ -82,6 +104,9 @@ class ClientRepo:
         self.addClient(updatedClient)
 
     def updateClientName(self, actualName, newName):
+        """
+        Update client with actualName to newName
+        """
         clientFound = False
         for i in range(0, len(self.__clientList)):
             if self.__clientList[i].getName() == actualName:

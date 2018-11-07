@@ -10,6 +10,9 @@ class MovieRepo:
         self.__dict__ = self.__shared_state
 
     def hasMovieWithId(self, movieId):
+        """
+        Checks whether there is a movie with movieId
+        """
         for movie in self.__movieList:
             if movie.getMovieId() == movieId:
                 return True
@@ -34,6 +37,9 @@ class MovieRepo:
         raise ObjectNotInCollectionException
 
     def removeMovieWithTitle(self, title):
+        """
+        Removes movie with title title from repo
+        """
         indexOfMovieToRemoveInList = -1
         for i in range(0, len(self.__movieList)):
             if (self.__movieList[i]).getTitle() == title:
@@ -45,6 +51,9 @@ class MovieRepo:
             del self.__movieList[indexOfMovieToRemoveInList]
 
     def updateMovieWithTitle(self, movieTitle, updatedMovie):
+        """
+        Update movie with movieTitle to updatedMovie
+        """
         movieFound = False
         for i in range(0, len(self.__movieList)):
             if self.__movieList[i].getTitle() == movieTitle:
@@ -55,7 +64,10 @@ class MovieRepo:
         if not movieFound:
             raise ObjectNotInCollectionException
 
-    def addMovie(self, movie):
+    def addMovie(self, movie):  # TODO check unicity
+        """
+        Add movie to repo
+        """
         if type(movie).__name__ == 'Movie':
             if not movie.hasIdSet():
                 movie.setMovieId(len(self.__movieList))
@@ -74,6 +86,9 @@ class MovieRepo:
         raise ObjectNotInCollectionException
 
     def removeMovieWithId(self, movieId):
+        """
+        Remove movie with movieId from repo
+        """
         indexOfMovieToRemoveInList = -1
         for i in range(0, len(self.__movieList)):
             if (self.__movieList[i]).getMovieId() == movieId:
@@ -85,6 +100,9 @@ class MovieRepo:
             del self.__movieList[indexOfMovieToRemoveInList]
 
     def updateMovieWithId(self, movieId, updatedMovie):
+        """
+        Update movie with movieId to updatedMovie
+        """
         if updatedMovie.hasIdSet():
             if updatedMovie.getMovieId() != movieId:
                 raise UpdatingObjectWithDifferentIdException

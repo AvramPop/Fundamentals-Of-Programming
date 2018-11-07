@@ -31,12 +31,16 @@ class Date:
         else:
             raise InvalidDateFormatException
 
-
-
     def __eq__(self, other: "Date"):
         return self.day == other.day and self.month == other.month and self.year == other.year
 
     def isBeforeDate(self, date):
+        """
+        Checks whether self is before date
+
+        :param date: the date to compare to
+        :return: True if self is before date, False otherwise
+        """
         if self.year < date.year or (self.year == date.year and self.month < date.month) or (self.year == date.year and self.month == date.month and self.day < date.day):
             return True
         else:

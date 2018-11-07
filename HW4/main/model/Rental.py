@@ -71,6 +71,13 @@ class Rental:
             raise AlreadySetException
 
     def setReturnedDate(self, returnedDate):
+        """
+        Set returned date
+
+        :param returnedDate: the returned date to set
+        :raises ValueError: if returnedDate is not a Date
+        :raises AlreadySetException: if the returned date is already set
+        """
         if self.__returnedDate is None:
             if type(returnedDate) == Date:
                 self.__returnedDate = returnedDate
@@ -80,10 +87,22 @@ class Rental:
             raise AlreadySetException
 
     def getRentalId(self):
+        """
+        Get rental id
+
+        :return: rental id, if not None
+        :raises TypeError: if the rental id is not set
+        """
         rentalId = self.__rentalId
         if rentalId is None:
             raise TypeError("rentalId not set. maybe not in list")
         return rentalId
+
+    def isReturned(self):
+        if self.__returnedDate is None:
+            return False
+        else:
+            return True
 
     def getReturnedDate(self):
         returnedDate = self.__returnedDate
@@ -112,4 +131,4 @@ class Rental:
         return "Rental id: " + str(self.__rentalId) + ", movieId: " + \
                str(self.__movieId) + ", clientId: " + str(self.__clientId) + \
                ", rented date: " + str(self.__rentedDate) + ", due date: " + \
-               str(self.__dueDate) + ", returned date: " + str(self.__rentedDate)
+               str(self.__dueDate) + ", returned date: " + str(self.__returnedDate)

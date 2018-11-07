@@ -26,6 +26,12 @@ class Movie:
             raise ValueError
 
     def getMovieId(self):
+        """
+        Return movie id
+
+        :return movieId: the id if it is set
+        :raises TypeError: if the id is not set
+        """
         movieId = self.__movieId
         if movieId is None:
             raise TypeError("movieId not set. maybe not in list")

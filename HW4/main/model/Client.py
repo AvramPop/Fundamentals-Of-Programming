@@ -17,9 +17,19 @@ class Client:
         return self.__name
 
     def hasIdSet(self):
+        """
+        Check whether client id is set
+
+        :return: True - id is set, False otherwise
+        """
         return not (self.__clientId is None)
 
     def getClientId(self):
+        """
+        Return client id.
+
+        :raises TypeError: if the id is not set
+        """
         clientId = self.__clientId
         if clientId is None:
             raise TypeError("clientId not set. maybe not in list")
