@@ -1,7 +1,9 @@
 from main.Constants import Constants
 from main.Exception import ObjectNotInCollectionException
 from main.model.Client import Client
+from main.model.Date import Date
 from main.model.Movie import Movie
+from main.model.Rental import Rental
 from main.repo.ClientRepo import ClientRepo
 from main.repo.MovieRepo import MovieRepo
 from main.repo.RentalRepo import RentalRepo
@@ -107,6 +109,11 @@ class Console:
                     optionInputWordList = optionInput.split()
                     if optionInputWordList[0] == "rent":
                         print("rent")
+                        clientId = self.clientRepo.getClientIdByName(optionInputWordList[1])
+                        movieId = self.movieRepo.getMovieIdByTitle(optionInputWordList[2])
+                        dueDate = Date(int(optionInputWordList[3]), int(optionInputWordList[4]), int(optionInputWordList[5]))
+                        self.rentalRepo.addRental(Rental(movieId, clientId, self.constants.currentDay(), dueDate))
+                        print("Movie", optionInputWordList[2], "successfully rented by", optionInputWordList[1], "until", str(dueDate))
                     elif optionInputWordList[0] == "return":
                         print("return")
                     elif optionInputWordList[0] == "back":

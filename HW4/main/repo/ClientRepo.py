@@ -105,6 +105,12 @@ class ClientRepo:
     def cleanClientList(self):
         self.__clientList = []
 
+    def getClientIdByName(self, name):
+        for client in self.__clientList:
+            if client.getName() == name:
+                return client.getClientId()
+        return ObjectNotInCollectionException
+
     def populate(self):
         self.addClient(Client("Dani"))
         self.addClient(Client("Ancu"))

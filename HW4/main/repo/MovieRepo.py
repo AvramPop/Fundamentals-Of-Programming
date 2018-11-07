@@ -15,6 +15,12 @@ class MovieRepo:
                 return True
         return False
 
+    def getMovieIdByTitle(self, title):
+        for movie in self.__movieList:
+            if movie.getTitle() == title:
+                return movie.getMovieId()
+        return ObjectNotInCollectionException
+
     def hasMovieWithTitle(self, title):
         for movie in self.__movieList:
             if movie.getTitle() == title:
