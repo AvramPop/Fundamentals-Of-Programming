@@ -40,6 +40,9 @@ class Movie:
     def getGenre(self):
         return self.__genre
 
+    def hasIdSet(self):
+        return not (self.__movieId is None)
+
     def setMovieId(self, movieId):
         """
         Set movieId to movieId, if not previously set. (Default None)
@@ -60,3 +63,7 @@ class Movie:
 
     def __eq__(self, other: "Movie"):
         return self.__genre == other.getGenre() and self.__description == other.getDescription() and self.__title == other.getTitle() and self.__movieId == other.getMovieId()  # TODO id can be none and throw exception
+
+    def __str__(self) -> str:
+        return "Movie id: " + str(self.__movieId) + ", title: " + str(self.__title) + ", description: " + str(
+            self.__description) + ", genre: " + str(self.__genre)

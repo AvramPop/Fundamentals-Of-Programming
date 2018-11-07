@@ -1,5 +1,6 @@
 from unittest import TestCase
 from main.model.Date import Date
+from main.Exception import InvalidDateFormatException
 
 
 class TestDate(TestCase):
@@ -13,17 +14,17 @@ class TestDate(TestCase):
         self.assertEqual(self.date.day, 5)
         self.assertEqual(self.date.month, 7)
         self.assertEqual(self.date.year, 2018)
-        with self.assertRaises(ValueError):
+        with self.assertRaises(InvalidDateFormatException):
             testDate = Date("sa", 5, 25)
-        with self.assertRaises(ValueError):
+        with self.assertRaises(InvalidDateFormatException):
             testDate = Date(2, [], 6)
-        with self.assertRaises(ValueError):
+        with self.assertRaises(InvalidDateFormatException):
             testDate = Date(1, 9, -75.5)
-        with self.assertRaises(ValueError):
+        with self.assertRaises(InvalidDateFormatException):
             testDate = Date(100, 6, 7)
-        with self.assertRaises(ValueError):
+        with self.assertRaises(InvalidDateFormatException):
             testDate = Date(2, 100, 7)
-        with self.assertRaises(ValueError):
+        with self.assertRaises(InvalidDateFormatException):
             testDate = Date(5, 6, -7)
 
     def test_equals(self):

@@ -16,6 +16,9 @@ class Client:
     def getName(self):
         return self.__name
 
+    def hasIdSet(self):
+        return not (self.__clientId is None)
+
     def getClientId(self):
         clientId = self.__clientId
         if clientId is None:
@@ -42,5 +45,10 @@ class Client:
 
     def __eq__(self, otherClient: 'Client') -> bool:
         return self.__name == otherClient.getName() and self.__clientId == otherClient.getClientId()
+
+    def __str__(self) -> str:
+        return "Client id: " + str(self.__clientId) + ", name: " + str(self.__name)
+
+
 
 

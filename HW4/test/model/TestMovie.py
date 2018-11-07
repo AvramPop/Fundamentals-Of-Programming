@@ -1,6 +1,6 @@
 from unittest import TestCase
 from main.model.Movie import Movie
-from main.Exception import SetToNotNoneException
+from main.Exception import AlreadySetException
 
 
 class TestMovie(TestCase):
@@ -41,5 +41,5 @@ class TestMovie(TestCase):
 
     def test_setMovieIdSecondTime(self):
         self.movie.setMovieId(5)
-        with self.assertRaises(SetToNotNoneException):
+        with self.assertRaises(AlreadySetException):
             self.movie.setMovieId(9)

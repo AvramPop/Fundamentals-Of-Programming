@@ -1,7 +1,7 @@
 from main.Exception import ObjectNotInCollectionException, AlreadySetException, DatesNotOrderedException
+from main.model.Date import Date
 from main.repo.ClientRepo import ClientRepo
 from main.repo.MovieRepo import MovieRepo
-from main.model.Date import Date
 
 
 class Rental:
@@ -107,3 +107,9 @@ class Rental:
         return self.__rentalId == other.getRentalId() and self.__movieId == other.getMovieId() and \
                self.__clientId == other.getClientId() and self.__returnedDate == other.getReturnedDate() and \
                self.__dueDate == other.getDueDate() and self.__rentedDate == other.getRentedDate()
+
+    def __str__(self) -> str:
+        return "Rental id: " + str(self.__rentalId) + ", movieId: " + \
+               str(self.__movieId) + ", clientId: " + str(self.__clientId) + \
+               ", rented date: " + str(self.__rentedDate) + ", due date: " + \
+               str(self.__dueDate) + ", returned date: " + str(self.__rentedDate)

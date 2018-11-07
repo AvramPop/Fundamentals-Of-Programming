@@ -1,3 +1,6 @@
+from main.model import Rental
+
+
 class RentalRepo:
     __shared_state = {}
     __rentalList = []
@@ -12,8 +15,12 @@ class RentalRepo:
         return False
 
     def addRental(self, rental):
-        rental.setRentalId(len(self.__rentalList))
-        self.__rentalList.append(rental)
+        # print(type(rental).__name__ == 'Rental')
+        if type(rental).__name__ == 'Rental':
+            rental.setRentalId(len(self.__rentalList))
+            self.__rentalList.append(rental)
+        else:
+            raise TypeError
 
     def getRentalList(self):
         return self.__rentalList

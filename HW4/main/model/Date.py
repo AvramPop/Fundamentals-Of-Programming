@@ -39,3 +39,6 @@ class Date:
             return True
         else:
             return False
+
+    def __str__(self) -> str:
+        return "Date day: " + str(self.day) + ", month: " + str(self.month) + ", year: " + str(self.year)

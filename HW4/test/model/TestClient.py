@@ -1,6 +1,6 @@
 from unittest import TestCase
 from main.model.Client import Client
-from main.Exception import SetToNotNoneException
+from main.Exception import AlreadySetException
 
 
 class TestClient(TestCase):
@@ -31,5 +31,5 @@ class TestClient(TestCase):
 
     def test_setClientIdSecondTime(self):
         self.client.setClientId(6)
-        with self.assertRaises(SetToNotNoneException):
+        with self.assertRaises(AlreadySetException):
             self.client.setClientId(9)
