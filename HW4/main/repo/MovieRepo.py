@@ -22,7 +22,7 @@ class MovieRepo:
         for movie in self.__movieList:
             if movie.getTitle() == title:
                 return movie.getMovieId()
-        return ObjectNotInCollectionException
+        raise ObjectNotInCollectionException
 
     def hasMovieWithTitle(self, title):
         for movie in self.__movieList:

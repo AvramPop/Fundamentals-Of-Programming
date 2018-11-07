@@ -134,7 +134,7 @@ class ClientRepo:
         for client in self.__clientList:
             if client.getName() == name:
                 return client.getClientId()
-        return ObjectNotInCollectionException
+        raise ObjectNotInCollectionException
 
     def populate(self):
         self.addClient(Client("Dani"))
