@@ -43,6 +43,9 @@ class Client:
         else:
             raise AlreadySetException
 
+    def setName(self, name):
+        self.__name = name
+
     def __eq__(self, otherClient: 'Client') -> bool:
         return self.__name == otherClient.getName() and self.__clientId == otherClient.getClientId()
 

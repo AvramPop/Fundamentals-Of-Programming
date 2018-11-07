@@ -1,8 +1,122 @@
+from main.Constants import Constants
+from main.Exception import ObjectNotInCollectionException
+from main.model.Client import Client
+from main.model.Movie import Movie
+from main.repo.ClientRepo import ClientRepo
+from main.repo.MovieRepo import MovieRepo
+from main.repo.RentalRepo import RentalRepo
+from main.ui.Printer import Printer
+
+
 class Console:
+    printer = Printer()
+    constants = Constants()
+    clientRepo = ClientRepo()
+    clientRepo.populate()
+    movieRepo = MovieRepo()
+    movieRepo.populate()
+    rentalRepo = RentalRepo()
 
-    def __init__(self) -> None:
-        super().__init__()
+    def run(self):
 
-    @staticmethod
-    def run():
-        print("running console")
+        while True:
+            self.printer.printMenu("mainMenu")
+            menuChosen = input(">")
+            if menuChosen == "manager":
+                while True:
+                    self.printer.printMenu("managerMenu")  # TODO validations
+                    menuChosen = input(">")
+                    if menuChosen == "client":
+                        while True:
+                            self.printer.printSubmenu("clientMenu")
+                            optionInput = input(">")
+                            optionInputWordList = optionInput.split()
+                            if optionInputWordList[0] == "list":
+                                if len(optionInputWordList) == 1:
+                                    self.clientRepo.printClientList()
+                                elif len(optionInputWordList) == 2:
+                                    try:
+                                        self.printer.printClient(self.clientRepo.getClientWithName(optionInputWordList[1]))
+                                    except ObjectNotInCollectionException as objectNotInCollectionException:
+                                        print("Client with name", optionInputWordList[1], "not found")
+                                else:
+                                    print("Wrong input")
+                            elif optionInputWordList[0] == "remove":
+                                try:
+                                    self.clientRepo.removeClientWithName(optionInputWordList[1])
+                                except ObjectNotInCollectionException as objectNotInCollectionException:
+                                    print("Client with name", optionInputWordList[1], "not found")
+                                else:
+                                    print("Successfully removed client", optionInputWordList[1])
+                            elif optionInputWordList[0] == "update":
+                                try:
+                                    self.clientRepo.updateClientName(optionInputWordList[1], optionInputWordList[2])
+                                except ObjectNotInCollectionException as objectNotInCollectionException:
+                                    print("Client with name", optionInputWordList[1], "not found")
+                                else:
+                                    print("Successfully updated client", optionInputWordList[1])
+                            elif optionInputWordList[0] == "add":
+                                self.clientRepo.addClient(Client(optionInputWordList[1]))
+                                print("Successfully added client", optionInputWordList[1])
+                            elif optionInputWordList[0] == "back":
+                                break
+                    elif menuChosen == "movie":
+                        while True:
+                            self.printer.printSubmenu("movieMenu")
+                            optionInput = input(">")
+                            optionInputWordList = optionInput.split()
+                            if optionInputWordList[0] == "list":
+                                if len(optionInputWordList) == 1:
+                                    self.movieRepo.printMovieList()
+                                elif len(optionInputWordList) == 2:
+                                    try:
+                                        self.printer.printMovie(
+                                            self.movieRepo.getMovieWithTitle(optionInputWordList[1]))
+                                    except ObjectNotInCollectionException as objectNotInCollectionException:
+                                        print("Movie with name", optionInputWordList[1], "not found")
+                                else:
+                                    print("Wrong input")
+                            elif optionInputWordList[0] == "remove":
+                                try:
+                                    self.movieRepo.removeMovieWithTitle(optionInputWordList[1])
+                                except ObjectNotInCollectionException as objectNotInCollectionException:
+                                    print("Movie with title", optionInputWordList[1], "not found")
+                                else:
+                                    print("Successfully removed movie", optionInputWordList[1])
+                            elif optionInputWordList[0] == "update":
+                                try:
+                                    self.movieRepo.updateMovieWithTitle(optionInputWordList[1], Movie(optionInputWordList[2], optionInputWordList[3], optionInputWordList[4]))
+                                except ObjectNotInCollectionException as objectNotInCollectionException:
+                                    print("Movie with title", optionInputWordList[1], "not found")
+                                else:
+                                    print("Successfully updated movie", optionInputWordList[1])
+                            elif optionInputWordList[0] == "add":
+                                print("add movie")
+                                self.movieRepo.addMovie(Movie(optionInputWordList[1], optionInputWordList[2], optionInputWordList[3]))
+                                print("Successfully added movie", optionInputWordList[1])
+                            elif optionInputWordList[0] == "back":
+                                break
+                    elif menuChosen == "back":
+                        break
+                    else:
+                        print("Wrong input!")
+            elif menuChosen == "rental":
+                while True:
+                    self.printer.printSubmenu("rentalMenu")
+                    optionInput = input(">")
+                    optionInputWordList = optionInput.split()
+                    if optionInputWordList[0] == "rent":
+                        print("rent")
+                    elif optionInputWordList[0] == "return":
+                        print("return")
+                    elif optionInputWordList[0] == "back":
+                        break
+            elif menuChosen == "search":
+                print("search")
+            elif menuChosen == "stats":
+                print("stats")
+            elif menuChosen == "exit":
+                return
+            else:
+                print("Wrong input!")
+
