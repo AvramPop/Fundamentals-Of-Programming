@@ -1,29 +1,29 @@
 class AlreadySetException(Exception):
-
     def __init__(self, *args: object, **kwargs: object) -> None:
         super().__init__(*args, **kwargs)
 
 
 class ObjectNotInCollectionException(Exception):
+    def __init__(self, *args: object, **kwargs: object) -> None:
+        super().__init__(*args, **kwargs)
 
+
+class ObjectAlreadyInCollectionException(Exception):
     def __init__(self, *args: object, **kwargs: object) -> None:
         super().__init__(*args, **kwargs)
 
 
 class InvalidDateFormatException(Exception):
-
     def __init__(self, *args: object, **kwargs: object) -> None:
         super().__init__(*args, **kwargs)
 
 
 class DatesNotOrderedException(Exception):
-
     def __init__(self, *args: object, **kwargs: object) -> None:
         super().__init__(*args, **kwargs)
 
 
 class UpdatingObjectWithDifferentIdException(Exception):
-
     def __init__(self, *args: object, **kwargs: object) -> None:
         super().__init__(*args, **kwargs)
 
@@ -34,5 +34,10 @@ class ConstantNotFoundException(Exception):
 
 
 class ClientHasMoviesNotReturned(Exception):
+    def __init__(self, *args: object, **kwargs: object) -> None:
+        super().__init__(*args, **kwargs)
+
+
+class IdNotSetException(Exception):
     def __init__(self, *args: object, **kwargs: object) -> None:
         super().__init__(*args, **kwargs)

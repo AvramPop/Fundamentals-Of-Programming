@@ -1,4 +1,5 @@
-from main.Exception import ObjectNotInCollectionException, AlreadySetException, DatesNotOrderedException
+from main.Exception import ObjectNotInCollectionException, AlreadySetException, DatesNotOrderedException, \
+    IdNotSetException
 from main.model.Date import Date
 from main.repo.ClientRepo import ClientRepo
 from main.repo.MovieRepo import MovieRepo
@@ -86,12 +87,12 @@ class Rental:
         else:
             raise AlreadySetException
 
-    def getMovie(self):
-        movieRepo = MovieRepo()
-        for movie in movieRepo.getMovieList():
-            if movie.getMovieId() == self.__movieId:
-                return movie
-        del movieRepo
+    # def getMovie(self):
+    #     movieRepo = MovieRepo()
+    #     for movie in movieRepo.getMovieList():
+    #         if movie.getMovieId() == self.__movieId:
+    #             return movie
+    #     del movieRepo
 
     def getRentalId(self):
         """
@@ -102,14 +103,14 @@ class Rental:
         """
         rentalId = self.__rentalId
         if rentalId is None:
-            raise TypeError("rentalId not set. maybe not in list")
+            raise IdNotSetException
         return rentalId
 
-    def isReturned(self):
+    def isRented(self):
         if self.__returnedDate is None:
-            return False
-        else:
             return True
+        else:
+            return False
 
     def getReturnedDate(self):
         returnedDate = self.__returnedDate
@@ -129,8 +130,8 @@ class Rental:
     def getDueDate(self):
         return self.__dueDate
 
-    def setDueDate(self, dueDate):
-        self.__dueDate = dueDate
+    # def setDueDate(self, dueDate):
+    #     self.__dueDate = dueDate
 
     def __eq__(self, other: "Rental"):
         return self.__rentalId == other.getRentalId() and self.__movieId == other.getMovieId() and \

@@ -8,9 +8,9 @@ class Constants:
     __now = datetime.datetime.now()
     __mainMenuCommandsMenu = ("1. Management Menu - manager", "2. Rentals Menu - rental", "3. Search Menu - search", "4. Statistics Menu - stats", "5. Exit - exit")
     __managerCommandsMenu = ("1. Client List - client", "2. Movie List - movie", "3. Back - back")
-    __clientManagementCommandsMenu = ("1. List All - list", "2. List Client With Name - list <name>", "3. Remove Client With Name - remove <name>", "4. Update Client With Name - update <name> <new name>", "5. Add Client - add <client name>", "6. Back - back")
-    __movieManagementCommandsMenu = ("1. List All - list", "2. List Movie With Title - list <title>", "3. Remove Movie With Title - remove <title>", "4. Update Movie With Title - update <title> <new title> <new description> <new genre>", "5. Add Movie - add <movie name> <movie description> <movie genre>", "6. Back - back")
-    __rentCommandsMenu = ("1. Rent - rent <client name> <movie title> <due date>", "2. Return movie - return <client name> <movie title>", "3. Back - back")
+    __clientManagementCommandsMenu = ("1. List All - list", "2. List Client With Id - list <client id>", "3. Remove Client With Id - remove <client id>", "4. Update Client With Id - update <client id> <new name>", "5. Add Client - add <client name>", "6. Back - back")
+    __movieManagementCommandsMenu = ("1. List All - list", "2. List Movie With Id - list <movie id>", "3. Remove Movie With Id - remove <movie id>", "4. Update Movie With Id - update <movie id> <new title> <new description> <new genre>", "5. Add Movie - add <movie name> <movie description> <movie genre>", "6. Back - back")
+    __rentCommandsMenu = ("1. Rent - rent <client id> <movie id> <due date>", "2. Return movie - return <client id> <movie id>", "3. Back - back")
     __mainMenuCommands = ("manager", "rental", "search", "exit", "stats")
     __constants = ("mainMenu", "mainMenuCommands", "managerMenu", "clientMenu", "movieMenu", "rentalMenu")
 

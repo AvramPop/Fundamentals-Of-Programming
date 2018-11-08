@@ -1,4 +1,4 @@
-from main.Exception import AlreadySetException
+from main.Exception import AlreadySetException, IdNotSetException
 
 
 class Client:
@@ -32,7 +32,7 @@ class Client:
         """
         clientId = self.__clientId
         if clientId is None:
-            raise TypeError("clientId not set. maybe not in list")
+            raise IdNotSetException
         return clientId
 
     def setClientId(self, clientId):

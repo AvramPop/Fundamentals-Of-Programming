@@ -19,7 +19,6 @@ class Console:
     movieRepo.populate()
     rentalRepo = RentalRepo()
     rentalRepo.populate()
-    rentalRepo.printRentalList()
 
     def run(self):
 
@@ -37,31 +36,44 @@ class Console:
                             optionInputWordList = optionInput.split()
                             if optionInputWordList[0] == "list":
                                 if len(optionInputWordList) == 1:
-                                    self.clientRepo.printClientList()
+                                    # self.clientRepo.printClientList()
+                                    self.printer.printRepo(self.clientRepo)
                                 elif len(optionInputWordList) == 2:
                                     try:
-                                        self.printer.printClient(self.clientRepo.getClientWithName(optionInputWordList[1]))
+                                        # self.printer.printClient(self.clientRepo.getClientWithName(optionInputWordList[1]))
+                                        if optionInputWordList[1].isdigit():
+                                            self.printer.printObject(self.clientRepo.getClientWithId(int(optionInputWordList[1])))
+                                        else:
+                                            print("wrong input")
                                     except ObjectNotInCollectionException as objectNotInCollectionException:
-                                        print("Client with name", optionInputWordList[1], "not found")
+                                        print("Client with id #", optionInputWordList[1], "not found")
                                 else:
                                     print("Wrong input")
                             elif optionInputWordList[0] == "remove":
                                 if len(optionInputWordList) == 2:
                                     try:
-                                        self.clientRepo.removeClientWithName(optionInputWordList[1])
+                                        # self.clientRepo.removeClientWithName(optionInputWordList[1])
+                                        if optionInputWordList[1].isdigit():
+                                            self.clientRepo.removeClientWithId(int(optionInputWordList[1]))
+                                        else:
+                                            print("wrong input")
                                     except ObjectNotInCollectionException as objectNotInCollectionException:
-                                        print("Client with name", optionInputWordList[1], "not found")
+                                        print("Client with id", optionInputWordList[1], "not found")
                                     else:
-                                        print("Successfully removed client", optionInputWordList[1])
+                                        print("Successfully removed client #", optionInputWordList[1])
                                 print("wrong input")
                             elif optionInputWordList[0] == "update":
                                 if len(optionInputWordList) == 3:
                                     try:
-                                        self.clientRepo.updateClientName(optionInputWordList[1], optionInputWordList[2])
+                                        # self.clientRepo.updateClientName(optionInputWordList[1], optionInputWordList[2])
+                                        if optionInputWordList[1].isdigit():
+                                            self.clientRepo.updateClientWithId(int(optionInputWordList[1]), optionInputWordList[2])
+                                        else:
+                                            print("wrong input")
                                     except ObjectNotInCollectionException as objectNotInCollectionException:
-                                        print("Client with name", optionInputWordList[1], "not found")
+                                        print("Client with id", optionInputWordList[1], "not found")
                                     else:
-                                        print("Successfully updated client", optionInputWordList[1])
+                                        print("Successfully updated client #", optionInputWordList[1])
                                 else:
                                     print("wrong input")
                             elif optionInputWordList[0] == "add":
@@ -76,16 +88,21 @@ class Console:
                             optionInputWordList = optionInput.split()
                             if optionInputWordList[0] == "list":
                                 if len(optionInputWordList) == 1:
-                                    self.movieRepo.printMovieList()
+                                    # self.movieRepo.printMovieList()
+                                    self.printer.printRepo(self.movieRepo)
                                 elif len(optionInputWordList) == 2:
                                     try:
-                                        self.printer.printMovie(
-                                            self.movieRepo.getMovieWithTitle(optionInputWordList[1]))
+                                        # self.printer.printMovie(
+                                            # self.movieRepo.getMovieWithTitle(optionInputWordList[1]))
+                                        if optionInputWordList[1].isdigit():
+                                            self.printer.printObject(self.movieRepo.getMovieWithId(int(optionInputWordList[1])))
+                                        else:
+                                            print("wrong input")
                                     except ObjectNotInCollectionException as objectNotInCollectionException:
-                                        print("Movie with name", optionInputWordList[1], "not found")
+                                        print("Movie with id", optionInputWordList[1], "not found")
                                 else:
                                     print("Wrong input")
-                            elif optionInputWordList[0] == "remove":
+                            elif optionInputWordList[0] == "remove":  # TODO refactoring done up until here
                                 if len(optionInputWordList) == 2:
                                     try:
                                         self.movieRepo.removeMovieWithTitle(optionInputWordList[1])
@@ -122,36 +139,39 @@ class Console:
                     optionInputWordList = optionInput.split()
                     if optionInputWordList:
                         if optionInputWordList[0] == "rent":
-                            try:
-                                clientId = self.clientRepo.getClientIdByName(optionInputWordList[1])
-                            except ObjectNotInCollectionException as objectNotInCollectionException:
-                                print("Client with name", optionInputWordList[1], "not found")
-                            else:
-                                if not self.rentalRepo.clientHasMoviesNotReturned(clientId):
-                                    try:
-                                        movieId = self.movieRepo.getMovieIdByTitle(optionInputWordList[2])
-                                    except ObjectNotInCollectionException as objectNotInCollectionException:
-                                        print("Movie with title", optionInputWordList[2], "not found")
-                                    else:
-                                        if not self.rentalRepo.isMovieRented(movieId):
-                                            try:
-                                                dueDate = Date(int(optionInputWordList[3]), int(optionInputWordList[4]), int(optionInputWordList[5]))
-                                            except InvalidDateFormatException as invalidDateFormatException:
-                                                print("Invalid date format")
-                                            else:
-                                                try:
-                                                    rentalToAdd = Rental(movieId, clientId, self.constants.currentDay(), dueDate)
-                                                except DatesNotOrderedException as datesNotOrderedException:
-                                                    print("The due date cannot be before the rental date")
-                                                else:
-                                                    rentalToAdd.getMovie().rent()
-                                                    self.rentalRepo.addRental(rentalToAdd)
-                                                    print("Movie", optionInputWordList[2], "successfully rented by", optionInputWordList[1], "until", str(dueDate))
-                                                    # self.rentalRepo.printRentalList()
-                                        else:
-                                            print("Movie", optionInputWordList[2], "is rented")
+                            if len(optionInputWordList) == 6:
+                                try:
+                                    clientId = self.clientRepo.getClientIdByName(optionInputWordList[1])
+                                except ObjectNotInCollectionException as objectNotInCollectionException:
+                                    print("Client with name", optionInputWordList[1], "not found")
                                 else:
-                                    print("Client", optionInputWordList[1], "has passed due date for movies")
+                                    if not self.rentalRepo.clientHasMoviesNotReturned(clientId):
+                                        try:
+                                            movieId = self.movieRepo.getMovieIdByTitle(optionInputWordList[2])
+                                        except ObjectNotInCollectionException as objectNotInCollectionException:
+                                            print("Movie with title", optionInputWordList[2], "not found")
+                                        else:
+                                            if not self.rentalRepo.isMovieRented(movieId):
+                                                try:
+                                                    dueDate = Date(int(optionInputWordList[3]), int(optionInputWordList[4]), int(optionInputWordList[5]))
+                                                except InvalidDateFormatException as invalidDateFormatException:
+                                                    print("Invalid date format")
+                                                else:
+                                                    try:
+                                                        rentalToAdd = Rental(movieId, clientId, self.constants.currentDay(), dueDate)
+                                                    except DatesNotOrderedException as datesNotOrderedException:
+                                                        print("The due date cannot be before the rental date")
+                                                    else:
+                                                        rentalToAdd.getMovie().rent()
+                                                        self.rentalRepo.addRental(rentalToAdd)
+                                                        print("Movie", optionInputWordList[2], "successfully rented by", optionInputWordList[1], "until", str(dueDate))
+                                                        self.rentalRepo.printRentalList()
+                                            else:
+                                                print("Movie", optionInputWordList[2], "is rented")
+                                    else:
+                                        print("Client", optionInputWordList[1], "has passed due date for movies")
+                            else:
+                                print("wrong input")
                         elif optionInputWordList[0] == "return":
                             try:
                                 clientId = self.clientRepo.getClientIdByName(optionInputWordList[1])
@@ -166,7 +186,7 @@ class Console:
                                     if self.rentalRepo.clientHasMovieRented(clientId, movieId):
                                         self.rentalRepo.returnMovie(clientId, movieId)
                                         print("Movie", optionInputWordList[2], "successfully returned by client", optionInputWordList[1])
-                                        # self.rentalRepo.printRentalList()
+                                        self.rentalRepo.printRentalList()
                                     else:
                                         print("Client", optionInputWordList[1], "doesn't have the movie", optionInputWordList[2], "rented")
                         elif optionInputWordList[0] == "back":

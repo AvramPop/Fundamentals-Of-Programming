@@ -1,4 +1,4 @@
-from main.Exception import AlreadySetException
+from main.Exception import AlreadySetException, IdNotSetException
 
 
 class Movie:
@@ -9,7 +9,7 @@ class Movie:
 
     def __init__(self, title, description, genre) -> None:
         self.__movieId = None
-        self.__isRented = False
+        # self.__isRented = False
 
         if type(title) == str:
             self.__title = title
@@ -35,17 +35,17 @@ class Movie:
         """
         movieId = self.__movieId
         if movieId is None:
-            raise TypeError("movieId not set. maybe not in list")
+            raise IdNotSetException
         return movieId
-
-    def rent(self):
-        self.__isRented = True
-
-    def returnMovie(self):
-        self.__isRented = False
-
-    def isRented(self):
-        return self.__isRented
+    #
+    # def rent(self):
+    #     self.__isRented = True
+    #
+    # def returnMovie(self):
+    #     self.__isRented = False
+    #
+    # def isRented(self):
+    #     return self.__isRented
 
     def getTitle(self):
         return self.__title

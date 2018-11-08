@@ -1,4 +1,5 @@
-from main.Exception import ObjectNotInCollectionException, UpdatingObjectWithDifferentIdException
+from main.Exception import ObjectNotInCollectionException, UpdatingObjectWithDifferentIdException, \
+    ObjectAlreadyInCollectionException
 from main.model.Client import Client
 
 
@@ -9,21 +10,21 @@ class ClientRepo:
     def __init__(self):
         self.__dict__ = self.__shared_state
 
-    def hasClientWithName(self, name):
-        """
-        Checks whether there is a client with name
-        :return: True it exists, False otherwise
-        """
-        for client in self.__clientList:
-            if client.getName() == name:
-                return True
-        return False
+    # def hasClientWithName(self, name):
+    #     """
+    #     Checks whether there is a client with name
+    #     :return: True it exists, False otherwise
+    #     """
+    #     for client in self.__clientList:
+    #         if client.getName() == name:
+    #             return True
+    #     return False
 
-    def getClientWithName(self, name):
-        for client in self.__clientList:
-            if client.getName() == name:
-                return client
-        raise ObjectNotInCollectionException
+    # def getClientWithName(self, name):
+    #     for client in self.__clientList:
+    #         if client.getName() == name:
+    #             return client
+    #     raise ObjectNotInCollectionException
 
     def hasClientWithId(self, clientId):
         """
@@ -34,21 +35,23 @@ class ClientRepo:
                 return True
         return False
 
-    def addClient(self, client):  # TODO check unicity
+    def addClient(self, client):
         """
         Add client to repo
 
         :param client: the client to add
         """
         if type(client).__name__ == 'Client':
-            if not client.hasIdSet():
+            if not self.hasClientWithId(client.getClientId()):
                 client.setClientId(len(self.__clientList))
-            self.__clientList.append(client)
-            self.sortClientList()
+                self.__clientList.append(client)
+                self.__sortClientList()
+            else:
+                raise ObjectAlreadyInCollectionException
         else:
             raise TypeError
 
-    def getClientList(self):
+    def getList(self):
         return self.__clientList
 
     def getClientWithId(self, clientId):
@@ -71,51 +74,60 @@ class ClientRepo:
             raise ObjectNotInCollectionException
         else:
             del self.__clientList[indexOfClientToRemoveInList]
-
-    def removeClientWithName(self, name):
-        """
-        Remove client with name from repo
-        """
-        indexOfClientToRemoveInList = -1
-        for i in range(0, len(self.__clientList)):
-            if (self.__clientList[i]).getName() == name:
-                indexOfClientToRemoveInList = i
-
-        if indexOfClientToRemoveInList == -1:
-            raise ObjectNotInCollectionException
-        else:
-            del self.__clientList[indexOfClientToRemoveInList]
+    #
+    # def removeClientWithName(self, name):
+    #     """
+    #     Remove client with name from repo
+    #     """
+    #     indexOfClientToRemoveInList = -1
+    #     for i in range(0, len(self.__clientList)):
+    #         if (self.__clientList[i]).getName() == name:
+    #             indexOfClientToRemoveInList = i
+    #
+    #     if indexOfClientToRemoveInList == -1:
+    #         raise ObjectNotInCollectionException
+    #     else:
+    #         del self.__clientList[indexOfClientToRemoveInList]
 
     def updateClientWithId(self, clientId, updatedClient):
         """
         Override client with clientId with updatedClient
         """
-        if updatedClient.hasIdSet():
-            if updatedClient.getClientId() != clientId:
-                raise UpdatingObjectWithDifferentIdException
-
-        try:
-            self.removeClientWithId(clientId)
-        except ObjectNotInCollectionException as objectNotInCollectionException:
-            raise objectNotInCollectionException
-
-        if not updatedClient.hasIdSet():
-            updatedClient.setClientId(clientId)
-        self.addClient(updatedClient)
-
-    def updateClientName(self, actualName, newName):
-        """
-        Update client with actualName to newName
-        """
-        clientFound = False
+        # if updatedClient.hasIdSet():
+        #     if updatedClient.getClientId() != clientId:
+        #         raise UpdatingObjectWithDifferentIdException
+        indexOfClientToUpdateInList = -1
         for i in range(0, len(self.__clientList)):
-            if self.__clientList[i].getName() == actualName:
-                self.__clientList[i].setName(newName)
-                clientFound = True
-        if not clientFound:
-            raise ObjectNotInCollectionException
+            if (self.__clientList[i]).getClientId() == clientId:
+                indexOfClientToUpdateInList = i
 
-    def sortClientList(self):
+        if indexOfClientToUpdateInList == -1:
+            raise ObjectNotInCollectionException
+        else:
+            self.__clientList[indexOfClientToUpdateInList] = updatedClient
+
+        # try:
+        #     self.removeClientWithId(clientId)
+        # except ObjectNotInCollectionException as objectNotInCollectionException:
+        #     raise objectNotInCollectionException
+        #
+        # if not updatedClient.hasIdSet():
+        #     updatedClient.setClientId(clientId)
+        # self.addClient(updatedClient)
+    #
+    # def updateClientName(self, actualName, newName):
+    #     """
+    #     Update client with actualName to newName
+    #     """
+    #     clientFound = False
+    #     for i in range(0, len(self.__clientList)):
+    #         if self.__clientList[i].getName() == actualName:
+    #             self.__clientList[i].setName(newName)
+    #             clientFound = True
+    #     if not clientFound:
+    #         raise ObjectNotInCollectionException
+
+    def __sortClientList(self):
         for i in range(0, len(self.__clientList) - 1):
             for j in range(i + 1, len(self.__clientList)):
                 if (self.__clientList[j]).getClientId() < self.__clientList[i].getClientId():
@@ -123,18 +135,18 @@ class ClientRepo:
                     self.__clientList[j] = self.__clientList[i]
                     self.__clientList[i] = auxClient
 
-    def printClientList(self):
-        for client in self.__clientList:
-            print(str(client))
+    # def printClientList(self):
+    #     for client in self.__clientList:
+    #         print(str(client))
 
-    def cleanClientList(self):
-        self.__clientList = []
+    # def cleanClientList(self):
+    #     self.__clientList = []
 
-    def getClientIdByName(self, name):
-        for client in self.__clientList:
-            if client.getName() == name:
-                return client.getClientId()
-        raise ObjectNotInCollectionException
+    # def getClientIdByName(self, name):
+    #     for client in self.__clientList:
+    #         if client.getName() == name:
+    #             return client.getClientId()
+    #     raise ObjectNotInCollectionException
 
     def populate(self):
         self.addClient(Client("Dani"))

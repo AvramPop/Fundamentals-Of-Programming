@@ -1,4 +1,5 @@
 from main.Constants import Constants
+from main.Exception import ObjectAlreadyInCollectionException, ObjectNotInCollectionException
 from main.model.Rental import Rental
 from main.model.Date import Date
 
@@ -20,57 +21,102 @@ class RentalRepo:
                 return True
         return False
 
-    def addRental(self, rental):  # TODO check unicity
+    def addRental(self, rental):
         if type(rental).__name__ == 'Rental':
-
-            rental.setRentalId(len(self.__rentalList))
-            self.__rentalList.append(rental)
+            if not self.hasRentalWithId(rental.getRentalId()):
+                rental.setRentalId(len(self.__rentalList))
+                self.__rentalList.append(rental)
+                self.__sortRentalList()
+            else:
+                raise ObjectAlreadyInCollectionException
         else:
             raise TypeError
 
-    def getRentalList(self):
+    def getList(self):
         return self.__rentalList
 
-    def printRentalList(self):
+    def getRentalWithId(self, rentalId):
         for rental in self.__rentalList:
-            print(str(rental))
+            if rental.getRentalId() == rentalId:
+                return rental
+        raise ObjectNotInCollectionException
 
-    def clientHasMoviesNotReturned(self, clientId):
+    def removeRentalWithId(self, rentalId):
         """
-        Checks whether client with clientId has at least one movie not returned
+        Remove rental with rentalId from repo
         """
-        moviesRentedOvertime = False
-        for rental in self.__rentalList:
-            if rental.getClientId() == clientId:
-                if rental.getDueDate().isBeforeDate(self.__constants.currentDay()) and rental.getMovie().isRented():
-                    moviesRentedOvertime = True
-        return moviesRentedOvertime
+        indexOfRentalToRemoveInList = -1
+        for i in range(0, len(self.__rentalList)):
+            if (self.__rentalList[i]).getRentalId() == rentalId:
+                indexOfRentalToRemoveInList = i
 
-    def isMovieRented(self, movieId):
-        """
-        Checks whether the movie is rented
-        """
-        for rental in self.__rentalList:
-            if rental.getMovieId() == movieId:
-                return rental.getMovie().isRented()
+        if indexOfRentalToRemoveInList == -1:
+            raise ObjectNotInCollectionException
+        else:
+            del self.__rentalList[indexOfRentalToRemoveInList]
 
-    def clientHasMovieRented(self, clientId, movieId):
+    def updateRentalWithId(self, rentalId, updatedRental):
         """
-        Checks whether client with clientId has movie with movieId rented
+        Update rental with rentalId to updatedRental
         """
-        for rental in self.__rentalList:
-            if rental.getMovieId() == movieId and rental.getClientId() == clientId and rental.getMovie().isRented():
-                return True
-        return False
+        indexOfRentalToUpdateInList = -1
+        for i in range(0, len(self.__rentalList)):
+            if (self.__rentalList[i]).getRentalId() == rentalId:
+                indexOfRentalToUpdateInList = i
 
-    def returnMovie(self, clientId, movieId):
-        """
-        Set rental of movie with movieId by client with clientId returned date to today
-        """
-        for rental in self.__rentalList:
-            if rental.getMovieId() == movieId and rental.getClientId() == clientId and rental.getMovie().isRented():
-                rental.setReturnedDate(self.__constants.currentDay())
-                rental.getMovie().returnMovie()
+        if indexOfRentalToUpdateInList == -1:
+            raise ObjectNotInCollectionException
+        else:
+            self.__rentalList[indexOfRentalToUpdateInList] = updatedRental
+
+    # def printRentalList(self):
+    #     for rental in self.__rentalList:
+    #         print(str(rental))
+    #
+    # def clientHasMoviesNotReturned(self, clientId):
+    #     """
+    #     Checks whether client with clientId has at least one movie not returned
+    #     """
+    #     moviesRentedOvertime = False
+    #     for rental in self.__rentalList:
+    #         if rental.getClientId() == clientId:
+    #             if rental.getDueDate().isBeforeDate(self.__constants.currentDay()) and rental.getMovie().isRented():
+    #                 moviesRentedOvertime = True
+    #     return moviesRentedOvertime
+
+    # def isMovieRented(self, movieId):
+    #     """
+    #     Checks whether the movie is rented
+    #     """
+    #     for rental in self.__rentalList:
+    #         if rental.getMovieId() == movieId:
+    #             return rental.getMovie().isRented()
+
+    # def clientHasMovieRented(self, clientId, movieId):
+    #     """
+    #     Checks whether client with clientId has movie with movieId rented
+    #     """
+    #     for rental in self.__rentalList:
+    #         if rental.getMovieId() == movieId and rental.getClientId() == clientId and rental.getMovie().isRented():
+    #             return True
+    #     return False
+
+    # def returnMovie(self, clientId, movieId):
+    #     """
+    #     Set rental of movie with movieId by client with clientId returned date to today
+    #     """
+    #     for rental in self.__rentalList:
+    #         if rental.getMovieId() == movieId and rental.getClientId() == clientId and rental.getMovie().isRented():
+    #             rental.setReturnedDate(self.__constants.currentDay())
+    #             rental.getMovie().returnMovie()
+
+    def __sortRentalList(self):
+        for i in range(0, len(self.__rentalList) - 1):
+            for j in range(i + 1, len(self.__rentalList)):
+                if (self.__rentalList[j]).getRentalId() < self.__rentalList[i].getRentalId():
+                    auxRental = self.__rentalList[j]
+                    self.__rentalList[j] = self.__rentalList[i]
+                    self.__rentalList[i] = auxRental
 
     def populate(self):  # TODO add missing attributes
         self.addRental(Rental(0, 0, Date(12, 5, 2011), Date(13, 6, 2012)))
