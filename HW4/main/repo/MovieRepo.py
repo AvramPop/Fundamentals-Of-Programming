@@ -71,13 +71,20 @@ class MovieRepo:
         """
         if type(movie).__name__ == 'Movie':
             if not self.hasMovieWithId(movie.getMovieId()):
-                movie.setMovieId(len(self.__movieList))
+                movie.setMovieId(self.__maximumIndexInMovieList() + 1)
                 self.__movieList.append(movie)
                 self.__sortMovieList()
             else:
                 raise ObjectAlreadyInCollectionException
         else:
             raise TypeError
+
+    def __maximumIndexInMovieList(self):
+        maximumIndex = -1
+        for movie in self.__movieList:
+            if movie.getMovieId() > maximumIndex:
+                maximumIndex = movie.getMovieId()
+        return maximumIndex
 
     def getList(self):
         return self.__movieList
@@ -114,6 +121,7 @@ class MovieRepo:
         if indexOfMovieToUpdateInList == -1:
             raise ObjectNotInCollectionException
         else:
+            updatedMovie.setMovieId(movieId)
             self.__movieList[indexOfMovieToUpdateInList] = updatedMovie
         # if updatedMovie.hasIdSet():
         #     if updatedMovie.getMovieId() != movieId:

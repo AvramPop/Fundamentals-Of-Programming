@@ -30,10 +30,7 @@ class Client:
 
         :raises TypeError: if the id is not set
         """
-        clientId = self.__clientId
-        if clientId is None:
-            raise IdNotSetException
-        return clientId
+        return self.__clientId
 
     def setClientId(self, clientId):
         """

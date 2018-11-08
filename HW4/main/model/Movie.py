@@ -33,10 +33,7 @@ class Movie:
         :return movieId: the id if it is set
         :raises TypeError: if the id is not set
         """
-        movieId = self.__movieId
-        if movieId is None:
-            raise IdNotSetException
-        return movieId
+        return self.__movieId
     #
     # def rent(self):
     #     self.__isRented = True

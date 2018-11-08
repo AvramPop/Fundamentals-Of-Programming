@@ -24,13 +24,20 @@ class RentalRepo:
     def addRental(self, rental):
         if type(rental).__name__ == 'Rental':
             if not self.hasRentalWithId(rental.getRentalId()):
-                rental.setRentalId(len(self.__rentalList))
+                rental.setRentalId(self.__maximumIndexInRentalList() + 1)
                 self.__rentalList.append(rental)
                 self.__sortRentalList()
             else:
                 raise ObjectAlreadyInCollectionException
         else:
             raise TypeError
+
+    def __maximumIndexInRentalList(self):
+        maximumIndex = -1
+        for rental in self.__rentalList:
+            if rental.getRentalId() > maximumIndex:
+                maximumIndex = rental.getRentalId()
+        return maximumIndex
 
     def getList(self):
         return self.__rentalList
@@ -67,6 +74,7 @@ class RentalRepo:
         if indexOfRentalToUpdateInList == -1:
             raise ObjectNotInCollectionException
         else:
+            updatedRental.setRentalId(rentalId)
             self.__rentalList[indexOfRentalToUpdateInList] = updatedRental
 
     # def printRentalList(self):
@@ -120,7 +128,6 @@ class RentalRepo:
 
     def populate(self):  # TODO add missing attributes
         self.addRental(Rental(0, 0, Date(12, 5, 2011), Date(13, 6, 2012)))
-        self.__rentalList[0].getMovie().rent()
         self.addRental(Rental(1, 1, Date(12, 5, 2012), Date(13, 6, 2019)))
         self.__rentalList[1].setReturnedDate(Date(12, 6, 2013))
         self.addRental(Rental(2, 2, Date(12, 5, 2013), Date(13, 6, 2013)))

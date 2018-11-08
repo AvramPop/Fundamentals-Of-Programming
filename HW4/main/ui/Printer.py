@@ -39,6 +39,6 @@ class Printer:
     def printObject(self, plainObject):
         print(str(plainObject))
 
-    def printRepo(self, repo):
-        for plainObject in repo.getList():
-            self.print(plainObject)
+    def printList(self, listToPrint):
+        for plainObject in listToPrint:
+            self.printObject(plainObject)

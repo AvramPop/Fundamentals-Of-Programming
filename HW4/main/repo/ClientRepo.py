@@ -1,5 +1,5 @@
 from main.Exception import ObjectNotInCollectionException, UpdatingObjectWithDifferentIdException, \
-    ObjectAlreadyInCollectionException
+    ObjectAlreadyInCollectionException, IdNotSetException
 from main.model.Client import Client
 
 
@@ -43,7 +43,7 @@ class ClientRepo:
         """
         if type(client).__name__ == 'Client':
             if not self.hasClientWithId(client.getClientId()):
-                client.setClientId(len(self.__clientList))
+                client.setClientId(self.__maximumIndexInClientList() + 1)
                 self.__clientList.append(client)
                 self.__sortClientList()
             else:
@@ -53,6 +53,13 @@ class ClientRepo:
 
     def getList(self):
         return self.__clientList
+
+    def __maximumIndexInClientList(self):
+        maximumIndex = -1
+        for client in self.__clientList:
+            if client.getClientId() > maximumIndex:
+                maximumIndex = client.getClientId()
+        return maximumIndex
 
     def getClientWithId(self, clientId):
         for client in self.__clientList:
@@ -104,6 +111,7 @@ class ClientRepo:
         if indexOfClientToUpdateInList == -1:
             raise ObjectNotInCollectionException
         else:
+            updatedClient.setClientId(clientId)
             self.__clientList[indexOfClientToUpdateInList] = updatedClient
 
         # try:

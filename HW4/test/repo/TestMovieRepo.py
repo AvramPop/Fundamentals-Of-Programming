@@ -11,42 +11,41 @@ class TestMovieRepo(TestCase):
 
     def tearDown(self):
         self.movieRepo = None
-        # self.movieRepo.cleanMovieList()
 
     def test_uniqueInstance(self):
         testMovieRepo = MovieRepo()
-        self.assertEqual(self.movieRepo.getMovieList(), testMovieRepo.getMovieList())
+        self.assertEqual(self.movieRepo.getList(), testMovieRepo.getList())
         testMovieRepo.addMovie(Movie("title1", "desc1", "genre1"))
-        self.assertEqual(self.movieRepo.getMovieList(), testMovieRepo.getMovieList())
+        self.assertEqual(self.movieRepo.getList(), testMovieRepo.getList())
         testMovieRepo.addMovie(Movie("title2", "desc2", "genre2"))
-        self.assertEqual(self.movieRepo.getMovieList(), testMovieRepo.getMovieList())
+        self.assertEqual(self.movieRepo.getList(), testMovieRepo.getList())
 
     def test_addMovie(self):  # TODO watchout. the repo is borg
         self.movieRepo.addMovie(Movie("dani", "great", "nice"))
         self.movieRepo.addMovie(Movie("titanic", "description", "genre"))
-        self.assertEqual((self.movieRepo.getMovieList()[0]).getMovieId(), 0)
-        self.assertEqual((self.movieRepo.getMovieList()[0]).getTitle(), "dani")
-        self.assertEqual((self.movieRepo.getMovieList()[0]).getDescription(), "great")
-        self.assertEqual((self.movieRepo.getMovieList()[0]).getGenre(), "nice")
-        self.assertEqual((self.movieRepo.getMovieList()[1]).getMovieId(), 1)
-        self.assertEqual((self.movieRepo.getMovieList()[1]).getTitle(), "titanic")
-        self.assertEqual((self.movieRepo.getMovieList()[1]).getDescription(), "description")
-        self.assertEqual((self.movieRepo.getMovieList()[1]).getGenre(), "genre")
+        self.assertEqual((self.movieRepo.getList()[0]).getMovieId(), 0)
+        self.assertEqual((self.movieRepo.getList()[0]).getTitle(), "dani")
+        self.assertEqual((self.movieRepo.getList()[0]).getDescription(), "great")
+        self.assertEqual((self.movieRepo.getList()[0]).getGenre(), "nice")
+        self.assertEqual((self.movieRepo.getList()[1]).getMovieId(), 1)
+        self.assertEqual((self.movieRepo.getList()[1]).getTitle(), "titanic")
+        self.assertEqual((self.movieRepo.getList()[1]).getDescription(), "description")
+        self.assertEqual((self.movieRepo.getList()[1]).getGenre(), "genre")
         testMovieRepo = MovieRepo()
-        self.assertEqual((testMovieRepo.getMovieList()[0]).getMovieId(), 0)
-        self.assertEqual((testMovieRepo.getMovieList()[0]).getDescription(), "great")
-        self.assertEqual((testMovieRepo.getMovieList()[0]).getTitle(), "dani")
-        self.assertEqual((testMovieRepo.getMovieList()[0]).getGenre(), "nice")
-        self.assertEqual((testMovieRepo.getMovieList()[1]).getMovieId(), 1)
-        self.assertEqual((testMovieRepo.getMovieList()[1]).getDescription(), "description")
-        self.assertEqual((testMovieRepo.getMovieList()[1]).getTitle(), "titanic")
-        self.assertEqual((testMovieRepo.getMovieList()[1]).getGenre(), "genre")
+        self.assertEqual((testMovieRepo.getList()[0]).getMovieId(), 0)
+        self.assertEqual((testMovieRepo.getList()[0]).getDescription(), "great")
+        self.assertEqual((testMovieRepo.getList()[0]).getTitle(), "dani")
+        self.assertEqual((testMovieRepo.getList()[0]).getGenre(), "nice")
+        self.assertEqual((testMovieRepo.getList()[1]).getMovieId(), 1)
+        self.assertEqual((testMovieRepo.getList()[1]).getDescription(), "description")
+        self.assertEqual((testMovieRepo.getList()[1]).getTitle(), "titanic")
+        self.assertEqual((testMovieRepo.getList()[1]).getGenre(), "genre")
         with self.assertRaises(TypeError):
             self.movieRepo.addMovie("sdfa")
 
     def test_removeMovie(self):
         self.movieRepo.removeMovieWithId(1)
-        self.assertEqual(len(self.movieRepo.getMovieList()), 1)
+        self.assertEqual(len(self.movieRepo.getList()), 1)
         with self.assertRaises(ObjectNotInCollectionException):
             self.movieRepo.removeMovieWithId(5)
 
@@ -58,6 +57,6 @@ class TestMovieRepo(TestCase):
         testMovie2.setMovieId(1)
         testMovie3 = Movie("title2", "desc2", "genre2")
         testMovie3.setMovieId(2)
-        self.assertEqual(self.movieRepo.getMovieList(), [testMovie1, testMovie2, testMovie3])
+        self.assertEqual(self.movieRepo.getList(), [testMovie1, testMovie2, testMovie3])
 
 

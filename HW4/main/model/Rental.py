@@ -101,10 +101,7 @@ class Rental:
         :return: rental id, if not None
         :raises TypeError: if the rental id is not set
         """
-        rentalId = self.__rentalId
-        if rentalId is None:
-            raise IdNotSetException
-        return rentalId
+        return self.__rentalId
 
     def isRented(self):
         if self.__returnedDate is None:
@@ -113,10 +110,7 @@ class Rental:
             return False
 
     def getReturnedDate(self):
-        returnedDate = self.__returnedDate
-        if returnedDate is None:
-            raise TypeError("returnedDate not set. maybe not in list")
-        return returnedDate
+        return self.__returnedDate
 
     def getMovieId(self):
         return self.__movieId
