@@ -102,28 +102,35 @@ class Console:
                                         print("Movie with id", optionInputWordList[1], "not found")
                                 else:
                                     print("Wrong input")
-                            elif optionInputWordList[0] == "remove":  # TODO refactoring done up until here
+                            elif optionInputWordList[0] == "remove":
                                 if len(optionInputWordList) == 2:
                                     try:
-                                        self.movieRepo.removeMovieWithTitle(optionInputWordList[1])
+                                        # self.movieRepo.removeMovieWithTitle(optionInputWordList[1])
+                                        if optionInputWordList[1].isdigit():
+                                            self.movieRepo.removeMovieWithId(int(optionInputWordList[1]))
+                                        else:
+                                            print("wrong input")
                                     except ObjectNotInCollectionException as objectNotInCollectionException:
-                                        print("Movie with title", optionInputWordList[1], "not found")
+                                        print("Movie with id", optionInputWordList[1], "not found")
                                     else:
-                                        print("Successfully removed movie", optionInputWordList[1])
+                                        print("Successfully removed movie #", optionInputWordList[1])
                                 else:
                                     print("wrong input")
                             elif optionInputWordList[0] == "update":
                                 if len(optionInputWordList) == 5:
                                     try:
-                                        self.movieRepo.updateMovieWithTitle(optionInputWordList[1], Movie(optionInputWordList[2], optionInputWordList[3], optionInputWordList[4]))
+                                        # self.movieRepo.updateMovieWithTitle(optionInputWordList[1], Movie(optionInputWordList[2], optionInputWordList[3], optionInputWordList[4]))
+                                        if optionInputWordList[1].isdigit():
+                                            self.movieRepo.updateMovieWithId(int(optionInputWordList[1]), Movie(optionInputWordList[2], optionInputWordList[3], optionInputWordList[4]))
+                                        else:
+                                            print("wrong input")
                                     except ObjectNotInCollectionException as objectNotInCollectionException:
-                                        print("Movie with title", optionInputWordList[1], "not found")
+                                        print("Movie with id", optionInputWordList[1], "not found")
                                     else:
-                                        print("Successfully updated movie", optionInputWordList[1])
+                                        print("Successfully updated movie #", optionInputWordList[1])
                                 else:
                                     print("wrong input")
                             elif optionInputWordList[0] == "add":
-                                print("add movie")
                                 self.movieRepo.addMovie(Movie(optionInputWordList[1], optionInputWordList[2], optionInputWordList[3]))
                                 print("Successfully added movie", optionInputWordList[1])
                             elif optionInputWordList[0] == "back":
@@ -132,7 +139,7 @@ class Console:
                         break
                     else:
                         print("Wrong input!")
-            elif menuChosen == "rental":
+            elif menuChosen == "rental":  # TODO refactoring done up until here
                 while True:
                     self.printer.printSubmenu("rentalMenu")
                     optionInput = input(">")
