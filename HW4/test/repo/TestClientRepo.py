@@ -3,6 +3,7 @@ from unittest import TestCase
 from main.Exception import ObjectNotInCollectionException
 from main.model.Client import Client
 from main.repo.ClientRepo import ClientRepo
+from main.ui.Printer import Printer
 
 
 class TestClientRepo(TestCase):
@@ -10,36 +11,39 @@ class TestClientRepo(TestCase):
         self.clientRepo = ClientRepo()
 
     def tearDown(self):
-        self.clientRepo = None
-
-    def test_uniqueInstance(self):
-        testClientRepo = ClientRepo()
-        self.assertEqual(self.clientRepo.getList(), testClientRepo.getList())
-        testClientRepo.addClient(Client("bani"))
-        self.assertEqual(self.clientRepo.getList(), testClientRepo.getList())
-        testClientRepo.addClient(Client("Ancu"))
-        self.assertEqual(self.clientRepo.getList(), testClientRepo.getList())
+        self.clientRepo.clean()
 
     def test_addClient(self):
+        printer = Printer()
+        printer.printList(self.clientRepo.getList())
+        print("aaaaaaaaaaaaaaa")
         self.clientRepo.addClient(Client("damo"))
         self.assertEqual(((self.clientRepo.getList())[0]).getClientId(), 0)
         self.assertEqual(((self.clientRepo.getList())[0]).getName(), "damo")
-        testClientRepo = ClientRepo()
-        self.assertEqual(((testClientRepo.getList())[0]).getClientId(), 0)
-        self.assertEqual(((testClientRepo.getList())[0]).getName(), "damo")
-        with self.assertRaises(TypeError):
-            self.clientRepo.addClient([])
 
     def test_removeClient(self):
-        self.clientRepo.removeClientWithId(0)
-        self.assertEqual(len(self.clientRepo.getList()), 0)
+        printer = Printer()
+        printer.printList(self.clientRepo.getList())
+        print("bbbbb")
+        self.clientRepo.addClient(Client("damo"))
+        self.clientRepo.addClient(Client("ancu"))
+        self.clientRepo.removeClientWithId(1)
+        self.assertEqual(len(self.clientRepo.getList()), 1)
+        testClient = Client("damo")
+        testClient.setClientId(0)
+        self.assertEqual(self.clientRepo.getList(), [testClient])
         with self.assertRaises(ObjectNotInCollectionException):
             self.clientRepo.removeClientWithId(5)
 
-    def test_updateMovie(self):
+    def test_updateClient(self):
+        printer = Printer()
+        printer.printList(self.clientRepo.getList())
+        print("ccccccccccc")
+        self.clientRepo.addClient(Client("damo"))
+        self.clientRepo.addClient(Client("ancu"))
         testClient1 = Client("ancu")
         testClient1.setClientId(0)
-        testClient2 = Client("Ancu")
+        testClient2 = Client("ancu")
         testClient2.setClientId(1)
         self.clientRepo.updateClientWithId(0, Client("ancu"))
         self.assertEqual(self.clientRepo.getList(), [testClient1, testClient2])

@@ -1,11 +1,19 @@
+from main.Constants import Constants
+from main.Exception import DatesNotOrderedException, ClientHasMoviesNotReturnedException, MovieNotAvailableException
+from main.model.Rental import Rental
 from main.repo.RentalRepo import RentalRepo
 
 
 class RentalController:
-    __rentalRepo = RentalRepo()
-    __rentalRepo.populate()
+    __constants = Constants()
 
-    def addRental(self, rental):
+    def __init__(self, rentalRepo) -> None:
+        self.__rentalRepo = rentalRepo
+
+    def getRepo(self):
+        return self.__rentalRepo
+
+    def addRental(self, rental):  # TODO check if exceptions should be handled
         self.__rentalRepo.addRental(rental)
 
     def getRentalWithId(self, rentalId):
@@ -17,5 +25,48 @@ class RentalController:
     def removeRentalWithId(self, rentalId):
         self.__rentalRepo.removeRentalWithId(rentalId)
 
+    def hasRentalWithId(self, rentalId):
+        return self.__rentalRepo.hasRentalWithId(rentalId)
+
     def updateRentalWithId(self, rentalId, updatedRental):
         self.__rentalRepo.updateRentalWithId(rentalId, updatedRental)
+
+    def rent(self, clientId, movieId, dueDate, movieRepo, clientRepo):
+        if dueDate.isBeforeDate(self.__constants.currentDay()):
+            raise DatesNotOrderedException
+        else:
+            if self.__clientHasPassedDueDateMovies(clientId):
+                raise ClientHasMoviesNotReturnedException
+            else:
+                if not self.__isMovieAvailable(movieId):
+                    raise MovieNotAvailableException
+                else:
+                    self.addRental(Rental(movieId, clientId, self.__constants.currentDay(), dueDate, movieRepo, clientRepo))
+
+    def __clientHasPassedDueDateMovies(self, clientId):
+        clientRentalList = []
+        for rental in self.getRentalList():
+            if rental.getClientId() == clientId:
+                clientRentalList.append(rental)
+
+        for rental in clientRentalList:
+            if rental.getReturnedDate() is None and rental.getDueDate().isBeforeDate(self.__constants.currentDay()):
+                return True
+        return False
+
+    def __isMovieAvailable(self, movieId):  # TODO check if have to check if movie exist (probably handled in ui)
+        movieRentalList = []
+        for rental in self.getRentalList():
+            if rental.getMovieId() == movieId:
+                movieRentalList.append(rental)
+
+        if len(movieRentalList) == 0:  # movie never rented
+            return True
+
+        for rental in movieRentalList:
+            if rental.getReturnedDate() is None:
+                return False
+        return True
+
+    def populateRepo(self, movieRepo, rentalRepo):
+        self.__rentalRepo.populate(movieRepo, rentalRepo)

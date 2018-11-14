@@ -15,7 +15,7 @@ class TestRental(TestCase):
         self.movieRepo.addMovie(Movie("Titanic", "lovely", "Romance"))
         self.clientRepo = ClientRepo()
         self.clientRepo.addClient(Client("dani"))
-        self.rental = Rental(0, 0, Date(5, 4, 2018), Date(7, 9, 2020))
+        self.rental = Rental(0, 0, Date(5, 4, 2018), Date(7, 9, 2020), self.movieRepo, self.clientRepo)
 
     def tearDown(self):
         self.rental = None
@@ -30,23 +30,23 @@ class TestRental(TestCase):
         self.assertRaises(TypeError, lambda: self.rental.getRentalId(), 'default rental id not None')
         self.assertRaises(TypeError, lambda: self.rental.getReturnedDate(), 'default returned date not None')
         with self.assertRaises(ValueError):
-            testRental = Rental("s", 0, Date(22, 4, 1995), Date(22, 4, 1996))
+            testRental = Rental("s", 0, Date(22, 4, 1995), Date(22, 4, 1996), self.movieRepo, self.clientRepo)
         with self.assertRaises(ValueError):
-            testRental = Rental(-5, 0, Date(22, 4, 1995), Date(22, 4, 1996))
+            testRental = Rental(-5, 0, Date(22, 4, 1995), Date(22, 4, 1996), self.movieRepo, self.clientRepo)
         with self.assertRaises(ValueError):
-            testRental = Rental(0, [], Date(22, 4, 1995), Date(22, 4, 1996))
+            testRental = Rental(0, [], Date(22, 4, 1995), Date(22, 4, 1996), self.movieRepo, self.clientRepo)
         with self.assertRaises(ValueError):
-            testRental = Rental(0, -99, Date(22, 4, 1995), Date(22, 4, 1996))
+            testRental = Rental(0, -99, Date(22, 4, 1995), Date(22, 4, 1996), self.movieRepo, self.clientRepo)
         with self.assertRaises(ValueError):
-            testRental = Rental(0, 0, 9, Date(22, 4, 1996))
+            testRental = Rental(0, 0, 9, Date(22, 4, 1996), self.movieRepo, self.clientRepo)
         with self.assertRaises(ValueError):
-            testRental = Rental(0, 0, Date(22, 4, 1995), "date")
+            testRental = Rental(0, 0, Date(22, 4, 1995), "date", self.movieRepo, self.clientRepo)
         with self.assertRaises(DatesNotOrderedException):
-            testRental = Rental(0, 0, Date(22, 4, 1995), Date(22, 4, 1994))
+            testRental = Rental(0, 0, Date(22, 4, 1995), Date(22, 4, 1994), self.movieRepo, self.clientRepo)
         with self.assertRaises(ObjectNotInCollectionException):
-            testRental = Rental(1, 0, Date(22, 4, 1995), Date(22, 4, 1996))
+            testRental = Rental(1, 0, Date(22, 4, 1995), Date(22, 4, 1996), self.movieRepo, self.clientRepo)
         with self.assertRaises(ObjectNotInCollectionException):
-            testRental = Rental(0, 1, Date(22, 4, 1995), Date(22, 4, 1996))
+            testRental = Rental(0, 1, Date(22, 4, 1995), Date(22, 4, 1996), self.movieRepo, self.clientRepo)
 
     def test_setWrongId(self):
         self.assertRaises(ValueError, lambda: self.rental.setRentalId(-3))

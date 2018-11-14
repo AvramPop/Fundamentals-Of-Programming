@@ -33,11 +33,16 @@ class ConstantNotFoundException(Exception):
         super().__init__(*args, **kwargs)
 
 
-class ClientHasMoviesNotReturned(Exception):
+class ClientHasMoviesNotReturnedException(Exception):
     def __init__(self, *args: object, **kwargs: object) -> None:
         super().__init__(*args, **kwargs)
 
 
 class IdNotSetException(Exception):
+    def __init__(self, *args: object, **kwargs: object) -> None:
+        super().__init__(*args, **kwargs)
+
+
+class MovieNotAvailableException(Exception):
     def __init__(self, *args: object, **kwargs: object) -> None:
         super().__init__(*args, **kwargs)

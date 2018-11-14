@@ -10,7 +10,7 @@ class Constants:
     __managerCommandsMenu = ("1. Client List - client", "2. Movie List - movie", "3. Back - back")
     __clientManagementCommandsMenu = ("1. List All - list", "2. List Client With Id - list <client id>", "3. Remove Client With Id - remove <client id>", "4. Update Client With Id - update <client id> <new name>", "5. Add Client - add <client name>", "6. Back - back")
     __movieManagementCommandsMenu = ("1. List All - list", "2. List Movie With Id - list <movie id>", "3. Remove Movie With Id - remove <movie id>", "4. Update Movie With Id - update <movie id> <new title> <new description> <new genre>", "5. Add Movie - add <movie name> <movie description> <movie genre>", "6. Back - back")
-    __rentCommandsMenu = ("1. Rent - rent <client id> <movie id> <due date>", "2. Return movie - return <client id> <movie id>", "3. Back - back")
+    __rentCommandsMenu = ("1. Rent - rent <client id> <movie id> <due date>", "2. Return movie - return <client id> <movie id>", "3. List all - list", "4. Back - back")
     __mainMenuCommands = ("manager", "rental", "search", "exit", "stats")
     __constants = ("mainMenu", "mainMenuCommands", "managerMenu", "clientMenu", "movieMenu", "rentalMenu")
 

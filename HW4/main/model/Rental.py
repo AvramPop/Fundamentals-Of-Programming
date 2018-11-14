@@ -10,11 +10,10 @@ class Rental:
     Models rental having <rentalID> (int, default = None), <movieId> (int, existing in MovieRepo),
     <clientId> (int, existing in ClientRepo), <rented date> (Date), <due date> (Date), <returned date> (Date, default none).
     """
-    def __init__(self, movieId, clientId, rentedDate, dueDate) -> None:
+    def __init__(self, movieId, clientId, rentedDate, dueDate, movieRepo: "MovieRepo", clientRepo: "ClientRepo") -> None:
         self.__rentalId = None
         self.__returnedDate = None
 
-        movieRepo = MovieRepo()
         if type(movieId) == int:
             if movieId >= 0:
                 if movieRepo.hasMovieWithId(movieId):
@@ -25,9 +24,7 @@ class Rental:
                 raise ValueError
         else:
             raise ValueError("invalid movie id")
-        del movieRepo
 
-        clientRepo = ClientRepo()
         if type(clientId) == int:
             if clientId >= 0:
                 if clientRepo.hasClientWithId(clientId):
@@ -38,7 +35,6 @@ class Rental:
                 raise ValueError
         else:
             raise ValueError("invalid client id")
-        del clientRepo  # TODO potentially harmful?
 
         if type(rentedDate) == Date:
             self.__rentedDate = rentedDate
