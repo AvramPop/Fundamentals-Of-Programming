@@ -1,5 +1,6 @@
 from main.Constants import Constants
-from main.Exception import DatesNotOrderedException, ClientHasMoviesNotReturnedException, MovieNotAvailableException
+from main.Exception import DatesNotOrderedException, ClientHasMoviesNotReturnedException, MovieNotAvailableException, \
+    MovieNotCurrentlyRentedByClientException
 from main.model.Rental import Rental
 from main.repo.RentalRepo import RentalRepo
 
@@ -31,7 +32,7 @@ class RentalController:
     def updateRentalWithId(self, rentalId, updatedRental):
         self.__rentalRepo.updateRentalWithId(rentalId, updatedRental)
 
-    def rent(self, clientId, movieId, dueDate, movieRepo, clientRepo):
+    def rentMovieByClientUntilDate(self, clientId, movieId, dueDate, movieRepo, clientRepo):
         if dueDate.isBeforeDate(self.__constants.currentDay()):
             raise DatesNotOrderedException
         else:
@@ -41,7 +42,19 @@ class RentalController:
                 if not self.__isMovieAvailable(movieId):
                     raise MovieNotAvailableException
                 else:
-                    self.addRental(Rental(movieId, clientId, self.__constants.currentDay(), dueDate, movieRepo, clientRepo))
+                    self.addRental(
+                        Rental(clientId, movieId, self.__constants.currentDay(), dueDate, movieRepo, clientRepo))
+
+    def returnMovieByClient(self, clientId, movieId):
+        movieFound = False
+        for rental in self.getRentalList():
+            if rental.getMovieId() == movieId and rental.getClientId() == clientId and rental.getReturnedDate() is None:
+                constants = Constants()
+                rental.setReturnedDate(constants.currentDay())
+                self.updateRentalWithId(rental.getRentalId(), rental)
+                movieFound = True
+        if not movieFound:
+            raise MovieNotCurrentlyRentedByClientException
 
     def __clientHasPassedDueDateMovies(self, clientId):
         clientRentalList = []

@@ -1,6 +1,6 @@
 from main.Constants import Constants
 from main.Exception import ObjectNotInCollectionException, DatesNotOrderedException, InvalidDateFormatException, \
-    ClientHasMoviesNotReturnedException, MovieNotAvailableException
+    ClientHasMoviesNotReturnedException, MovieNotAvailableException, MovieNotCurrentlyRentedByClientException
 from main.controller.ClientController import ClientController
 from main.controller.MovieController import MovieController
 from main.controller.RentalController import RentalController
@@ -160,7 +160,7 @@ class Console:
                                                         print("Invalid date format")
                                                     else:
                                                         try:
-                                                            self.rentalController.rent(int(optionInputWordList[1]), int(optionInputWordList[2]), dueDate, self.movieController.getRepo(), self.clientController.getRepo())
+                                                            self.rentalController.rentMovieByClientUntilDate(int(optionInputWordList[1]), int(optionInputWordList[2]), dueDate, self.movieController.getRepo(), self.clientController._getRepo())
                                                         except DatesNotOrderedException as datesNotOrderedException:
                                                             print("The due date cannot be before the rental date")
                                                         except ClientHasMoviesNotReturnedException as clientHasMoviesNotReturnedException:
@@ -181,23 +181,26 @@ class Console:
                                     print("wrong input")
                             else:
                                 print("wrong input")
-                        elif optionInputWordList[0] == "return":  # TODO refactoring done up until here
-                            try:
-                                clientId = self.clientRepo.getClientIdByName(optionInputWordList[1])
-                            except ObjectNotInCollectionException as objectNotInCollectionException:
-                                print("Client with name", optionInputWordList[1], "not found")
-                            else:
-                                try:
-                                    movieId = self.movieRepo.getMovieIdByTitle(optionInputWordList[2])
-                                except ObjectNotInCollectionException as objectNotInCollectionException:
-                                    print("movie with title", optionInputWordList[2], "not found")
-                                else:
-                                    if self.rentalRepo.clientHasMovieRented(clientId, movieId):
-                                        self.rentalRepo.returnMovie(clientId, movieId)
-                                        print("Movie", optionInputWordList[2], "successfully returned by client", optionInputWordList[1])
-                                        self.rentalRepo.printRentalList()
+                        elif optionInputWordList[0] == "return":
+                            if optionInputWordList[1].isdigit():
+                                if self.clientController.hasClientWithId(int(optionInputWordList[1])):
+                                    if optionInputWordList[2].isdigit():
+                                        if self.movieController.hasMovieWithId(int(optionInputWordList[2])):
+                                            try:
+                                                self.rentalController.returnMovieByClient(int(optionInputWordList[1]), int(optionInputWordList[2]))
+                                            except MovieNotCurrentlyRentedByClientException as movieNotCurrentlyRentedByClientException:
+                                                print("movie with id #", optionInputWordList[2], "not rented by client with #", optionInputWordList[1])
+                                            else:
+                                                print("Movie with id #", optionInputWordList[2],
+                                                      "successfully returned by client with id #", optionInputWordList[1])
+                                        else:
+                                            print("movie with id #", optionInputWordList[2], "not found")
                                     else:
-                                        print("Client", optionInputWordList[1], "doesn't have the movie", optionInputWordList[2], "rented")
+                                        print("wrong input")
+                                else:
+                                    print("client with id #", optionInputWordList[1], "not found")
+                            else:
+                                print("wrong input")
                         elif optionInputWordList[0] == "list":
                             self.printer.printList(self.rentalController.getRentalList())
                         elif optionInputWordList[0] == "back":

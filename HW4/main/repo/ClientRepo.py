@@ -33,7 +33,6 @@ class ClientRepo:
         else:
             raise TypeError
 
-
     def getList(self):
         return self.__clientList
 
@@ -65,7 +64,6 @@ class ClientRepo:
         else:
             del self.__clientList[indexOfClientToRemoveInList]
 
-
     def updateClientWithId(self, clientId, updatedClient):
         """
         Override client with clientId with updatedClient
@@ -78,9 +76,9 @@ class ClientRepo:
         if indexOfClientToUpdateInList == -1:
             raise ObjectNotInCollectionException
         else:
-            updatedClient.setClientId(clientId)
+            if updatedClient.getClientId() is None:
+                updatedClient.setClientId(clientId)
             self.__clientList[indexOfClientToUpdateInList] = updatedClient
-
 
     def __sortClientList(self):
         for i in range(0, len(self.__clientList) - 1):

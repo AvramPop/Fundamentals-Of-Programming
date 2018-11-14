@@ -60,7 +60,6 @@ class RentalRepo:
         else:
             del self.__rentalList[indexOfRentalToRemoveInList]
 
-
     def updateRentalWithId(self, rentalId, updatedRental):
         """
         Update rental with rentalId to updatedRental
@@ -73,9 +72,9 @@ class RentalRepo:
         if indexOfRentalToUpdateInList == -1:
             raise ObjectNotInCollectionException
         else:
-            updatedRental.setRentalId(rentalId)
+            if updatedRental.getRentalId() is None:
+                updatedRental.setRentalId(rentalId)
             self.__rentalList[indexOfRentalToUpdateInList] = updatedRental
-
 
     def __sortRentalList(self):
         for i in range(0, len(self.__rentalList) - 1):

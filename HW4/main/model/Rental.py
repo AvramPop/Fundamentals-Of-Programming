@@ -10,7 +10,7 @@ class Rental:
     Models rental having <rentalID> (int, default = None), <movieId> (int, existing in MovieRepo),
     <clientId> (int, existing in ClientRepo), <rented date> (Date), <due date> (Date), <returned date> (Date, default none).
     """
-    def __init__(self, movieId, clientId, rentedDate, dueDate, movieRepo: "MovieRepo", clientRepo: "ClientRepo") -> None:
+    def __init__(self, clientId, movieId, rentedDate, dueDate, movieRepo: "MovieRepo", clientRepo: "ClientRepo") -> None:
         self.__rentalId = None
         self.__returnedDate = None
 

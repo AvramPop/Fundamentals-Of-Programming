@@ -75,7 +75,8 @@ class MovieRepo:
         if indexOfMovieToUpdateInList == -1:
             raise ObjectNotInCollectionException
         else:
-            updatedMovie.setMovieId(movieId)
+            if updatedMovie.getMovieId() is None:
+                updatedMovie.setMovieId(movieId)
             self.__movieList[indexOfMovieToUpdateInList] = updatedMovie
 
 

@@ -75,7 +75,7 @@ class Movie:
             raise AlreadySetException
 
     def __eq__(self, other: "Movie"):
-        return self.__genre == other.getGenre() and self.__description == other.getDescription() and self.__title == other.getTitle() and self.__movieId == other.getMovieId()  # TODO id can be none and throw exception
+        return self.__genre == other.getGenre() and self.__description == other.getDescription() and self.__title == other.getTitle() and self.__movieId == other.getMovieId()
 
     def __str__(self) -> str:
         return "Movie id: " + str(self.__movieId) + ", title: " + str(self.__title) + ", description: " + str(

@@ -31,7 +31,7 @@ class TestRentalRepo(TestCase):
         self.movieRepo.clean()
 
     def test_addRental(self):
-        self.rentalRepo.addRental(Rental(2, 1, Date(5, 4, 2018), Date(7, 9, 2020), self.movieRepo, self.clientRepo))
+        self.rentalRepo.addRental(Rental(1, 2, Date(5, 4, 2018), Date(7, 9, 2020), self.movieRepo, self.clientRepo))
         self.assertEqual((self.rentalRepo.getList()[0]).getRentalId(), 0)
         self.assertEqual((self.rentalRepo.getList()[0]).getMovieId(), 0)
         self.assertEqual((self.rentalRepo.getList()[0]).getClientId(), 0)
@@ -51,7 +51,8 @@ class TestRentalRepo(TestCase):
         self.assertEqual(self.rentalRepo.getList(), [testRental1])
 
     def test_updateRental(self):
-        self.rentalRepo.updateRentalWithId(0, Rental(0, 0, Date(5, 4, 2018), Date(7, 9, 2021), self.movieRepo, self.clientRepo))
+        self.rentalRepo.updateRentalWithId(0, Rental(0, 0, Date(5, 4, 2018), Date(7, 9, 2021), self.movieRepo,
+                                                     self.clientRepo))
         testRental1 = Rental(0, 0, Date(5, 4, 2018), Date(7, 9, 2021), self.movieRepo, self.clientRepo)
         testRental1.setRentalId(0)
         testRental2 = Rental(1, 1, Date(5, 4, 2018), Date(7, 9, 2020), self.movieRepo, self.clientRepo)
