@@ -1,6 +1,7 @@
 from main.Constants import Constants
 from main.Exception import ObjectNotInCollectionException, DatesNotOrderedException, InvalidDateFormatException, \
     ClientHasMoviesNotReturnedException, MovieNotAvailableException, MovieNotCurrentlyRentedByClientException
+from main.Validator import Validator
 from main.controller.ClientController import ClientController
 from main.controller.MovieController import MovieController
 from main.controller.RentalController import RentalController
@@ -16,6 +17,7 @@ from main.ui.Printer import Printer
 
 class Console:
     printer = Printer()
+    validator = Validator()
     constants = Constants()
     clientRepo = ClientRepo()
     movieRepo = MovieRepo()
@@ -27,7 +29,7 @@ class Console:
     movieController.populateRepo()
     rentalController.populateRepo(movieRepo, clientRepo)
 
-    def run(self):
+    def run(self):  # TODO refactor this ugly thing
 
         while True:
             self.printer.printMenu("mainMenu")
@@ -139,7 +141,6 @@ class Console:
                     else:
                         print("Wrong input!")
             elif menuChosen == "rental":
-                print("rental")
                 while True:
                     self.printer.printSubmenu("rentalMenu")
                     optionInput = input(">")
@@ -210,9 +211,44 @@ class Console:
                     else:
                         print("wrong input")
             elif menuChosen == "search":
-                print("search")
+                while True:
+                    self.printer.printSubmenu("searchMenu")
+                    optionInput = input(">")
+                    optionInputWordList = optionInput.split()
+                    if self.validator.isValidSearchQuery(optionInputWordList):
+                        if optionInputWordList[2] == "name":
+                            self.printer.printList(self.clientController.listOfClientsWithName(optionInputWordList[3]))
+                        elif optionInputWordList[2] == "title":
+                            self.printer.printList(self.movieController.listOfMoviesWithTitle(optionInputWordList[3]))
+                        elif optionInputWordList[2] == "description":
+                            self.printer.printList(self.movieController.listOfMoviesWithDescription(optionInputWordList[3]))
+                        elif optionInputWordList[2] == "genre":
+                            self.printer.printList(self.movieController.listOfMoviesWithGenre(optionInputWordList[3]))
+                    elif optionInputWordList[0] == "back":
+                        break
+                    else:
+                        print("wrong input")
             elif menuChosen == "stats":
                 print("stats")
+                while True:
+                    self.printer.printSubmenu("statsMenu")
+                    optionInput = input(">")
+                    optionInputWordList = optionInput.split()
+                    if self.validator.isValidStatsQuery(optionInputWordList):
+                        if optionInputWordList[0] == "active":
+                            print("active")
+                        elif optionInputWordList[0] == "now":
+                            print("now")
+                        elif optionInputWordList[0] == "late":
+                            print("late")
+                        elif optionInputWordList[0] == "most" and optionInputWordList[2] == "times":
+                            print("most times")
+                        elif optionInputWordList[0] == "most" and optionInputWordList[2] == "days":
+                            print("most days")
+                    elif optionInputWordList[0] == "back":
+                        break
+                    else:
+                        print("wrong input")
             elif menuChosen == "exit":
                 return
             else:

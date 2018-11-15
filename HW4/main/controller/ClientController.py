@@ -1,3 +1,4 @@
+from main.Utils import stringsPartiallyMatch
 from main.repo.ClientRepo import ClientRepo
 from difflib import SequenceMatcher
 
@@ -34,11 +35,7 @@ class ClientController:
     def listOfClientsWithName(self, clientNameToFind):
         clientListWithPartialNameCorresponding = []
         for client in self.getClientList():
-            if self.__isSameString(client.getName(), clientNameToFind):
+            if stringsPartiallyMatch(client.getName(), clientNameToFind):
                 clientListWithPartialNameCorresponding.append(client)
         return clientListWithPartialNameCorresponding
-
-    def __stringsPartiallyMatch(self, string1, string2):
-        sequenceMatcher = SequenceMatcher(string1, string2)
-        return sequenceMatcher.ratio() > 0.75
 

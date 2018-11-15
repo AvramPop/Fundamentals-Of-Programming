@@ -1,3 +1,4 @@
+from main.Utils import stringsPartiallyMatch
 from main.repo.MovieRepo import MovieRepo
 
 
@@ -29,3 +30,24 @@ class MovieController:
 
     def populateRepo(self):
         self.__movieRepo.populate()
+        
+    def listOfMoviesWithTitle(self, movieTitleToFind):
+        movieListWithPartialTitleCorresponding = []
+        for movie in self.getMovieList():
+            if stringsPartiallyMatch(movie.getTitle(), movieTitleToFind):
+                movieListWithPartialTitleCorresponding.append(movie)
+        return movieListWithPartialTitleCorresponding
+
+    def listOfMoviesWithGenre(self, movieGenreToFind):
+        movieListWithPartialGenreCorresponding = []
+        for movie in self.getMovieList():
+            if stringsPartiallyMatch(movie.getGenre(), movieGenreToFind):
+                movieListWithPartialGenreCorresponding.append(movie)
+        return movieListWithPartialGenreCorresponding
+
+    def listOfMoviesWithDescription(self, movieDescriptionToFind):
+        movieListWithPartialDescriptionCorresponding = []
+        for movie in self.getMovieList():
+            if stringsPartiallyMatch(movie.getDescription(), movieDescriptionToFind):
+                movieListWithPartialDescriptionCorresponding.append(movie)
+        return movieListWithPartialDescriptionCorresponding

@@ -40,5 +40,7 @@ class Printer:
         print(str(plainObject))
 
     def printList(self, listToPrint):
+        if len(listToPrint) == 0:
+            print("empty list")
         for plainObject in listToPrint:
             self.printObject(plainObject)

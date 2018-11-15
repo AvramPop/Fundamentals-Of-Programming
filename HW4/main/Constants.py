@@ -12,7 +12,9 @@ class Constants:
     __movieManagementCommandsMenu = ("1. List All - list", "2. List Movie With Id - list <movie id>", "3. Remove Movie With Id - remove <movie id>", "4. Update Movie With Id - update <movie id> <new title> <new description> <new genre>", "5. Add Movie - add <movie name> <movie description> <movie genre>", "6. Back - back")
     __rentCommandsMenu = ("1. Rent - rent <client id> <movie id> <due date>", "2. Return movie - return <client id> <movie id>", "3. List all - list", "4. Back - back")
     __mainMenuCommands = ("manager", "rental", "search", "exit", "stats")
-    __constants = ("mainMenu", "mainMenuCommands", "managerMenu", "clientMenu", "movieMenu", "rentalMenu")
+    __searchCommandsMenu = ("1. Search client by name - search client name <name>", "2. Search movie by title - search movie title <title>", "3. Search movie by genre - search movie genre <genre>", "4. Search movie by description - search movie description <description>")
+    __statsCommandsMenu = ("1. List most times rented movies - most rented times", "2. List most days rented movies - most rented days", "3. List most active clients - active clients", "4. List all rented movies - now rented", "5. List all late rentals - late rentals", "6. Back - back")
+    __constants = ("mainMenu", "mainMenuCommands", "managerMenu", "clientMenu", "statsMenu", "movieMenu", "rentalMenu", "searchMenu")
 
     def currentDay(self):
         """
@@ -37,5 +39,9 @@ class Constants:
                 return self.__movieManagementCommandsMenu
             elif constantName == "rentalMenu":
                 return self.__rentCommandsMenu
+            elif constantName == "searchMenu":
+                return self.__searchCommandsMenu
+            elif constantName == "statsMenu":
+                return self.__statsCommandsMenu
         else:
             raise ConstantNotFoundException
