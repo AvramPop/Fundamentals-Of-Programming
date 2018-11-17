@@ -64,7 +64,6 @@ class MovieRepo:
         else:
             del self.__movieList[indexOfMovieToRemoveInList]
 
-
     def updateMovieWithId(self, movieId, updatedMovie):
         """
         Update movie with movieId to updatedMovie
@@ -80,15 +79,6 @@ class MovieRepo:
             if updatedMovie.getId() is None:
                 updatedMovie.setMovieId(movieId)
             self.__movieList[indexOfMovieToUpdateInList] = updatedMovie
-
-
-    # def __sortMovieList(self):
-    #     for i in range(0, len(self.__movieList) - 1):
-    #         for j in range(i + 1, len(self.__movieList)):
-    #             if (self.__movieList[j]).getId() < self.__movieList[i].getId():
-    #                 auxMovie = self.__movieList[j]
-    #                 self.__movieList[j] = self.__movieList[i]
-    #                 self.__movieList[i] = auxMovie
 
     def populate(self):
         self.addMovie(Movie("Titanic", "adventurous", "drama"))

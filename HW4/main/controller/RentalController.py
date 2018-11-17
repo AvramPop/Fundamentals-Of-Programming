@@ -34,6 +34,9 @@ class RentalController:
         self.__rentalRepo.updateRentalWithId(rentalId, updatedRental)
 
     def rentMovieByClientUntilDate(self, clientId, movieId, dueDate, movieRepo, clientRepo):
+        """
+        Create a new rental between client and movie from today until due date
+        """
         if dueDate.isBeforeDate(self.__constants.currentDay()):
             raise DatesNotOrderedException
         else:
@@ -47,6 +50,9 @@ class RentalController:
                         Rental(clientId, movieId, self.__constants.currentDay(), dueDate, movieRepo, clientRepo))
 
     def returnMovieByClient(self, clientId, movieId):
+        """
+        Return movie if rented by client
+        """
         movieFound = False
         for rental in self.getRentalList():
             if rental.getId() == movieId and rental.getId() == clientId and rental.getReturnedDate() is None:
@@ -86,6 +92,9 @@ class RentalController:
         self.__rentalRepo.populate(movieRepo, rentalRepo)
 
     def moviesMostRentedByTimesRented(self, movieRepo):
+        """
+        Get list of movies most rented by times rented
+        """
         moviesIdMostRentedList = [0] * len(movieRepo.getList())
         timesMovieRentedList = [0] * len(movieRepo.getList())
         for movie in movieRepo.getList():
@@ -113,6 +122,9 @@ class RentalController:
         return moviesMostRentedList
 
     def moviesMostRentedByDays(self, movieRepo):
+        """
+        Get list of movies most rented by days rented
+        """
         constants = Constants()
         moviesIdMostRentedList = [0] * len(movieRepo.getList())
         daysMovieRentedList = [0] * len(movieRepo.getList())
@@ -145,6 +157,9 @@ class RentalController:
         return moviesMostRentedList
 
     def mostActiveClients(self, clientRepo):
+        """
+        Get list of most active clients by days rented
+        """
         constants = Constants()
         mostActiveClientsId = [0] * len(clientRepo.getList())
         clientsActivityList = [0] * len(clientRepo.getList())
@@ -177,6 +192,9 @@ class RentalController:
         return clientsMostActiveList
 
     def moviesCurrentlyRented(self, movieRepo):
+        """
+        Get list of movie currently rented
+        """
         moviesRentedNow = []
         for rental in self.getRentalList():
             if rental.getReturnedDate() is None:
@@ -184,6 +202,9 @@ class RentalController:
         return moviesRentedNow
 
     def moviesPastDueDate(self, movieRepo):
+        """
+        Get list of movies past due date
+        """
         rentalsPassedDueDate = []
         constants = Constants()
         for rental in self.getRentalList():

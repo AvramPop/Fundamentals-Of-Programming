@@ -1,6 +1,11 @@
 class Validator:
-
+    """
+    Class to provide validation for queries
+    """
     def isValidSearchQuery(self, searchQuery):
+        """
+        Check whether query is a valid search query
+        """
         if len(searchQuery) != 4:
             return False
         validSearchQueries = [["search", "client", "name"],
@@ -14,6 +19,9 @@ class Validator:
         return isValidQuery
 
     def isValidStatsQuery(self, statsQuery):
+        """
+        Check whether query is a valid stats query
+        """
         if len(statsQuery) != 2 and len(statsQuery) != 3:
             return False
         if len(statsQuery) == 2:

@@ -82,14 +82,6 @@ class ClientRepo:
                 updatedClient.setClientId(clientId)
             self.__clientList[indexOfClientToUpdateInList] = updatedClient
 
-    # def __sortClientList(self):
-    #     for i in range(0, len(self.__clientList) - 1):
-    #         for j in range(i + 1, len(self.__clientList)):
-    #             if (self.__clientList[j]).getId() < self.__clientList[i].getId():
-    #                 auxClient = self.__clientList[j]
-    #                 self.__clientList[j] = self.__clientList[i]
-    #                 self.__clientList[i] = auxClient
-
     def populate(self):
         self.addClient(Client("Dani"))
         self.addClient(Client("Ancu"))

@@ -78,14 +78,6 @@ class RentalRepo:
                 updatedRental.setRentalId(rentalId)
             self.__rentalList[indexOfRentalToUpdateInList] = updatedRental
 
-    # def __sortRentalList(self):
-    #     for i in range(0, len(self.__rentalList) - 1):
-    #         for j in range(i + 1, len(self.__rentalList)):
-    #             if (self.__rentalList[j]).getId() < self.__rentalList[i].getId():
-    #                 auxRental = self.__rentalList[j]
-    #                 self.__rentalList[j] = self.__rentalList[i]
-    #                 self.__rentalList[i] = auxRental
-
     def populate(self, movieRepo, rentalRepo):
         self.addRental(Rental(0, 0, Date(12, 5, 2011), Date(13, 6, 2012), movieRepo, rentalRepo))
         self.addRental(Rental(1, 1, Date(12, 5, 2012), Date(13, 6, 2019), movieRepo, rentalRepo))

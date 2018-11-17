@@ -9,9 +9,15 @@ class MovieController:
         self.__movieRepo = movieRepo
 
     def getRepo(self):
+        """
+        Get controller's repo
+        """
         return self.__movieRepo
 
     def addMovie(self, movie):
+        """
+        Add movie to controller
+        """
         self.__movieRepo.addMovie(movie)
 
     def getMovieWithId(self, movieId):
@@ -36,6 +42,9 @@ class MovieController:
         self.__movieRepo.populate()
         
     def listOfMoviesWithTitle(self, movieTitleToFind):
+        """
+        Get movies having title
+        """
         movieListWithPartialTitleCorresponding = []
         for movie in self.getMovieList():
             if stringsPartiallyMatch(movie.getTitle(), movieTitleToFind):
@@ -43,6 +52,9 @@ class MovieController:
         return movieListWithPartialTitleCorresponding
 
     def listOfMoviesWithGenre(self, movieGenreToFind):
+        """
+        Get movies having genre
+        """
         movieListWithPartialGenreCorresponding = []
         for movie in self.getMovieList():
             if stringsPartiallyMatch(movie.getGenre(), movieGenreToFind):
@@ -50,6 +62,9 @@ class MovieController:
         return movieListWithPartialGenreCorresponding
 
     def listOfMoviesWithDescription(self, movieDescriptionToFind):
+        """
+        Get movies having description
+        """
         movieListWithPartialDescriptionCorresponding = []
         for movie in self.getMovieList():
             if stringsPartiallyMatch(movie.getDescription(), movieDescriptionToFind):

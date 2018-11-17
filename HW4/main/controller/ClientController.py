@@ -11,15 +11,27 @@ class ClientController:
         self.__clientRepo = clientRepo
 
     def getRepo(self):
+        """
+        Get Controller Repo (Client Repo)
+        """
         return self.__clientRepo
 
     def addClient(self, client):
+        """
+        Add client to repo.
+        """
         self.__clientRepo.addClient(client)
 
     def getClientWithId(self, clientId):
+        """
+        Get client having id clientId
+        """
         return self.__clientRepo.getClientWithId(clientId)
 
     def hasClientWithId(self, clientId):
+        """
+        Checks whether there is a client with sought id
+        """
         return self.__clientRepo.hasClientWithId(clientId)
 
     def getClientList(self):
@@ -45,6 +57,9 @@ class ClientController:
         return clientListWithPartialNameCorresponding
 
     def clientHasMoviesNotReturned(self, clientId, rentalRepo):
+        """
+        Checks whether client has movies not returned
+        """
         constants = Constants()
         for rental in rentalRepo.getList():
             if rental.getClientId() == clientId:

@@ -26,6 +26,9 @@ class Constants:
         return constant in self.__constants
 
     def getConstant(self, constantName):
+        """
+        Return constant with constant name
+        """
         if self.isConstant(constantName):
             if constantName == "mainMenu":
                 return self.__mainMenuCommandsMenu
