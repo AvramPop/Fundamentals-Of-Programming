@@ -16,11 +16,11 @@ class TestMovieRepo(TestCase):
     def test_addMovie(self):
         self.movieRepo.addMovie(Movie("dani", "great", "nice"))
         self.movieRepo.addMovie(Movie("titanic", "description", "genre"))
-        self.assertEqual((self.movieRepo.getList()[0]).getMovieId(), 0)
+        self.assertEqual((self.movieRepo.getList()[0]).getId(), 0)
         self.assertEqual((self.movieRepo.getList()[0]).getTitle(), "dani")
         self.assertEqual((self.movieRepo.getList()[0]).getDescription(), "great")
         self.assertEqual((self.movieRepo.getList()[0]).getGenre(), "nice")
-        self.assertEqual((self.movieRepo.getList()[1]).getMovieId(), 1)
+        self.assertEqual((self.movieRepo.getList()[1]).getId(), 1)
         self.assertEqual((self.movieRepo.getList()[1]).getTitle(), "titanic")
         self.assertEqual((self.movieRepo.getList()[1]).getDescription(), "description")
         self.assertEqual((self.movieRepo.getList()[1]).getGenre(), "genre")

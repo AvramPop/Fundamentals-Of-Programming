@@ -1,3 +1,5 @@
+from datetime import date
+
 from main.Exception import InvalidDateFormatException
 
 
@@ -34,17 +36,23 @@ class Date:
     def __eq__(self, other: "Date"):
         return self.day == other.day and self.month == other.month and self.year == other.year
 
-    def isBeforeDate(self, date):
+    def isBeforeDate(self, dateUntil):
         """
         Checks whether self is before date
 
-        :param date: the date to compare to
+        :param dateUntil: the date to compare to
         :return: True if self is before date, False otherwise
         """
-        if self.year < date.year or (self.year == date.year and self.month < date.month) or (self.year == date.year and self.month == date.month and self.day < date.day):
+        if self.year < dateUntil.year or (self.year == dateUntil.year and self.month < dateUntil.month) or (self.year == dateUntil.year and self.month == dateUntil.month and self.day < dateUntil.day):
             return True
         else:
             return False
+
+    def daysUntilDate(self, dateUntil: "Date"):
+        d1 = date(self.year, self.month, self.day)
+        d2 = date(dateUntil.year, dateUntil.month, dateUntil.day)
+        delta = d1 - d2
+        return abs(delta.days)
 
     def __str__(self) -> str:
         return "Date day: " + str(self.day) + ", month: " + str(self.month) + ", year: " + str(self.year)

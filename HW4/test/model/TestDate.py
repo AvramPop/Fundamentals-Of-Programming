@@ -36,3 +36,8 @@ class TestDate(TestCase):
         self.assertTrue(self.date.isBeforeDate(Date(5, 7, 2019)))
         self.assertFalse(self.date.isBeforeDate(Date(4, 7, 2018)))
         self.assertFalse(self.date.isBeforeDate(Date(5, 7, 202)))
+
+    def test_dateDifference(self):
+        date1 = Date(11, 7, 2015)
+        date2 = Date(8, 7, 2015)
+        self.assertEqual(date1.daysUntilDate(date2), 3)

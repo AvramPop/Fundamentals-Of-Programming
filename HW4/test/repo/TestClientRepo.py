@@ -18,7 +18,7 @@ class TestClientRepo(TestCase):
         printer.printList(self.clientRepo.getList())
         print("aaaaaaaaaaaaaaa")
         self.clientRepo.addClient(Client("damo"))
-        self.assertEqual(((self.clientRepo.getList())[0]).getClientId(), 0)
+        self.assertEqual(((self.clientRepo.getList())[0]).getId(), 0)
         self.assertEqual(((self.clientRepo.getList())[0]).getName(), "damo")
 
     def test_removeClient(self):

@@ -16,11 +16,11 @@ class TestClient(TestCase):
         with self.assertRaises(ValueError):
             testClient = Client([])
         self.assertEqual(self.client.getName(), "Dani", 'client name got wrong')
-        self.assertRaises(TypeError, lambda: self.client.getClientId(), 'default client id not None')
+        self.assertRaises(TypeError, lambda: self.client.getId(), 'default client id not None')
 
     def test_setClientId(self):
         self.client.setClientId(5)
-        self.assertEqual(self.client.getClientId(), 5, "client id set wrong")
+        self.assertEqual(self.client.getId(), 5, "client id set wrong")
 
     def test_setWrongId(self):
         self.assertRaises(ValueError, lambda: self.client.setClientId(-3))

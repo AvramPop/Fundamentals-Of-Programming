@@ -1,5 +1,6 @@
 from main.Constants import Constants
 from main.Exception import ObjectAlreadyInCollectionException, ObjectNotInCollectionException
+from main.Utils import sortListById
 from main.model.Rental import Rental
 from main.model.Date import Date
 
@@ -15,16 +16,17 @@ class RentalRepo:
         Checks whether there is a rental in the repo with rentalId
         """
         for rental in self.__rentalList:
-            if rental.getRentalId() == rentalId:
+            if rental.getId() == rentalId:
                 return True
         return False
 
     def addRental(self, rental):
         if type(rental).__name__ == 'Rental':
-            if not self.hasRentalWithId(rental.getRentalId()):
+            if not self.hasRentalWithId(rental.getId()):
                 rental.setRentalId(self.__maximumIndexInRentalList() + 1)
                 self.__rentalList.append(rental)
-                self.__sortRentalList()
+                # self.__sortRentalList()
+                sortListById(self.__rentalList)
             else:
                 raise ObjectAlreadyInCollectionException
         else:
@@ -33,8 +35,8 @@ class RentalRepo:
     def __maximumIndexInRentalList(self):
         maximumIndex = -1
         for rental in self.__rentalList:
-            if rental.getRentalId() > maximumIndex:
-                maximumIndex = rental.getRentalId()
+            if rental.getId() > maximumIndex:
+                maximumIndex = rental.getId()
         return maximumIndex
 
     def getList(self):
@@ -42,7 +44,7 @@ class RentalRepo:
 
     def getRentalWithId(self, rentalId):
         for rental in self.__rentalList:
-            if rental.getRentalId() == rentalId:
+            if rental.getId() == rentalId:
                 return rental
         raise ObjectNotInCollectionException
 
@@ -52,7 +54,7 @@ class RentalRepo:
         """
         indexOfRentalToRemoveInList = -1
         for i in range(0, len(self.__rentalList)):
-            if (self.__rentalList[i]).getRentalId() == rentalId:
+            if (self.__rentalList[i]).getId() == rentalId:
                 indexOfRentalToRemoveInList = i
 
         if indexOfRentalToRemoveInList == -1:
@@ -66,25 +68,25 @@ class RentalRepo:
         """
         indexOfRentalToUpdateInList = -1
         for i in range(0, len(self.__rentalList)):
-            if (self.__rentalList[i]).getRentalId() == rentalId:
+            if (self.__rentalList[i]).getId() == rentalId:
                 indexOfRentalToUpdateInList = i
 
         if indexOfRentalToUpdateInList == -1:
             raise ObjectNotInCollectionException
         else:
-            if updatedRental.getRentalId() is None:
+            if updatedRental.getId() is None:
                 updatedRental.setRentalId(rentalId)
             self.__rentalList[indexOfRentalToUpdateInList] = updatedRental
 
-    def __sortRentalList(self):
-        for i in range(0, len(self.__rentalList) - 1):
-            for j in range(i + 1, len(self.__rentalList)):
-                if (self.__rentalList[j]).getRentalId() < self.__rentalList[i].getRentalId():
-                    auxRental = self.__rentalList[j]
-                    self.__rentalList[j] = self.__rentalList[i]
-                    self.__rentalList[i] = auxRental
+    # def __sortRentalList(self):
+    #     for i in range(0, len(self.__rentalList) - 1):
+    #         for j in range(i + 1, len(self.__rentalList)):
+    #             if (self.__rentalList[j]).getId() < self.__rentalList[i].getId():
+    #                 auxRental = self.__rentalList[j]
+    #                 self.__rentalList[j] = self.__rentalList[i]
+    #                 self.__rentalList[i] = auxRental
 
-    def populate(self, movieRepo, rentalRepo):  # TODO add missing attributes
+    def populate(self, movieRepo, rentalRepo):
         self.addRental(Rental(0, 0, Date(12, 5, 2011), Date(13, 6, 2012), movieRepo, rentalRepo))
         self.addRental(Rental(1, 1, Date(12, 5, 2012), Date(13, 6, 2019), movieRepo, rentalRepo))
         self.__rentalList[1].setReturnedDate(Date(12, 6, 2013))

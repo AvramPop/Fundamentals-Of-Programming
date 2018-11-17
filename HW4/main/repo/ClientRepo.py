@@ -1,5 +1,6 @@
 from main.Exception import ObjectNotInCollectionException, UpdatingObjectWithDifferentIdException, \
     ObjectAlreadyInCollectionException, IdNotSetException
+from main.Utils import sortListById
 from main.model.Client import Client
 
 
@@ -13,7 +14,7 @@ class ClientRepo:
         Checks whether there is a client having clientId
         """
         for client in self.__clientList:
-            if client.getClientId() == clientId:
+            if client.getId() == clientId:
                 return True
         return False
 
@@ -24,10 +25,11 @@ class ClientRepo:
         :param client: the client to add
         """
         if type(client).__name__ == 'Client':
-            if not self.hasClientWithId(client.getClientId()):
+            if not self.hasClientWithId(client.getId()):
                 client.setClientId(self.__maximumIndexInClientList() + 1)
                 self.__clientList.append(client)
-                self.__sortClientList()
+                sortListById(self.__clientList)
+                # self.__sortClientList()
             else:
                 raise ObjectAlreadyInCollectionException
         else:
@@ -39,13 +41,13 @@ class ClientRepo:
     def __maximumIndexInClientList(self):
         maximumIndex = -1
         for client in self.__clientList:
-            if client.getClientId() > maximumIndex:
-                maximumIndex = client.getClientId()
+            if client.getId() > maximumIndex:
+                maximumIndex = client.getId()
         return maximumIndex
 
     def getClientWithId(self, clientId):
         for client in self.__clientList:
-            if client.getClientId() == clientId:
+            if client.getId() == clientId:
                 return client
         raise ObjectNotInCollectionException
 
@@ -56,7 +58,7 @@ class ClientRepo:
         """
         indexOfClientToRemoveInList = -1
         for i in range(0, len(self.__clientList)):
-            if (self.__clientList[i]).getClientId() == clientId:
+            if (self.__clientList[i]).getId() == clientId:
                 indexOfClientToRemoveInList = i
 
         if indexOfClientToRemoveInList == -1:
@@ -70,23 +72,23 @@ class ClientRepo:
         """
         indexOfClientToUpdateInList = -1
         for i in range(0, len(self.__clientList)):
-            if (self.__clientList[i]).getClientId() == clientId:
+            if (self.__clientList[i]).getId() == clientId:
                 indexOfClientToUpdateInList = i
 
         if indexOfClientToUpdateInList == -1:
             raise ObjectNotInCollectionException
         else:
-            if updatedClient.getClientId() is None:
+            if updatedClient.getId() is None:
                 updatedClient.setClientId(clientId)
             self.__clientList[indexOfClientToUpdateInList] = updatedClient
 
-    def __sortClientList(self):
-        for i in range(0, len(self.__clientList) - 1):
-            for j in range(i + 1, len(self.__clientList)):
-                if (self.__clientList[j]).getClientId() < self.__clientList[i].getClientId():
-                    auxClient = self.__clientList[j]
-                    self.__clientList[j] = self.__clientList[i]
-                    self.__clientList[i] = auxClient
+    # def __sortClientList(self):
+    #     for i in range(0, len(self.__clientList) - 1):
+    #         for j in range(i + 1, len(self.__clientList)):
+    #             if (self.__clientList[j]).getId() < self.__clientList[i].getId():
+    #                 auxClient = self.__clientList[j]
+    #                 self.__clientList[j] = self.__clientList[i]
+    #                 self.__clientList[i] = auxClient
 
     def populate(self):
         self.addClient(Client("Dani"))

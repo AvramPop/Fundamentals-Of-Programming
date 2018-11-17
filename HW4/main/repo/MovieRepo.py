@@ -1,5 +1,6 @@
 from main.Exception import ObjectNotInCollectionException, UpdatingObjectWithDifferentIdException, \
     ObjectAlreadyInCollectionException
+from main.Utils import sortListById
 from main.model.Movie import Movie
 
 
@@ -13,7 +14,7 @@ class MovieRepo:
         Checks whether there is a movie with movieId
         """
         for movie in self.__movieList:
-            if movie.getMovieId() == movieId:
+            if movie.getId() == movieId:
                 return True
         return False
 
@@ -22,10 +23,11 @@ class MovieRepo:
         Add movie to repo
         """
         if type(movie).__name__ == 'Movie':
-            if not self.hasMovieWithId(movie.getMovieId()):
+            if not self.hasMovieWithId(movie.getId()):
                 movie.setMovieId(self.__maximumIndexInMovieList() + 1)
                 self.__movieList.append(movie)
-                self.__sortMovieList()
+                # self.__sortMovieList()
+                sortListById(self.__movieList)
             else:
                 raise ObjectAlreadyInCollectionException
         else:
@@ -35,8 +37,8 @@ class MovieRepo:
     def __maximumIndexInMovieList(self):
         maximumIndex = -1
         for movie in self.__movieList:
-            if movie.getMovieId() > maximumIndex:
-                maximumIndex = movie.getMovieId()
+            if movie.getId() > maximumIndex:
+                maximumIndex = movie.getId()
         return maximumIndex
 
     def getList(self):
@@ -44,7 +46,7 @@ class MovieRepo:
 
     def getMovieWithId(self, movieId):
         for movie in self.__movieList:
-            if movie.getMovieId() == movieId:
+            if movie.getId() == movieId:
                 return movie
         raise ObjectNotInCollectionException
 
@@ -54,7 +56,7 @@ class MovieRepo:
         """
         indexOfMovieToRemoveInList = -1
         for i in range(0, len(self.__movieList)):
-            if (self.__movieList[i]).getMovieId() == movieId:
+            if (self.__movieList[i]).getId() == movieId:
                 indexOfMovieToRemoveInList = i
 
         if indexOfMovieToRemoveInList == -1:
@@ -69,24 +71,24 @@ class MovieRepo:
         """
         indexOfMovieToUpdateInList = -1
         for i in range(0, len(self.__movieList)):
-            if (self.__movieList[i]).getMovieId() == movieId:
+            if (self.__movieList[i]).getId() == movieId:
                 indexOfMovieToUpdateInList = i
 
         if indexOfMovieToUpdateInList == -1:
             raise ObjectNotInCollectionException
         else:
-            if updatedMovie.getMovieId() is None:
+            if updatedMovie.getId() is None:
                 updatedMovie.setMovieId(movieId)
             self.__movieList[indexOfMovieToUpdateInList] = updatedMovie
 
 
-    def __sortMovieList(self):
-        for i in range(0, len(self.__movieList) - 1):
-            for j in range(i + 1, len(self.__movieList)):
-                if (self.__movieList[j]).getMovieId() < self.__movieList[i].getMovieId():
-                    auxMovie = self.__movieList[j]
-                    self.__movieList[j] = self.__movieList[i]
-                    self.__movieList[i] = auxMovie
+    # def __sortMovieList(self):
+    #     for i in range(0, len(self.__movieList) - 1):
+    #         for j in range(i + 1, len(self.__movieList)):
+    #             if (self.__movieList[j]).getId() < self.__movieList[i].getId():
+    #                 auxMovie = self.__movieList[j]
+    #                 self.__movieList[j] = self.__movieList[i]
+    #                 self.__movieList[i] = auxMovie
 
     def populate(self):
         self.addMovie(Movie("Titanic", "adventurous", "drama"))

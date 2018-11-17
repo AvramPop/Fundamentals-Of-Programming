@@ -161,7 +161,7 @@ class Console:
                                                         print("Invalid date format")
                                                     else:
                                                         try:
-                                                            self.rentalController.rentMovieByClientUntilDate(int(optionInputWordList[1]), int(optionInputWordList[2]), dueDate, self.movieController.getRepo(), self.clientController._getRepo())
+                                                            self.rentalController.rentMovieByClientUntilDate(int(optionInputWordList[1]), int(optionInputWordList[2]), dueDate, self.movieController.getRepo(), self.clientController.getRepo())
                                                         except DatesNotOrderedException as datesNotOrderedException:
                                                             print("The due date cannot be before the rental date")
                                                         except ClientHasMoviesNotReturnedException as clientHasMoviesNotReturnedException:
@@ -229,22 +229,28 @@ class Console:
                     else:
                         print("wrong input")
             elif menuChosen == "stats":
-                print("stats")
                 while True:
                     self.printer.printSubmenu("statsMenu")
                     optionInput = input(">")
                     optionInputWordList = optionInput.split()
                     if self.validator.isValidStatsQuery(optionInputWordList):
                         if optionInputWordList[0] == "active":
-                            print("active")
+                            print("Most active clients:")
+                            self.printer.printList(
+                                self.rentalController.mostActiveClients(self.clientController.getRepo()))
                         elif optionInputWordList[0] == "now":
-                            print("now")
+                            print("Movies now rented:")
+                            self.printer.printList(
+                                self.rentalController.moviesCurrentlyRented(self.movieController.getRepo()))
                         elif optionInputWordList[0] == "late":
-                            print("late")
+                            print("Movies most passed due date:")
+                            self.printer.printList(self.rentalController.moviesPastDueDate(self.movieController.getRepo()))
                         elif optionInputWordList[0] == "most" and optionInputWordList[2] == "times":
-                            print("most times")
+                            print("Most rented movies by times rented:")
+                            self.printer.printList(self.rentalController.moviesMostRentedByTimesRented(self.movieController.getRepo()))
                         elif optionInputWordList[0] == "most" and optionInputWordList[2] == "days":
-                            print("most days")
+                            print("Most rented movies by times rented:")
+                            self.printer.printList(self.rentalController.moviesMostRentedByDays(self.movieController.getRepo()))
                     elif optionInputWordList[0] == "back":
                         break
                     else:

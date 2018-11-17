@@ -2,17 +2,26 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9902384d-ba54-4e59-8b6e-2d02ed0913fb" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/main/Validator.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/misc/TestUtils.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/misc/__init__.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/Constants.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/Constants.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/Exception.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/Exception.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main/Utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/Utils.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main/controller/ClientController.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/controller/ClientController.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main/controller/MovieController.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/controller/MovieController.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/controller/RentalController.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/controller/RentalController.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/model/Client.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/model/Client.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/model/Date.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/model/Date.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/model/Movie.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/model/Movie.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/model/Rental.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/model/Rental.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/repo/ClientRepo.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/repo/ClientRepo.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/repo/MovieRepo.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/repo/MovieRepo.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/repo/RentalRepo.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/repo/RentalRepo.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main/ui/Console.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/ui/Console.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/ui/Printer.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/ui/Printer.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/model/TestClient.py" beforeDir="false" afterPath="$PROJECT_DIR$/test/model/TestClient.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/model/TestDate.py" beforeDir="false" afterPath="$PROJECT_DIR$/test/model/TestDate.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/model/TestMovie.py" beforeDir="false" afterPath="$PROJECT_DIR$/test/model/TestMovie.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/model/TestRental.py" beforeDir="false" afterPath="$PROJECT_DIR$/test/model/TestRental.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/repo/TestClientRepo.py" beforeDir="false" afterPath="$PROJECT_DIR$/test/repo/TestClientRepo.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/repo/TestMovieRepo.py" beforeDir="false" afterPath="$PROJECT_DIR$/test/repo/TestMovieRepo.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/repo/TestRentalRepo.py" beforeDir="false" afterPath="$PROJECT_DIR$/test/repo/TestRentalRepo.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Lab2/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab2/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../lab03/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../lab03/.idea/workspace.xml" afterDir="false" />
     </list>
@@ -32,7 +41,7 @@
     <SUITE FILE_PATH="coverage/HW4$Unittests_for_TestClientRepo_TestClientRepo_test_removeClient.coverage" NAME="Unittests for TestClientRepo.TestClientRepo.test_removeClient Coverage Results" MODIFIED="1542197892417" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test/repo" />
     <SUITE FILE_PATH="coverage/HW4$Unittests_in_model.coverage" NAME="Unittests in model Coverage Results" MODIFIED="1541170107584" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test/model" />
     <SUITE FILE_PATH="coverage/HW4$Unittests_for_ClientTests_ClientTests.coverage" NAME="Unittests for ClientTests.ClientTests Coverage Results" MODIFIED="1541173810795" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test/model" />
-    <SUITE FILE_PATH="coverage/HW4$Main.coverage" NAME="Main Coverage Results" MODIFIED="1542296068266" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/main" />
+    <SUITE FILE_PATH="coverage/HW4$Main.coverage" NAME="Main Coverage Results" MODIFIED="1542472736673" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/main" />
     <SUITE FILE_PATH="coverage/HW4$Unittests_for_TestMovieRepo_TestMovieRepo.coverage" NAME="Unittests for TestMovieRepo.TestMovieRepo Coverage Results" MODIFIED="1542196516052" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test/repo" />
     <SUITE FILE_PATH="coverage/HW4$Unittests_for_TestRental_TestRental_test_setReturnedDateSecondTime.coverage" NAME="Unittests for TestRental.TestRental.test_setReturnedDateSecondTime Coverage Results" MODIFIED="1541193936108" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test/model" />
     <SUITE FILE_PATH="coverage/HW4$Unittests_for_TestRentalController_TestRentalController_test_return.coverage" NAME="Unittests for TestRentalController.TestRentalController.test_return Coverage Results" MODIFIED="1542206465906" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test/controller" />
@@ -45,6 +54,7 @@
     <SUITE FILE_PATH="coverage/HW4$Unittests_for_TestClientRepo_TestClientRepo.coverage" NAME="Unittests for TestClientRepo.TestClientRepo Coverage Results" MODIFIED="1542198074345" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test/repo" />
     <SUITE FILE_PATH="coverage/HW4$Unittests_in_TestClientRepo_py.coverage" NAME="Unittests in TestClientRepo.py Coverage Results" MODIFIED="1542290519976" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test/repo" />
     <SUITE FILE_PATH="coverage/HW4$Unittests_for_TestDate_TestDate_test_equals.coverage" NAME="Unittests for TestDate.TestDate.test_equals Coverage Results" MODIFIED="1541185719238" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test/model" />
+    <SUITE FILE_PATH="coverage/HW4$Unittests_for_TestDate_TestDate_test_dateDifference.coverage" NAME="Unittests for TestDate.TestDate.test_dateDifference Coverage Results" MODIFIED="1542470355087" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test/model" />
     <SUITE FILE_PATH="coverage/HW4$Unittests_in_TestRentalController_py.coverage" NAME="Unittests in TestRentalController.py Coverage Results" MODIFIED="1542290522868" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test/controller" />
     <SUITE FILE_PATH="coverage/HW4$Unittests_for_TestRentalRepo_TestRentalRepo_test_removeRental.coverage" NAME="Unittests for TestRentalRepo.TestRentalRepo.test_removeRental Coverage Results" MODIFIED="1542193224839" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test/repo" />
     <SUITE FILE_PATH="coverage/HW4$Unittests_for_TestRental_TestRental_test_setRentalIdSecondTime.coverage" NAME="Unittests for TestRental.TestRental.test_setRentalIdSecondTime Coverage Results" MODIFIED="1541193301097" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test/model" />
@@ -95,9 +105,9 @@
     <session id="-2044529525">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="23" />
+          <entry key="project.closed" value="26" />
           <entry key="project.open.time.10" value="2" />
-          <entry key="project.open.time.11" value="2" />
+          <entry key="project.open.time.11" value="3" />
           <entry key="project.open.time.12" value="1" />
           <entry key="project.open.time.13" value="1" />
           <entry key="project.open.time.14" value="2" />
@@ -112,35 +122,37 @@
           <entry key="project.open.time.33" value="1" />
           <entry key="project.open.time.35" value="1" />
           <entry key="project.open.time.41" value="1" />
+          <entry key="project.open.time.44" value="1" />
+          <entry key="project.open.time.47" value="1" />
           <entry key="project.open.time.5" value="1" />
           <entry key="project.open.time.8" value="1" />
           <entry key="project.open.time.9" value="2" />
-          <entry key="project.opened" value="25" />
+          <entry key="project.opened" value="28" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="coverage" value="1" />
-          <entry key="py" value="495" />
+          <entry key="py" value="511" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="PLAIN_TEXT" value="1" />
-          <entry key="Python" value="495" />
+          <entry key="Python" value="511" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="Python Console" value="16" />
-          <entry key="dummy" value="100" />
-          <entry key="py" value="35992" />
+          <entry key="dummy" value="103" />
+          <entry key="py" value="38223" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="PLAIN_TEXT" value="100" />
-          <entry key="Python" value="36008" />
+          <entry key="PLAIN_TEXT" value="103" />
+          <entry key="Python" value="38239" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.js.language.service.starts" />
@@ -149,56 +161,122 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/main/ui/Console.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="309">
-              <caret line="243" column="86" selection-start-line="243" selection-start-column="86" selection-end-line="243" selection-end-column="86" />
+            <state relative-caret-position="46">
+              <caret line="248" column="39" lean-forward="true" selection-start-line="248" selection-start-column="39" selection-end-line="248" selection-end-column="39" />
               <folding>
-                <element signature="e#1372#8690#0" />
-                <element signature="e#1557#4975#0" />
-                <element signature="e#5048#8541#0" />
-                <element signature="e#8748#14303#0" />
+                <element signature="e#1470#8788#0" />
+                <element signature="e#1655#5073#0" />
+                <element signature="e#5146#8639#0" />
+                <element signature="e#8846#14401#0" />
+                <element signature="e#14459#15618#0" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/main/Main.py">
+        <entry file="file://$PROJECT_DIR$/main/controller/ClientController.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="234">
-              <caret line="13" selection-start-line="13" selection-end-line="13" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/main/Validator.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="381">
-              <caret line="29" column="39" selection-start-line="29" selection-start-column="39" selection-end-line="29" selection-end-column="39" />
+            <state relative-caret-position="450">
+              <caret line="25" column="91" selection-start-line="25" selection-start-column="91" selection-end-line="25" selection-end-column="91" />
               <folding>
-                <marker date="1542296068162" expanded="true" signature="17:22" ph="..." />
+                <element signature="e#0#44#0" expanded="true" />
+                <marker date="1542471436516" expanded="true" signature="195:240" ph="..." />
+                <marker date="1542471436516" expanded="true" signature="258:297" ph="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/main/ui/Printer.py">
+        <entry file="file://$PROJECT_DIR$/main/controller/MovieController.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="251">
-              <caret line="33" selection-start-line="33" selection-end-line="33" />
+            <state relative-caret-position="432">
+              <caret line="24" column="77" selection-start-line="24" selection-start-column="77" selection-end-line="24" selection-end-column="77" />
+              <folding>
+                <element signature="e#0#44#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/main/Constants.py">
+        <entry file="file://$PROJECT_DIR$/main/repo/RentalRepo.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="25">
-              <caret line="15" column="85" lean-forward="true" selection-start-line="15" selection-start-column="85" selection-end-line="15" selection-end-column="85" />
+            <state relative-caret-position="401">
+              <caret line="91" column="63" selection-start-line="91" selection-start-column="63" selection-end-line="91" selection-end-column="63" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/main/controller/RentalController.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="617">
+              <caret line="203" selection-start-line="203" selection-end-line="203" />
+              <folding>
+                <element signature="e#0#36#0" expanded="true" />
+                <element signature="e#3450#4571#0" />
+                <element signature="e#4639#5866#0" />
+                <element signature="e#6085#7459#0" />
+                <element signature="e#7537#7767#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/main/repo/ClientRepo.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="576">
+              <caret line="53" column="43" selection-start-line="53" selection-start-column="43" selection-end-line="53" selection-end-column="43" />
+              <folding>
+                <element signature="e#0#158#0" expanded="true" />
+                <marker date="1542471389392" expanded="true" signature="252:316" ph="..." />
+                <marker date="1542471389392" expanded="true" signature="1231:1424" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/main/repo/MovieRepo.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="558">
+              <caret line="52" column="41" selection-start-line="52" selection-start-column="41" selection-end-line="52" selection-end-column="41" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/main/model/Date.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="711">
+              <caret line="54" column="30" selection-start-line="54" selection-start-column="30" selection-end-line="54" selection-end-column="30" />
+              <folding>
+                <element signature="e#0#25#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/test/model/TestDate.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="684">
+              <caret line="40" column="23" selection-start-line="40" selection-start-column="23" selection-end-line="40" selection-end-column="23" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/main/model/Rental.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1440">
+              <caret line="84" lean-forward="true" selection-start-line="84" selection-end-line="84" />
             </state>
           </provider>
         </entry>
@@ -214,8 +292,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>except</find>
-      <find>cli</find>
       <find>&gt;=</find>
       <find>5</find>
       <find>type</find>
@@ -243,6 +319,9 @@
       <find>.getInstance</find>
       <find>Client</find>
       <find>ratio</find>
+      <find>date</find>
+      <find>passed</find>
+      <find>_</find>
     </findStrings>
     <replaceStrings>
       <replace>Client</replace>
@@ -287,35 +366,35 @@
         <option value="$PROJECT_DIR$/test/model/TestMovie.py" />
         <option value="$PROJECT_DIR$/main/model/Exception.py" />
         <option value="$PROJECT_DIR$/main/model/Singleton.py" />
-        <option value="$PROJECT_DIR$/test/model/TestDate.py" />
         <option value="$PROJECT_DIR$/test/model/TestClient.py" />
         <option value="$PROJECT_DIR$/main/Main.py" />
         <option value="$PROJECT_DIR$/main/ui/Constants.py" />
         <option value="$PROJECT_DIR$/main/Validation.py" />
-        <option value="$PROJECT_DIR$/main/model/Date.py" />
         <option value="$PROJECT_DIR$/test/controller/TestMovieController.py" />
         <option value="$PROJECT_DIR$/test/controller/TestClientController.py" />
         <option value="$PROJECT_DIR$/main/Borg.py" />
         <option value="$PROJECT_DIR$/test/repo/TestClientRepo.py" />
         <option value="$PROJECT_DIR$/test/repo/TestMovieRepo.py" />
         <option value="$PROJECT_DIR$/test/repo/TestRentalRepo.py" />
-        <option value="$PROJECT_DIR$/main/controller/RentalController.py" />
-        <option value="$PROJECT_DIR$/main/repo/RentalRepo.py" />
-        <option value="$PROJECT_DIR$/main/repo/MovieRepo.py" />
-        <option value="$PROJECT_DIR$/main/repo/ClientRepo.py" />
         <option value="$PROJECT_DIR$/test/controller/TestRentalController.py" />
-        <option value="$PROJECT_DIR$/main/model/Rental.py" />
-        <option value="$PROJECT_DIR$/main/model/Movie.py" />
         <option value="$PROJECT_DIR$/test/model/TestRental.py" />
-        <option value="$PROJECT_DIR$/main/model/Client.py" />
         <option value="$PROJECT_DIR$/main/Exception.py" />
         <option value="$PROJECT_DIR$/test/misc/TestUtils.py" />
-        <option value="$PROJECT_DIR$/main/controller/MovieController.py" />
-        <option value="$PROJECT_DIR$/main/controller/ClientController.py" />
-        <option value="$PROJECT_DIR$/main/Utils.py" />
         <option value="$PROJECT_DIR$/main/ui/Printer.py" />
         <option value="$PROJECT_DIR$/main/Constants.py" />
         <option value="$PROJECT_DIR$/main/Validator.py" />
+        <option value="$PROJECT_DIR$/main/model/Client.py" />
+        <option value="$PROJECT_DIR$/main/model/Movie.py" />
+        <option value="$PROJECT_DIR$/main/model/Rental.py" />
+        <option value="$PROJECT_DIR$/main/Utils.py" />
+        <option value="$PROJECT_DIR$/main/repo/RentalRepo.py" />
+        <option value="$PROJECT_DIR$/main/model/Date.py" />
+        <option value="$PROJECT_DIR$/test/model/TestDate.py" />
+        <option value="$PROJECT_DIR$/main/repo/MovieRepo.py" />
+        <option value="$PROJECT_DIR$/main/controller/MovieController.py" />
+        <option value="$PROJECT_DIR$/main/repo/ClientRepo.py" />
+        <option value="$PROJECT_DIR$/main/controller/ClientController.py" />
+        <option value="$PROJECT_DIR$/main/controller/RentalController.py" />
         <option value="$PROJECT_DIR$/main/ui/Console.py" />
       </list>
     </option>
@@ -327,9 +406,10 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="684" />
-    <option name="width" value="682" />
-    <option name="height" value="767" />
+    <option name="x" value="1931" />
+    <option name="y" value="117" />
+    <option name="width" value="672" />
+    <option name="height" value="765" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -400,6 +480,12 @@
               <item name="HW4" type="462c0819:PsiDirectoryNode" />
               <item name="test" type="462c0819:PsiDirectoryNode" />
               <item name="misc" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="HW4" type="b2602c69:ProjectViewProjectNode" />
+              <item name="HW4" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="model" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -578,18 +664,18 @@
         <option name="RunConfigurationTask" enabled="true" run_configuration_name="Unittests in TestUtils.py" run_configuration_type="tests" />
       </method>
     </configuration>
-    <configuration name="Unittests for TestClientRepo.TestClientRepo" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
+    <configuration name="Unittests for TestDate.TestDate.test_dateDifference" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
       <module name="HW4" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/test/repo" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/test/model" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;TestClientRepo.TestClientRepo&quot;" />
+      <option name="_new_target" value="&quot;TestDate.TestDate.test_dateDifference&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
@@ -843,19 +929,19 @@
       <item itemvalue="Python tests.Unittests in TestMovieController.py" />
       <item itemvalue="Python tests.Unittests in TestRentalController.py" />
       <item itemvalue="Python tests.Unittests in TestUtils.py" />
-      <item itemvalue="Python tests.Unittests for TestClientRepo.TestClientRepo" />
       <item itemvalue="Python tests.Unittests for TestRentalController.TestRentalController" />
       <item itemvalue="Python tests.Unittests for TestRentalController.TestRentalController.test_rent" />
       <item itemvalue="Python tests.Unittests for TestRentalController.TestRentalController.test_return" />
       <item itemvalue="Python tests.Unittests for TestUtils.TestUtils" />
+      <item itemvalue="Python tests.Unittests for TestDate.TestDate.test_dateDifference" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python tests.Unittests for TestDate.TestDate.test_dateDifference" />
         <item itemvalue="Python tests.Unittests for TestUtils.TestUtils" />
         <item itemvalue="Python tests.Unittests for TestRentalController.TestRentalController" />
         <item itemvalue="Python tests.Unittests for TestRentalController.TestRentalController.test_return" />
         <item itemvalue="Python tests.Unittests for TestRentalController.TestRentalController.test_rent" />
-        <item itemvalue="Python tests.Unittests for TestClientRepo.TestClientRepo" />
       </list>
     </recent_temporary>
   </component>
@@ -873,12 +959,6 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="Unittests_in_TestRentalController_py - 2018.11.15 at 16h 02m 03s.xml">
-      <configuration name="Unittests in TestRentalController.py" configurationId="tests" />
-    </history-entry>
-    <history-entry file="Unittests_in_TestUtils_py - 2018.11.15 at 16h 02m 03s.xml">
-      <configuration name="Unittests in TestUtils.py" configurationId="tests" />
-    </history-entry>
     <history-entry file="Unittests_for_TestUtils_TestUtils - 2018.11.15 at 16h 03m 48s.xml">
       <configuration name="Unittests for TestUtils.TestUtils" configurationId="tests" />
     </history-entry>
@@ -903,6 +983,12 @@
     <history-entry file="Unittests_for_TestUtils_TestUtils - 2018.11.15 at 16h 21m 06s.xml">
       <configuration name="Unittests for TestUtils.TestUtils" configurationId="tests" />
     </history-entry>
+    <history-entry file="Unittests_for_TestDate_TestDate_test_dateDifference - 2018.11.17 at 17h 59m 06s.xml">
+      <configuration name="Unittests for TestDate.TestDate.test_dateDifference" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Unittests_for_TestDate_TestDate_test_dateDifference - 2018.11.17 at 17h 59m 15s.xml">
+      <configuration name="Unittests for TestDate.TestDate.test_dateDifference" configurationId="tests" />
+    </history-entry>
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -914,16 +1000,16 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="-1" width="1366" height="768" extended-state="6" />
+    <frame x="1366" y="-1" width="1920" height="1080" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.3628788" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.11632871" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32659408" />
-      <window_info anchor="bottom" x="0" y="28" width="1366" height="740" id="Run" order="2" sideWeight="0.4994664" weight="0.8024883" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.39502332" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32565445" />
+      <window_info anchor="bottom" x="0" y="28" width="1366" height="740" id="Run" order="2" sideWeight="0.4994664" weight="0.8020942" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.3947644" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32970452" />
@@ -931,7 +1017,7 @@
       <window_info anchor="bottom" id="Version Control" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Statistic" order="10" weight="0.32970452" />
-      <window_info anchor="bottom" id="Terminal" order="11" weight="0.318323" />
+      <window_info anchor="bottom" id="Terminal" order="11" weight="0.21361257" />
       <window_info anchor="bottom" id="Event Log" order="12" sideWeight="0.50053364" side_tool="true" weight="0.32879582" />
       <window_info anchor="bottom" id="Python Console" order="13" weight="0.32984293" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
@@ -1110,20 +1196,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test/model/TestDate.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="13" column="20" selection-start-line="13" selection-start-column="20" selection-end-line="13" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/main/model/Date.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="623">
-          <caret line="39" selection-start-line="39" selection-end-line="39" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file:///usr/lib/python3.6/unittest/case.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="175">
@@ -1181,13 +1253,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/main/model/Rental.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="12" column="12" selection-start-line="12" selection-start-column="12" selection-end-line="12" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/test/controller/TestRentalController.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1404">
@@ -1195,31 +1260,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/main/model/Movie.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="395">
-          <caret line="77" column="174" selection-start-line="77" selection-start-column="174" selection-end-line="77" selection-end-column="174" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/main/repo/RentalRepo.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="127">
-          <caret line="86" column="77" lean-forward="true" selection-start-line="86" selection-start-column="77" selection-end-line="86" selection-end-column="77" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/test/model/TestRental.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="127">
           <caret line="22" column="29" selection-start-line="22" selection-start-column="29" selection-end-line="22" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/main/repo/MovieRepo.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1368">
-          <caret line="78" column="16" selection-start-line="78" selection-start-column="16" selection-end-line="78" selection-end-column="16" />
         </state>
       </provider>
     </entry>
@@ -1234,75 +1278,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/main/repo/ClientRepo.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="882">
-          <caret line="51" column="8" selection-start-line="51" selection-start-column="8" selection-end-line="51" selection-end-column="8" />
-          <folding>
-            <element signature="e#0#158#0" expanded="true" />
-            <marker date="1542206803171" expanded="true" signature="216:280" ph="..." />
-            <marker date="1542206803171" expanded="true" signature="1157:1362" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/main/model/Client.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="557">
-          <caret line="42" column="33" selection-start-line="42" selection-start-column="33" selection-end-line="42" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/main/controller/RentalController.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-378">
-          <caret line="34" column="8" selection-start-line="34" selection-start-column="8" selection-end-line="34" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/main/controller/MovieController.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="179">
-          <caret line="36" column="71" selection-start-line="36" selection-start-column="71" selection-end-line="36" selection-end-column="71" />
-          <folding>
-            <element signature="e#0#44#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/main/controller/ClientController.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="413">
-          <caret line="37" column="53" selection-start-line="37" selection-start-column="53" selection-end-line="37" selection-end-column="53" />
-          <folding>
-            <element signature="e#0#44#0" expanded="true" />
-            <marker date="1542291666520" expanded="true" signature="195:240" ph="..." />
-            <marker date="1542291666520" expanded="true" signature="259:298" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/test/misc/TestUtils.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="144">
           <caret line="8" column="53" selection-start-line="8" selection-start-column="53" selection-end-line="8" selection-end-column="53" />
-          <folding>
-            <element signature="e#0#29#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/main/Utils.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="5" selection-start-line="5" selection-end-line="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/main/Main.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="234">
-          <caret line="13" selection-start-line="13" selection-end-line="13" />
         </state>
       </provider>
     </entry>
@@ -1313,23 +1292,16 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/main/ui/Printer.py">
+    <entry file="file://$PROJECT_DIR$/main/Main.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="251">
-          <caret line="33" selection-start-line="33" selection-end-line="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/main/Constants.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="25">
-          <caret line="15" column="85" lean-forward="true" selection-start-line="15" selection-start-column="85" selection-end-line="15" selection-end-column="85" />
+        <state relative-caret-position="234">
+          <caret line="13" selection-start-line="13" selection-end-line="13" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/main/Validator.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="381">
+        <state relative-caret-position="522">
           <caret line="29" column="39" selection-start-line="29" selection-start-column="39" selection-end-line="29" selection-end-column="39" />
           <folding>
             <marker date="1542296068162" expanded="true" signature="17:22" ph="..." />
@@ -1337,15 +1309,137 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/main/ui/Printer.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="540">
+          <caret line="33" selection-start-line="33" selection-end-line="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main/Constants.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="15" column="85" selection-start-line="15" selection-start-column="85" selection-end-line="15" selection-end-column="85" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main/model/Client.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="269">
+          <caret line="26" column="11" selection-start-line="26" selection-start-column="8" selection-end-line="26" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main/model/Movie.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="227">
+          <caret line="28" column="11" lean-forward="true" selection-start-line="28" selection-start-column="8" selection-end-line="28" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main/Utils.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="252">
+          <caret line="14" column="35" selection-start-line="14" selection-start-column="35" selection-end-line="14" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main/model/Rental.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1440">
+          <caret line="84" lean-forward="true" selection-start-line="84" selection-end-line="84" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main/repo/RentalRepo.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="401">
+          <caret line="91" column="63" selection-start-line="91" selection-start-column="63" selection-end-line="91" selection-end-column="63" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main/model/Date.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="711">
+          <caret line="54" column="30" selection-start-line="54" selection-start-column="30" selection-end-line="54" selection-end-column="30" />
+          <folding>
+            <element signature="e#0#25#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/model/TestDate.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="684">
+          <caret line="40" column="23" selection-start-line="40" selection-start-column="23" selection-end-line="40" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main/repo/MovieRepo.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="558">
+          <caret line="52" column="41" selection-start-line="52" selection-start-column="41" selection-end-line="52" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main/controller/MovieController.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="432">
+          <caret line="24" column="77" selection-start-line="24" selection-start-column="77" selection-end-line="24" selection-end-column="77" />
+          <folding>
+            <element signature="e#0#44#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main/repo/ClientRepo.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="576">
+          <caret line="53" column="43" selection-start-line="53" selection-start-column="43" selection-end-line="53" selection-end-column="43" />
+          <folding>
+            <element signature="e#0#158#0" expanded="true" />
+            <marker date="1542471389392" expanded="true" signature="252:316" ph="..." />
+            <marker date="1542471389392" expanded="true" signature="1231:1424" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main/controller/ClientController.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="450">
+          <caret line="25" column="91" selection-start-line="25" selection-start-column="91" selection-end-line="25" selection-end-column="91" />
+          <folding>
+            <element signature="e#0#44#0" expanded="true" />
+            <marker date="1542471436516" expanded="true" signature="195:240" ph="..." />
+            <marker date="1542471436516" expanded="true" signature="258:297" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/main/ui/Console.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="309">
-          <caret line="243" column="86" selection-start-line="243" selection-start-column="86" selection-end-line="243" selection-end-column="86" />
+        <state relative-caret-position="46">
+          <caret line="248" column="39" lean-forward="true" selection-start-line="248" selection-start-column="39" selection-end-line="248" selection-end-column="39" />
           <folding>
-            <element signature="e#1372#8690#0" />
-            <element signature="e#1557#4975#0" />
-            <element signature="e#5048#8541#0" />
-            <element signature="e#8748#14303#0" />
+            <element signature="e#1470#8788#0" />
+            <element signature="e#1655#5073#0" />
+            <element signature="e#5146#8639#0" />
+            <element signature="e#8846#14401#0" />
+            <element signature="e#14459#15618#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main/controller/RentalController.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="617">
+          <caret line="203" selection-start-line="203" selection-end-line="203" />
+          <folding>
+            <element signature="e#0#36#0" expanded="true" />
+            <element signature="e#3450#4571#0" />
+            <element signature="e#4639#5866#0" />
+            <element signature="e#6085#7459#0" />
+            <element signature="e#7537#7767#0" />
           </folding>
         </state>
       </provider>

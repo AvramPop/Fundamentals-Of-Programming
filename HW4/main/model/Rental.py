@@ -83,14 +83,7 @@ class Rental:
         else:
             raise AlreadySetException
 
-    # def getMovie(self):
-    #     movieRepo = MovieRepo()
-    #     for movie in movieRepo.getMovieList():
-    #         if movie.getMovieId() == self.__movieId:
-    #             return movie
-    #     del movieRepo
-
-    def getRentalId(self):
+    def getId(self):
         """
         Get rental id
 
@@ -120,11 +113,8 @@ class Rental:
     def getDueDate(self):
         return self.__dueDate
 
-    # def setDueDate(self, dueDate):
-    #     self.__dueDate = dueDate
-
     def __eq__(self, other: "Rental"):
-        return self.__rentalId == other.getRentalId() and self.__movieId == other.getMovieId() and \
+        return self.__rentalId == other.getId() and self.__movieId == other.getMovieId() and \
                self.__clientId == other.getClientId() and self.__returnedDate == other.getReturnedDate() and \
                self.__dueDate == other.getDueDate() and self.__rentedDate == other.getRentedDate()
 

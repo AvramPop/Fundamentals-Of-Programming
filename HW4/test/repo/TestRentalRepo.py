@@ -32,14 +32,14 @@ class TestRentalRepo(TestCase):
 
     def test_addRental(self):
         self.rentalRepo.addRental(Rental(1, 2, Date(5, 4, 2018), Date(7, 9, 2020), self.movieRepo, self.clientRepo))
-        self.assertEqual((self.rentalRepo.getList()[0]).getRentalId(), 0)
-        self.assertEqual((self.rentalRepo.getList()[0]).getMovieId(), 0)
-        self.assertEqual((self.rentalRepo.getList()[0]).getClientId(), 0)
+        self.assertEqual((self.rentalRepo.getList()[0]).getId(), 0)
+        self.assertEqual((self.rentalRepo.getList()[0]).getId(), 0)
+        self.assertEqual((self.rentalRepo.getList()[0]).getId(), 0)
         self.assertEqual((self.rentalRepo.getList()[0]).getRentedDate(), Date(5, 4, 2018))
         self.assertEqual((self.rentalRepo.getList()[0]).getDueDate(), Date(7, 9, 2020))
-        self.assertEqual((self.rentalRepo.getList()[2]).getRentalId(), 2)
-        self.assertEqual((self.rentalRepo.getList()[2]).getMovieId(), 2)
-        self.assertEqual((self.rentalRepo.getList()[2]).getClientId(), 1)
+        self.assertEqual((self.rentalRepo.getList()[2]).getId(), 2)
+        self.assertEqual((self.rentalRepo.getList()[2]).getId(), 2)
+        self.assertEqual((self.rentalRepo.getList()[2]).getId(), 1)
         self.assertEqual((self.rentalRepo.getList()[2]).getRentedDate(), Date(5, 4, 2018))
         self.assertEqual((self.rentalRepo.getList()[2]).getDueDate(), Date(7, 9, 2020))
 

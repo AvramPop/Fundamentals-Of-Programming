@@ -22,7 +22,7 @@ class MovieController:
     def getMovieList(self):
         return self.__movieRepo.getList()
 
-    def removeMovieWithId(self, movieId):
+    def removeMovieWithId(self, movieId):   # TODO approve just if not rented
         self.__movieRepo.removeMovieWithId(movieId)
 
     def updateMovieWithId(self, movieId, updatedMovie):

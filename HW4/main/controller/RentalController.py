@@ -3,6 +3,7 @@ from main.Exception import DatesNotOrderedException, ClientHasMoviesNotReturnedE
     MovieNotCurrentlyRentedByClientException
 from main.model.Rental import Rental
 from main.repo.RentalRepo import RentalRepo
+from main.ui.Printer import Printer
 
 
 class RentalController:
@@ -48,10 +49,10 @@ class RentalController:
     def returnMovieByClient(self, clientId, movieId):
         movieFound = False
         for rental in self.getRentalList():
-            if rental.getMovieId() == movieId and rental.getClientId() == clientId and rental.getReturnedDate() is None:
+            if rental.getId() == movieId and rental.getId() == clientId and rental.getReturnedDate() is None:
                 constants = Constants()
                 rental.setReturnedDate(constants.currentDay())
-                self.updateRentalWithId(rental.getRentalId(), rental)
+                self.updateRentalWithId(rental.getId(), rental)
                 movieFound = True
         if not movieFound:
             raise MovieNotCurrentlyRentedByClientException
@@ -59,7 +60,7 @@ class RentalController:
     def __clientHasPassedDueDateMovies(self, clientId):
         clientRentalList = []
         for rental in self.getRentalList():
-            if rental.getClientId() == clientId:
+            if rental.getId() == clientId:
                 clientRentalList.append(rental)
 
         for rental in clientRentalList:
@@ -68,9 +69,10 @@ class RentalController:
         return False
 
     def __isMovieAvailable(self, movieId):  # TODO check if have to check if movie exist (probably handled in ui)
+        # TODO URGENT new rental not added (persistence)
         movieRentalList = []
         for rental in self.getRentalList():
-            if rental.getMovieId() == movieId:
+            if rental.getId() == movieId:
                 movieRentalList.append(rental)
 
         if len(movieRentalList) == 0:  # movie never rented
@@ -83,3 +85,120 @@ class RentalController:
 
     def populateRepo(self, movieRepo, rentalRepo):
         self.__rentalRepo.populate(movieRepo, rentalRepo)
+
+    def moviesMostRentedByTimesRented(self, movieRepo):
+        moviesIdMostRentedList = [0] * len(movieRepo.getList())
+        timesMovieRentedList = [0] * len(movieRepo.getList())
+        for movie in movieRepo.getList():
+            moviesIdMostRentedList[movie.getId()] = movie.getId()
+
+        for rental in self.getRentalList():
+            timesMovieRentedList[rental.getMovieId()] += 1
+
+        for i in range(0, len(movieRepo.getList()) - 1):
+            for j in range(i + 1, len(movieRepo.getList())):
+                if timesMovieRentedList[i] < timesMovieRentedList[j]:
+                    aux = timesMovieRentedList[j]
+                    timesMovieRentedList[j] = timesMovieRentedList[i]
+                    timesMovieRentedList[i] = aux
+
+                    aux = moviesIdMostRentedList[j]
+                    moviesIdMostRentedList[j] = moviesIdMostRentedList[i]
+                    moviesIdMostRentedList[i] = aux
+
+        moviesMostRentedList = [None] * len(movieRepo.getList())
+        i = 0
+        for movieId in moviesIdMostRentedList:
+            moviesMostRentedList[i] = movieRepo.getMovieWithId(movieId)
+            i += 1
+        return moviesMostRentedList
+
+    def moviesMostRentedByDays(self, movieRepo):
+        constants = Constants()
+        moviesIdMostRentedList = [0] * len(movieRepo.getList())
+        daysMovieRentedList = [0] * len(movieRepo.getList())
+        for movie in movieRepo.getList():
+            moviesIdMostRentedList[movie.getId()] = movie.getId()
+
+        for rental in self.getRentalList():
+            if rental.getReturnedDate() is None:
+                daysToAdd = constants.currentDay().daysUntilDate(rental.getRentedDate())
+            else:
+                daysToAdd = rental.getRentedDate().daysUntilDate(rental.getReturnedDate())
+            daysMovieRentedList[rental.getMovieId()] += daysToAdd
+
+        for i in range(0, len(movieRepo.getList()) - 1):
+            for j in range(i + 1, len(movieRepo.getList())):
+                if daysMovieRentedList[i] < daysMovieRentedList[j]:
+                    aux = daysMovieRentedList[j]
+                    daysMovieRentedList[j] = daysMovieRentedList[i]
+                    daysMovieRentedList[i] = aux
+
+                    aux = moviesIdMostRentedList[j]
+                    moviesIdMostRentedList[j] = moviesIdMostRentedList[i]
+                    moviesIdMostRentedList[i] = aux
+
+        moviesMostRentedList = [None] * len(movieRepo.getList())
+        i = 0
+        for movieId in moviesIdMostRentedList:
+            moviesMostRentedList[i] = movieRepo.getMovieWithId(movieId)
+            i += 1
+        return moviesMostRentedList
+
+    def mostActiveClients(self, clientRepo):
+        constants = Constants()
+        mostActiveClientsId = [0] * len(clientRepo.getList())
+        clientsActivityList = [0] * len(clientRepo.getList())
+        for client in clientRepo.getList():
+            mostActiveClientsId[client.getId()] = client.getId()
+
+        for rental in self.getRentalList():
+            if rental.getReturnedDate() is None:
+                daysToAdd = constants.currentDay().daysUntilDate(rental.getRentedDate())
+            else:
+                daysToAdd = rental.getRentedDate().daysUntilDate(rental.getReturnedDate())
+            clientsActivityList[rental.getClientId()] += daysToAdd
+
+        for i in range(0, len(clientRepo.getList()) - 1):
+            for j in range(i + 1, len(clientRepo.getList())):
+                if clientsActivityList[i] < clientsActivityList[j]:
+                    aux = clientsActivityList[j]
+                    clientsActivityList[j] = clientsActivityList[i]
+                    clientsActivityList[i] = aux
+
+                    aux = mostActiveClientsId[j]
+                    mostActiveClientsId[j] = mostActiveClientsId[i]
+                    mostActiveClientsId[i] = aux
+
+        clientsMostActiveList = [None] * len(clientRepo.getList())
+        i = 0
+        for movieId in mostActiveClientsId:
+            clientsMostActiveList[i] = clientRepo.getClientWithId(movieId)
+            i += 1
+        return clientsMostActiveList
+
+    def moviesCurrentlyRented(self, movieRepo):
+        moviesRentedNow = []
+        for rental in self.getRentalList():
+            if rental.getReturnedDate() is None:
+                moviesRentedNow.append(movieRepo.getMovieWithId(rental.getMovieId()))
+        return moviesRentedNow
+
+    def moviesPastDueDate(self, movieRepo):
+        rentalsPassedDueDate = []
+        constants = Constants()
+        for rental in self.getRentalList():
+            if rental.getReturnedDate() is None and rental.getDueDate().isBeforeDate(self.__constants.currentDay()):
+                rentalsPassedDueDate.append(rental)
+
+        for i in range(0, len(rentalsPassedDueDate) - 1):
+            for j in range(i + 1, len(rentalsPassedDueDate)):
+                if constants.currentDay().daysUntilDate(rentalsPassedDueDate[i].getRentedDate()) < constants.currentDay().daysUntilDate(rentalsPassedDueDate[j].getRentedDate()):
+                    aux = rentalsPassedDueDate[i]
+                    rentalsPassedDueDate[i] = rentalsPassedDueDate[j]
+                    rentalsPassedDueDate[j] = aux
+
+        moviesPassedDueDateSorted = []
+        for rental in rentalsPassedDueDate:
+            moviesPassedDueDateSorted.append(movieRepo.getMovieWithId(rental.getMovieId()))
+        return moviesPassedDueDateSorted

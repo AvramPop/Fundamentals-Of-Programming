@@ -8,7 +8,7 @@ class ClientController:
     def __init__(self, clientRepo) -> None:
         self.__clientRepo = clientRepo
 
-    def _getRepo(self):
+    def getRepo(self):
         return self.__clientRepo
 
     def addClient(self, client):
@@ -23,7 +23,7 @@ class ClientController:
     def getClientList(self):
         return self.__clientRepo.getList()
 
-    def removeClientWithId(self, clientId):
+    def removeClientWithId(self, clientId):   # TODO approve just if no movies not returned
         self.__clientRepo.removeClientWithId(clientId)
 
     def updateClientWithId(self, clientId, updatedClient):

@@ -23,11 +23,11 @@ class TestRental(TestCase):
         self.movieRepo = None
 
     def test_init(self):
-        self.assertEqual(self.rental.getMovieId(), 0)
-        self.assertEqual(self.rental.getClientId(), 0)
+        self.assertEqual(self.rental.getId(), 0)
+        self.assertEqual(self.rental.getId(), 0)
         self.assertEqual(self.rental.getRentedDate(), Date(5, 4, 2018))
         self.assertEqual(self.rental.getDueDate(), Date(7, 9, 2020))
-        self.assertRaises(TypeError, lambda: self.rental.getRentalId(), 'default rental id not None')
+        self.assertRaises(TypeError, lambda: self.rental.getId(), 'default rental id not None')
         self.assertRaises(TypeError, lambda: self.rental.getReturnedDate(), 'default returned date not None')
         with self.assertRaises(ValueError):
             testRental = Rental(0, "s", Date(22, 4, 1995), Date(22, 4, 1996), self.movieRepo, self.clientRepo)
@@ -67,7 +67,7 @@ class TestRental(TestCase):
         with self.assertRaises(ValueError):
             self.rental.setRentalId("dsaa")
         self.rental.setRentalId(5)
-        self.assertEqual(self.rental.getRentalId(), 5, "rental id set wrong")
+        self.assertEqual(self.rental.getId(), 5, "rental id set wrong")
 
     def test_setReturnedDate(self):
         with self.assertRaises(ValueError):
