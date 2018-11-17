@@ -69,7 +69,6 @@ class RentalController:
         return False
 
     def __isMovieAvailable(self, movieId):  # TODO check if have to check if movie exist (probably handled in ui)
-        # TODO URGENT new rental not added (persistence)
         movieRentalList = []
         for rental in self.getRentalList():
             if rental.getMovieId() == movieId:

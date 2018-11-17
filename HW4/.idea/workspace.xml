@@ -2,14 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9902384d-ba54-4e59-8b6e-2d02ed0913fb" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/main/Exception.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/Exception.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/controller/ClientController.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/controller/ClientController.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/controller/MovieController.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/controller/MovieController.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/controller/RentalController.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/controller/RentalController.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/Validator.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/Validator.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main/ui/Console.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/ui/Console.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/controller/TestRentalController.py" beforeDir="false" afterPath="$PROJECT_DIR$/test/controller/TestRentalController.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/model/TestRental.py" beforeDir="false" afterPath="$PROJECT_DIR$/test/model/TestRental.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/repo/TestRentalRepo.py" beforeDir="false" afterPath="$PROJECT_DIR$/test/repo/TestRentalRepo.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Lab2/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab2/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../lab03/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../lab03/.idea/workspace.xml" afterDir="false" />
     </list>
@@ -29,7 +23,7 @@
     <SUITE FILE_PATH="coverage/HW4$Unittests_for_TestClientRepo_TestClientRepo_test_removeClient.coverage" NAME="Unittests for TestClientRepo.TestClientRepo.test_removeClient Coverage Results" MODIFIED="1542197892417" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test/repo" />
     <SUITE FILE_PATH="coverage/HW4$Unittests_in_model.coverage" NAME="Unittests in model Coverage Results" MODIFIED="1541170107584" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test/model" />
     <SUITE FILE_PATH="coverage/HW4$Unittests_for_ClientTests_ClientTests.coverage" NAME="Unittests for ClientTests.ClientTests Coverage Results" MODIFIED="1541173810795" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test/model" />
-    <SUITE FILE_PATH="coverage/HW4$Main.coverage" NAME="Main Coverage Results" MODIFIED="1542476931068" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/main" />
+    <SUITE FILE_PATH="coverage/HW4$Main.coverage" NAME="Main Coverage Results" MODIFIED="1542478118475" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/main" />
     <SUITE FILE_PATH="coverage/HW4$Unittests_for_TestMovieRepo_TestMovieRepo.coverage" NAME="Unittests for TestMovieRepo.TestMovieRepo Coverage Results" MODIFIED="1542196516052" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test/repo" />
     <SUITE FILE_PATH="coverage/HW4$Unittests_for_TestRental_TestRental_test_setReturnedDateSecondTime.coverage" NAME="Unittests for TestRental.TestRental.test_setReturnedDateSecondTime Coverage Results" MODIFIED="1541193936108" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test/model" />
     <SUITE FILE_PATH="coverage/HW4$Unittests_for_TestRentalController_TestRentalController_test_return.coverage" NAME="Unittests for TestRentalController.TestRentalController.test_return Coverage Results" MODIFIED="1542206465906" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test/controller" />
@@ -121,26 +115,26 @@
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="coverage" value="1" />
-          <entry key="py" value="526" />
+          <entry key="py" value="527" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="PLAIN_TEXT" value="1" />
-          <entry key="Python" value="526" />
+          <entry key="Python" value="527" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="Python Console" value="16" />
           <entry key="dummy" value="103" />
-          <entry key="py" value="39079" />
+          <entry key="py" value="39624" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="PLAIN_TEXT" value="103" />
-          <entry key="Python" value="39095" />
+          <entry key="Python" value="39640" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.js.language.service.starts" />
@@ -152,11 +146,21 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/main/ui/Console.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="548">
-              <caret line="110" lean-forward="true" selection-start-line="110" selection-end-line="110" />
+            <state relative-caret-position="635">
+              <caret line="36" column="39" selection-start-line="36" selection-start-column="39" selection-end-line="36" selection-end-column="39" />
               <folding>
                 <element signature="e#0#36#0" expanded="true" />
-                <element signature="e#1650#6288#0" />
+                <element signature="e#1502#8833#0" />
+                <element signature="e#1687#5235#0" />
+                <element signature="e#1950#2822#0" />
+                <element signature="e#2961#3910#0" />
+                <element signature="e#4008#4767#0" />
+                <element signature="e#6029#6183#0" />
+                <element signature="e#5234#8759#0" />
+                <element signature="e#5440#6305#0" />
+                <element signature="e#6746#7717#0" />
+                <element signature="e#7526#8282#0" />
+                <element signature="e#8331#8529#0" />
                 <element signature="e#8841#14395#0" />
                 <element signature="e#14453#15612#0" />
                 <element signature="e#15669#17507#0" />
@@ -180,12 +184,12 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/main/controller/MovieController.py">
+        <entry file="file://$PROJECT_DIR$/main/Validator.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="864">
-              <caret line="63" lean-forward="true" selection-start-line="63" selection-end-line="63" />
+            <state relative-caret-position="720">
+              <caret line="40" column="47" selection-start-line="40" selection-start-column="47" selection-end-line="40" selection-end-column="47" />
               <folding>
-                <element signature="e#0#56#0" expanded="true" />
+                <marker date="1542478020760" expanded="true" signature="17:22" ph="..." />
               </folding>
             </state>
           </provider>
@@ -300,7 +304,6 @@
         <option value="$PROJECT_DIR$/test/misc/TestUtils.py" />
         <option value="$PROJECT_DIR$/main/ui/Printer.py" />
         <option value="$PROJECT_DIR$/main/Constants.py" />
-        <option value="$PROJECT_DIR$/main/Validator.py" />
         <option value="$PROJECT_DIR$/main/model/Client.py" />
         <option value="$PROJECT_DIR$/main/model/Movie.py" />
         <option value="$PROJECT_DIR$/main/model/Rental.py" />
@@ -317,6 +320,7 @@
         <option value="$PROJECT_DIR$/main/controller/ClientController.py" />
         <option value="$PROJECT_DIR$/main/Exception.py" />
         <option value="$PROJECT_DIR$/main/controller/MovieController.py" />
+        <option value="$PROJECT_DIR$/main/Validator.py" />
         <option value="$PROJECT_DIR$/main/ui/Console.py" />
       </list>
     </option>
@@ -1150,16 +1154,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/main/Validator.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="522">
-          <caret line="29" column="39" selection-start-line="29" selection-start-column="39" selection-end-line="29" selection-end-column="39" />
-          <folding>
-            <marker date="1542296068162" expanded="true" signature="17:22" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/main/ui/Printer.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="540">
@@ -1297,18 +1291,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/main/controller/ClientController.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="576">
-          <caret line="41" column="43" lean-forward="true" selection-start-line="41" selection-start-column="43" selection-end-line="41" selection-end-column="43" />
-          <folding>
-            <element signature="e#0#36#0" expanded="true" />
-            <marker date="1542476592472" expanded="true" signature="295:340" ph="..." />
-            <marker date="1542476592472" expanded="true" signature="358:397" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/main/Exception.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="815">
@@ -1321,21 +1303,53 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/main/controller/MovieController.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="864">
-          <caret line="63" lean-forward="true" selection-start-line="63" selection-end-line="63" />
+        <state relative-caret-position="522">
+          <caret line="29" column="37" lean-forward="true" selection-start-line="29" selection-start-column="37" selection-end-line="29" selection-end-column="37" />
           <folding>
             <element signature="e#0#56#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/main/ui/Console.py">
+    <entry file="file://$PROJECT_DIR$/main/controller/ClientController.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="548">
-          <caret line="110" lean-forward="true" selection-start-line="110" selection-end-line="110" />
+        <state relative-caret-position="576">
+          <caret line="41" column="43" lean-forward="true" selection-start-line="41" selection-start-column="43" selection-end-line="41" selection-end-column="43" />
           <folding>
             <element signature="e#0#36#0" expanded="true" />
-            <element signature="e#1650#6288#0" />
+            <marker date="1542476592472" expanded="true" signature="295:340" ph="..." />
+            <marker date="1542476592472" expanded="true" signature="358:397" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main/Validator.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="720">
+          <caret line="40" column="47" selection-start-line="40" selection-start-column="47" selection-end-line="40" selection-end-column="47" />
+          <folding>
+            <marker date="1542478020760" expanded="true" signature="17:22" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main/ui/Console.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="635">
+          <caret line="36" column="39" selection-start-line="36" selection-start-column="39" selection-end-line="36" selection-end-column="39" />
+          <folding>
+            <element signature="e#0#36#0" expanded="true" />
+            <element signature="e#1502#8833#0" />
+            <element signature="e#1687#5235#0" />
+            <element signature="e#1950#2822#0" />
+            <element signature="e#2961#3910#0" />
+            <element signature="e#4008#4767#0" />
+            <element signature="e#6029#6183#0" />
+            <element signature="e#5234#8759#0" />
+            <element signature="e#5440#6305#0" />
+            <element signature="e#6746#7717#0" />
+            <element signature="e#7526#8282#0" />
+            <element signature="e#8331#8529#0" />
             <element signature="e#8841#14395#0" />
             <element signature="e#14453#15612#0" />
             <element signature="e#15669#17507#0" />

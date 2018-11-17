@@ -30,5 +30,19 @@ class Validator:
                     isValidQuery = True
         return isValidQuery
 
+    def isValidRemoveQuery(self, removeQuery):
+        if len(removeQuery) != 2:
+            return False
+        if not removeQuery[1].isdigit():
+            return False
+        return True
+
+    def isValidUpdateQueryWithNumberOfElements(self, updateQuery, numberOfElements):
+        if len(updateQuery) != numberOfElements:
+            return False
+        if not updateQuery[1].isdigit():
+            return False
+        return True
+
 
 

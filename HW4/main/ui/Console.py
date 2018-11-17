@@ -57,27 +57,22 @@ class Console:
                                 else:
                                     print("Wrong input")
                             elif optionInputWordList[0] == "remove":
-                                if len(optionInputWordList) == 2:
-                                    if optionInputWordList[1].isdigit():
-                                        try:
-                                            self.clientController.removeClientWithId(int(optionInputWordList[1]), self.rentalController.getRepo())
-                                        except ClientHasMoviesNotReturnedException as clientHasMoviesNotReturnedException:
-                                            print("Client with id #", optionInputWordList[1], "has movies not returned. Couldn't delete")
-                                        except ObjectNotInCollectionException as objectNotInCollectionException:
-                                            print("Client with id", optionInputWordList[1], "not found")
-                                        else:
-                                            print("Successfully removed client #", optionInputWordList[1])
+                                if self.validator.isValidRemoveQuery(optionInputWordList):
+                                    try:
+                                        self.clientController.removeClientWithId(int(optionInputWordList[1]), self.rentalController.getRepo())
+                                    except ClientHasMoviesNotReturnedException as clientHasMoviesNotReturnedException:
+                                        print("Client with id #", optionInputWordList[1], "has movies not returned. Couldn't delete")
+                                    except ObjectNotInCollectionException as objectNotInCollectionException:
+                                        print("Client with id", optionInputWordList[1], "not found")
                                     else:
-                                        print("wrong input")
+                                        print("Successfully removed client #", optionInputWordList[1])
                                 else:
                                     print("wrong input")
                             elif optionInputWordList[0] == "update":
-                                if len(optionInputWordList) == 3:
+                                if self.validator.isValidUpdateQueryWithNumberOfElements(optionInputWordList, 3):
                                     try:
-                                        if optionInputWordList[1].isdigit():
-                                            self.clientController.updateClientWithId(int(optionInputWordList[1]), Client(optionInputWordList[2]))
-                                        else:
-                                            print("wrong input")
+                                        self.clientController.updateClientWithId(int(optionInputWordList[1]),
+                                                                                 Client(optionInputWordList[2]))
                                     except ObjectNotInCollectionException as objectNotInCollectionException:
                                         print("Client with id", optionInputWordList[1], "not found")
                                     else:
@@ -89,6 +84,8 @@ class Console:
                                 print("Successfully added client", optionInputWordList[1])
                             elif optionInputWordList[0] == "back":
                                 break
+                            else:
+                                print("wrong input")
                     elif menuChosen == "movie":
                         while True:
                             self.printer.printSubmenu("movieMenu")
@@ -108,28 +105,21 @@ class Console:
                                 else:
                                     print("Wrong input")
                             elif optionInputWordList[0] == "remove":
-                                if len(optionInputWordList) == 2:
-                                    if optionInputWordList[1].isdigit():
-                                        try:
-                                            self.movieController.removeMovieWithId(int(optionInputWordList[1]), self.rentalController.getRepo())
-                                        except ObjectNotInCollectionException as objectNotInCollectionException:
-                                            print("Movie with id", optionInputWordList[1], "not found")
-                                        except MovieCurrentlyRentedException as movieCurrentlyRentedException:
-                                            print("Movie with id #", optionInputWordList[1],
-                                                  "is currently rented. Couldn't delete")
-                                        else:
-                                            print("Successfully removed movie #", optionInputWordList[1])
+                                if self.validator.isValidRemoveQuery(optionInputWordList):
+                                    try:
+                                        self.movieController.removeMovieWithId(int(optionInputWordList[1]), self.rentalController.getRepo())
+                                    except ObjectNotInCollectionException as objectNotInCollectionException:
+                                        print("Movie with id", optionInputWordList[1], "not found")
+                                    except MovieCurrentlyRentedException as movieCurrentlyRentedException:
+                                        print("Movie with id #", optionInputWordList[1], "is currently rented. Couldn't delete")
                                     else:
-                                        print("wrong input")
+                                        print("Successfully removed movie #", optionInputWordList[1])
                                 else:
                                     print("wrong input")
                             elif optionInputWordList[0] == "update":
-                                if len(optionInputWordList) == 5:
+                                if self.validator.isValidUpdateQueryWithNumberOfElements(optionInputWordList, 5):
                                     try:
-                                        if optionInputWordList[1].isdigit():
-                                            self.movieController.updateMovieWithId(int(optionInputWordList[1]), Movie(optionInputWordList[2], optionInputWordList[3], optionInputWordList[4]))
-                                        else:
-                                            print("wrong input")
+                                        self.movieController.updateMovieWithId(int(optionInputWordList[1]), Movie(optionInputWordList[2], optionInputWordList[3], optionInputWordList[4]))
                                     except ObjectNotInCollectionException as objectNotInCollectionException:
                                         print("Movie with id", optionInputWordList[1], "not found")
                                     else:
@@ -141,6 +131,8 @@ class Console:
                                 print("Successfully added movie", optionInputWordList[1])
                             elif optionInputWordList[0] == "back":
                                 break
+                            else:
+                                print("wrong input")
                     elif menuChosen == "back":
                         break
                     else:
