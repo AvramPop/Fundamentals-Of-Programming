@@ -60,7 +60,7 @@ class RentalController:
     def __clientHasPassedDueDateMovies(self, clientId):
         clientRentalList = []
         for rental in self.getRentalList():
-            if rental.getId() == clientId:
+            if rental.getClientId() == clientId:
                 clientRentalList.append(rental)
 
         for rental in clientRentalList:
@@ -72,7 +72,7 @@ class RentalController:
         # TODO URGENT new rental not added (persistence)
         movieRentalList = []
         for rental in self.getRentalList():
-            if rental.getId() == movieId:
+            if rental.getMovieId() == movieId:
                 movieRentalList.append(rental)
 
         if len(movieRentalList) == 0:  # movie never rented

@@ -23,8 +23,8 @@ class TestRental(TestCase):
         self.movieRepo = None
 
     def test_init(self):
-        self.assertEqual(self.rental.getId(), 0)
-        self.assertEqual(self.rental.getId(), 0)
+        self.assertEqual(self.rental.getMovieId(), 0)
+        self.assertEqual(self.rental.getClientId(), 0)
         self.assertEqual(self.rental.getRentedDate(), Date(5, 4, 2018))
         self.assertEqual(self.rental.getDueDate(), Date(7, 9, 2020))
         self.assertRaises(TypeError, lambda: self.rental.getId(), 'default rental id not None')

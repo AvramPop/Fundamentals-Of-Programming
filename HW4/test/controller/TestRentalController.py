@@ -43,15 +43,19 @@ class TestRentalController(TestCase):
         self.rentalRepo.clean()
 
     def test_rent(self):
+        printer = Printer()
         with self.assertRaises(DatesNotOrderedException):
             self.rentalController.rentMovieByClientUntilDate(0, 0, Date(1, 1, 1999), self.movieRepo, self.clientRepo)
         self.rentalController.getRepo().addRental(
             Rental(3, 4, Date(5, 4, 2012), Date(7, 9, 2013), self.movieRepo, self.clientRepo))
+        printer.printList(self.rentalController.getRepo().getList())
         with self.assertRaises(ClientHasMoviesNotReturnedException):
             self.rentalController.rentMovieByClientUntilDate(3, 3, Date(5, 5, 2025), self.movieRepo, self.clientRepo)
         with self.assertRaises(MovieNotAvailableException):
             self.rentalController.rentMovieByClientUntilDate(0, 4, Date(5, 5, 2025), self.movieRepo, self.clientRepo)
         self.rentalController.rentMovieByClientUntilDate(5, 5, Date(5, 5, 2025), self.movieRepo, self.clientRepo)
+
+        # printer.printList(self.rentalController.getRepo().getList())
         rentalTest1 = Rental(0, 0, Date(5, 4, 2018), Date(7, 9, 2020), self.movieRepo, self.clientRepo)
         rentalTest1.setRentalId(0)
         rentalTest2 = Rental(1, 1, Date(5, 4, 2018), Date(7, 9, 2020), self.movieRepo, self.clientRepo)
@@ -61,6 +65,8 @@ class TestRentalController(TestCase):
         rentalTest4 = Rental(5, 5, self.constants.currentDay(), Date(5, 5, 2025), self.movieRepo, self.clientRepo)
         rentalTest4.setRentalId(3)
         self.assertEqual(self.rentalController.getRentalList(), [rentalTest1, rentalTest2, rentalTest3, rentalTest4])
+        with self.assertRaises(MovieNotAvailableException):
+            self.rentalController.rentMovieByClientUntilDate(5, 5, Date(5, 5, 2025), self.movieRepo, self.clientRepo)
 
     def test_return(self):
         printer = Printer()

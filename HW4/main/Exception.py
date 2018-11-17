@@ -53,5 +53,6 @@ class MovieNotCurrentlyRentedByClientException(Exception):
         super().__init__(*args, **kwargs)
 
 
-class excceptiaMea(Exception):
-    pass
+class MovieCurrentlyRentedException(Exception):
+    def __init__(self, *args: object, **kwargs: object) -> None:
+        super().__init__(*args, **kwargs)

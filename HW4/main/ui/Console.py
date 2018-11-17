@@ -1,6 +1,7 @@
 from main.Constants import Constants
 from main.Exception import ObjectNotInCollectionException, DatesNotOrderedException, InvalidDateFormatException, \
-    ClientHasMoviesNotReturnedException, MovieNotAvailableException, MovieNotCurrentlyRentedByClientException
+    ClientHasMoviesNotReturnedException, MovieNotAvailableException, MovieNotCurrentlyRentedByClientException, \
+    MovieCurrentlyRentedException
 from main.Validator import Validator
 from main.controller.ClientController import ClientController
 from main.controller.MovieController import MovieController
@@ -8,7 +9,6 @@ from main.controller.RentalController import RentalController
 from main.model.Client import Client
 from main.model.Date import Date
 from main.model.Movie import Movie
-from main.model.Rental import Rental
 from main.repo.ClientRepo import ClientRepo
 from main.repo.MovieRepo import MovieRepo
 from main.repo.RentalRepo import RentalRepo
@@ -27,7 +27,7 @@ class Console:
     rentalController = RentalController(rentalRepo)
     clientController.populateRepo()
     movieController.populateRepo()
-    rentalController.populateRepo(movieRepo, clientRepo)
+    rentalController.populateRepo(movieController.getRepo(), clientController.getRepo())
 
     def run(self):  # TODO refactor this ugly thing
 
@@ -58,15 +58,17 @@ class Console:
                                     print("Wrong input")
                             elif optionInputWordList[0] == "remove":
                                 if len(optionInputWordList) == 2:
-                                    try:
-                                        if optionInputWordList[1].isdigit():
-                                            self.clientController.removeClientWithId(int(optionInputWordList[1]))
+                                    if optionInputWordList[1].isdigit():
+                                        try:
+                                            self.clientController.removeClientWithId(int(optionInputWordList[1]), self.rentalController.getRepo())
+                                        except ClientHasMoviesNotReturnedException as clientHasMoviesNotReturnedException:
+                                            print("Client with id #", optionInputWordList[1], "has movies not returned. Couldn't delete")
+                                        except ObjectNotInCollectionException as objectNotInCollectionException:
+                                            print("Client with id", optionInputWordList[1], "not found")
                                         else:
-                                            print("wrong input")
-                                    except ObjectNotInCollectionException as objectNotInCollectionException:
-                                        print("Client with id", optionInputWordList[1], "not found")
+                                            print("Successfully removed client #", optionInputWordList[1])
                                     else:
-                                        print("Successfully removed client #", optionInputWordList[1])
+                                        print("wrong input")
                                 else:
                                     print("wrong input")
                             elif optionInputWordList[0] == "update":
@@ -107,15 +109,18 @@ class Console:
                                     print("Wrong input")
                             elif optionInputWordList[0] == "remove":
                                 if len(optionInputWordList) == 2:
-                                    try:
-                                        if optionInputWordList[1].isdigit():
-                                            self.movieController.removeMovieWithId(int(optionInputWordList[1]))
+                                    if optionInputWordList[1].isdigit():
+                                        try:
+                                            self.movieController.removeMovieWithId(int(optionInputWordList[1]), self.rentalController.getRepo())
+                                        except ObjectNotInCollectionException as objectNotInCollectionException:
+                                            print("Movie with id", optionInputWordList[1], "not found")
+                                        except MovieCurrentlyRentedException as movieCurrentlyRentedException:
+                                            print("Movie with id #", optionInputWordList[1],
+                                                  "is currently rented. Couldn't delete")
                                         else:
-                                            print("wrong input")
-                                    except ObjectNotInCollectionException as objectNotInCollectionException:
-                                        print("Movie with id", optionInputWordList[1], "not found")
+                                            print("Successfully removed movie #", optionInputWordList[1])
                                     else:
-                                        print("Successfully removed movie #", optionInputWordList[1])
+                                        print("wrong input")
                                 else:
                                     print("wrong input")
                             elif optionInputWordList[0] == "update":

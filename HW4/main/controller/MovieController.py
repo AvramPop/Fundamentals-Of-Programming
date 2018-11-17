@@ -1,3 +1,4 @@
+from main.Exception import MovieCurrentlyRentedException
 from main.Utils import stringsPartiallyMatch
 from main.repo.MovieRepo import MovieRepo
 
@@ -22,8 +23,11 @@ class MovieController:
     def getMovieList(self):
         return self.__movieRepo.getList()
 
-    def removeMovieWithId(self, movieId):   # TODO approve just if not rented
-        self.__movieRepo.removeMovieWithId(movieId)
+    def removeMovieWithId(self, movieId, rentalRepo):
+        if not self.__isMovieRented(movieId, rentalRepo):
+            self.__movieRepo.removeMovieWithId(movieId)
+        else:
+            raise MovieCurrentlyRentedException
 
     def updateMovieWithId(self, movieId, updatedMovie):
         self.__movieRepo.updateMovieWithId(movieId, updatedMovie)
@@ -51,3 +55,10 @@ class MovieController:
             if stringsPartiallyMatch(movie.getDescription(), movieDescriptionToFind):
                 movieListWithPartialDescriptionCorresponding.append(movie)
         return movieListWithPartialDescriptionCorresponding
+
+    def __isMovieRented(self, movieId, rentalRepo):
+        for rental in rentalRepo.getList():
+            if rental.getMovieId() == movieId and rental.getReturnedDate() is None:
+                return True
+        return False
+

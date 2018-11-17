@@ -1,3 +1,5 @@
+from main.Constants import Constants
+from main.Exception import ClientHasMoviesNotReturnedException
 from main.Utils import stringsPartiallyMatch
 from main.repo.ClientRepo import ClientRepo
 from difflib import SequenceMatcher
@@ -23,8 +25,11 @@ class ClientController:
     def getClientList(self):
         return self.__clientRepo.getList()
 
-    def removeClientWithId(self, clientId):   # TODO approve just if no movies not returned
-        self.__clientRepo.removeClientWithId(clientId)
+    def removeClientWithId(self, clientId, rentalRepo):
+        if not self.clientHasMoviesNotReturned(clientId, rentalRepo):
+            self.__clientRepo.removeClientWithId(clientId)
+        else:
+            raise ClientHasMoviesNotReturnedException
 
     def updateClientWithId(self, clientId, updatedClient):
         self.__clientRepo.updateClientWithId(clientId, updatedClient)
@@ -38,4 +43,12 @@ class ClientController:
             if stringsPartiallyMatch(client.getName(), clientNameToFind):
                 clientListWithPartialNameCorresponding.append(client)
         return clientListWithPartialNameCorresponding
+
+    def clientHasMoviesNotReturned(self, clientId, rentalRepo):
+        constants = Constants()
+        for rental in rentalRepo.getList():
+            if rental.getClientId() == clientId:
+                if rental.getReturnedDate() is None and rental.getDueDate().isBeforeDate(constants.currentDay()):
+                    return True
+        return False
 
