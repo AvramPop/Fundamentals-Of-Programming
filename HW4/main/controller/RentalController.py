@@ -98,7 +98,7 @@ class RentalController:
         moviesIdMostRentedList = [0] * len(movieRepo.getList())
         timesMovieRentedList = [0] * len(movieRepo.getList())
         for movie in movieRepo.getList():
-            moviesIdMostRentedList[movie.getId()] = movie.getId()
+            moviesIdMostRentedList[movie.getId()] = movie.getId()  # TODO FIXME this crashes
 
         for rental in self.getRentalList():
             timesMovieRentedList[rental.getMovieId()] += 1

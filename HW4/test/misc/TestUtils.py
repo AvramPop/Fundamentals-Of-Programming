@@ -5,6 +5,6 @@ from main.Utils import stringsPartiallyMatch
 
 class TestUtils(TestCase):
     def test_stringsPartiallyMatch(self):
-        self.assertTrue(stringsPartiallyMatch("cement", "cemetery"))
-        self.assertTrue(stringsPartiallyMatch("cEMENT", "cemetery"))
+        self.assertTrue(stringsPartiallyMatch("cemetery", "cem"))
+        self.assertTrue(stringsPartiallyMatch("cem", "c"))
         self.assertFalse(stringsPartiallyMatch("iosif", "dani"))
