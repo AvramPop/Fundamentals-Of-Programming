@@ -55,7 +55,7 @@ class RentalController:
         """
         movieFound = False
         for rental in self.getRentalList():
-            if rental.getId() == movieId and rental.getId() == clientId and rental.getReturnedDate() is None:
+            if rental.getMovieId() == movieId and rental.getClientId() == clientId and rental.getReturnedDate() is None:
                 constants = Constants()
                 rental.setReturnedDate(constants.currentDay())
                 self.updateRentalWithId(rental.getId(), rental)
