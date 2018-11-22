@@ -5,8 +5,9 @@ def stringsPartiallyMatch(string1, string2):
     """
     Check whether string1 and string2 match with precision over 0.6
     """
-    sequenceMatcher = SequenceMatcher(None, string1.lower(), string2.lower())
-    return sequenceMatcher.ratio() > 0.6
+    return string2.lower() in string1.lower()
+    # sequenceMatcher = SequenceMatcher(None, string1.lower(), string2.lower())
+    # return sequenceMatcher.ratio() > 0.5
 
 
 def sortListById(listToSort):
