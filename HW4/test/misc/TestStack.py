@@ -13,12 +13,12 @@ class TestStack(TestCase):
     def test_push(self):
         self.stack.push("a")
         self.stack.push("b")
-        self.assertEquals(self.stack.pop(), "b")
+        self.assertEqual(self.stack.pop(), "b")
 
     def test_pop(self):
         self.stack.push("a")
         self.stack.push("b")
-        self.assertEquals(self.stack.pop(), "b")
-        self.assertEquals(self.stack.pop(), "a")
+        self.assertEqual(self.stack.pop(), "b")
+        self.assertEqual(self.stack.pop(), "a")
         with self.assertRaises(IndexError):
             self.stack.pop()

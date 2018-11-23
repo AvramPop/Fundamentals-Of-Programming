@@ -1,4 +1,3 @@
-from main.UndoRunner import CommandsGenerator
 from main.Constants import Constants
 from main.Exception import ObjectNotInCollectionException, DatesNotOrderedException, InvalidDateFormatException, \
     ClientHasMoviesNotReturnedException, MovieNotAvailableException, MovieNotCurrentlyRentedByClientException, \
@@ -21,18 +20,18 @@ class Console:
     printer = Printer()
     validator = Validator()
     constants = Constants()
-    clientRepo = ClientRepo()
-    movieRepo = MovieRepo()
-    rentalRepo = RentalRepo()
-    clientController = ClientController(clientRepo)
-    movieController = MovieController(movieRepo)
-    rentalController = RentalController(rentalRepo)
+    # clientRepo = ClientRepo()
+    # movieRepo = MovieRepo()
+    # rentalRepo = RentalRepo()
+    clientController = ClientController(ClientRepo())
+    movieController = MovieController(MovieRepo())
+    rentalController = RentalController(RentalRepo())
     clientController.populateRepo()
     movieController.populateRepo()
-    rentalController.populateRepo(movieController.getRepo(), clientController.getRepo())
+    rentalController.populateRepo(movieController.getRepo(), clientController.getRepo())  # TODO do these really update as they should?
     undoStack = Stack()
     redoStack = Stack()
-    commandsGenerator = CommandsGenerator()
+    # commandsGenerator = CommandsGenerator()
 
     def run(self):
 

@@ -1,10 +1,10 @@
 class UndoRunner:
 
-    def addOppositeCommandToStack(self, command, controller, stack, typeWorkingWith):
+    def addCommand(self, command, controller, stack, typeWorkingWith):
         # for every command add to stack the command + id of element + type
         if typeWorkingWith == "client":
             if command[0] == "add":
-                stack.push(self.__addClientOppositeCommand(command, controller))
+                stack.push(self.__addClientOppositeCommand(controller))
             elif command[0] == "remove":
                 stack.push(self.__removeClientOppositeCommand(command, controller))
             elif command[0] == "update":
@@ -13,7 +13,7 @@ class UndoRunner:
                 return
         elif typeWorkingWith == "movie":
             if command[0] == "add":
-                stack.push(self.__addMovieOppositeCommand(command, controller))
+                stack.push(self.__addMovieOppositeCommand(controller))
             elif command[0] == "remove":
                 stack.push(self.__removeMovieOppositeCommand(command, controller))
             elif command[0] == "update":
@@ -22,7 +22,7 @@ class UndoRunner:
                 return
         elif typeWorkingWith == "rental":
             if command[0] == "rent":
-                stack.push(self.__rentOppositeCommand(command, controller))
+                stack.push(self.__rentOppositeCommand(controller))
             elif command[0] == "return":
                 stack.push(self.__returnOppositeCommand(command, controller))
             else:
@@ -38,13 +38,13 @@ class UndoRunner:
         oppositeCommand = ["rental", "returnedDateToNone"]
         for rental in controller.getRentalList():
             if rental.getMovieId() == int(parsedInputCommand[2]) and rental.getClientId() == int(parsedInputCommand[1]) and rental.getReturnedDate() is None:
-                oppositeCommand.append(rental.getId())
+                oppositeCommand.append(str(rental.getId()))
                 return oppositeCommand
         # return "rental" "returnedDateToNone" "rental id"
 
     def __rentOppositeCommand(self, controller):
         # got "rent" "client id" "movie id" "day" "month" "year"
-        oppositeCommand = ["rental", "remove", len(controller.getRentalList())]  # TODO maybe +1 or -1
+        oppositeCommand = ["rental", "remove", str(len(controller.getRentalList()))]  # TODO maybe +1 or -1
         return oppositeCommand
         # return "rental" "remove" "rental id"
 
@@ -68,13 +68,13 @@ class UndoRunner:
 
     def __addMovieOppositeCommand(self, controller):
         # got "add" "name" "description" "genre"
-        oppositeCommand = ["movie", "remove", len(controller.getMovieList)]  # TODO maybe + or - 1
+        oppositeCommand = ["movie", "remove", str(len(controller.getMovieList()))]  # TODO maybe + or - 1
         return oppositeCommand
         # return "movie" "remove" "id of movie to remove"
 
     def __addClientOppositeCommand(self, controller):
         # got "add" "name"
-        oppositeCommand = ["client", "remove", len(controller.getClientList())]  # TODO maybe +1 or -1
+        oppositeCommand = ["client", "remove", str(len(controller.getClientList()))]  # TODO maybe +1 or -1
         return oppositeCommand
         # return "client" "remove" "id of element to remove"
 
