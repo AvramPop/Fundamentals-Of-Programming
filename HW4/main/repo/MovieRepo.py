@@ -33,7 +33,6 @@ class MovieRepo:
         else:
             raise TypeError
 
-
     def __maximumIndexInMovieList(self):
         maximumIndex = -1
         for movie in self.__movieList:
@@ -80,7 +79,11 @@ class MovieRepo:
                 updatedMovie.setMovieId(movieId)
             self.__movieList[indexOfMovieToUpdateInList] = updatedMovie
 
-    def populate(self):
+    def addMovieWithId(self, movie):
+        self.__movieList.append(movie)
+        sortListById(self.__movieList)
+
+    def populateWithFew(self):
         self.addMovie(Movie("Titanic", "adventurous", "drama"))
         self.addMovie(Movie("Avatar", "nice", "action"))
         self.addMovie(Movie("Silence", "genial", "drama"))

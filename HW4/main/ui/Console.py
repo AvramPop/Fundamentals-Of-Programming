@@ -1,8 +1,9 @@
 from main.Constants import Constants
 from main.Exception import ObjectNotInCollectionException, DatesNotOrderedException, InvalidDateFormatException, \
     ClientHasMoviesNotReturnedException, MovieNotAvailableException, MovieNotCurrentlyRentedByClientException, \
-    MovieCurrentlyRentedException
+    MovieCurrentlyRentedException, EmptyStackException
 from main.Stack import Stack
+from main.UndoRunner import UndoRunner
 from main.Validator import Validator
 from main.controller.ClientController import ClientController
 from main.controller.MovieController import MovieController
@@ -20,18 +21,16 @@ class Console:
     printer = Printer()
     validator = Validator()
     constants = Constants()
-    # clientRepo = ClientRepo()
-    # movieRepo = MovieRepo()
-    # rentalRepo = RentalRepo()
     clientController = ClientController(ClientRepo())
     movieController = MovieController(MovieRepo())
     rentalController = RentalController(RentalRepo())
     clientController.populateRepo()
     movieController.populateRepo()
-    rentalController.populateRepo(movieController.getRepo(), clientController.getRepo())  # TODO do these really update as they should?
+    rentalController.populateRepo(movieController.getRepo(), clientController.getRepo())  # TODO do these really update as they should? remove checking seems wrong
     undoStack = Stack()
+    commandsStack = Stack()
     redoStack = Stack()
-    # commandsGenerator = CommandsGenerator()
+    undoRunner = UndoRunner()
 
     def run(self):
 
@@ -50,6 +49,22 @@ class Console:
                 return
             else:
                 print("Wrong input!")
+
+    def __undo(self):
+        try:
+            lastElement = self.commandsStack.lastElement()
+            self.undoRunner.undo(self.clientController, self.movieController, self.rentalController, self.undoStack)
+        except EmptyStackException as emptyStackException:
+            print("nothing to undo")
+        else:
+            self.redoStack.push(lastElement)
+            self.commandsStack.deleteLastElement()
+
+    def __redo(self):
+        try:
+            print(self.redoStack.pop())
+        except EmptyStackException as exptyStackException:
+            print("nothing to redo")
 
     def __managerMenu(self):
         while True:
@@ -102,6 +117,10 @@ class Console:
                     self.printer.printList(self.rentalController.getRentalList())
                 elif optionInputWordList[0] == "back":
                     break
+                elif optionInputWordList[0] == "undo":
+                    self.__undo()
+                elif optionInputWordList[0] == "redo":
+                    self.__redo()
                 else:
                     print("wrong input")
             else:
@@ -122,6 +141,10 @@ class Console:
                 self.__addMovie(optionInputWordList)
             elif optionInputWordList[0] == "back":
                 break
+            elif optionInputWordList[0] == "undo":
+                self.__undo()
+            elif optionInputWordList[0] == "redo":
+                self.__redo()
             else:
                 print("wrong input")
 
@@ -140,6 +163,10 @@ class Console:
                 self.__addClient(optionInputWordList)
             elif optionInputWordList[0] == "back":
                 break
+            elif optionInputWordList[0] == "undo":
+                self.__undo()
+            elif optionInputWordList[0] == "redo":
+                self.__redo()
             else:
                 print("wrong input")
 
@@ -178,6 +205,7 @@ class Console:
                 if optionInputWordList[2].isdigit():
                     if self.movieController.hasMovieWithId(int(optionInputWordList[2])):
                         try:
+                            self.undoRunner.addCommandToUndo(optionInputWordList, self.rentalController, self.undoStack, "rental", self.commandsStack)  # todo fix won't work if exception thrown
                             self.rentalController.returnMovieByClient(int(optionInputWordList[1]),
                                                                       int(optionInputWordList[2]))
                         except MovieNotCurrentlyRentedByClientException as movieNotCurrentlyRentedByClientException:
@@ -211,6 +239,8 @@ class Console:
                                     print("Invalid date format")
                                 else:
                                     try:
+                                        self.undoRunner.addCommandToUndo(optionInputWordList, self.rentalController,
+                                                                         self.undoStack, "rental", self.commandsStack)
                                         self.rentalController.rentMovieByClientUntilDate(int(optionInputWordList[1]),
                                                                                          int(optionInputWordList[2]),
                                                                                          dueDate,
@@ -223,6 +253,7 @@ class Console:
                                     except MovieNotAvailableException as movieNotAvailableException:
                                         print("Movie #", optionInputWordList[2], "is not available")
                                     else:
+
                                         print("Movie #", optionInputWordList[2], "successfully rented by client #",
                                               optionInputWordList[1], "until", str(dueDate))
                             else:
@@ -239,12 +270,14 @@ class Console:
             print("wrong input")
 
     def __addMovie(self, optionInputWordList):
+        self.undoRunner.addCommandToUndo(optionInputWordList, self.movieController, self.undoStack, "movie", self.commandsStack)
         self.movieController.addMovie(Movie(optionInputWordList[1], optionInputWordList[2], optionInputWordList[3]))
         print("Successfully added movie", optionInputWordList[1])
 
     def __updateMovie(self, optionInputWordList):
         if self.validator.isValidUpdateQueryWithNumberOfElements(optionInputWordList, 5):
             try:
+                self.undoRunner.addCommandToUndo(optionInputWordList, self.movieController, self.undoStack, "movie", self.commandsStack)  # todo fix won't work if exception thrown
                 self.movieController.updateMovieWithId(int(optionInputWordList[1]),
                                                        Movie(optionInputWordList[2], optionInputWordList[3],
                                                              optionInputWordList[4]))
@@ -258,6 +291,7 @@ class Console:
     def __removeMovie(self, optionInputWordList):
         if self.validator.isValidRemoveQuery(optionInputWordList):
             try:
+                self.undoRunner.addCommandToUndo(optionInputWordList, self.movieController, self.undoStack, "movie", self.commandsStack)  # todo fix won't work if exception thrown
                 self.movieController.removeMovieWithId(int(optionInputWordList[1]), self.rentalController.getRepo())
             except ObjectNotInCollectionException as objectNotInCollectionException:
                 print("Movie with id", optionInputWordList[1], "not found")
@@ -283,12 +317,14 @@ class Console:
             print("Wrong input")
 
     def __addClient(self, optionInputWordList):
+        self.undoRunner.addCommandToUndo(optionInputWordList, self.clientController, self.undoStack, "client", self.commandsStack)
         self.clientController.addClient(Client(optionInputWordList[1]))
         print("Successfully added client", optionInputWordList[1])
 
     def __updateClient(self, optionInputWordList):
         if self.validator.isValidUpdateQueryWithNumberOfElements(optionInputWordList, 3):
             try:
+                self.undoRunner.addCommandToUndo(optionInputWordList, self.clientController, self.undoStack, "client", self.commandsStack)  # todo fix won't work if exception thrown
                 self.clientController.updateClientWithId(int(optionInputWordList[1]),
                                                          Client(optionInputWordList[2]))
             except ObjectNotInCollectionException as objectNotInCollectionException:
@@ -301,6 +337,7 @@ class Console:
     def __removeClient(self, optionInputWordList):
         if self.validator.isValidRemoveQuery(optionInputWordList):
             try:
+                self.undoRunner.addCommandToUndo(optionInputWordList, self.clientController, self.undoStack, "client", self.commandsStack)  # todo fix won't work if exception thrown
                 self.clientController.removeClientWithId(int(optionInputWordList[1]), self.rentalController.getRepo())
             except ClientHasMoviesNotReturnedException as clientHasMoviesNotReturnedException:
                 print("Client with id #", optionInputWordList[1], "has movies not returned. Couldn't delete")

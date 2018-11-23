@@ -16,6 +16,12 @@ class ClientController:
         """
         return self.__clientRepo
 
+    def addClientWithId(self, client):
+        """
+        Add client to repo.
+        """
+        self.__clientRepo.addClientWithId(client)
+
     def addClient(self, client):
         """
         Add client to repo.
@@ -47,7 +53,7 @@ class ClientController:
         self.__clientRepo.updateClientWithId(clientId, updatedClient)
 
     def populateRepo(self):
-        self.__clientRepo.populate()
+        self.__clientRepo.populateWithFew()
 
     def listOfClientsWithName(self, clientNameToFind):
         clientListWithPartialNameCorresponding = []

@@ -14,6 +14,12 @@ class MovieController:
         """
         return self.__movieRepo
 
+    def addMovieWithId(self, movie):
+        """
+        Add movie to controller
+        """
+        self.__movieRepo.addMovieWithId(movie)
+
     def addMovie(self, movie):
         """
         Add movie to controller
@@ -39,7 +45,7 @@ class MovieController:
         self.__movieRepo.updateMovieWithId(movieId, updatedMovie)
 
     def populateRepo(self):
-        self.__movieRepo.populate()
+        self.__movieRepo.populateWithFew()
         
     def listOfMoviesWithTitle(self, movieTitleToFind):
         """

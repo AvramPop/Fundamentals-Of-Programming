@@ -38,6 +38,10 @@ class ClientRepo:
     def getList(self):
         return self.__clientList
 
+    def addClientWithId(self, client):
+        self.__clientList.append(client)
+        sortListById(self.__clientList)
+
     def __maximumIndexInClientList(self):
         maximumIndex = -1
         for client in self.__clientList:
@@ -82,7 +86,7 @@ class ClientRepo:
                 updatedClient.setClientId(clientId)
             self.__clientList[indexOfClientToUpdateInList] = updatedClient
 
-    def populate(self):
+    def populateWithFew(self):
         self.addClient(Client("Dani"))
         self.addClient(Client("Ancu"))
         self.addClient(Client("Ana"))

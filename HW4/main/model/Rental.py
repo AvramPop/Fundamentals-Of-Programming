@@ -67,6 +67,9 @@ class Rental:
         else:
             raise AlreadySetException
 
+    def setReturnedDateToNone(self):
+        self.__returnedDate = None
+
     def setReturnedDate(self, returnedDate):
         """
         Set returned date

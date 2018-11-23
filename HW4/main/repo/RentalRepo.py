@@ -78,7 +78,7 @@ class RentalRepo:
                 updatedRental.setRentalId(rentalId)
             self.__rentalList[indexOfRentalToUpdateInList] = updatedRental
 
-    def populate(self, movieRepo, rentalRepo):
+    def populateWithFew(self, movieRepo, rentalRepo):
         self.addRental(Rental(0, 0, Date(12, 5, 2011), Date(13, 6, 2012), movieRepo, rentalRepo))
         self.addRental(Rental(1, 1, Date(12, 5, 2012), Date(13, 6, 2019), movieRepo, rentalRepo))
         self.__rentalList[1].setReturnedDate(Date(12, 6, 2013))
@@ -99,6 +99,10 @@ class RentalRepo:
         self.addRental(Rental(9, 9, Date(12, 5, 2004), Date(13, 6, 2004), movieRepo, rentalRepo))
         self.addRental(Rental(10, 10, Date(12, 5, 2000), Date(13, 6, 2000), movieRepo, rentalRepo))
         self.__rentalList[10].setReturnedDate(Date(12, 6, 2006))
+
+    def addRentalWithId(self, rental):
+        self.__rentalList.append(rental)
+        sortListById(self.__rentalList)
 
     def clean(self):
         self.__rentalList = []

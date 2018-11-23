@@ -15,6 +15,9 @@ class RentalController:
     def getRepo(self):
         return self.__rentalRepo
 
+    def addRentalWithId(self, rental):
+        self.__rentalRepo.addRentalWithId(rental)
+
     def addRental(self, rental):  # TODO check if exceptions should be handled
         self.__rentalRepo.addRental(rental)
 
@@ -89,7 +92,7 @@ class RentalController:
         return True
 
     def populateRepo(self, movieRepo, rentalRepo):
-        self.__rentalRepo.populate(movieRepo, rentalRepo)
+        self.__rentalRepo.populateWithFew(movieRepo, rentalRepo)
 
     def moviesMostRentedByTimesRented(self, movieRepo):
         """

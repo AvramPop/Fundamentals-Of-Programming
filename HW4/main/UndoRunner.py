@@ -1,30 +1,43 @@
+from main.Constants import Constants
+from main.model.Client import Client
+from main.model.Movie import Movie
+
+
 class UndoRunner:
 
-    def addCommand(self, command, controller, stack, typeWorkingWith):
+    def addCommandToUndo(self, command, controller, undoStack, typeWorkingWith, commandsStack):
         # for every command add to stack the command + id of element + type
         if typeWorkingWith == "client":
             if command[0] == "add":
-                stack.push(self.__addClientOppositeCommand(controller))
+                undoStack.push(self.__addClientOppositeCommand(controller))
+                commandsStack.push(command)
             elif command[0] == "remove":
-                stack.push(self.__removeClientOppositeCommand(command, controller))
+                undoStack.push(self.__removeClientOppositeCommand(command, controller))
+                commandsStack.push(command)
             elif command[0] == "update":
-                stack.push(self.__updateClientOppositeCommand(command, controller))
+                undoStack.push(self.__updateClientOppositeCommand(command, controller))
+                commandsStack.push(command)
             else:
                 return
         elif typeWorkingWith == "movie":
             if command[0] == "add":
-                stack.push(self.__addMovieOppositeCommand(controller))
+                commandsStack.push(command)
+                undoStack.push(self.__addMovieOppositeCommand(controller))
             elif command[0] == "remove":
-                stack.push(self.__removeMovieOppositeCommand(command, controller))
+                commandsStack.push(command)
+                undoStack.push(self.__removeMovieOppositeCommand(command, controller))
             elif command[0] == "update":
-                stack.push(self.__updateMovieOppositeCommand(command, controller))
+                commandsStack.push(command)
+                undoStack.push(self.__updateMovieOppositeCommand(command, controller))
             else:
                 return
         elif typeWorkingWith == "rental":
             if command[0] == "rent":
-                stack.push(self.__rentOppositeCommand(controller))
+                commandsStack.push(command)
+                undoStack.push(self.__rentOppositeCommand(controller))
             elif command[0] == "return":
-                stack.push(self.__returnOppositeCommand(command, controller))
+                commandsStack.push(command)
+                undoStack.push(self.__returnOppositeCommand(command, controller))
             else:
                 return
         else:
@@ -36,6 +49,7 @@ class UndoRunner:
     def __returnOppositeCommand(self, parsedInputCommand, controller):
         # got "return" "client id" "movie id"
         oppositeCommand = ["rental", "returnedDateToNone"]
+        constants = Constants()
         for rental in controller.getRentalList():
             if rental.getMovieId() == int(parsedInputCommand[2]) and rental.getClientId() == int(parsedInputCommand[1]) and rental.getReturnedDate() is None:
                 oppositeCommand.append(str(rental.getId()))
@@ -44,7 +58,7 @@ class UndoRunner:
 
     def __rentOppositeCommand(self, controller):
         # got "rent" "client id" "movie id" "day" "month" "year"
-        oppositeCommand = ["rental", "remove", str(len(controller.getRentalList()))]  # TODO maybe +1 or -1
+        oppositeCommand = ["rental", "remove", str(len(controller.getRentalList()))]
         return oppositeCommand
         # return "rental" "remove" "rental id"
 
@@ -68,13 +82,13 @@ class UndoRunner:
 
     def __addMovieOppositeCommand(self, controller):
         # got "add" "name" "description" "genre"
-        oppositeCommand = ["movie", "remove", str(len(controller.getMovieList()))]  # TODO maybe + or - 1
+        oppositeCommand = ["movie", "remove", str(len(controller.getMovieList()))]
         return oppositeCommand
         # return "movie" "remove" "id of movie to remove"
 
     def __addClientOppositeCommand(self, controller):
         # got "add" "name"
-        oppositeCommand = ["client", "remove", str(len(controller.getClientList()))]  # TODO maybe +1 or -1
+        oppositeCommand = ["client", "remove", str(len(controller.getClientList()))]
         return oppositeCommand
         # return "client" "remove" "id of element to remove"
 
@@ -98,14 +112,14 @@ class UndoRunner:
             if operation == "add":
                 self.__addClient(command, clientController)
             elif operation == "remove":
-                self.__removeClient(command, clientController)
+                self.__removeClient(command, clientController, rentalController)
             elif operation == "update":
                 self.__updateClient(command, clientController)
         elif typeOfOperation == "movie":
             if operation == "add":
                 self.__addMovie(command, movieController)
             elif operation == "remove":
-                self.__removeMovie(command, movieController)
+                self.__removeMovie(command, movieController, rentalController)
             elif operation == "update":
                 self.__updateMovie(command, movieController)
         elif typeOfOperation == "rental":
@@ -116,32 +130,42 @@ class UndoRunner:
 
     def __addClient(self, command, clientController):
         # return "client" "add" "client id" "client name"
-        pass
+        client = Client(command[3])
+        client.setClientId(int(command[2]))
+        clientController.addClientWithId(client)
 
-    def __removeClient(self, command, clientController):
+    def __removeClient(self, command, clientController, rentalController):
         # return "client" "remove" "id of element to remove"
-        pass
+        clientController.removeClientWithId(int(command[2]), rentalController.getRepo())
 
     def __updateClient(self, command, clientController):
         # return "client" "update" "client id" "old name"
-        pass
+        updatedClient = Client(command[3])
+        updatedClient.setClientId(int(command[2]))
+        clientController.updateClientWithId(int(command[2]), updatedClient)
 
     def __addMovie(self, command, movieController):
         # return "movie" "add" "movie id" "title" "description" "genre"
-        pass
+        movie = Movie(command[3], command[4], command[5])
+        movie.setMovieId(int(command[2]))
+        movieController.addMovieWithId(movie)
 
-    def __removeMovie(self, command, movieController):
+    def __removeMovie(self, command, movieController, rentalController):
         # return "movie" "remove" "id of movie to remove"
-        pass
+        movieController.removeMovieWithId(int(command[2]), rentalController.getRepo())
 
     def __updateMovie(self, command, movieController):
         # return "movie" "update" "movie id" "old title" "old description" "old genre"
-        pass
+        updatedMovie = Movie(command[3], command[4], command[5])
+        updatedMovie.setMovieId(int(command[2]))
+        movieController.updateMovieWithId(int(command[2]), updatedMovie)
 
     def __returnedDateToNone(self, command, rentalController):
         # return "rental" "returnedDateToNone" "rental id"
-        pass
+        updatedRental = rentalController.getRentalWithId(int(command[2]))
+        updatedRental.setReturnedDateToNone()
+        rentalController.updateRentalWithId(int(command[2]), updatedRental)
 
     def __removeRental(self, command, rentalController):
         # return "rental" "remove" "rental id"
-        pass
+        rentalController.removeRentalWithId(int(command[2]))
