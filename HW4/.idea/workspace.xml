@@ -3,18 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="9902384d-ba54-4e59-8b6e-2d02ed0913fb" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/Exception.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/Exception.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/Stack.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/Stack.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/UndoRunner.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/UndoRunner.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/controller/ClientController.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/controller/ClientController.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/controller/MovieController.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/controller/MovieController.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/controller/RentalController.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/controller/RentalController.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/model/Rental.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/model/Rental.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/repo/ClientRepo.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/repo/ClientRepo.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main/repo/MovieRepo.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/repo/MovieRepo.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/repo/RentalRepo.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/repo/RentalRepo.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main/ui/Console.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/ui/Console.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/misc/TestUndoRunner.py" beforeDir="false" afterPath="$PROJECT_DIR$/test/misc/TestUndoRunner.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Lab2/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab2/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../lab03/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../lab03/.idea/workspace.xml" afterDir="false" />
     </list>
@@ -52,7 +42,7 @@
     <SUITE FILE_PATH="coverage/HW4$Unittests_for_TestUndoRunner_TestUndoRunner_test_undoAddMovie.coverage" NAME="Unittests for TestUndoRunner.TestUndoRunner.test_undoAddMovie Coverage Results" MODIFIED="1543005792511" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test/misc" />
     <SUITE FILE_PATH="coverage/HW4$Unittests_for_TestUtils_TestUtils.coverage" NAME="Unittests for TestUtils.TestUtils Coverage Results" MODIFIED="1542291666637" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test/misc" />
     <SUITE FILE_PATH="coverage/HW4$Unittests_in_TestMovieRepo_py.coverage" NAME="Unittests in TestMovieRepo.py Coverage Results" MODIFIED="1543008497974" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test/repo" />
-    <SUITE FILE_PATH="coverage/HW4$Main.coverage" NAME="Main Coverage Results" MODIFIED="1543010861785" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/main" />
+    <SUITE FILE_PATH="coverage/HW4$Main.coverage" NAME="Main Coverage Results" MODIFIED="1543220199041" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/main" />
     <SUITE FILE_PATH="coverage/HW4$Unittests_in_RentalTests_py.coverage" NAME="Unittests in TestRental.py Coverage Results" MODIFIED="1541174782463" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test/model" />
     <SUITE FILE_PATH="coverage/HW4$Unittests_in_TestRental_py.coverage" NAME="Unittests in TestRental.py Coverage Results" MODIFIED="1543008499144" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test/model" />
     <SUITE FILE_PATH="coverage/HW4$Unittests_for_TestClientRepo_TestClientRepo_test_removeClient.coverage" NAME="Unittests for TestClientRepo.TestClientRepo.test_removeClient Coverage Results" MODIFIED="1542197892417" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test/repo" />
@@ -110,29 +100,47 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/main/ui/Console.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="254">
-              <caret line="61" column="50" selection-start-line="61" selection-start-column="50" selection-end-line="61" selection-end-column="50" />
+            <state relative-caret-position="320">
+              <caret line="88" column="71" lean-forward="true" selection-start-line="88" selection-start-column="71" selection-end-line="88" selection-end-column="71" />
               <folding>
-                <element signature="e#1500#2018#0" />
-                <element signature="e#2057#2427#0" />
-                <element signature="e#2464#2865#0" />
-                <element signature="e#2903#3307#0" />
-                <element signature="e#5649#6791#0" />
-                <element signature="e#6846#7451#0" />
-                <element signature="e#7511#8811#0" />
-                <element signature="e#8869#11821#0" />
-                <element signature="e#12220#12498#0" />
-                <element signature="e#12112#12793#0" />
-                <element signature="e#12853#13537#0" />
-                <element signature="e#13595#14196#0" />
-                <element signature="e#15016#15146#0" />
-                <element signature="e#14445#15024#0" />
-                <element signature="e#15085#15790#0" />
-                <element signature="e#15849#16457#0" />
+                <element signature="e#1506#2024#0" />
+                <element signature="e#2653#3023#0" />
+                <element signature="e#3060#3461#0" />
+                <element signature="e#3499#3903#0" />
+                <element signature="e#3941#4873#0" />
+                <element signature="e#4913#5780#0" />
+                <element signature="e#5821#6693#0" />
+                <element signature="e#6747#7889#0" />
+                <element signature="e#7944#8549#0" />
+                <element signature="e#8609#10103#0" />
+                <element signature="e#10071#10220#0" />
+                <element signature="e#10161#13350#0" />
+                <element signature="e#13042#13450#0" />
+                <element signature="e#14464#14785#0" />
+                <element signature="e#13770#14631#0" />
+                <element signature="e#14669#14915#0" />
+                <element signature="e#14691#15555#0" />
+                <element signature="e#15842#15942#0" />
+                <element signature="e#15613#16214#0" />
+                <element signature="e#17795#18120#0" />
+                <element signature="e#16594#17355#0" />
+                <element signature="e#17788#17938#0" />
+                <element signature="e#17416#18303#0" />
+                <element signature="e#18889#18991#0" />
+                <element signature="e#18362#18970#0" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/main/repo/MovieRepo.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="510">
+              <caret line="85" column="57" selection-start-line="85" selection-start-column="57" selection-end-line="85" selection-end-column="57" />
             </state>
           </provider>
         </entry>
@@ -140,7 +148,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/main/UndoRunner.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="122">
+            <state relative-caret-position="810">
               <caret line="47" selection-start-line="47" selection-end-line="47" />
               <folding>
                 <element signature="e#0#36#0" expanded="true" />
@@ -149,19 +157,10 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/main/Stack.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="15" column="23" selection-start-line="15" selection-start-column="23" selection-end-line="15" selection-end-column="23" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/main/Exception.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="816">
+            <state relative-caret-position="1062">
               <caret line="59" selection-start-line="59" selection-end-line="59" />
             </state>
           </provider>
@@ -170,7 +169,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/test/misc/TestUndoRunner.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="349">
+            <state relative-caret-position="2232">
               <caret line="140" column="107" selection-start-line="140" selection-start-column="107" selection-end-line="140" selection-end-column="107" />
               <folding>
                 <element signature="e#0#29#0" expanded="true" />
@@ -182,7 +181,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/main/controller/ClientController.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="708">
+            <state relative-caret-position="1188">
               <caret line="70" selection-start-line="70" selection-end-line="70" />
               <folding>
                 <element signature="e#0#36#0" expanded="true" />
@@ -195,7 +194,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/main/repo/RentalRepo.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="184">
+            <state relative-caret-position="684">
               <caret line="42" selection-start-line="42" selection-end-line="42" />
             </state>
           </provider>
@@ -204,7 +203,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/main/repo/ClientRepo.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-425">
+            <state relative-caret-position="972">
               <caret line="57" column="8" selection-start-line="57" selection-start-column="8" selection-end-line="57" selection-end-column="8" />
               <folding>
                 <element signature="e#0#158#0" expanded="true" />
@@ -218,7 +217,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/main/controller/RentalController.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="176">
+            <state relative-caret-position="180">
               <caret line="15" selection-start-line="15" selection-end-line="15" />
             </state>
           </provider>
@@ -339,13 +338,13 @@
         <option value="$PROJECT_DIR$/main/controller/MovieController.py" />
         <option value="$PROJECT_DIR$/main/controller/RentalController.py" />
         <option value="$PROJECT_DIR$/main/repo/ClientRepo.py" />
-        <option value="$PROJECT_DIR$/main/repo/MovieRepo.py" />
         <option value="$PROJECT_DIR$/main/repo/RentalRepo.py" />
         <option value="$PROJECT_DIR$/test/misc/TestUndoRunner.py" />
         <option value="$PROJECT_DIR$/main/Exception.py" />
         <option value="$PROJECT_DIR$/main/UndoRunner.py" />
-        <option value="$PROJECT_DIR$/main/ui/Console.py" />
         <option value="$PROJECT_DIR$/main/Stack.py" />
+        <option value="$PROJECT_DIR$/main/repo/MovieRepo.py" />
+        <option value="$PROJECT_DIR$/main/ui/Console.py" />
       </list>
     </option>
   </component>
@@ -949,7 +948,8 @@
       <workItem from="1542896648379" duration="5068000" />
       <workItem from="1542902238689" duration="232000" />
       <workItem from="1542978744540" duration="2156000" />
-      <workItem from="1542985680703" duration="11558000" />
+      <workItem from="1542985680703" duration="11632000" />
+      <workItem from="1543218096389" duration="2364000" />
     </task>
     <servers />
   </component>
@@ -986,7 +986,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="26097000" />
+    <option name="totallyTimeSpent" value="28535000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1000,13 +1000,13 @@
   <component name="ToolWindowManager">
     <frame x="1366" y="-1" width="1920" height="1080" extended-state="6" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.09071505" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.09178229" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32217574" />
       <window_info anchor="bottom" x="0" y="0" width="1366" height="762" id="Run" order="2" sideWeight="0.4994664" type="FLOATING" weight="0.45759162" />
-      <window_info anchor="bottom" id="Debug" order="3" visible="true" weight="0.54393303" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.54393303" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32879582" />
@@ -1014,7 +1014,7 @@
       <window_info anchor="bottom" id="Version Control" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Statistic" order="10" weight="0.32919255" />
-      <window_info anchor="bottom" id="Terminal" order="11" weight="0.17782427" />
+      <window_info anchor="bottom" id="Terminal" order="11" weight="0.17763846" />
       <window_info anchor="bottom" id="Event Log" order="12" sideWeight="0.50053364" side_tool="true" weight="0.32879582" />
       <window_info anchor="bottom" id="Python Console" order="13" weight="0.32984293" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
@@ -1385,30 +1385,61 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/main/repo/MovieRepo.py">
+    <entry file="file://$PROJECT_DIR$/main/Stack.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="690">
-          <caret line="91" column="35" selection-start-line="91" selection-start-column="35" selection-end-line="91" selection-end-column="35" />
+        <state relative-caret-position="270">
+          <caret line="15" column="23" selection-start-line="15" selection-start-column="23" selection-end-line="15" selection-end-column="23" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/main/controller/RentalController.py">
+    <entry file="file://$PROJECT_DIR$/main/UndoRunner.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="15" selection-start-line="15" selection-end-line="15" />
+        <state relative-caret-position="810">
+          <caret line="47" selection-start-line="47" selection-end-line="47" />
+          <folding>
+            <element signature="e#0#36#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main/Exception.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1062">
+          <caret line="59" selection-start-line="59" selection-end-line="59" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/misc/TestUndoRunner.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2232">
+          <caret line="140" column="107" selection-start-line="140" selection-start-column="107" selection-end-line="140" selection-end-column="107" />
+          <folding>
+            <element signature="e#0#29#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main/controller/ClientController.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1188">
+          <caret line="70" selection-start-line="70" selection-end-line="70" />
+          <folding>
+            <element signature="e#0#36#0" expanded="true" />
+            <marker date="1543002271729" expanded="true" signature="295:340" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/main/repo/RentalRepo.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="184">
+        <state relative-caret-position="684">
           <caret line="42" selection-start-line="42" selection-end-line="42" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/main/repo/ClientRepo.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-425">
+        <state relative-caret-position="972">
           <caret line="57" column="8" selection-start-line="57" selection-start-column="8" selection-end-line="57" selection-end-column="8" />
           <folding>
             <element signature="e#0#158#0" expanded="true" />
@@ -1418,73 +1449,51 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test/misc/TestUndoRunner.py">
+    <entry file="file://$PROJECT_DIR$/main/controller/RentalController.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="349">
-          <caret line="140" column="107" selection-start-line="140" selection-start-column="107" selection-end-line="140" selection-end-column="107" />
-          <folding>
-            <element signature="e#0#29#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="180">
+          <caret line="15" selection-start-line="15" selection-end-line="15" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/main/Exception.py">
+    <entry file="file://$PROJECT_DIR$/main/repo/MovieRepo.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="816">
-          <caret line="59" selection-start-line="59" selection-end-line="59" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/main/controller/ClientController.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="708">
-          <caret line="70" selection-start-line="70" selection-end-line="70" />
-          <folding>
-            <element signature="e#0#36#0" expanded="true" />
-            <marker date="1543002271729" expanded="true" signature="295:340" ph="..." />
-          </folding>
+        <state relative-caret-position="510">
+          <caret line="85" column="57" selection-start-line="85" selection-start-column="57" selection-end-line="85" selection-end-column="57" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/main/ui/Console.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="254">
-          <caret line="61" column="50" selection-start-line="61" selection-start-column="50" selection-end-line="61" selection-end-column="50" />
+        <state relative-caret-position="320">
+          <caret line="88" column="71" lean-forward="true" selection-start-line="88" selection-start-column="71" selection-end-line="88" selection-end-column="71" />
           <folding>
-            <element signature="e#1500#2018#0" />
-            <element signature="e#2057#2427#0" />
-            <element signature="e#2464#2865#0" />
-            <element signature="e#2903#3307#0" />
-            <element signature="e#5649#6791#0" />
-            <element signature="e#6846#7451#0" />
-            <element signature="e#7511#8811#0" />
-            <element signature="e#8869#11821#0" />
-            <element signature="e#12220#12498#0" />
-            <element signature="e#12112#12793#0" />
-            <element signature="e#12853#13537#0" />
-            <element signature="e#13595#14196#0" />
-            <element signature="e#15016#15146#0" />
-            <element signature="e#14445#15024#0" />
-            <element signature="e#15085#15790#0" />
-            <element signature="e#15849#16457#0" />
+            <element signature="e#1506#2024#0" />
+            <element signature="e#2653#3023#0" />
+            <element signature="e#3060#3461#0" />
+            <element signature="e#3499#3903#0" />
+            <element signature="e#3941#4873#0" />
+            <element signature="e#4913#5780#0" />
+            <element signature="e#5821#6693#0" />
+            <element signature="e#6747#7889#0" />
+            <element signature="e#7944#8549#0" />
+            <element signature="e#8609#10103#0" />
+            <element signature="e#10071#10220#0" />
+            <element signature="e#10161#13350#0" />
+            <element signature="e#13042#13450#0" />
+            <element signature="e#14464#14785#0" />
+            <element signature="e#13770#14631#0" />
+            <element signature="e#14669#14915#0" />
+            <element signature="e#14691#15555#0" />
+            <element signature="e#15842#15942#0" />
+            <element signature="e#15613#16214#0" />
+            <element signature="e#17795#18120#0" />
+            <element signature="e#16594#17355#0" />
+            <element signature="e#17788#17938#0" />
+            <element signature="e#17416#18303#0" />
+            <element signature="e#18889#18991#0" />
+            <element signature="e#18362#18970#0" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/main/UndoRunner.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="122">
-          <caret line="47" selection-start-line="47" selection-end-line="47" />
-          <folding>
-            <element signature="e#0#36#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/main/Stack.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="15" column="23" selection-start-line="15" selection-start-column="23" selection-end-line="15" selection-end-column="23" />
         </state>
       </provider>
     </entry>

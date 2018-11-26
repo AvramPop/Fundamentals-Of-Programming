@@ -83,7 +83,7 @@ class MovieRepo:
         self.__movieList.append(movie)
         sortListById(self.__movieList)
 
-    def populateWithFew(self):
+    def populateWithFew(self):  # TODO populate with many
         self.addMovie(Movie("Titanic", "adventurous", "drama"))
         self.addMovie(Movie("Avatar", "nice", "action"))
         self.addMovie(Movie("Silence", "genial", "drama"))
