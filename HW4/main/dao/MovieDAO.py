@@ -1,7 +1,7 @@
 from main.Exception import AlreadySetException, IdNotSetException
 
 
-class Movie:
+class MovieDAO:
     """
     Models a movie having a <movieId> (int, default None), <title> (string),
     <description> (string) and <genre> (string)
@@ -65,7 +65,7 @@ class Movie:
         else:
             raise AlreadySetException
 
-    def __eq__(self, other: "Movie"):
+    def __eq__(self, other: "MovieDAO"):
         return self.__genre == other.getGenre() and self.__description == other.getDescription() and self.__title == other.getTitle() and self.__movieId == other.getId()
 
     def __str__(self) -> str:

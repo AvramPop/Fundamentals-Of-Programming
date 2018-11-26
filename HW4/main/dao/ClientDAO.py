@@ -1,7 +1,7 @@
 from main.Exception import AlreadySetException, IdNotSetException
 
 
-class Client:
+class ClientDAO:
     """
     Models a client having <clientId>(int, default None), <name>(string).
     """
@@ -50,10 +50,10 @@ class Client:
         else:
             raise AlreadySetException
 
-    def setName(self, name):
+    def __setName(self, name):
         self.__name = name
 
-    def __eq__(self, otherClient: 'Client') -> bool:
+    def __eq__(self, otherClient: 'ClientDAO') -> bool:
         return self.__name == otherClient.getName() and self.__clientId == otherClient.getId()
 
     def __str__(self) -> str:

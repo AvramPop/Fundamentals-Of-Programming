@@ -1,11 +1,10 @@
-from main.Exception import ObjectNotInCollectionException, AlreadySetException, DatesNotOrderedException, \
-    IdNotSetException
-from main.model.Date import Date
+from main.Exception import ObjectNotInCollectionException, AlreadySetException, DatesNotOrderedException
+from main.Date import Date
 from main.repo.ClientRepo import ClientRepo
 from main.repo.MovieRepo import MovieRepo
 
 
-class Rental:
+class RentalDAO:
     """
     Models rental having <rentalID> (int, default = None), <movieId> (int, existing in MovieRepo),
     <clientId> (int, existing in ClientRepo), <rented date> (Date), <due date> (Date), <returned date> (Date, default none).
@@ -116,7 +115,7 @@ class Rental:
     def getDueDate(self):
         return self.__dueDate
 
-    def __eq__(self, other: "Rental"):
+    def __eq__(self, other: "RentalDAO"):
         return self.__rentalId == other.getId() and self.__movieId == other.getMovieId() and \
                self.__clientId == other.getClientId() and self.__returnedDate == other.getReturnedDate() and \
                self.__dueDate == other.getDueDate() and self.__rentedDate == other.getRentedDate()

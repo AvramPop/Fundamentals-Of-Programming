@@ -8,9 +8,9 @@ from main.Validator import Validator
 from main.controller.ClientController import ClientController
 from main.controller.MovieController import MovieController
 from main.controller.RentalController import RentalController
-from main.model.Client import Client
-from main.model.Date import Date
-from main.model.Movie import Movie
+from main.dao.ClientDAO import ClientDAO
+from main.Date import Date
+from main.dao.MovieDAO import MovieDAO
 from main.repo.ClientRepo import ClientRepo
 from main.repo.MovieRepo import MovieRepo
 from main.repo.RentalRepo import RentalRepo
@@ -242,6 +242,7 @@ class Console:
                         except MovieNotCurrentlyRentedByClientException as movieNotCurrentlyRentedByClientException:
                             print("movie with id #", optionInputWordList[2], "not rented by client with #",
                                   optionInputWordList[1])
+                            self.__popStacks()
                         else:
                             print("Movie with id #", optionInputWordList[2],
                                   "successfully returned by client with id #", optionInputWordList[1])
@@ -253,6 +254,10 @@ class Console:
                 print("client with id #", optionInputWordList[1], "not found")
         else:
             print("wrong input")
+
+    def __popStacks(self):
+        self.undoStack.pop()
+        self.commandsStack.pop()
 
     def __doReturn(self, optionInputWordList):
         self.rentalController.returnMovieByClient(int(optionInputWordList[1]),
@@ -279,10 +284,13 @@ class Console:
                                         self.__doRent(dueDate, optionInputWordList)
                                     except DatesNotOrderedException as datesNotOrderedException:
                                         print("The due date cannot be before the rental date")
+                                        self.__popStacks()
                                     except ClientHasMoviesNotReturnedException as clientHasMoviesNotReturnedException:
                                         print("Client #", optionInputWordList[1], "has passed due date for movies")
+                                        self.__popStacks()
                                     except MovieNotAvailableException as movieNotAvailableException:
                                         print("Movie #", optionInputWordList[2], "is not available")
+                                        self.__popStacks()
                                     else:
 
                                         print("Movie #", optionInputWordList[2], "successfully rented by client #",
@@ -316,7 +324,7 @@ class Console:
             print("wrong input")
 
     def __doAddMovie(self, optionInputWordList):
-        self.movieController.addMovie(Movie(optionInputWordList[1], optionInputWordList[2], optionInputWordList[3]))
+        self.movieController.addMovie(MovieDAO(optionInputWordList[1], optionInputWordList[2], optionInputWordList[3]))
 
     def __updateMovie(self, optionInputWordList):
         if self.validator.isValidUpdateQueryWithNumberOfElements(optionInputWordList, 5):
@@ -325,6 +333,7 @@ class Console:
                 self.__doUpdateMovie(optionInputWordList)
             except ObjectNotInCollectionException as objectNotInCollectionException:
                 print("Movie with id", optionInputWordList[1], "not found")
+                self.__popStacks()
             else:
                 print("Successfully updated movie #", optionInputWordList[1])
         else:
@@ -332,8 +341,8 @@ class Console:
 
     def __doUpdateMovie(self, optionInputWordList):
         self.movieController.updateMovieWithId(int(optionInputWordList[1]),
-                                               Movie(optionInputWordList[2], optionInputWordList[3],
-                                                     optionInputWordList[4]))
+                                               MovieDAO(optionInputWordList[2], optionInputWordList[3],
+                                                        optionInputWordList[4]))
 
     def __removeMovie(self, optionInputWordList):
         if self.validator.isValidRemoveQuery(optionInputWordList):
@@ -343,8 +352,10 @@ class Console:
                 self.__doRemoveMovie(optionInputWordList)
             except ObjectNotInCollectionException as objectNotInCollectionException:
                 print("Movie with id", optionInputWordList[1], "not found")
+                self.__popStacks()
             except MovieCurrentlyRentedException as movieCurrentlyRentedException:
                 print("Movie with id #", optionInputWordList[1], "is currently rented. Couldn't delete")
+                self.__popStacks()
             else:
                 print("Successfully removed movie #", optionInputWordList[1])
         else:
@@ -376,7 +387,7 @@ class Console:
             print("wrong input")
 
     def __doAddClient(self, optionInputWordList):
-        self.clientController.addClient(Client(optionInputWordList[1]))
+        self.clientController.addClient(ClientDAO(optionInputWordList[1]))
 
     def __updateClient(self, optionInputWordList):
         if self.validator.isValidUpdateQueryWithNumberOfElements(optionInputWordList, 3):
@@ -385,6 +396,7 @@ class Console:
                 self.__doUpdateClient(optionInputWordList)
             except ObjectNotInCollectionException as objectNotInCollectionException:
                 print("Client with id", optionInputWordList[1], "not found")
+                self.__popStacks()
             else:
                 print("Successfully updated client #", optionInputWordList[1])
         else:
@@ -392,7 +404,7 @@ class Console:
 
     def __doUpdateClient(self, optionInputWordList):
         self.clientController.updateClientWithId(int(optionInputWordList[1]),
-                                                 Client(optionInputWordList[2]))
+                                                 ClientDAO(optionInputWordList[2]))
 
     def __removeClient(self, optionInputWordList):
         if self.validator.isValidRemoveQuery(optionInputWordList):
@@ -402,8 +414,10 @@ class Console:
                 self.__doRemoveClient(optionInputWordList)
             except ClientHasMoviesNotReturnedException as clientHasMoviesNotReturnedException:
                 print("Client with id #", optionInputWordList[1], "has movies not returned. Couldn't delete")
+                self.__popStacks()
             except ObjectNotInCollectionException as objectNotInCollectionException:
                 print("Client with id", optionInputWordList[1], "not found")
+                self.__popStacks()
             else:
                 print("Successfully removed client #", optionInputWordList[1])
         else:

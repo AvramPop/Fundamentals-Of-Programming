@@ -1,7 +1,7 @@
 from main.Constants import Constants
-from main.model.Client import Client
-from main.model.Movie import Movie
-from main.model.Rental import Rental
+from main.dao.ClientDAO import ClientDAO
+from main.dao.MovieDAO import MovieDAO
+from main.dao.RentalDAO import RentalDAO
 
 
 class Printer:

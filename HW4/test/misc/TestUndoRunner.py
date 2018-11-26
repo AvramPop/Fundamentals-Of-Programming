@@ -7,10 +7,9 @@ from main.UndoRunner import UndoRunner
 from main.controller.ClientController import ClientController
 from main.controller.MovieController import MovieController
 from main.controller.RentalController import RentalController
-from main.model.Client import Client
-from main.model.Date import Date
-from main.model.Movie import Movie
-from main.model.Rental import Rental
+from main.dao.ClientDAO import ClientDAO
+from main.Date import Date
+from main.dao.MovieDAO import MovieDAO
 from main.repo.ClientRepo import ClientRepo
 from main.repo.MovieRepo import MovieRepo
 from main.repo.RentalRepo import RentalRepo
@@ -56,9 +55,9 @@ class TestUndoRunner(TestCase):
 
     def test_undoAddClient(self):
         self.undoRunner.addCommandToUndo(["add", "Da"], self.clientController, self.stack, "client", self.commandsStack)
-        self.clientController.addClient(Client("Da"))
+        self.clientController.addClient(ClientDAO("Da"))
         self.undoRunner.addCommandToUndo(["add", "Iani"], self.clientController, self.stack, "client", self.commandsStack)
-        self.clientController.addClient(Client("Iani"))  # 14
+        self.clientController.addClient(ClientDAO("Iani"))  # 14
         self.assertEqual(len(self.clientController.getRepo().getList()), 14)
         self.assertEqual(self.clientController.getClientWithId(13).getName(), "Iani")
         self.undoRunner.undo(self.clientController, self.movieController, self.rentalController, self.stack)
@@ -68,10 +67,10 @@ class TestUndoRunner(TestCase):
 
     def test_undoAddMovie(self):
         self.undoRunner.addCommandToUndo(["add", "a", "a", "a"], self.movieController, self.stack, "movie", self.commandsStack)
-        self.movieController.addMovie(Movie("a", "a", "a"))
+        self.movieController.addMovie(MovieDAO("a", "a", "a"))
         self.undoRunner.addCommandToUndo(["add", "b", "b", "b"], self.movieController, self.stack, "movie", self.commandsStack)
 
-        self.movieController.addMovie(Movie("b", "b", "b"))
+        self.movieController.addMovie(MovieDAO("b", "b", "b"))
         self.printer.printList(self.movieController.getMovieList())
         print()
         self.assertEqual(len(self.movieController.getRepo().getList()), 14)
@@ -111,7 +110,7 @@ class TestUndoRunner(TestCase):
         self.assertEqual(self.movieController.getMovieWithId(5).getTitle(), "Pluto")
 
     def test_undoUpdateClient(self):
-        updatedClient = Client("aaa")
+        updatedClient = ClientDAO("aaa")
         updatedClient.setClientId(0)
         self.undoRunner.addCommandToUndo(["update", "0", "aaa"], self.clientController, self.stack, "client", self.commandsStack)
         self.clientController.updateClientWithId(0, updatedClient)
@@ -120,7 +119,7 @@ class TestUndoRunner(TestCase):
         self.assertEqual(self.clientController.getClientWithId(0).getName(), "Dani")
 
     def test_undoUpdateMovie(self):
-        updatedMovie = Movie("a", "a", "a")
+        updatedMovie = MovieDAO("a", "a", "a")
         updatedMovie.setMovieId(0)
         self.undoRunner.addCommandToUndo(["update", "0", "a", "a", "a"], self.movieController, self.stack, "movie", self.commandsStack)
 

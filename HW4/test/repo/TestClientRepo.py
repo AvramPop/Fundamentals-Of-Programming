@@ -1,7 +1,7 @@
 from unittest import TestCase
 
 from main.Exception import ObjectNotInCollectionException
-from main.model.Client import Client
+from main.dao.ClientDAO import ClientDAO
 from main.repo.ClientRepo import ClientRepo
 from main.ui.Printer import Printer
 
@@ -16,8 +16,7 @@ class TestClientRepo(TestCase):
     def test_addClient(self):
         printer = Printer()
         printer.printList(self.clientRepo.getList())
-        print("aaaaaaaaaaaaaaa")
-        self.clientRepo.addClient(Client("damo"))
+        self.clientRepo.addClient(ClientDAO("damo"))
         self.assertEqual(((self.clientRepo.getList())[0]).getId(), 0)
         self.assertEqual(((self.clientRepo.getList())[0]).getName(), "damo")
 
@@ -25,11 +24,11 @@ class TestClientRepo(TestCase):
         printer = Printer()
         printer.printList(self.clientRepo.getList())
         print("bbbbb")
-        self.clientRepo.addClient(Client("damo"))
-        self.clientRepo.addClient(Client("ancu"))
+        self.clientRepo.addClient(ClientDAO("damo"))
+        self.clientRepo.addClient(ClientDAO("ancu"))
         self.clientRepo.removeClientWithId(1)
         self.assertEqual(len(self.clientRepo.getList()), 1)
-        testClient = Client("damo")
+        testClient = ClientDAO("damo")
         testClient.setClientId(0)
         self.assertEqual(self.clientRepo.getList(), [testClient])
         with self.assertRaises(ObjectNotInCollectionException):
@@ -39,11 +38,11 @@ class TestClientRepo(TestCase):
         printer = Printer()
         printer.printList(self.clientRepo.getList())
         print("ccccccccccc")
-        self.clientRepo.addClient(Client("damo"))
-        self.clientRepo.addClient(Client("ancu"))
-        testClient1 = Client("ancu")
+        self.clientRepo.addClient(ClientDAO("damo"))
+        self.clientRepo.addClient(ClientDAO("ancu"))
+        testClient1 = ClientDAO("ancu")
         testClient1.setClientId(0)
-        testClient2 = Client("ancu")
+        testClient2 = ClientDAO("ancu")
         testClient2.setClientId(1)
-        self.clientRepo.updateClientWithId(0, Client("ancu"))
+        self.clientRepo.updateClientWithId(0, ClientDAO("ancu"))
         self.assertEqual(self.clientRepo.getList(), [testClient1, testClient2])

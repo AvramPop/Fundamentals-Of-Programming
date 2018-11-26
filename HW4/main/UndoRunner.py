@@ -1,6 +1,6 @@
 from main.Constants import Constants
-from main.model.Client import Client
-from main.model.Movie import Movie
+from main.dao.ClientDAO import ClientDAO
+from main.dao.MovieDAO import MovieDAO
 
 
 class UndoRunner:
@@ -130,7 +130,7 @@ class UndoRunner:
 
     def __addClient(self, command, clientController):
         # return "client" "add" "client id" "client name"
-        client = Client(command[3])
+        client = ClientDAO(command[3])
         client.setClientId(int(command[2]))
         clientController.addClientWithId(client)
 
@@ -140,13 +140,13 @@ class UndoRunner:
 
     def __updateClient(self, command, clientController):
         # return "client" "update" "client id" "old name"
-        updatedClient = Client(command[3])
+        updatedClient = ClientDAO(command[3])
         updatedClient.setClientId(int(command[2]))
         clientController.updateClientWithId(int(command[2]), updatedClient)
 
     def __addMovie(self, command, movieController):
         # return "movie" "add" "movie id" "title" "description" "genre"
-        movie = Movie(command[3], command[4], command[5])
+        movie = MovieDAO(command[3], command[4], command[5])
         movie.setMovieId(int(command[2]))
         movieController.addMovieWithId(movie)
 
@@ -156,7 +156,7 @@ class UndoRunner:
 
     def __updateMovie(self, command, movieController):
         # return "movie" "update" "movie id" "old title" "old description" "old genre"
-        updatedMovie = Movie(command[3], command[4], command[5])
+        updatedMovie = MovieDAO(command[3], command[4], command[5])
         updatedMovie.setMovieId(int(command[2]))
         movieController.updateMovieWithId(int(command[2]), updatedMovie)
 

@@ -1,8 +1,8 @@
 from main.Constants import Constants
 from main.Exception import ObjectAlreadyInCollectionException, ObjectNotInCollectionException
 from main.Utils import sortListById
-from main.model.Rental import Rental
-from main.model.Date import Date
+from main.dao.RentalDAO import RentalDAO
+from main.Date import Date
 
 
 class RentalRepo:
@@ -21,7 +21,7 @@ class RentalRepo:
         return False
 
     def addRental(self, rental):
-        if type(rental).__name__ == 'Rental':
+        if type(rental).__name__ == 'RentalDAO':
             if not self.hasRentalWithId(rental.getId()):
                 rental.setRentalId(self.__maximumIndexInRentalList() + 1)
                 self.__rentalList.append(rental)
@@ -79,25 +79,25 @@ class RentalRepo:
             self.__rentalList[indexOfRentalToUpdateInList] = updatedRental
 
     def populateWithFew(self, movieRepo, rentalRepo):
-        self.addRental(Rental(0, 0, Date(12, 5, 2011), Date(13, 6, 2012), movieRepo, rentalRepo))
-        self.addRental(Rental(1, 1, Date(12, 5, 2012), Date(13, 6, 2019), movieRepo, rentalRepo))
+        self.addRental(RentalDAO(0, 0, Date(12, 5, 2011), Date(13, 6, 2012), movieRepo, rentalRepo))
+        self.addRental(RentalDAO(1, 1, Date(12, 5, 2012), Date(13, 6, 2019), movieRepo, rentalRepo))
         self.__rentalList[1].setReturnedDate(Date(12, 6, 2013))
-        self.addRental(Rental(2, 2, Date(12, 5, 2013), Date(13, 6, 2013), movieRepo, rentalRepo))
+        self.addRental(RentalDAO(2, 2, Date(12, 5, 2013), Date(13, 6, 2013), movieRepo, rentalRepo))
         self.__rentalList[2].setReturnedDate(Date(12, 6, 2014))
-        self.addRental(Rental(3, 3, Date(12, 5, 2014), Date(13, 6, 2014), movieRepo, rentalRepo))
+        self.addRental(RentalDAO(3, 3, Date(12, 5, 2014), Date(13, 6, 2014), movieRepo, rentalRepo))
         self.__rentalList[3].setReturnedDate(Date(12, 6, 2015))
-        self.addRental(Rental(4, 4, Date(12, 5, 2015), Date(13, 6, 2015), movieRepo, rentalRepo))
+        self.addRental(RentalDAO(4, 4, Date(12, 5, 2015), Date(13, 6, 2015), movieRepo, rentalRepo))
         self.__rentalList[4].setReturnedDate(Date(12, 6, 2016))
-        self.addRental(Rental(5, 5, Date(12, 5, 2016), Date(13, 6, 2016), movieRepo, rentalRepo))
+        self.addRental(RentalDAO(5, 5, Date(12, 5, 2016), Date(13, 6, 2016), movieRepo, rentalRepo))
         self.__rentalList[5].setReturnedDate(Date(12, 6, 2017))
-        self.addRental(Rental(6, 6, Date(12, 5, 2001), Date(13, 6, 2001), movieRepo, rentalRepo))
+        self.addRental(RentalDAO(6, 6, Date(12, 5, 2001), Date(13, 6, 2001), movieRepo, rentalRepo))
         self.__rentalList[6].setReturnedDate(Date(12, 6, 2002))
-        self.addRental(Rental(7, 7, Date(12, 5, 2002), Date(13, 6, 2002), movieRepo, rentalRepo))
+        self.addRental(RentalDAO(7, 7, Date(12, 5, 2002), Date(13, 6, 2002), movieRepo, rentalRepo))
         self.__rentalList[7].setReturnedDate(Date(12, 6, 2003))
-        self.addRental(Rental(8, 8, Date(12, 5, 2003), Date(13, 6, 2003), movieRepo, rentalRepo))
+        self.addRental(RentalDAO(8, 8, Date(12, 5, 2003), Date(13, 6, 2003), movieRepo, rentalRepo))
         self.__rentalList[8].setReturnedDate(Date(12, 6, 2004))
-        self.addRental(Rental(9, 9, Date(12, 5, 2004), Date(13, 6, 2004), movieRepo, rentalRepo))
-        self.addRental(Rental(10, 10, Date(12, 5, 2000), Date(13, 6, 2000), movieRepo, rentalRepo))
+        self.addRental(RentalDAO(9, 9, Date(12, 5, 2004), Date(13, 6, 2004), movieRepo, rentalRepo))
+        self.addRental(RentalDAO(10, 10, Date(12, 5, 2000), Date(13, 6, 2000), movieRepo, rentalRepo))
         self.__rentalList[10].setReturnedDate(Date(12, 6, 2006))
 
     def addRentalWithId(self, rental):

@@ -1,5 +1,5 @@
 from unittest import TestCase
-from main.model.Date import Date
+from main.Date import Date
 from main.Exception import InvalidDateFormatException
 
 

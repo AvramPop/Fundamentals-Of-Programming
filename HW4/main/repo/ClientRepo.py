@@ -1,7 +1,7 @@
 from main.Exception import ObjectNotInCollectionException, UpdatingObjectWithDifferentIdException, \
     ObjectAlreadyInCollectionException, IdNotSetException
 from main.Utils import sortListById
-from main.model.Client import Client
+from main.dao.ClientDAO import ClientDAO
 
 
 class ClientRepo:
@@ -24,7 +24,7 @@ class ClientRepo:
 
         :param client: the client to add
         """
-        if type(client).__name__ == 'Client':
+        if type(client).__name__ == 'ClientDAO':
             if not self.hasClientWithId(client.getId()):
                 client.setClientId(self.__maximumIndexInClientList() + 1)
                 self.__clientList.append(client)
@@ -35,7 +35,7 @@ class ClientRepo:
         else:
             raise TypeError
 
-    def getList(self):
+    def getList(self):  # caution use
         return self.__clientList
 
     def addClientWithId(self, client):
@@ -87,68 +87,68 @@ class ClientRepo:
             self.__clientList[indexOfClientToUpdateInList] = updatedClient
 
     def populateWithFew(self):
-        self.addClient(Client("Dani"))
-        self.addClient(Client("Ancu"))
-        self.addClient(Client("Ana"))
-        self.addClient(Client("Betu"))
-        self.addClient(Client("Sami"))
-        self.addClient(Client("Dave"))
-        self.addClient(Client("Mami"))
-        self.addClient(Client("Tati"))
-        self.addClient(Client("Sergiu"))
-        self.addClient(Client("Adi"))
-        self.addClient(Client("Cristi"))
-        self.addClient(Client("Anisoara"))
+        self.addClient(ClientDAO("Dani"))
+        self.addClient(ClientDAO("Ancu"))
+        self.addClient(ClientDAO("Ana"))
+        self.addClient(ClientDAO("Betu"))
+        self.addClient(ClientDAO("Sami"))
+        self.addClient(ClientDAO("Dave"))
+        self.addClient(ClientDAO("Mami"))
+        self.addClient(ClientDAO("Tati"))
+        self.addClient(ClientDAO("Sergiu"))
+        self.addClient(ClientDAO("Adi"))
+        self.addClient(ClientDAO("Cristi"))
+        self.addClient(ClientDAO("Anisoara"))
 
     def populateWithMany(self):
-        self.addClient(Client("Dani"))
-        self.addClient(Client("Ancu"))
-        self.addClient(Client("Ana"))
-        self.addClient(Client("Betu"))
-        self.addClient(Client("Sami"))
-        self.addClient(Client("Dave"))
-        self.addClient(Client("Mami"))
-        self.addClient(Client("Tati"))
-        self.addClient(Client("Sergiu"))
-        self.addClient(Client("Adi"))
-        self.addClient(Client("Cristi"))
-        self.addClient(Client("Anisoara"))
-        self.addClient(Client("AA"))
-        self.addClient(Client("AA1"))
-        self.addClient(Client("AA2"))
-        self.addClient(Client("AA3"))
-        self.addClient(Client("AA4"))
-        self.addClient(Client("AA5"))
-        self.addClient(Client("AA6"))
-        self.addClient(Client("AA7"))
-        self.addClient(Client("AA8"))
-        self.addClient(Client("AA9"))
-        self.addClient(Client("AA0"))
-        self.addClient(Client("AA12"))
-        self.addClient(Client("AA11"))
-        self.addClient(Client("AA22"))
-        self.addClient(Client("AA33"))
-        self.addClient(Client("AA55"))
-        self.addClient(Client("AA44"))
-        self.addClient(Client("AA66"))
-        self.addClient(Client("AA77"))
-        self.addClient(Client("AA88"))
-        self.addClient(Client("AA99"))
-        self.addClient(Client("AA000"))
-        self.addClient(Client("AA111"))
-        self.addClient(Client("AA222"))
-        self.addClient(Client("AA333"))
-        self.addClient(Client("AA444"))
-        self.addClient(Client("AA555"))
-        self.addClient(Client("AA666"))
-        self.addClient(Client("AA777"))
-        self.addClient(Client("A88A"))
-        self.addClient(Client("AA999"))
-        self.addClient(Client("AA000"))
-        self.addClient(Client("AA11111"))
-        self.addClient(Client("AdAAi"))
-        self.addClient(Client("CriAAsti"))
-        self.addClient(Client("AnisAAoara"))
+        self.addClient(ClientDAO("Dani"))
+        self.addClient(ClientDAO("Ancu"))
+        self.addClient(ClientDAO("Ana"))
+        self.addClient(ClientDAO("Betu"))
+        self.addClient(ClientDAO("Sami"))
+        self.addClient(ClientDAO("Dave"))
+        self.addClient(ClientDAO("Mami"))
+        self.addClient(ClientDAO("Tati"))
+        self.addClient(ClientDAO("Sergiu"))
+        self.addClient(ClientDAO("Adi"))
+        self.addClient(ClientDAO("Cristi"))
+        self.addClient(ClientDAO("Anisoara"))
+        self.addClient(ClientDAO("AA"))
+        self.addClient(ClientDAO("AA1"))
+        self.addClient(ClientDAO("AA2"))
+        self.addClient(ClientDAO("AA3"))
+        self.addClient(ClientDAO("AA4"))
+        self.addClient(ClientDAO("AA5"))
+        self.addClient(ClientDAO("AA6"))
+        self.addClient(ClientDAO("AA7"))
+        self.addClient(ClientDAO("AA8"))
+        self.addClient(ClientDAO("AA9"))
+        self.addClient(ClientDAO("AA0"))
+        self.addClient(ClientDAO("AA12"))
+        self.addClient(ClientDAO("AA11"))
+        self.addClient(ClientDAO("AA22"))
+        self.addClient(ClientDAO("AA33"))
+        self.addClient(ClientDAO("AA55"))
+        self.addClient(ClientDAO("AA44"))
+        self.addClient(ClientDAO("AA66"))
+        self.addClient(ClientDAO("AA77"))
+        self.addClient(ClientDAO("AA88"))
+        self.addClient(ClientDAO("AA99"))
+        self.addClient(ClientDAO("AA000"))
+        self.addClient(ClientDAO("AA111"))
+        self.addClient(ClientDAO("AA222"))
+        self.addClient(ClientDAO("AA333"))
+        self.addClient(ClientDAO("AA444"))
+        self.addClient(ClientDAO("AA555"))
+        self.addClient(ClientDAO("AA666"))
+        self.addClient(ClientDAO("AA777"))
+        self.addClient(ClientDAO("A88A"))
+        self.addClient(ClientDAO("AA999"))
+        self.addClient(ClientDAO("AA000"))
+        self.addClient(ClientDAO("AA11111"))
+        self.addClient(ClientDAO("AdAAi"))
+        self.addClient(ClientDAO("CriAAsti"))
+        self.addClient(ClientDAO("AnisAAoara"))
 
     def clean(self):
         self.__clientList = []

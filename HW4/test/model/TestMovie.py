@@ -1,27 +1,27 @@
 from unittest import TestCase
-from main.model.Movie import Movie
+from main.dao.MovieDAO import MovieDAO
 from main.Exception import AlreadySetException
 
 
 class TestMovie(TestCase):
 
     def setUp(self):
-        self.movie = Movie("Titanic", "lovely", "romance")
+        self.movie = MovieDAO("Titanic", "lovely", "romance")
 
     def tearDown(self):
         self.movie = None
 
     def test_init(self):
         with self.assertRaises(ValueError):
-            testMovie = Movie(1, "dfa", "fasd")
+            testMovie = MovieDAO(1, "dfa", "fasd")
         with self.assertRaises(ValueError):
-            testMovie = Movie("asd", [], "fasd")
+            testMovie = MovieDAO("asd", [], "fasd")
         with self.assertRaises(ValueError):
-            testMovie = Movie("sdf", "fsda", 6.5)
+            testMovie = MovieDAO("sdf", "fsda", 6.5)
         with self.assertRaises(ValueError):
-            testMovie = Movie(1, "dfa", [])
+            testMovie = MovieDAO(1, "dfa", [])
         with self.assertRaises(ValueError):
-            testMovie = Movie(1, [], {"6": 5})
+            testMovie = MovieDAO(1, [], {"6": 5})
         self.assertEqual(self.movie.getTitle(), "Titanic", 'movie title got wrong')
         self.assertEqual(self.movie.getDescription(), "lovely", 'movie description got wrong')
         self.assertEqual(self.movie.getGenre(), "romance", 'movie genre got wrong')

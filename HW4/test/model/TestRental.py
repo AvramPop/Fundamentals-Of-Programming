@@ -1,10 +1,10 @@
 from unittest import TestCase
 
 from main.Exception import DatesNotOrderedException, ObjectNotInCollectionException, AlreadySetException
-from main.model.Client import Client
-from main.model.Movie import Movie
-from main.model.Rental import Rental
-from main.model.Date import Date
+from main.dao.ClientDAO import ClientDAO
+from main.dao.MovieDAO import MovieDAO
+from main.dao.RentalDAO import RentalDAO
+from main.Date import Date
 from main.repo.ClientRepo import ClientRepo
 from main.repo.MovieRepo import MovieRepo
 
@@ -12,10 +12,10 @@ from main.repo.MovieRepo import MovieRepo
 class TestRental(TestCase):
     def setUp(self):
         self.movieRepo = MovieRepo()
-        self.movieRepo.addMovie(Movie("Titanic", "lovely", "Romance"))
+        self.movieRepo.addMovie(MovieDAO("Titanic", "lovely", "Romance"))
         self.clientRepo = ClientRepo()
-        self.clientRepo.addClient(Client("dani"))
-        self.rental = Rental(0, 0, Date(5, 4, 2018), Date(7, 9, 2020), self.movieRepo, self.clientRepo)
+        self.clientRepo.addClient(ClientDAO("dani"))
+        self.rental = RentalDAO(0, 0, Date(5, 4, 2018), Date(7, 9, 2020), self.movieRepo, self.clientRepo)
 
     def tearDown(self):
         self.rental = None
@@ -30,23 +30,23 @@ class TestRental(TestCase):
         self.assertRaises(TypeError, lambda: self.rental.getId(), 'default rental id not None')
         self.assertRaises(TypeError, lambda: self.rental.getReturnedDate(), 'default returned date not None')
         with self.assertRaises(ValueError):
-            testRental = Rental(0, "s", Date(22, 4, 1995), Date(22, 4, 1996), self.movieRepo, self.clientRepo)
+            testRental = RentalDAO(0, "s", Date(22, 4, 1995), Date(22, 4, 1996), self.movieRepo, self.clientRepo)
         with self.assertRaises(ValueError):
-            testRental = Rental(0, -5, Date(22, 4, 1995), Date(22, 4, 1996), self.movieRepo, self.clientRepo)
+            testRental = RentalDAO(0, -5, Date(22, 4, 1995), Date(22, 4, 1996), self.movieRepo, self.clientRepo)
         with self.assertRaises(ValueError):
-            testRental = Rental([], 0, Date(22, 4, 1995), Date(22, 4, 1996), self.movieRepo, self.clientRepo)
+            testRental = RentalDAO([], 0, Date(22, 4, 1995), Date(22, 4, 1996), self.movieRepo, self.clientRepo)
         with self.assertRaises(ValueError):
-            testRental = Rental(-99, 0, Date(22, 4, 1995), Date(22, 4, 1996), self.movieRepo, self.clientRepo)
+            testRental = RentalDAO(-99, 0, Date(22, 4, 1995), Date(22, 4, 1996), self.movieRepo, self.clientRepo)
         with self.assertRaises(ValueError):
-            testRental = Rental(0, 0, 9, Date(22, 4, 1996), self.movieRepo, self.clientRepo)
+            testRental = RentalDAO(0, 0, 9, Date(22, 4, 1996), self.movieRepo, self.clientRepo)
         with self.assertRaises(ValueError):
-            testRental = Rental(0, 0, Date(22, 4, 1995), "date", self.movieRepo, self.clientRepo)
+            testRental = RentalDAO(0, 0, Date(22, 4, 1995), "date", self.movieRepo, self.clientRepo)
         with self.assertRaises(DatesNotOrderedException):
-            testRental = Rental(0, 0, Date(22, 4, 1995), Date(22, 4, 1994), self.movieRepo, self.clientRepo)
+            testRental = RentalDAO(0, 0, Date(22, 4, 1995), Date(22, 4, 1994), self.movieRepo, self.clientRepo)
         with self.assertRaises(ObjectNotInCollectionException):
-            testRental = Rental(0, 1, Date(22, 4, 1995), Date(22, 4, 1996), self.movieRepo, self.clientRepo)
+            testRental = RentalDAO(0, 1, Date(22, 4, 1995), Date(22, 4, 1996), self.movieRepo, self.clientRepo)
         with self.assertRaises(ObjectNotInCollectionException):
-            testRental = Rental(1, 0, Date(22, 4, 1995), Date(22, 4, 1996), self.movieRepo, self.clientRepo)
+            testRental = RentalDAO(1, 0, Date(22, 4, 1995), Date(22, 4, 1996), self.movieRepo, self.clientRepo)
 
     def test_setWrongId(self):
         self.assertRaises(ValueError, lambda: self.rental.setRentalId(-3))

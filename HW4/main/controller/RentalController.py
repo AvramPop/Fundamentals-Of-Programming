@@ -1,7 +1,7 @@
 from main.Constants import Constants
 from main.Exception import DatesNotOrderedException, ClientHasMoviesNotReturnedException, MovieNotAvailableException, \
     MovieNotCurrentlyRentedByClientException
-from main.model.Rental import Rental
+from main.dao.RentalDAO import RentalDAO
 from main.repo.RentalRepo import RentalRepo
 from main.ui.Printer import Printer
 
@@ -50,7 +50,7 @@ class RentalController:
                     raise MovieNotAvailableException
                 else:
                     self.addRental(
-                        Rental(clientId, movieId, self.__constants.currentDay(), dueDate, movieRepo, clientRepo))
+                        RentalDAO(clientId, movieId, self.__constants.currentDay(), dueDate, movieRepo, clientRepo))
 
     def returnMovieByClient(self, clientId, movieId):
         """

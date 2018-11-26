@@ -1,20 +1,20 @@
 from unittest import TestCase
-from main.model.Client import Client
+from main.dao.ClientDAO import ClientDAO
 from main.Exception import AlreadySetException
 
 
 class TestClient(TestCase):
     def setUp(self):
-        self.client = Client("Dani")
+        self.client = ClientDAO("Dani")
 
     def tearDown(self):
         self.client = None
 
     def test_init(self):
         with self.assertRaises(ValueError):
-            testClient = Client(1)
+            testClient = ClientDAO(1)
         with self.assertRaises(ValueError):
-            testClient = Client([])
+            testClient = ClientDAO([])
         self.assertEqual(self.client.getName(), "Dani", 'client name got wrong')
         self.assertRaises(TypeError, lambda: self.client.getId(), 'default client id not None')
 

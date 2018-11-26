@@ -1,7 +1,7 @@
 from main.Exception import ConstantNotFoundException
 import datetime
 
-from main.model.Date import Date
+from main.Date import Date
 
 
 class Constants:
