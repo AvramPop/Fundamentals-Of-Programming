@@ -44,8 +44,11 @@ class MovieController:
     def updateMovieWithId(self, movieId, updatedMovie):
         self.__movieRepo.updateMovieWithId(movieId, updatedMovie)
 
-    def populateRepo(self):
+    def populateRepoWithFew(self):
         self.__movieRepo.populateWithFew()
+
+    def populateRepoWithMany(self):
+        self.__movieRepo.populateWithMany()
         
     def listOfMoviesWithTitle(self, movieTitleToFind):
         """

@@ -52,8 +52,11 @@ class ClientController:
     def updateClientWithId(self, clientId, updatedClient):
         self.__clientRepo.updateClientWithId(clientId, updatedClient)
 
-    def populateRepo(self):
+    def populateRepoWithFew(self):
         self.__clientRepo.populateWithFew()
+
+    def populateRepoWithMany(self):
+        self.__clientRepo.populateWithMany()
 
     def listOfClientsWithName(self, clientNameToFind):
         clientListWithPartialNameCorresponding = []

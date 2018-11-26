@@ -18,22 +18,24 @@ from main.ui.Printer import Printer
 
 
 class Console:
-    printer = Printer()
-    validator = Validator()
-    constants = Constants()
-    clientController = ClientController(ClientRepo())
-    movieController = MovieController(MovieRepo())
-    rentalController = RentalController(RentalRepo())
-    clientController.populateRepo()
-    movieController.populateRepo()
-    rentalController.populateRepo(movieController.getRepo(), clientController.getRepo())  # TODO do these really update as they should? remove checking seems wrong
-    undoStack = Stack()
-    commandsStack = Stack()
-    redoStack = Stack()
-    undoRunner = UndoRunner()
+
+    def __init__(self) -> None:
+        self.printer = Printer()
+        self.validator = Validator()
+        self.constants = Constants()
+        self.clientController = ClientController(ClientRepo())
+        self.movieController = MovieController(MovieRepo())
+        self.rentalController = RentalController(RentalRepo())
+        self.clientController.populateRepoWithMany()
+        self.movieController.populateRepoWithMany()
+        self.rentalController.populateRepo(self.movieController.getRepo(),
+                                           self.clientController.getRepo())  # TODO do these really update as they should? remove checking seems wrong
+        self.undoStack = Stack()
+        self.commandsStack = Stack()
+        self.redoStack = Stack()
+        self.undoRunner = UndoRunner()
 
     def run(self):
-
         while True:
             self.printer.printMenu("mainMenu")
             menuChosen = input(">")
@@ -423,4 +425,5 @@ class Console:
                 print("Client with id #", optionInputWordList[1], "not found")
         else:
             print("Wrong input")
+
 

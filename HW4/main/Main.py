@@ -3,8 +3,7 @@ from main.ui.Console import Console
 
 class Main:
 
-    @staticmethod
-    def main():
+    def main(self):
         console = Console()
         console.run()
         print("bye")

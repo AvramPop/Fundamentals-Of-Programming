@@ -1,5 +1,6 @@
 from unittest import TestCase
 
+from main.Exception import EmptyStackException
 from main.Stack import Stack
 
 
@@ -20,5 +21,5 @@ class TestStack(TestCase):
         self.stack.push("b")
         self.assertEqual(self.stack.pop(), "b")
         self.assertEqual(self.stack.pop(), "a")
-        with self.assertRaises(IndexError):
+        with self.assertRaises(EmptyStackException):
             self.stack.pop()
