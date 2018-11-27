@@ -2,6 +2,7 @@ from main.Constants import Constants
 from main.Exception import DatesNotOrderedException, ClientHasMoviesNotReturnedException, MovieNotAvailableException, \
     MovieNotCurrentlyRentedByClientException
 from main.dao.RentalDAO import RentalDAO
+import operator
 from main.repo.RentalRepo import RentalRepo
 from main.ui.Printer import Printer
 
@@ -98,66 +99,46 @@ class RentalController:
         """
         Get list of movies most rented by times rented
         """
-        moviesIdMostRentedList = [0] * len(movieRepo.getList())
-        timesMovieRentedList = [0] * len(movieRepo.getList())
-        for movie in movieRepo.getList():
-            moviesIdMostRentedList[movie.getId()] = movie.getId()  # TODO FIXME this crashes
-
-        for rental in self.getRentalList():
-            timesMovieRentedList[rental.getMovieId()] += 1
-
-        for i in range(0, len(movieRepo.getList()) - 1):
-            for j in range(i + 1, len(movieRepo.getList())):
-                if timesMovieRentedList[i] < timesMovieRentedList[j]:
-                    aux = timesMovieRentedList[j]
-                    timesMovieRentedList[j] = timesMovieRentedList[i]
-                    timesMovieRentedList[i] = aux
-
-                    aux = moviesIdMostRentedList[j]
-                    moviesIdMostRentedList[j] = moviesIdMostRentedList[i]
-                    moviesIdMostRentedList[i] = aux
-
-        moviesMostRentedList = [None] * len(movieRepo.getList())
-        i = 0
-        for movieId in moviesIdMostRentedList:
-            moviesMostRentedList[i] = movieRepo.getMovieWithId(movieId)
-            i += 1
-        return moviesMostRentedList
+        rentals = self.getRentalList()
+        movies = movieRepo.getList()
+        moviesDictionary = {}
+        for movie in movies:
+            moviesDictionary[movie.getId()] = 0
+        for rental in rentals:
+            if rental.getMovieId() in moviesDictionary:
+                moviesDictionary[rental.getMovieId()] += 1
+        sortedMovies = sorted(moviesDictionary.items(), key=operator.itemgetter(1))
+        sortedMovies.reverse()
+        print(str(sortedMovies))
+        sortedMovieList = []
+        for movie in sortedMovies:
+            sortedMovieList.append(movieRepo.getMovieWithId(movie[0]))
+        return sortedMovieList
 
     def moviesMostRentedByDays(self, movieRepo):
         """
         Get list of movies most rented by days rented
         """
         constants = Constants()
-        moviesIdMostRentedList = [0] * len(movieRepo.getList())
-        daysMovieRentedList = [0] * len(movieRepo.getList())
-        for movie in movieRepo.getList():
-            moviesIdMostRentedList[movie.getId()] = movie.getId()
-
-        for rental in self.getRentalList():
-            if rental.getReturnedDate() is None:
-                daysToAdd = constants.currentDay().daysUntilDate(rental.getRentedDate())
-            else:
-                daysToAdd = rental.getRentedDate().daysUntilDate(rental.getReturnedDate())
-            daysMovieRentedList[rental.getMovieId()] += daysToAdd
-
-        for i in range(0, len(movieRepo.getList()) - 1):
-            for j in range(i + 1, len(movieRepo.getList())):
-                if daysMovieRentedList[i] < daysMovieRentedList[j]:
-                    aux = daysMovieRentedList[j]
-                    daysMovieRentedList[j] = daysMovieRentedList[i]
-                    daysMovieRentedList[i] = aux
-
-                    aux = moviesIdMostRentedList[j]
-                    moviesIdMostRentedList[j] = moviesIdMostRentedList[i]
-                    moviesIdMostRentedList[i] = aux
-
-        moviesMostRentedList = [None] * len(movieRepo.getList())
-        i = 0
-        for movieId in moviesIdMostRentedList:
-            moviesMostRentedList[i] = movieRepo.getMovieWithId(movieId)
-            i += 1
-        return moviesMostRentedList
+        rentals = self.getRentalList()
+        movies = movieRepo.getList()
+        moviesDictionary = {}
+        for movie in movies:
+            moviesDictionary[movie.getId()] = 0
+        for rental in rentals:
+            if rental.getMovieId() in moviesDictionary:
+                if rental.getReturnedDate() is None:
+                    daysToAdd = constants.currentDay().daysUntilDate(rental.getRentedDate())
+                else:
+                    daysToAdd = rental.getRentedDate().daysUntilDate(rental.getReturnedDate())
+                moviesDictionary[rental.getMovieId()] += daysToAdd
+        sortedMovies = sorted(moviesDictionary.items(), key=operator.itemgetter(1))
+        sortedMovies.reverse()
+        print(str(sortedMovies))
+        sortedMovieList = []
+        for movie in sortedMovies:
+            sortedMovieList.append(movieRepo.getMovieWithId(movie[0]))
+        return sortedMovieList
 
     def mostActiveClients(self, clientRepo):
         """

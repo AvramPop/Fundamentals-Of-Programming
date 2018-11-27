@@ -39,7 +39,7 @@ class RentalRepo:
                 maximumIndex = rental.getId()
         return maximumIndex
 
-    def getList(self):
+    def getList(self):  # caution use
         return self.__rentalList
 
     def getRentalWithId(self, rentalId):

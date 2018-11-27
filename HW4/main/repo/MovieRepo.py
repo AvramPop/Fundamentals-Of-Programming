@@ -61,7 +61,7 @@ class MovieRepo:
         if indexOfMovieToRemoveInList == -1:
             raise ObjectNotInCollectionException
         else:
-            del self.__movieList[indexOfMovieToRemoveInList]
+            self.getList().pop(indexOfMovieToRemoveInList)
 
     def updateMovieWithId(self, movieId, updatedMovie):
         """
