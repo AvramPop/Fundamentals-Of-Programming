@@ -109,7 +109,6 @@ class RentalController:
                 moviesDictionary[rental.getMovieId()] += 1
         sortedMovies = sorted(moviesDictionary.items(), key=operator.itemgetter(1))
         sortedMovies.reverse()
-        print(str(sortedMovies))
         sortedMovieList = []
         for movie in sortedMovies:
             sortedMovieList.append(movieRepo.getMovieWithId(movie[0]))
@@ -134,7 +133,6 @@ class RentalController:
                 moviesDictionary[rental.getMovieId()] += daysToAdd
         sortedMovies = sorted(moviesDictionary.items(), key=operator.itemgetter(1))
         sortedMovies.reverse()
-        print(str(sortedMovies))
         sortedMovieList = []
         for movie in sortedMovies:
             sortedMovieList.append(movieRepo.getMovieWithId(movie[0]))
@@ -145,35 +143,24 @@ class RentalController:
         Get list of most active clients by days rented
         """
         constants = Constants()
-        mostActiveClientsId = [0] * len(clientRepo.getList())
-        clientsActivityList = [0] * len(clientRepo.getList())
-        for client in clientRepo.getList():
-            mostActiveClientsId[client.getId()] = client.getId()
-
-        for rental in self.getRentalList():
-            if rental.getReturnedDate() is None:
-                daysToAdd = constants.currentDay().daysUntilDate(rental.getRentedDate())
-            else:
-                daysToAdd = rental.getRentedDate().daysUntilDate(rental.getReturnedDate())
-            clientsActivityList[rental.getClientId()] += daysToAdd
-
-        for i in range(0, len(clientRepo.getList()) - 1):
-            for j in range(i + 1, len(clientRepo.getList())):
-                if clientsActivityList[i] < clientsActivityList[j]:
-                    aux = clientsActivityList[j]
-                    clientsActivityList[j] = clientsActivityList[i]
-                    clientsActivityList[i] = aux
-
-                    aux = mostActiveClientsId[j]
-                    mostActiveClientsId[j] = mostActiveClientsId[i]
-                    mostActiveClientsId[i] = aux
-
-        clientsMostActiveList = [None] * len(clientRepo.getList())
-        i = 0
-        for movieId in mostActiveClientsId:
-            clientsMostActiveList[i] = clientRepo.getClientWithId(movieId)
-            i += 1
-        return clientsMostActiveList
+        rentals = self.getRentalList()
+        clients = clientRepo.getList()
+        clientsDictionary = {}
+        for client in clients:
+            clientsDictionary[client.getId()] = 0
+        for rental in rentals:
+            if rental.getClientId() in clientsDictionary:
+                if rental.getReturnedDate() is None:
+                    daysToAdd = constants.currentDay().daysUntilDate(rental.getRentedDate())
+                else:
+                    daysToAdd = rental.getRentedDate().daysUntilDate(rental.getReturnedDate())
+                clientsDictionary[rental.getClientId()] += daysToAdd
+        sortedClients = sorted(clientsDictionary.items(), key=operator.itemgetter(1))
+        sortedClients.reverse()
+        sortedClientList = []
+        for client in sortedClients:
+            sortedClientList.append(clientRepo.getClientWithId(client[0]))
+        return sortedClientList
 
     def moviesCurrentlyRented(self, movieRepo):
         """

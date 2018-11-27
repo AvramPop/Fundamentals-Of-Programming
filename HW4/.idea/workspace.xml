@@ -2,11 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9902384d-ba54-4e59-8b6e-2d02ed0913fb" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main/controller/RentalController.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/controller/RentalController.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/repo/MovieRepo.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/repo/MovieRepo.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/repo/RentalRepo.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/repo/RentalRepo.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/ui/Console.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/ui/Console.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Lab2/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab2/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../lab03/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../lab03/.idea/workspace.xml" afterDir="false" />
     </list>
@@ -45,7 +41,7 @@
     <SUITE FILE_PATH="coverage/HW4$Unittests_for_TestUndoRunner_TestUndoRunner_test_undoAddMovie.coverage" NAME="Unittests for TestUndoRunner.TestUndoRunner.test_undoAddMovie Coverage Results" MODIFIED="1543005792511" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test/misc" />
     <SUITE FILE_PATH="coverage/HW4$Unittests_for_TestUtils_TestUtils.coverage" NAME="Unittests for TestUtils.TestUtils Coverage Results" MODIFIED="1542291666637" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test/misc" />
     <SUITE FILE_PATH="coverage/HW4$Unittests_in_TestMovieRepo_py.coverage" NAME="Unittests in TestMovieRepo.py Coverage Results" MODIFIED="1543246634665" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test/repo" />
-    <SUITE FILE_PATH="coverage/HW4$Main.coverage" NAME="Main Coverage Results" MODIFIED="1543301832152" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/main" />
+    <SUITE FILE_PATH="coverage/HW4$Main.coverage" NAME="Main Coverage Results" MODIFIED="1543302440698" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/main" />
     <SUITE FILE_PATH="coverage/HW4$Unittests_in_RentalTests_py.coverage" NAME="Unittests in TestRental.py Coverage Results" MODIFIED="1541174782463" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test/model" />
     <SUITE FILE_PATH="coverage/HW4$Unittests_in_TestRental_py.coverage" NAME="Unittests in TestRental.py Coverage Results" MODIFIED="1543246635734" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test/model" />
     <SUITE FILE_PATH="coverage/HW4$Unittests_for_TestClientRepo_TestClientRepo_test_removeClient.coverage" NAME="Unittests for TestClientRepo.TestClientRepo.test_removeClient Coverage Results" MODIFIED="1542197892417" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test/repo" />
@@ -111,8 +107,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/main/controller/RentalController.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="774">
-              <caret line="145" lean-forward="true" selection-start-line="145" selection-end-line="145" />
+            <state relative-caret-position="690">
+              <caret line="158" column="19" selection-start-line="158" selection-start-column="8" selection-end-line="158" selection-end-column="23" />
             </state>
           </provider>
         </entry>
@@ -887,7 +883,7 @@
       <workItem from="1543218096389" duration="4611000" />
       <workItem from="1543226453139" duration="1698000" />
       <workItem from="1543238094845" duration="2732000" />
-      <workItem from="1543300995486" duration="702000" />
+      <workItem from="1543300995486" duration="1288000" />
     </task>
     <servers />
   </component>
@@ -924,7 +920,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="35914000" />
+    <option name="totallyTimeSpent" value="36500000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -943,7 +939,7 @@
       <window_info id="Favorites" order="2" sideWeight="0.501046" side_tool="true" weight="0.17129135" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32217574" />
-      <window_info anchor="bottom" x="0" y="0" width="1366" height="762" id="Run" order="2" sideWeight="0.4994664" type="FLOATING" weight="0.45759162" />
+      <window_info anchor="bottom" x="0" y="0" width="1366" height="762" id="Run" order="2" sideWeight="0.4994664" type="FLOATING" visible="true" weight="0.45759162" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.54393303" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -952,7 +948,7 @@
       <window_info anchor="bottom" id="Version Control" order="8" weight="0.32919255" />
       <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Statistic" order="10" weight="0.32919255" />
-      <window_info anchor="bottom" id="Terminal" order="11" weight="0.17546584" />
+      <window_info anchor="bottom" id="Terminal" order="11" weight="0.1746862" />
       <window_info anchor="bottom" id="Event Log" order="12" sideWeight="0.50053364" side_tool="true" weight="0.32763976" />
       <window_info anchor="bottom" id="Python Console" order="13" weight="0.32984293" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
@@ -1436,8 +1432,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/main/controller/RentalController.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="738">
-          <caret line="143" column="41" selection-start-line="143" selection-start-column="41" selection-end-line="143" selection-end-column="41" />
+        <state relative-caret-position="690">
+          <caret line="158" column="19" selection-start-line="158" selection-start-column="8" selection-end-line="158" selection-end-column="23" />
         </state>
       </provider>
     </entry>
