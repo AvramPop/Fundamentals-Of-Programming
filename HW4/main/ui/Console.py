@@ -2,40 +2,26 @@ from main.Constants import Constants
 from main.Exception import ObjectNotInCollectionException, DatesNotOrderedException, InvalidDateFormatException, \
     ClientHasMoviesNotReturnedException, MovieNotAvailableException, MovieNotCurrentlyRentedByClientException, \
     MovieCurrentlyRentedException, EmptyStackException
-from main.Stack import Stack
-from main.UndoRunner import UndoRunner
 from main.Validator import Validator
-from main.controller.ClientController import ClientController
-from main.controller.MovieController import MovieController
-from main.controller.RentalController import RentalController
 from main.dao.ClientDAO import ClientDAO
 from main.Date import Date
 from main.dao.MovieDAO import MovieDAO
-from main.repo.ClientRepo import ClientRepo
-from main.repo.MovieRepo import MovieRepo
-from main.repo.RentalRepo import RentalRepo
 from main.ui.Printer import Printer
 
 
 class Console:
 
-    def __init__(self) -> None:
+    def __init__(self, clientController, movieController, rentalController, undoStack, commandsStack, redoStack, undoRunner) -> None:
         self.printer = Printer()
         self.validator = Validator()
         self.constants = Constants()
-        self.clientController = ClientController(ClientRepo())
-        self.movieController = MovieController(MovieRepo())
-        self.rentalController = RentalController(RentalRepo())
-        # self.clientController.populateRepoWithMany()
-        # self.movieController.populateRepoWithMany()
-        self.movieController.populateRepoWithFew()
-        self.clientController.populateRepoWithFew()
-        self.rentalController.populateRepo(self.movieController.getRepo(),
-                                           self.clientController.getRepo())  # TODO do these really update as they should? remove checking seems wrong
-        self.undoStack = Stack()
-        self.commandsStack = Stack()
-        self.redoStack = Stack()
-        self.undoRunner = UndoRunner()
+        self.clientController = clientController
+        self.movieController = movieController
+        self.rentalController = rentalController
+        self.undoStack = undoStack
+        self.commandsStack = commandsStack
+        self.redoStack = redoStack
+        self.undoRunner = undoRunner
 
     def run(self):
         while True:
@@ -61,43 +47,33 @@ class Console:
         except EmptyStackException as emptyStackException:
             print("nothing to undo")
         else:
-            print(lastElement)
             self.redoStack.push(lastElement)
             self.commandsStack.deleteLastElement()
 
     def __redo(self):
         try:
             commandToRedo = self.redoStack.pop()
-            print(commandToRedo)
         except EmptyStackException as exptyStackException:
             print("nothing to redo")
         else:
             if commandToRedo[0] == "rent":
-                print("redo rent")
                 dueDate = Date(int(commandToRedo[3]),
                                int(commandToRedo[4]),
                                int(commandToRedo[5]))
                 self.__doRent(dueDate, commandToRedo)
             elif commandToRedo[0] == "return":
-                print("redo return")
                 self.__doReturn(commandToRedo)
             elif commandToRedo[0] == "add" and len(commandToRedo) == 2:
-                print("redo add client")
                 self.__doAddClient(commandToRedo)
             elif commandToRedo[0] == "remove" and commandToRedo[2] == "client":
-                print("redo remove client")
                 self.__doRemoveClient(commandToRedo)
             elif commandToRedo[0] == "update" and len(commandToRedo) == 3:
-                print("redo update client")
                 self.__doUpdateClient(commandToRedo)
             elif commandToRedo[0] == "add" and len(commandToRedo) == 4:
-                print("redo add movie")
                 self.__doAddMovie(commandToRedo)
             elif commandToRedo[0] == "remove" and commandToRedo[2] == "movie":
-                print("redo remove movie")
                 self.__doRemoveMovie(commandToRedo)
             elif commandToRedo[0] == "update" and len(commandToRedo) == 5:
-                print("redo update movie")
                 self.__doUpdateMovie(commandToRedo)
 
     def __showManagerMenu(self):
@@ -244,7 +220,7 @@ class Console:
                         except MovieNotCurrentlyRentedByClientException as movieNotCurrentlyRentedByClientException:
                             print("movie with id #", optionInputWordList[2], "not rented by client with #",
                                   optionInputWordList[1])
-                            self.__popStacks()
+                            self.__popUndoStacks()
                         else:
                             print("Movie with id #", optionInputWordList[2],
                                   "successfully returned by client with id #", optionInputWordList[1])
@@ -257,7 +233,7 @@ class Console:
         else:
             print("wrong input")
 
-    def __popStacks(self):
+    def __popUndoStacks(self):
         self.undoStack.pop()
         self.commandsStack.pop()
 
@@ -286,13 +262,13 @@ class Console:
                                         self.__doRent(dueDate, optionInputWordList)
                                     except DatesNotOrderedException as datesNotOrderedException:
                                         print("The due date cannot be before the rental date")
-                                        self.__popStacks()
+                                        self.__popUndoStacks()
                                     except ClientHasMoviesNotReturnedException as clientHasMoviesNotReturnedException:
                                         print("Client #", optionInputWordList[1], "has passed due date for movies")
-                                        self.__popStacks()
+                                        self.__popUndoStacks()
                                     except MovieNotAvailableException as movieNotAvailableException:
                                         print("Movie #", optionInputWordList[2], "is not available")
-                                        self.__popStacks()
+                                        self.__popUndoStacks()
                                     else:
 
                                         print("Movie #", optionInputWordList[2], "successfully rented by client #",
@@ -335,7 +311,7 @@ class Console:
                 self.__doUpdateMovie(optionInputWordList)
             except ObjectNotInCollectionException as objectNotInCollectionException:
                 print("Movie with id", optionInputWordList[1], "not found")
-                self.__popStacks()
+                self.__popUndoStacks()
             else:
                 print("Successfully updated movie #", optionInputWordList[1])
         else:
@@ -354,10 +330,10 @@ class Console:
                 self.__doRemoveMovie(optionInputWordList)
             except ObjectNotInCollectionException as objectNotInCollectionException:
                 print("Movie with id", optionInputWordList[1], "not found")
-                self.__popStacks()
+                self.__popUndoStacks()
             except MovieCurrentlyRentedException as movieCurrentlyRentedException:
                 print("Movie with id #", optionInputWordList[1], "is currently rented. Couldn't delete")
-                self.__popStacks()
+                self.__popUndoStacks()
             else:
                 print("Successfully removed movie #", optionInputWordList[1])
         else:
@@ -398,7 +374,7 @@ class Console:
                 self.__doUpdateClient(optionInputWordList)
             except ObjectNotInCollectionException as objectNotInCollectionException:
                 print("Client with id", optionInputWordList[1], "not found")
-                self.__popStacks()
+                self.__popUndoStacks()
             else:
                 print("Successfully updated client #", optionInputWordList[1])
         else:
@@ -416,10 +392,10 @@ class Console:
                 self.__doRemoveClient(optionInputWordList)
             except ClientHasMoviesNotReturnedException as clientHasMoviesNotReturnedException:
                 print("Client with id #", optionInputWordList[1], "has movies not returned. Couldn't delete")
-                self.__popStacks()
+                self.__popUndoStacks()
             except ObjectNotInCollectionException as objectNotInCollectionException:
                 print("Client with id", optionInputWordList[1], "not found")
-                self.__popStacks()
+                self.__popUndoStacks()
             else:
                 print("Successfully removed client #", optionInputWordList[1])
         else:
@@ -441,5 +417,3 @@ class Console:
                 print("Client with id #", optionInputWordList[1], "not found")
         else:
             print("Wrong input")
-
-
