@@ -1,4 +1,5 @@
 from main.Constants import Constants
+from main.Date import Date
 from main.dao.ClientDAO import ClientDAO
 from main.dao.MovieDAO import MovieDAO
 
@@ -45,6 +46,27 @@ class UndoRunner:
 
     def undo(self, clientController, movieController, rentalController, stack):
         self.__runUndoCommand(stack.pop(), clientController, movieController, rentalController)
+
+    def redo(self, commandToRedo, clientController, movieController, rentalController):
+        if commandToRedo[0] == "rent":
+            dueDate = Date(int(commandToRedo[3]),
+                           int(commandToRedo[4]),
+                           int(commandToRedo[5]))
+            self.__doRentForRedo(dueDate, commandToRedo, rentalController, clientController, movieController)
+        elif commandToRedo[0] == "return":
+            self.__doReturnForRedo(commandToRedo, rentalController)
+        elif commandToRedo[0] == "add" and len(commandToRedo) == 2:
+            self.__doAddClientForRedo(commandToRedo, clientController)
+        elif commandToRedo[0] == "remove" and commandToRedo[2] == "client":
+            self.__doRemoveClientForRedo(commandToRedo, clientController, rentalController)
+        elif commandToRedo[0] == "update" and len(commandToRedo) == 3:
+            self.__doUpdateClientForRedo(commandToRedo, clientController)
+        elif commandToRedo[0] == "add" and len(commandToRedo) == 4:
+            self.__doAddMovieForRedo(commandToRedo, movieController)
+        elif commandToRedo[0] == "remove" and commandToRedo[2] == "movie":
+            self.__doRemoveMovieForRedo(commandToRedo, movieController, rentalController)
+        elif commandToRedo[0] == "update" and len(commandToRedo) == 5:
+            self.__doUpdateMovieForRedo(commandToRedo, movieController)
 
     def __returnOppositeCommand(self, parsedInputCommand, controller):
         # got "return" "client id" "movie id"
@@ -110,62 +132,94 @@ class UndoRunner:
         operation = command[1]
         if typeOfOperation == "client":
             if operation == "add":
-                self.__addClient(command, clientController)
+                self.__addClientForUndo(command, clientController)
             elif operation == "remove":
-                self.__removeClient(command, clientController, rentalController)
+                self.__removeClientForUndo(command, clientController, rentalController)
             elif operation == "update":
-                self.__updateClient(command, clientController)
+                self.__updateClientForUndo(command, clientController)
         elif typeOfOperation == "movie":
             if operation == "add":
-                self.__addMovie(command, movieController)
+                self.__addMovieForUndo(command, movieController)
             elif operation == "remove":
-                self.__removeMovie(command, movieController, rentalController)
+                self.__removeMovieForUndo(command, movieController, rentalController)
             elif operation == "update":
-                self.__updateMovie(command, movieController)
+                self.__updateMovieForUndo(command, movieController)
         elif typeOfOperation == "rental":
             if operation == "returnedDateToNone":
-                self.__returnedDateToNone(command, rentalController)
+                self.__returnedDateToNoneForUndo(command, rentalController)
             elif operation == "remove":
-                self.__removeRental(command, rentalController)
+                self.__removeRentalForUndo(command, rentalController)
 
-    def __addClient(self, command, clientController):
+    def __addClientForUndo(self, command, clientController):
         # return "client" "add" "client id" "client name"
         client = ClientDAO(command[3])
         client.setClientId(int(command[2]))
         clientController.addClientWithId(client)
 
-    def __removeClient(self, command, clientController, rentalController):
+    def __removeClientForUndo(self, command, clientController, rentalController):
         # return "client" "remove" "id of element to remove"
         clientController.removeClientWithId(int(command[2]), rentalController.getRepo())
 
-    def __updateClient(self, command, clientController):
+    def __updateClientForUndo(self, command, clientController):
         # return "client" "update" "client id" "old name"
         updatedClient = ClientDAO(command[3])
         updatedClient.setClientId(int(command[2]))
         clientController.updateClientWithId(int(command[2]), updatedClient)
 
-    def __addMovie(self, command, movieController):
+    def __addMovieForUndo(self, command, movieController):
         # return "movie" "add" "movie id" "title" "description" "genre"
         movie = MovieDAO(command[3], command[4], command[5])
         movie.setMovieId(int(command[2]))
         movieController.addMovieWithId(movie)
 
-    def __removeMovie(self, command, movieController, rentalController):
+    def __removeMovieForUndo(self, command, movieController, rentalController):
         # return "movie" "remove" "id of movie to remove"
         movieController.removeMovieWithId(int(command[2]), rentalController.getRepo())
 
-    def __updateMovie(self, command, movieController):
+    def __updateMovieForUndo(self, command, movieController):
         # return "movie" "update" "movie id" "old title" "old description" "old genre"
         updatedMovie = MovieDAO(command[3], command[4], command[5])
         updatedMovie.setMovieId(int(command[2]))
         movieController.updateMovieWithId(int(command[2]), updatedMovie)
 
-    def __returnedDateToNone(self, command, rentalController):
+    def __returnedDateToNoneForUndo(self, command, rentalController):
         # return "rental" "returnedDateToNone" "rental id"
         updatedRental = rentalController.getRentalWithId(int(command[2]))
         updatedRental.setReturnedDateToNone()
         rentalController.updateRentalWithId(int(command[2]), updatedRental)
 
-    def __removeRental(self, command, rentalController):
+    def __removeRentalForUndo(self, command, rentalController):
         # return "rental" "remove" "rental id"
         rentalController.removeRentalWithId(int(command[2]))
+
+    def __doRentForRedo(self, dueDate, commandToRedo, rentalController, clientController, movieController):
+        rentalController.rentMovieByClientUntilDate(int(commandToRedo[1]),
+                                                         int(commandToRedo[2]),
+                                                         dueDate,
+                                                         movieController.getRepo(),
+                                                         clientController.getRepo())
+
+    def __doReturnForRedo(self, commandToRedo, rentalController):
+        rentalController.returnMovieByClient(int(commandToRedo[1]),
+                                                  int(commandToRedo[2]))
+
+    def __doAddClientForRedo(self, commandToRedo, clientController):
+        clientController.addClient(ClientDAO(commandToRedo[1]))
+
+    def __doRemoveClientForRedo(self, commandToRedo, clientController, rentalController):
+        clientController.removeClientWithId(int(commandToRedo[1]), rentalController.getRepo())
+
+    def __doUpdateClientForRedo(self, commandToRedo, clientController):
+        clientController.updateClientWithId(int(commandToRedo[1]),
+                                                 ClientDAO(commandToRedo[2]))
+
+    def __doAddMovieForRedo(self, commandToRedo, movieController):
+        movieController.addMovie(MovieDAO(commandToRedo[1], commandToRedo[2], commandToRedo[3]))
+
+    def __doRemoveMovieForRedo(self, commandToRedo, movieController, rentalController):
+        movieController.removeMovieWithId(int(commandToRedo[1]), rentalController.getRepo())
+
+    def __doUpdateMovieForRedo(self, commandToRedo, movieController):
+        movieController.updateMovieWithId(int(commandToRedo[1]),
+                                               MovieDAO(commandToRedo[2], commandToRedo[3],
+                                                        commandToRedo[4]))

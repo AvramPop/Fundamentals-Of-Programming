@@ -56,25 +56,7 @@ class Console:
         except EmptyStackException as exptyStackException:
             print("nothing to redo")
         else:
-            if commandToRedo[0] == "rent":
-                dueDate = Date(int(commandToRedo[3]),
-                               int(commandToRedo[4]),
-                               int(commandToRedo[5]))
-                self.__doRent(dueDate, commandToRedo)
-            elif commandToRedo[0] == "return":
-                self.__doReturn(commandToRedo)
-            elif commandToRedo[0] == "add" and len(commandToRedo) == 2:
-                self.__doAddClient(commandToRedo)
-            elif commandToRedo[0] == "remove" and commandToRedo[2] == "client":
-                self.__doRemoveClient(commandToRedo)
-            elif commandToRedo[0] == "update" and len(commandToRedo) == 3:
-                self.__doUpdateClient(commandToRedo)
-            elif commandToRedo[0] == "add" and len(commandToRedo) == 4:
-                self.__doAddMovie(commandToRedo)
-            elif commandToRedo[0] == "remove" and commandToRedo[2] == "movie":
-                self.__doRemoveMovie(commandToRedo)
-            elif commandToRedo[0] == "update" and len(commandToRedo) == 5:
-                self.__doUpdateMovie(commandToRedo)
+            self.undoRunner.redo(commandToRedo, self.clientController, self.movieController, self.rentalController)
 
     def __showManagerMenu(self):
         while True:
