@@ -1,9 +1,8 @@
 from unittest import TestCase
 
-from main.Exception import ObjectNotInCollectionException
-from main.dao.MovieDAO import MovieDAO
-from main.repo.MovieRepo import MovieRepo
-from main.ui.Printer import Printer
+from src.Exception import ObjectNotInCollectionException
+from src.dao.MovieDAO import MovieDAO
+from src.repo.inmemory.MovieRepo import MovieRepo
 
 
 class TestMovieRepo(TestCase):

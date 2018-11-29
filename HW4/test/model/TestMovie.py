@@ -1,6 +1,6 @@
 from unittest import TestCase
-from main.dao.MovieDAO import MovieDAO
-from main.Exception import AlreadySetException
+from src.dao.MovieDAO import MovieDAO
+from src.Exception import AlreadySetException
 
 
 class TestMovie(TestCase):

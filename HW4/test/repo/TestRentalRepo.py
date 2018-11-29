@@ -1,13 +1,13 @@
 from unittest import TestCase
 
-from main.dao.ClientDAO import ClientDAO
-from main.Date import Date
-from main.dao.MovieDAO import MovieDAO
-from main.dao.RentalDAO import RentalDAO
-from main.repo.ClientRepo import ClientRepo
-from main.repo.MovieRepo import MovieRepo
-from main.repo.RentalRepo import RentalRepo
-from main.ui.Printer import Printer
+from src.dao.ClientDAO import ClientDAO
+from src.Date import Date
+from src.dao.MovieDAO import MovieDAO
+from src.dao.RentalDAO import RentalDAO
+from src.repo.inmemory.ClientRepo import ClientRepo
+from src.repo.inmemory.MovieRepo import MovieRepo
+from src.repo.inmemory.RentalRepo import RentalRepo
+from src.ui.Printer import Printer
 
 
 class TestRentalRepo(TestCase):

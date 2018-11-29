@@ -1,12 +1,12 @@
 from unittest import TestCase
 
-from main.Exception import DatesNotOrderedException, ObjectNotInCollectionException, AlreadySetException
-from main.dao.ClientDAO import ClientDAO
-from main.dao.MovieDAO import MovieDAO
-from main.dao.RentalDAO import RentalDAO
-from main.Date import Date
-from main.repo.ClientRepo import ClientRepo
-from main.repo.MovieRepo import MovieRepo
+from src.Exception import DatesNotOrderedException, ObjectNotInCollectionException, AlreadySetException
+from src.dao.ClientDAO import ClientDAO
+from src.dao.MovieDAO import MovieDAO
+from src.dao.RentalDAO import RentalDAO
+from src.Date import Date
+from src.repo.inmemory.ClientRepo import ClientRepo
+from src.repo.inmemory.MovieRepo import MovieRepo
 
 
 class TestRental(TestCase):

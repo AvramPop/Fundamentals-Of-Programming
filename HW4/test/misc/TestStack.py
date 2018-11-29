@@ -1,7 +1,7 @@
 from unittest import TestCase
 
-from main.Exception import EmptyStackException
-from main.Stack import Stack
+from src.Exception import EmptyStackException
+from src.undo.Stack import Stack
 
 
 class TestStack(TestCase):

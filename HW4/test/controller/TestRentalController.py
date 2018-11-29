@@ -1,17 +1,17 @@
 from unittest import TestCase
 
-from main.Constants import Constants
-from main.Exception import DatesNotOrderedException, ClientHasMoviesNotReturnedException, MovieNotAvailableException, \
+from src.Constants import Constants
+from src.Exception import DatesNotOrderedException, ClientHasMoviesNotReturnedException, MovieNotAvailableException, \
     MovieNotCurrentlyRentedByClientException
-from main.controller.RentalController import RentalController
-from main.dao.ClientDAO import ClientDAO
-from main.Date import Date
-from main.dao.MovieDAO import MovieDAO
-from main.dao.RentalDAO import RentalDAO
-from main.repo.ClientRepo import ClientRepo
-from main.repo.MovieRepo import MovieRepo
-from main.repo.RentalRepo import RentalRepo
-from main.ui.Printer import Printer
+from src.controller.RentalController import RentalController
+from src.dao.ClientDAO import ClientDAO
+from src.Date import Date
+from src.dao.MovieDAO import MovieDAO
+from src.dao.RentalDAO import RentalDAO
+from src.repo.inmemory.ClientRepo import ClientRepo
+from src.repo.inmemory.MovieRepo import MovieRepo
+from src.repo.inmemory.RentalRepo import RentalRepo
+from src.ui.Printer import Printer
 
 
 class TestRentalController(TestCase):

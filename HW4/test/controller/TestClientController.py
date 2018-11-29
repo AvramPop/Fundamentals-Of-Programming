@@ -1,7 +1,7 @@
 from unittest import TestCase
 
-from main.controller.ClientController import ClientController
-from main.repo.ClientRepo import ClientRepo
+from src.controller.ClientController import ClientController
+from src.repo.inmemory.ClientRepo import ClientRepo
 
 
 class TestClientController(TestCase):

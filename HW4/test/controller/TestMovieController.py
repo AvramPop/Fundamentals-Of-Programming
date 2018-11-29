@@ -1,7 +1,7 @@
 from unittest import TestCase
 
-from main.controller.MovieController import MovieController
-from main.repo.MovieRepo import MovieRepo
+from src.controller.MovieController import MovieController
+from src.repo.inmemory.MovieRepo import MovieRepo
 
 
 class TestMovieController(TestCase):

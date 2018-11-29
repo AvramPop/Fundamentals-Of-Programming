@@ -1,6 +1,6 @@
 from unittest import TestCase
 
-from main.Utils import stringsPartiallyMatch
+from src.Utils import stringsPartiallyMatch
 
 
 class TestUtils(TestCase):

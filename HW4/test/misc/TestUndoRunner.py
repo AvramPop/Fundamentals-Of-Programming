@@ -1,19 +1,19 @@
 from unittest import TestCase
 
-from main.Constants import Constants
-from main.Exception import ObjectNotInCollectionException
-from main.Stack import Stack
-from main.UndoRunner import UndoRunner
-from main.controller.ClientController import ClientController
-from main.controller.MovieController import MovieController
-from main.controller.RentalController import RentalController
-from main.dao.ClientDAO import ClientDAO
-from main.Date import Date
-from main.dao.MovieDAO import MovieDAO
-from main.repo.ClientRepo import ClientRepo
-from main.repo.MovieRepo import MovieRepo
-from main.repo.RentalRepo import RentalRepo
-from main.ui.Printer import Printer
+from src.Constants import Constants
+from src.Exception import ObjectNotInCollectionException
+from src.undo.Stack import Stack
+from src.undo.UndoRunner import UndoRunner
+from src.controller.ClientController import ClientController
+from src.controller.MovieController import MovieController
+from src.controller.RentalController import RentalController
+from src.dao.ClientDAO import ClientDAO
+from src.Date import Date
+from src.dao.MovieDAO import MovieDAO
+from src.repo.inmemory.ClientRepo import ClientRepo
+from src.repo.inmemory.MovieRepo import MovieRepo
+from src.repo.inmemory.RentalRepo import RentalRepo
+from src.ui.Printer import Printer
 
 
 class TestUndoRunner(TestCase):

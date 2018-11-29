@@ -1,6 +1,6 @@
 from unittest import TestCase
-from main.Date import Date
-from main.Exception import InvalidDateFormatException
+from src.Date import Date
+from src.Exception import InvalidDateFormatException
 
 
 class TestDate(TestCase):

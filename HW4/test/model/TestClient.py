@@ -1,6 +1,6 @@
 from unittest import TestCase
-from main.dao.ClientDAO import ClientDAO
-from main.Exception import AlreadySetException
+from src.dao.ClientDAO import ClientDAO
+from src.Exception import AlreadySetException
 
 
 class TestClient(TestCase):

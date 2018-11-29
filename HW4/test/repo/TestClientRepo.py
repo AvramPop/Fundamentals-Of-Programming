@@ -1,9 +1,9 @@
 from unittest import TestCase
 
-from main.Exception import ObjectNotInCollectionException
-from main.dao.ClientDAO import ClientDAO
-from main.repo.ClientRepo import ClientRepo
-from main.ui.Printer import Printer
+from src.Exception import ObjectNotInCollectionException
+from src.dao.ClientDAO import ClientDAO
+from src.repo.inmemory.ClientRepo import ClientRepo
+from src.ui.Printer import Printer
 
 
 class TestClientRepo(TestCase):
