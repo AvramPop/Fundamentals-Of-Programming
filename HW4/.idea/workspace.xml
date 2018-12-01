@@ -2,26 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9902384d-ba54-4e59-8b6e-2d02ed0913fb" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/res/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/res/binary/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/res/txt/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/repo/file/TestClientFileRepository.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/repo/file/TestMovieFileRepository.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/repo/file/TestRentalFileRepository.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/repo/file/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/repo/file/clientTest.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/repo/file/movieTest.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/repo/file/rentalTest.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/txt/clients.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/txt/movies.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/txt/rentals.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/config.ini" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dao/RentalDAO.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/dao/RentalDAO.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/repo/file/ClientFileRepository.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/repo/file/ClientFileRepository.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/repo/file/MovieFileRepository.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/repo/file/MovieFileRepository.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/repo/file/RentalFileRepository.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/repo/file/RentalFileRepository.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/repo/inmemory/ClientRepo.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/repo/inmemory/ClientRepo.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/repo/inmemory/MovieRepo.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/repo/inmemory/MovieRepo.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/repo/inmemory/RentalRepo.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/repo/inmemory/RentalRepo.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/undo/UndoRunner.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/undo/UndoRunner.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/repo/TestClientRepo.py" beforeDir="false" afterPath="$PROJECT_DIR$/test/repo/TestClientRepo.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Lab2/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab2/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../lab03/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../lab03/.idea/workspace.xml" afterDir="false" />
     </list>
@@ -67,8 +54,8 @@
     <SUITE FILE_PATH="coverage/HW4$Unittests_in_MovieTests_py.coverage" NAME="Unittests in TestMovie.py Coverage Results" MODIFIED="1541174782592" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test/model" />
     <SUITE FILE_PATH="coverage/HW4$Unittests_for_TestUndoRunner_TestUndoRunner_test_undoAddMovie.coverage" NAME="Unittests for TestUndoRunner.TestUndoRunner.test_undoAddMovie Coverage Results" MODIFIED="1543005792511" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test/misc" />
     <SUITE FILE_PATH="coverage/HW4$Unittests_for_TestUtils_TestUtils.coverage" NAME="Unittests for TestUtils.TestUtils Coverage Results" MODIFIED="1542291666637" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test/misc" />
-    <SUITE FILE_PATH="coverage/HW4$Main.coverage" NAME="Main Coverage Results" MODIFIED="1543502769902" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
     <SUITE FILE_PATH="coverage/HW4$Unittests_in_TestMovieRepo_py.coverage" NAME="Unittests in TestMovieRepo.py Coverage Results" MODIFIED="1543686118340" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test/repo" />
+    <SUITE FILE_PATH="coverage/HW4$Main.coverage" NAME="Main Coverage Results" MODIFIED="1543688681192" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
     <SUITE FILE_PATH="coverage/HW4$Unittests_in_RentalTests_py.coverage" NAME="Unittests in TestRental.py Coverage Results" MODIFIED="1541174782463" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test/model" />
     <SUITE FILE_PATH="coverage/HW4$Unittests_in_TestRental_py.coverage" NAME="Unittests in TestRental.py Coverage Results" MODIFIED="1543686119095" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test/model" />
     <SUITE FILE_PATH="coverage/HW4$Unittests_for_TestClientRepo_TestClientRepo_test_removeClient.coverage" NAME="Unittests for TestClientRepo.TestClientRepo.test_removeClient Coverage Results" MODIFIED="1542197892417" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test/repo" />
@@ -143,25 +130,124 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/test/repo/file/TestRentalFileRepository.py">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/repo/file/ClientFileRepository.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1140">
-              <caret line="76" column="77" lean-forward="true" selection-start-line="76" selection-start-column="77" selection-end-line="76" selection-end-column="77" />
+            <state relative-caret-position="93">
+              <caret line="65" selection-start-line="65" selection-end-line="65" />
               <folding>
-                <element signature="e#0#29#0" expanded="true" />
+                <element signature="e#0#39#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/repo/file/RentalFileRepository.py">
+        <entry file="file://$PROJECT_DIR$/src/repo/inmemory/ClientRepo.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="294">
-              <caret line="66" column="34" selection-start-line="66" selection-start-column="34" selection-end-line="66" selection-end-column="34" />
+            <state relative-caret-position="147">
+              <caret line="42" selection-start-line="42" selection-end-line="42" />
               <folding>
-                <element signature="e#0#25#0" expanded="true" />
+                <element signature="e#0#92#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/repo/file/MovieFileRepository.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="420">
+              <caret line="66" selection-start-line="66" selection-end-line="66" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/res/txt/clients.txt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="322">
+              <caret line="48" lean-forward="true" selection-start-line="48" selection-end-line="48" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/res/txt/movies.txt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1044">
+              <caret line="58" selection-start-line="58" selection-end-line="58" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/res/txt/rentals.txt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="162">
+              <caret line="9" column="25" selection-start-line="9" selection-start-column="25" selection-end-line="9" selection-end-column="25" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Main.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="528">
+              <caret line="34" selection-start-line="34" selection-end-line="34" />
+              <folding>
+                <element signature="e#0#19#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/ui/Console.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="346">
+              <caret line="328" column="63" selection-start-line="328" selection-start-column="63" selection-end-line="328" selection-end-column="63" />
+              <folding>
+                <element signature="e#0#35#0" expanded="true" />
+                <element signature="e#1075#1609#0" />
+                <element signature="e#2381#2759#0" />
+                <element signature="e#2800#3201#0" />
+                <element signature="e#3243#3647#0" />
+                <element signature="e#3689#4621#0" />
+                <element signature="e#4665#5532#0" />
+                <element signature="e#5577#6449#0" />
+                <element signature="e#6503#7645#0" />
+                <element signature="e#7700#8305#0" />
+                <element signature="e#9885#10034#0" />
+                <element signature="e#13041#13449#0" />
+                <element signature="e#13899#14010#0" />
+                <element signature="e#14768#15020#0" />
+                <element signature="e#16049#16149#0" />
+                <element signature="e#17264#17330#0" />
+                <element signature="e#18095#18248#0" />
+                <element signature="e#19302#19404#0" />
+                <element signature="e#19463#20071#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/controller/MovieController.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="310">
+              <caret line="33" column="8" selection-start-line="33" selection-start-column="8" selection-end-line="33" selection-end-column="8" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/repo/inmemory/MovieRepo.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-68">
+              <caret line="21" column="8" selection-start-line="21" selection-start-column="8" selection-end-line="21" selection-end-column="8" />
+              <folding>
+                <element signature="e#0#138#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -178,12 +264,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>getMovieId</find>
-      <find>getMovieList</find>
-      <find>getRentalList</find>
-      <find>printRepo</find>
-      <find>Borg</find>
-      <find>ClientRepo</find>
       <find>RentalRepo(</find>
       <find>ClientRepo()</find>
       <find>self.__dict__ = self.__shared_state</find>
@@ -208,6 +288,12 @@
       <find>client</find>
       <find>movieRepo</find>
       <find>rentalRepo</find>
+      <find>loading</find>
+      <find>self.addClient(ClientDAO(&quot;</find>
+      <find>, name:</find>
+      <find>, genre:</find>
+      <find>, returned date: Date day:</find>
+      <find>printer</find>
     </findStrings>
     <replaceStrings>
       <replace>Client</replace>
@@ -242,12 +328,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/main/Validator.py" />
-        <option value="$PROJECT_DIR$/main/Constants.py" />
-        <option value="$PROJECT_DIR$/test/controller/TestClientController.py" />
-        <option value="$PROJECT_DIR$/test/controller/TestMovieController.py" />
-        <option value="$PROJECT_DIR$/main/Utils.py" />
-        <option value="$PROJECT_DIR$/test/misc/TestUtils.py" />
         <option value="$PROJECT_DIR$/main/CommandsGenerator.py" />
         <option value="$PROJECT_DIR$/main/model/Rental.py" />
         <option value="$PROJECT_DIR$/main/Exception.py" />
@@ -288,11 +368,17 @@
         <option value="$PROJECT_DIR$/src/repo/inmemory/RentalRepo.py" />
         <option value="$PROJECT_DIR$/src/dao/RentalDAO.py" />
         <option value="$PROJECT_DIR$/src/Date.py" />
-        <option value="$PROJECT_DIR$/src/repo/file/MovieFileRepository.py" />
         <option value="$PROJECT_DIR$/src/repo/inmemory/MovieRepo.py" />
         <option value="$PROJECT_DIR$/test/repo/file/TestMovieFileRepository.py" />
         <option value="$PROJECT_DIR$/src/repo/file/RentalFileRepository.py" />
         <option value="$PROJECT_DIR$/test/repo/file/TestRentalFileRepository.py" />
+        <option value="$PROJECT_DIR$/src/settings.properties" />
+        <option value="$PROJECT_DIR$/src/config.ini" />
+        <option value="$PROJECT_DIR$/res/txt/clients.txt" />
+        <option value="$PROJECT_DIR$/res/txt/movies.txt" />
+        <option value="$PROJECT_DIR$/res/txt/rentals.txt" />
+        <option value="$PROJECT_DIR$/src/Main.py" />
+        <option value="$PROJECT_DIR$/src/repo/file/MovieFileRepository.py" />
       </list>
     </option>
   </component>
@@ -335,6 +421,17 @@
             <path>
               <item name="HW4" type="b2602c69:ProjectViewProjectNode" />
               <item name="HW4" type="462c0819:PsiDirectoryNode" />
+              <item name="res" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="HW4" type="b2602c69:ProjectViewProjectNode" />
+              <item name="HW4" type="462c0819:PsiDirectoryNode" />
+              <item name="res" type="462c0819:PsiDirectoryNode" />
+              <item name="txt" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="HW4" type="b2602c69:ProjectViewProjectNode" />
+              <item name="HW4" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -360,20 +457,13 @@
             <path>
               <item name="HW4" type="b2602c69:ProjectViewProjectNode" />
               <item name="HW4" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="ui" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="HW4" type="b2602c69:ProjectViewProjectNode" />
               <item name="HW4" type="462c0819:PsiDirectoryNode" />
               <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="repo" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="HW4" type="b2602c69:ProjectViewProjectNode" />
-              <item name="HW4" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="repo" type="462c0819:PsiDirectoryNode" />
-              <item name="file" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -412,7 +502,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.MainWithTests">
+  <component name="RunManager" selected="Python.Main">
     <configuration default="true" type="Applet" factoryName="Applet">
       <option name="WIDTH" value="400" />
       <option name="HEIGHT" value="300" />
@@ -973,7 +1063,7 @@
       <workItem from="1543500280569" duration="7510000" />
       <workItem from="1543587469267" duration="2078000" />
       <workItem from="1543605342189" duration="1690000" />
-      <workItem from="1543680786772" duration="5337000" />
+      <workItem from="1543680786772" duration="7926000" />
     </task>
     <servers />
   </component>
@@ -1010,7 +1100,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="67179000" />
+    <option name="totallyTimeSpent" value="69768000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1028,7 +1118,7 @@
       <window_info id="Structure" order="1" sideWeight="0.501046" side_tool="true" weight="0.17129135" />
       <window_info id="Favorites" order="2" sideWeight="0.501046" side_tool="true" weight="0.17129135" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32142857" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.3211297" />
       <window_info anchor="bottom" x="0" y="0" width="1366" height="762" id="Run" order="2" sideWeight="0.4994664" type="FLOATING" weight="0.45759162" />
       <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49924242" weight="0.54184103" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
@@ -1038,7 +1128,7 @@
       <window_info anchor="bottom" id="Version Control" order="8" weight="0.32845187" />
       <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Statistic" order="10" weight="0.32919255" />
-      <window_info anchor="bottom" id="Terminal" order="11" weight="0.17080745" />
+      <window_info anchor="bottom" id="Terminal" order="11" weight="0.1705021" />
       <window_info anchor="bottom" id="Event Log" order="12" sideWeight="0.5007576" side_tool="true" weight="0.54347825" />
       <window_info anchor="bottom" id="Python Console" order="13" weight="0.32984293" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
@@ -1060,11 +1150,6 @@
           <url>file://$PROJECT_DIR$/main/repo/MovieRepo.py</url>
           <line>55</line>
           <option name="timeStamp" value="3" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/src/repo/file/MovieFileRepository.py</url>
-          <line>43</line>
-          <option name="timeStamp" value="17" />
         </line-breakpoint>
       </breakpoints>
       <default-breakpoints>
@@ -1158,14 +1243,6 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/main/Constants.py" />
-    <entry file="file://$PROJECT_DIR$/main/Date.py" />
-    <entry file="file://$PROJECT_DIR$/main/Exception.py" />
-    <entry file="file://$PROJECT_DIR$/main/Utils.py" />
-    <entry file="file://$PROJECT_DIR$/main/Stack.py" />
-    <entry file="file://$PROJECT_DIR$/main/Validator.py" />
-    <entry file="file://$PROJECT_DIR$/main/Repository.py" />
-    <entry file="file://$PROJECT_DIR$/main/ClientBinaryRepository.py" />
     <entry file="file://$PROJECT_DIR$/main/MovieBinaryRepository.py" />
     <entry file="file://$PROJECT_DIR$/main/MovieFileRepository.py" />
     <entry file="file://$PROJECT_DIR$/main/RentalBinaryRepository.py" />
@@ -1250,35 +1327,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ui/Console.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="504">
-          <caret line="43" column="12" selection-start-line="43" selection-start-column="12" selection-end-line="43" selection-end-column="12" />
-          <folding>
-            <element signature="e#0#35#0" expanded="true" />
-            <element signature="e#1075#1609#0" />
-            <element signature="e#2381#2759#0" />
-            <element signature="e#2800#3201#0" />
-            <element signature="e#3243#3647#0" />
-            <element signature="e#3689#4621#0" />
-            <element signature="e#4665#5532#0" />
-            <element signature="e#5577#6449#0" />
-            <element signature="e#6503#7645#0" />
-            <element signature="e#7700#8305#0" />
-            <element signature="e#9885#10034#0" />
-            <element signature="e#13041#13449#0" />
-            <element signature="e#13899#14010#0" />
-            <element signature="e#14768#15020#0" />
-            <element signature="e#16049#16149#0" />
-            <element signature="e#16207#16808#0" />
-            <element signature="e#17264#17330#0" />
-            <element signature="e#18095#18248#0" />
-            <element signature="e#19302#19404#0" />
-            <element signature="e#19463#20071#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/repo/Repository.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -1294,13 +1342,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/test/repo/file/clientTest.txt">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/repo/TestClientRepo.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/dao/MovieDAO.py">
       <provider selected="true" editor-type-id="text-editor" />
@@ -1339,16 +1380,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/repo/inmemory/ClientRepo.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1704">
-          <caret line="152" column="8" selection-start-line="152" selection-start-column="8" selection-end-line="152" selection-end-column="8" />
-          <folding>
-            <element signature="e#0#92#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/repo/inmemory/RentalRepo.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="216">
@@ -1362,40 +1393,10 @@
     <entry file="file://$PROJECT_DIR$/test/repo/file/movieTest.txt">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/repo/inmemory/MovieRepo.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="262">
-          <caret line="163" selection-start-line="163" selection-end-line="163" />
-          <folding>
-            <element signature="e#0#138#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/repo/file/MovieFileRepository.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="129">
-          <caret line="43" selection-start-line="43" selection-end-line="43" />
-          <folding>
-            <element signature="e#0#39#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file:///usr/lib/python3.6/unittest/case.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="317">
           <caret line="614" selection-start-line="614" selection-end-line="614" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/repo/file/ClientFileRepository.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="6">
-          <caret line="41" column="41" selection-start-line="41" selection-start-column="41" selection-end-line="41" selection-end-column="41" />
-          <folding>
-            <element signature="e#0#39#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1446,6 +1447,137 @@
           <folding>
             <element signature="e#0#29#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/repo/TestClientRepo.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="162">
+          <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/config.ini">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="18">
+          <caret line="1" column="21" selection-start-line="1" selection-start-column="21" selection-end-line="1" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/lib/python3.6/configparser.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="1233" selection-start-line="1233" selection-end-line="1233" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/controller/ClientController.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="137">
+          <caret line="41" selection-start-line="41" selection-end-line="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/repo/inmemory/ClientRepo.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="147">
+          <caret line="42" selection-start-line="42" selection-end-line="42" />
+          <folding>
+            <element signature="e#0#92#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/repo/file/ClientFileRepository.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="93">
+          <caret line="65" selection-start-line="65" selection-end-line="65" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/txt/clients.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="322">
+          <caret line="48" lean-forward="true" selection-start-line="48" selection-end-line="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/txt/movies.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1044">
+          <caret line="58" selection-start-line="58" selection-end-line="58" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/txt/rentals.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="162">
+          <caret line="9" column="25" selection-start-line="9" selection-start-column="25" selection-end-line="9" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/repo/inmemory/MovieRepo.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-68">
+          <caret line="21" column="8" selection-start-line="21" selection-start-column="8" selection-end-line="21" selection-end-column="8" />
+          <folding>
+            <element signature="e#0#138#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Main.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="528">
+          <caret line="34" selection-start-line="34" selection-end-line="34" />
+          <folding>
+            <element signature="e#0#19#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ui/Console.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="346">
+          <caret line="328" column="63" selection-start-line="328" selection-start-column="63" selection-end-line="328" selection-end-column="63" />
+          <folding>
+            <element signature="e#0#35#0" expanded="true" />
+            <element signature="e#1075#1609#0" />
+            <element signature="e#2381#2759#0" />
+            <element signature="e#2800#3201#0" />
+            <element signature="e#3243#3647#0" />
+            <element signature="e#3689#4621#0" />
+            <element signature="e#4665#5532#0" />
+            <element signature="e#5577#6449#0" />
+            <element signature="e#6503#7645#0" />
+            <element signature="e#7700#8305#0" />
+            <element signature="e#9885#10034#0" />
+            <element signature="e#13041#13449#0" />
+            <element signature="e#13899#14010#0" />
+            <element signature="e#14768#15020#0" />
+            <element signature="e#16049#16149#0" />
+            <element signature="e#17264#17330#0" />
+            <element signature="e#18095#18248#0" />
+            <element signature="e#19302#19404#0" />
+            <element signature="e#19463#20071#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/controller/MovieController.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="310">
+          <caret line="33" column="8" selection-start-line="33" selection-start-column="8" selection-end-line="33" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/repo/file/MovieFileRepository.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="420">
+          <caret line="66" selection-start-line="66" selection-end-line="66" />
         </state>
       </provider>
     </entry>

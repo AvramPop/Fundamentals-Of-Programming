@@ -62,10 +62,8 @@ class MovieFileRepository(MovieRepo):
 
     def __loadRepo(self):
         self.__loadFileReadMode()
-        print("loading repo")
         for line in self.__file:
             splitLine = line.split()
-            print(line)
             movieToAdd = MovieDAO(splitLine[1], splitLine[2], splitLine[3])
             movieToAdd.setMovieId(int(splitLine[0]))
             super().addMovieWithId(movieToAdd)
@@ -76,7 +74,6 @@ class MovieFileRepository(MovieRepo):
         self.__loadFileWriteMode()
         self.__file.write("")
         for movie in super().getList():
-            print(self.movieToString(movie))
             self.__file.write(self.movieToString(movie))
         self.__closeFile()
 

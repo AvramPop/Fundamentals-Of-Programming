@@ -1,3 +1,9 @@
+import configparser
+
+from src.repo.file.ClientFileRepository import ClientFileRepository
+from src.repo.file.MovieFileRepository import MovieFileRepository
+from src.repo.file.RentalFileRepository import RentalFileRepository
+from src.ui.Printer import Printer
 from src.undo.Stack import Stack
 from src.undo.UndoRunner import UndoRunner
 from src.controller.ClientController import ClientController
@@ -12,15 +18,22 @@ from src.ui.Console import Console
 class Main:
 
     def __init__(self) -> None:
-        self.clientController = ClientController(ClientRepo())
-        self.movieController = MovieController(MovieRepo())
-        self.rentalController = RentalController(RentalRepo())
-        self.clientController.populateRepoWithMany()
-        self.movieController.populateRepoWithMany()
-        # self.movieController.populateRepoWithFew()
-        # self.clientController.populateRepoWithFew()
-        self.rentalController.populateRepo(self.movieController.getRepo(),
-                                           self.clientController.getRepo())  # TODO do these really update as they should? remove checking seems wrong
+        config = configparser.ConfigParser()
+        config.read("config.ini")
+        if config['DEFAULT']["repository"] == "inmemory":
+            self.clientController = ClientController(ClientRepo())
+            self.movieController = MovieController(MovieRepo())
+            self.rentalController = RentalController(RentalRepo())
+            self.clientController.populateRepoWithMany()
+            self.movieController.populateRepoWithMany()
+            # self.movieController.populateRepoWithFew()
+            # self.clientController.populateRepoWithFew()
+            self.rentalController.populateRepo(self.movieController.getRepo(),
+                                               self.clientController.getRepo())  # TODO do these really update as they should? remove checking seems wrong
+        elif config['DEFAULT']["repository"] == "textfile":
+            self.clientController = ClientController(ClientFileRepository(config['DEFAULT']["clients"]))
+            self.movieController = MovieController(MovieFileRepository(config['DEFAULT']["movies"]))
+            self.rentalController = RentalController(RentalFileRepository(config['DEFAULT']["rentals"]))
         self.undoStack = Stack()
         self.commandsStack = Stack()
         self.redoStack = Stack()
