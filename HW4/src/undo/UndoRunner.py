@@ -58,28 +58,20 @@ class UndoRunner:
                            int(commandToRedo[4]),
                            int(commandToRedo[5]))
             redoActionRunner.rent(dueDate, commandToRedo, rentalController, clientController, movieController)
-            # self.__doRentForRedo(dueDate, commandToRedo, rentalController, clientController, movieController)
         elif commandToRedo[0] == "return":
             redoActionRunner.doReturn(commandToRedo, rentalController)
-            # self.__doReturnForRedo(commandToRedo, rentalController)
         elif commandToRedo[0] == "add" and len(commandToRedo) == 2:
             redoActionRunner.addClient(commandToRedo, clientController)
-            # self.__doAddClientForRedo(commandToRedo, clientController)
         elif commandToRedo[0] == "remove" and commandToRedo[2] == "client":
             redoActionRunner.removeClient(commandToRedo, clientController, rentalController)
-            # self.__doRemoveClientForRedo(commandToRedo, clientController, rentalController)
         elif commandToRedo[0] == "update" and len(commandToRedo) == 3:
             redoActionRunner.updateClient(commandToRedo, clientController)
-            # self.__doUpdateClientForRedo(commandToRedo, clientController)
         elif commandToRedo[0] == "add" and len(commandToRedo) == 4:
             redoActionRunner.addMovie(commandToRedo, movieController)
-            # self.__doAddMovieForRedo(commandToRedo, movieController)
         elif commandToRedo[0] == "remove" and commandToRedo[2] == "movie":
             redoActionRunner.removeMovie(commandToRedo, movieController, rentalController)
-            # self.__doRemoveMovieForRedo(commandToRedo, movieController, rentalController)
         elif commandToRedo[0] == "update" and len(commandToRedo) == 5:
             redoActionRunner.updateMovie(commandToRedo, movieController)
-            # self.__doUpdateMovieForRedo(commandToRedo, movieController)
 
     def __runUndoCommand(self, command, clientController, movieController, rentalController):
         typeOfOperation = command[0]

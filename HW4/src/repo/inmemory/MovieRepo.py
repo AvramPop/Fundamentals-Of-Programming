@@ -2,9 +2,10 @@ from src.Exception import ObjectNotInCollectionException, UpdatingObjectWithDiff
     ObjectAlreadyInCollectionException
 from src.Utils import sortListById
 from src.dao.MovieDAO import MovieDAO
+from src.repo.Repository import Repository
 
 
-class MovieRepo:
+class MovieRepo(Repository):
 
     def __init__(self) -> None:
         self.__movieList = []
@@ -23,7 +24,7 @@ class MovieRepo:
         Add movie to repo
         """
         if type(movie).__name__ == 'MovieDAO':
-            if not self.hasMovieWithId(movie.getId()):
+            if not MovieRepo.hasMovieWithId(self, movie.getId()):
                 movie.setMovieId(self.__maximumIndexInMovieList() + 1)
                 self.__movieList.append(movie)
                 # self.__sortMovieList()
@@ -61,7 +62,7 @@ class MovieRepo:
         if indexOfMovieToRemoveInList == -1:
             raise ObjectNotInCollectionException
         else:
-            self.getList().pop(indexOfMovieToRemoveInList)
+            del self.__movieList[indexOfMovieToRemoveInList]
 
     def updateMovieWithId(self, movieId, updatedMovie):
         """

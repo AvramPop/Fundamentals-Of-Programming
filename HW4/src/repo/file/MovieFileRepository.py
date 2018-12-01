@@ -1,28 +1,91 @@
-from src.repo.Repository import Repository
+from src.dao.MovieDAO import MovieDAO
+from src.repo.inmemory.MovieRepo import MovieRepo
 
 
-class MovieFileRepository(Repository):
+class MovieFileRepository(MovieRepo):
 
-    def __init__(self) -> None:
+    def __init__(self, fileName) -> None:
         super().__init__()
+        self.__fileName = fileName
+        self.__file = None
 
-    def hasClientWithId(self, clientId):
-        super().hasClientWithId(clientId)
+    def hasMovieWithId(self, movieId):
+        self.__loadRepo()
+        hasMovieWithId = super().hasMovieWithId(movieId)
+        super().clean()
+        return hasMovieWithId
 
-    def addClient(self, client):
-        super().addClient(client)
+    def addMovie(self, movie):
+        self.__loadRepo()
+        super().addMovie(movie)
+        self.__storeRepo()
+        super().clean()
 
     def getList(self):
-        super().getList()
+        self.__loadRepo()
+        movieList = super().getList()
+        super().clean()
+        return movieList
 
-    def addClientWithId(self, client):
-        super().addClientWithId(client)
+    def addMovieWithId(self, movie):
+        self.__loadRepo()
+        super().addMovieWithId(movie)
+        self.__storeRepo()
+        super().clean()
 
-    def getClientWithId(self, clientId):
-        super().getClientWithId(clientId)
+    def getMovieWithId(self, movieId):
+        self.__loadRepo()
+        movie = super().getMovieWithId(movieId)
+        super().clean()
+        return movie
 
-    def removeClientWithId(self, clientId):
-        super().removeClientWithId(clientId)
+    def removeMovieWithId(self, movieId):
+        self.__loadRepo()
+        super().removeMovieWithId(movieId)
+        self.__storeRepo()
+        super().clean()
 
-    def updateClientWithId(self, clientId, updatedClient):
-        super().updateClientWithId(clientId, updatedClient)
+    def updateMovieWithId(self, movieId, updatedMovie):
+        self.__loadRepo()
+        super().updateMovieWithId(movieId, updatedMovie)
+        self.__storeRepo()
+        super().clean()
+
+    def __loadFileReadMode(self):
+        self.__file = open(self.__fileName, "r")
+
+    def __loadFileWriteMode(self):
+        self.__file = open(self.__fileName, "w")
+
+    def __closeFile(self):
+        self.__file.close()
+
+    def __loadRepo(self):
+        self.__loadFileReadMode()
+        print("loading repo")
+        for line in self.__file:
+            splitLine = line.split()
+            print(line)
+            movieToAdd = MovieDAO(splitLine[1], splitLine[2], splitLine[3])
+            movieToAdd.setMovieId(int(splitLine[0]))
+            super().addMovieWithId(movieToAdd)
+        self.__closeFile()
+
+    def __storeRepo(self):
+        print("storing repo")
+        self.__loadFileWriteMode()
+        self.__file.write("")
+        for movie in super().getList():
+            print(self.movieToString(movie))
+            self.__file.write(self.movieToString(movie))
+        self.__closeFile()
+
+    def movieToString(self, movieDAO):
+        string = str(movieDAO.getId()) + " " + movieDAO.getTitle() + " " + movieDAO.getDescription() + " " + movieDAO.getGenre() + "\n"
+        # print(string)
+        return string
+
+    def cleanFile(self):
+        self.__loadFileWriteMode()
+        self.__file.write("")
+        self.__closeFile()

@@ -14,8 +14,6 @@ class TestClientRepo(TestCase):
         self.clientRepo.clean()
 
     def test_addClient(self):
-        printer = Printer()
-        printer.printList(self.clientRepo.getList())
         self.clientRepo.addClient(ClientDAO("damo"))
         self.assertEqual(((self.clientRepo.getList())[0]).getId(), 0)
         self.assertEqual(((self.clientRepo.getList())[0]).getName(), "damo")

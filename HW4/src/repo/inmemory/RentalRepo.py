@@ -3,9 +3,10 @@ from src.Exception import ObjectAlreadyInCollectionException, ObjectNotInCollect
 from src.Utils import sortListById
 from src.dao.RentalDAO import RentalDAO
 from src.Date import Date
+from src.repo.Repository import Repository
 
 
-class RentalRepo:
+class RentalRepo(Repository):
     __constants = Constants()
 
     def __init__(self) -> None:
@@ -22,7 +23,7 @@ class RentalRepo:
 
     def addRental(self, rental):
         if type(rental).__name__ == 'RentalDAO':
-            if not self.hasRentalWithId(rental.getId()):
+            if not RentalRepo.hasRentalWithId(self, rental.getId()):
                 rental.setRentalId(self.__maximumIndexInRentalList() + 1)
                 self.__rentalList.append(rental)
                 # self.__sortRentalList()

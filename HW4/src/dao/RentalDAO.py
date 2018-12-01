@@ -9,16 +9,19 @@ class RentalDAO:
     Models rental having <rentalID> (int, default = None), <movieId> (int, existing in MovieRepo),
     <clientId> (int, existing in ClientRepo), <rented date> (Date), <due date> (Date), <returned date> (Date, default none).
     """
-    def __init__(self, clientId, movieId, rentedDate, dueDate, movieRepo: "MovieRepo", clientRepo: "ClientRepo") -> None:
+    def __init__(self, clientId, movieId, rentedDate, dueDate, movieRepo = None, clientRepo = None) -> None:
         self.__rentalId = None
         self.__returnedDate = None
 
         if type(movieId) == int:
             if movieId >= 0:
-                if movieRepo.hasMovieWithId(movieId):
-                    self.__movieId = movieId
+                if movieRepo is not None:
+                    if movieRepo.hasMovieWithId(movieId):
+                        self.__movieId = movieId
+                    else:
+                        raise ObjectNotInCollectionException("movie with id does not exits")
                 else:
-                    raise ObjectNotInCollectionException("movie with id does not exits")
+                    self.__movieId = movieId
             else:
                 raise ValueError
         else:
@@ -26,10 +29,13 @@ class RentalDAO:
 
         if type(clientId) == int:
             if clientId >= 0:
-                if clientRepo.hasClientWithId(clientId):
-                    self.__clientId = clientId
+                if clientRepo is not None:
+                    if clientRepo.hasClientWithId(clientId):
+                        self.__clientId = clientId
+                    else:
+                        raise ObjectNotInCollectionException("client with id does not exist")
                 else:
-                    raise ObjectNotInCollectionException("client with id does not exist")
+                    self.__clientId = clientId
             else:
                 raise ValueError
         else:

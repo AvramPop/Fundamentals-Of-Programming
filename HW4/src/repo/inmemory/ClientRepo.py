@@ -1,10 +1,10 @@
-from src.Exception import ObjectNotInCollectionException, UpdatingObjectWithDifferentIdException, \
-    ObjectAlreadyInCollectionException, IdNotSetException
+from src.Exception import ObjectNotInCollectionException, ObjectAlreadyInCollectionException
 from src.Utils import sortListById
 from src.dao.ClientDAO import ClientDAO
+from src.repo.Repository import Repository
 
 
-class ClientRepo:
+class ClientRepo(Repository):
 
     def __init__(self) -> None:
         self.__clientList = []
@@ -25,7 +25,7 @@ class ClientRepo:
         :param client: the client to add
         """
         if type(client).__name__ == 'ClientDAO':
-            if not self.hasClientWithId(client.getId()):
+            if not ClientRepo.hasClientWithId(self, client.getId()):
                 client.setClientId(self.__maximumIndexInClientList() + 1)
                 self.__clientList.append(client)
                 sortListById(self.__clientList)
