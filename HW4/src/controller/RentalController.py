@@ -90,8 +90,8 @@ class RentalController:
                 return False
         return True
 
-    def populateRepo(self, movieRepo, rentalRepo):
-        self.__rentalRepo.populateWithFew(movieRepo, rentalRepo)
+    def populateRepo(self, movieRepo, clientRepo):
+        self.__rentalRepo.populateWithFew(movieRepo, clientRepo)
 
     def moviesMostRentedByTimesRented(self, movieRepo):
         """

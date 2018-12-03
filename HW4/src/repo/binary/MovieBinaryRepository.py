@@ -1,27 +1,73 @@
-from src.repo.Repository import Repository
+import pickle
+
+from src.dao.MovieDAO import MovieDAO
+from src.repo.inmemory.MovieRepo import MovieRepo
 
 
-class MovieBinaryRepository(Repository):
-    def __init__(self) -> None:
+class MovieBinaryRepository(MovieRepo):
+    def __init__(self, fileName) -> None:
         super().__init__()
+        self.__fileName = fileName
+        self.__file = None
 
-    def hasClientWithId(self, clientId):
-        super().hasClientWithId(clientId)
+    def hasMovieWithId(self, movieId):
+        self.__loadRepo()
+        hasMovieWithId = super().hasMovieWithId(movieId)
+        super().clean()
+        return hasMovieWithId
 
-    def addClient(self, client):
-        super().addClient(client)
+    def addMovie(self, movie):
+        self.__loadRepo()
+        super().addMovie(movie)
+        self.__storeRepo()
+        super().clean()
 
     def getList(self):
-        super().getList()
+        self.__loadRepo()
+        movieList = super().getList()
+        super().clean()
+        return movieList
 
-    def addClientWithId(self, client):
-        super().addClientWithId(client)
+    def addMovieWithId(self, movie):
+        self.__loadRepo()
+        super().addMovieWithId(movie)
+        self.__storeRepo()
+        super().clean()
 
-    def getClientWithId(self, clientId):
-        super().getClientWithId(clientId)
+    def getMovieWithId(self, movieId):
+        self.__loadRepo()
+        movie = super().getMovieWithId(movieId)
+        super().clean()
+        return movie
 
-    def removeClientWithId(self, clientId):
-        super().removeClientWithId(clientId)
+    def removeMovieWithId(self, movieId):
+        self.__loadRepo()
+        super().removeMovieWithId(movieId)
+        self.__storeRepo()
+        super().clean()
 
-    def updateClientWithId(self, clientId, updatedClient):
-        super().updateClientWithId(clientId, updatedClient)
+    def updateMovieWithId(self, movieId, updatedMovie):
+        self.__loadRepo()
+        super().updateMovieWithId(movieId, updatedMovie)
+        self.__storeRepo()
+        super().clean()
+
+    def __loadRepo(self):
+        file = open(self.__fileName, "rb")
+        try:
+            readRepo = pickle.load(file)
+        except EOFError:
+            readRepo = []
+        for movie in readRepo:
+            super().addMovieWithId(movie)
+        file.close()
+
+    def __storeRepo(self):
+        file = open(self.__fileName, "wb")
+        pickle.dump(super().getList(), file)
+        file.close()
+
+    def cleanFile(self):
+        file = open(self.__fileName, "wb")
+        pickle.dump([], file)
+        file.close()
