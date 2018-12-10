@@ -1,4 +1,4 @@
-from src.Exception import AlreadySetException, IdNotSetException
+from src.Exception import AlreadySetException
 
 
 class MovieDAO:

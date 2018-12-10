@@ -1,20 +1,20 @@
 import configparser
 
+from src.controller.ClientController import ClientController
+from src.controller.MovieController import MovieController
+from src.controller.RentalController import RentalController
 from src.repo.binary.ClientBinaryRepository import ClientBinaryRepository
 from src.repo.binary.MovieBinaryRepository import MovieBinaryRepository
 from src.repo.binary.RentalBinaryRepository import RentalBinaryRepository
 from src.repo.file.ClientFileRepository import ClientFileRepository
 from src.repo.file.MovieFileRepository import MovieFileRepository
 from src.repo.file.RentalFileRepository import RentalFileRepository
-from src.undo.Stack import Stack
-from src.undo.UndoRunner import UndoRunner
-from src.controller.ClientController import ClientController
-from src.controller.MovieController import MovieController
-from src.controller.RentalController import RentalController
 from src.repo.inmemory.ClientRepo import ClientRepo
 from src.repo.inmemory.MovieRepo import MovieRepo
 from src.repo.inmemory.RentalRepo import RentalRepo
 from src.ui.Console import Console
+from src.undo.Stack import Stack
+from src.undo.UndoRunner import UndoRunner
 
 
 class Main:

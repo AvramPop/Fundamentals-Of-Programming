@@ -1,7 +1,4 @@
 from src.Constants import Constants
-from src.dao.ClientDAO import ClientDAO
-from src.dao.MovieDAO import MovieDAO
-from src.dao.RentalDAO import RentalDAO
 
 
 class Printer:

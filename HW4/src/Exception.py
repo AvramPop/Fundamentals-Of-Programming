@@ -1,51 +1,41 @@
 class AlreadySetException(Exception):
-    def __init__(self, *args: object, **kwargs: object) -> None:
-        super().__init__(*args, **kwargs)
+    pass
 
 
 class ObjectNotInCollectionException(Exception):
-    def __init__(self, *args: object, **kwargs: object) -> None:
-        super().__init__(*args, **kwargs)
+    pass
 
 
 class ObjectAlreadyInCollectionException(Exception):
-    def __init__(self, *args: object, **kwargs: object) -> None:
-        super().__init__(*args, **kwargs)
+    pass
 
 
 class InvalidDateFormatException(Exception):
-    def __init__(self, *args: object, **kwargs: object) -> None:
-        super().__init__(*args, **kwargs)
+    pass
 
 
 class DatesNotOrderedException(Exception):
-    def __init__(self, *args: object, **kwargs: object) -> None:
-        super().__init__(*args, **kwargs)
+    pass
 
 
 class UpdatingObjectWithDifferentIdException(Exception):
-    def __init__(self, *args: object, **kwargs: object) -> None:
-        super().__init__(*args, **kwargs)
+    pass
 
 
 class ConstantNotFoundException(Exception):
-    def __init__(self, *args: object, **kwargs: object) -> None:
-        super().__init__(*args, **kwargs)
+    pass
 
 
 class ClientHasMoviesNotReturnedException(Exception):
-    def __init__(self, *args: object, **kwargs: object) -> None:
-        super().__init__(*args, **kwargs)
+    pass
 
 
 class IdNotSetException(Exception):
-    def __init__(self, *args: object, **kwargs: object) -> None:
-        super().__init__(*args, **kwargs)
+    pass
 
 
 class MovieNotAvailableException(Exception):
-    def __init__(self, *args: object, **kwargs: object) -> None:
-        super().__init__(*args, **kwargs)
+    pass
 
 
 class MovieNotCurrentlyRentedByClientException(Exception):
@@ -54,8 +44,7 @@ class MovieNotCurrentlyRentedByClientException(Exception):
 
 
 class MovieCurrentlyRentedException(Exception):
-    def __init__(self, *args: object, **kwargs: object) -> None:
-        super().__init__(*args, **kwargs)
+    pass
 
 
 class EmptyStackException(Exception):

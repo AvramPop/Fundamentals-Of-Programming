@@ -55,7 +55,7 @@ class ClientBinaryRepository(ClientRepo):
         file = open(self.__fileName, "rb")
         try:
             readRepo = pickle.load(file)
-        except EOFError as exception:
+        except EOFError:
             readRepo = []
         for client in readRepo:
             super().addClientWithId(client)

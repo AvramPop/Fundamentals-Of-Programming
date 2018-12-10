@@ -1,8 +1,9 @@
+import operator
+
 from src.Constants import Constants
 from src.Exception import DatesNotOrderedException, ClientHasMoviesNotReturnedException, MovieNotAvailableException, \
     MovieNotCurrentlyRentedByClientException
 from src.dao.RentalDAO import RentalDAO
-import operator
 
 
 class RentalController:

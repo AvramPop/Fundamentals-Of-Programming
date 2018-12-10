@@ -73,4 +73,3 @@ class ClientController:
                 if rental.getReturnedDate() is None and rental.getDueDate().isBeforeDate(constants.currentDay()):
                     return True
         return False
-

@@ -1,6 +1,3 @@
-from difflib import SequenceMatcher
-
-
 def stringsPartiallyMatch(string1, string2):
     """
     Check whether string1 and string2 match with precision over 0.6

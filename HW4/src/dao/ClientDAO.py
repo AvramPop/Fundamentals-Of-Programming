@@ -1,4 +1,4 @@
-from src.Exception import AlreadySetException, IdNotSetException
+from src.Exception import AlreadySetException
 
 
 class ClientDAO:
@@ -58,7 +58,3 @@ class ClientDAO:
 
     def __str__(self) -> str:
         return "Client id: " + str(self.__clientId) + ", name: " + str(self.__name)
-
-
-
-

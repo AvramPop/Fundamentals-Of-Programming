@@ -1,10 +1,10 @@
 from src.Constants import Constants
+from src.Date import Date
 from src.Exception import ObjectNotInCollectionException, DatesNotOrderedException, InvalidDateFormatException, \
     ClientHasMoviesNotReturnedException, MovieNotAvailableException, MovieNotCurrentlyRentedByClientException, \
     MovieCurrentlyRentedException, EmptyStackException
 from src.Validator import Validator
 from src.dao.ClientDAO import ClientDAO
-from src.Date import Date
 from src.dao.MovieDAO import MovieDAO
 from src.ui.Printer import Printer
 
@@ -44,7 +44,7 @@ class Console:
         try:
             lastElement = self.commandsStack.lastElement()
             self.undoRunner.undo(self.clientController, self.movieController, self.rentalController, self.undoStack)
-        except EmptyStackException as emptyStackException:
+        except EmptyStackException:
             print("nothing to undo")
         else:
             self.redoStack.push(lastElement)
@@ -53,7 +53,7 @@ class Console:
     def __redo(self):
         try:
             commandToRedo = self.redoStack.pop()
-        except EmptyStackException as exptyStackException:
+        except EmptyStackException:
             print("nothing to redo")
         else:
             self.undoRunner.redo(commandToRedo, self.clientController, self.movieController, self.rentalController)
@@ -199,7 +199,7 @@ class Console:
                         try:
                             self.undoRunner.addCommandToUndo(optionInputWordList, self.rentalController, self.undoStack, "rental", self.commandsStack)
                             self.__doReturn(optionInputWordList)
-                        except MovieNotCurrentlyRentedByClientException as movieNotCurrentlyRentedByClientException:
+                        except MovieNotCurrentlyRentedByClientException:
                             print("movie with id #", optionInputWordList[2], "not rented by client with #",
                                   optionInputWordList[1])
                             self.__popUndoStacks()
@@ -235,20 +235,20 @@ class Console:
                                     dueDate = Date(int(optionInputWordList[3]),
                                                    int(optionInputWordList[4]),
                                                    int(optionInputWordList[5]))
-                                except InvalidDateFormatException as invalidDateFormatException:
+                                except InvalidDateFormatException:
                                     print("Invalid date format")
                                 else:
                                     try:
                                         self.undoRunner.addCommandToUndo(optionInputWordList, self.rentalController,
                                                                          self.undoStack, "rental", self.commandsStack)
                                         self.__doRent(dueDate, optionInputWordList)
-                                    except DatesNotOrderedException as datesNotOrderedException:
+                                    except DatesNotOrderedException:
                                         print("The due date cannot be before the rental date")
                                         self.__popUndoStacks()
-                                    except ClientHasMoviesNotReturnedException as clientHasMoviesNotReturnedException:
+                                    except ClientHasMoviesNotReturnedException:
                                         print("Client #", optionInputWordList[1], "has passed due date for movies")
                                         self.__popUndoStacks()
-                                    except MovieNotAvailableException as movieNotAvailableException:
+                                    except MovieNotAvailableException:
                                         print("Movie #", optionInputWordList[2], "is not available")
                                         self.__popUndoStacks()
                                     else:
@@ -291,7 +291,7 @@ class Console:
             try:
                 self.undoRunner.addCommandToUndo(optionInputWordList, self.movieController, self.undoStack, "movie", self.commandsStack)
                 self.__doUpdateMovie(optionInputWordList)
-            except ObjectNotInCollectionException as objectNotInCollectionException:
+            except ObjectNotInCollectionException:
                 print("Movie with id", optionInputWordList[1], "not found")
                 self.__popUndoStacks()
             else:
@@ -310,10 +310,10 @@ class Console:
                 optionInputWordList.append("movie")  # caution use
                 self.undoRunner.addCommandToUndo(optionInputWordList, self.movieController, self.undoStack, "movie", self.commandsStack)
                 self.__doRemoveMovie(optionInputWordList)
-            except ObjectNotInCollectionException as objectNotInCollectionException:
+            except ObjectNotInCollectionException:
                 print("Movie with id", optionInputWordList[1], "not found")
                 self.__popUndoStacks()
-            except MovieCurrentlyRentedException as movieCurrentlyRentedException:
+            except MovieCurrentlyRentedException:
                 print("Movie with id #", optionInputWordList[1], "is currently rented. Couldn't delete")
                 self.__popUndoStacks()
             else:
@@ -333,7 +333,7 @@ class Console:
                     self.printer.printObject(self.movieController.getMovieWithId(int(optionInputWordList[1])))
                 else:
                     print("wrong input")
-            except ObjectNotInCollectionException as objectNotInCollectionException:
+            except ObjectNotInCollectionException:
                 print("Movie with id", optionInputWordList[1], "not found")
         else:
             print("Wrong input")
@@ -354,7 +354,7 @@ class Console:
             try:
                 self.undoRunner.addCommandToUndo(optionInputWordList, self.clientController, self.undoStack, "client", self.commandsStack)
                 self.__doUpdateClient(optionInputWordList)
-            except ObjectNotInCollectionException as objectNotInCollectionException:
+            except ObjectNotInCollectionException:
                 print("Client with id", optionInputWordList[1], "not found")
                 self.__popUndoStacks()
             else:
@@ -372,10 +372,10 @@ class Console:
                 optionInputWordList.append("client")  # caution use
                 self.undoRunner.addCommandToUndo(optionInputWordList, self.clientController, self.undoStack, "client", self.commandsStack)
                 self.__doRemoveClient(optionInputWordList)
-            except ClientHasMoviesNotReturnedException as clientHasMoviesNotReturnedException:
+            except ClientHasMoviesNotReturnedException:
                 print("Client with id #", optionInputWordList[1], "has movies not returned. Couldn't delete")
                 self.__popUndoStacks()
-            except ObjectNotInCollectionException as objectNotInCollectionException:
+            except ObjectNotInCollectionException:
                 print("Client with id", optionInputWordList[1], "not found")
                 self.__popUndoStacks()
             else:
@@ -395,7 +395,7 @@ class Console:
                     self.printer.printObject(self.clientController.getClientWithId(int(optionInputWordList[1])))
                 else:
                     print("wrong input")
-            except ObjectNotInCollectionException as objectNotInCollectionException:
+            except ObjectNotInCollectionException:
                 print("Client with id #", optionInputWordList[1], "not found")
         else:
             print("Wrong input")

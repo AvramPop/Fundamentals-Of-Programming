@@ -1,7 +1,4 @@
-from src.Constants import Constants
 from src.Date import Date
-from src.dao.ClientDAO import ClientDAO
-from src.dao.MovieDAO import MovieDAO
 from src.undo.OppositeCommandGenerator import OppositeCommandGenerator
 from src.undo.RedoActionRunner import RedoActionRunner
 from src.undo.UndoActionRunner import UndoActionRunner

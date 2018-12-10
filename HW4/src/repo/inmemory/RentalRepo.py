@@ -1,8 +1,8 @@
 from src.Constants import Constants
+from src.Date import Date
 from src.Exception import ObjectAlreadyInCollectionException, ObjectNotInCollectionException
 from src.Utils import sortListById
 from src.dao.RentalDAO import RentalDAO
-from src.Date import Date
 from src.repo.Repository import Repository
 
 
@@ -107,4 +107,3 @@ class RentalRepo(Repository):
 
     def clean(self):
         self.__rentalList = []
-

@@ -1,7 +1,5 @@
 import pickle
 
-from src.Date import Date
-from src.dao.RentalDAO import RentalDAO
 from src.repo.inmemory.RentalRepo import RentalRepo
 
 

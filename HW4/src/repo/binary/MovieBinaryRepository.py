@@ -1,6 +1,5 @@
 import pickle
 
-from src.dao.MovieDAO import MovieDAO
 from src.repo.inmemory.MovieRepo import MovieRepo
 
 

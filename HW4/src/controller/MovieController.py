@@ -84,4 +84,3 @@ class MovieController:
             if rental.getMovieId() == movieId and rental.getReturnedDate() is None:
                 return True
         return False
-

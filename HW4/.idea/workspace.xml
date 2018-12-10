@@ -2,24 +2,31 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9902384d-ba54-4e59-8b6e-2d02ed0913fb" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/res/binary/clients.pickle" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/res/binary/movies.pickle" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/res/binary/rentals.pickle" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/repo/binary/TestClientBinaryRepository.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/repo/binary/TestMovieBinaryRepository.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/repo/binary/TestRentalBinaryRepository.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/repo/binary/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/repo/binary/clientsTest.pickle" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/repo/binary/moviesTest.pickle" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/repo/binary/rentalsTest.pickle" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/List.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/misc/TestList.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/binary/clients.pickle" beforeDir="false" afterPath="$PROJECT_DIR$/res/binary/clients.pickle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/txt/clients.txt" beforeDir="false" afterPath="$PROJECT_DIR$/res/txt/clients.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/txt/movies.txt" beforeDir="false" afterPath="$PROJECT_DIR$/res/txt/movies.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Constants.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/Constants.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Exception.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/Exception.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/Utils.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/config.ini" beforeDir="false" afterPath="$PROJECT_DIR$/src/config.ini" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controller/ClientController.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/ClientController.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controller/MovieController.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/MovieController.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/controller/RentalController.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/RentalController.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/dao/ClientDAO.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/dao/ClientDAO.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/dao/MovieDAO.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/dao/MovieDAO.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/repo/binary/ClientBinaryRepository.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/repo/binary/ClientBinaryRepository.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/repo/binary/MovieBinaryRepository.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/repo/binary/MovieBinaryRepository.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/repo/binary/RentalBinaryRepository.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/repo/binary/RentalBinaryRepository.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/repo/inmemory/MovieRepo.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/repo/inmemory/MovieRepo.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/repo/inmemory/RentalRepo.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/repo/inmemory/RentalRepo.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ui/Console.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/Console.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ui/Printer.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/Printer.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/undo/UndoRunner.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/undo/UndoRunner.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Lab2/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab2/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../lab03/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../lab03/.idea/workspace.xml" afterDir="false" />
     </list>
@@ -36,12 +43,15 @@
     <SUITE FILE_PATH="coverage/HW4$Unittests_for_TestRental_TestRental.coverage" NAME="Unittests for TestRental.TestRental Coverage Results" MODIFIED="1541689065113" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test/model" />
     <SUITE FILE_PATH="coverage/HW4$Unittests_for_TestRentalRepo_TestRentalRepo.coverage" NAME="Unittests for TestRentalRepo.TestRentalRepo Coverage Results" MODIFIED="1542474325423" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test/repo" />
     <SUITE FILE_PATH="coverage/HW4$Unittests_for_TestClientRepo_TestClientRepo.coverage" NAME="Unittests for TestClientRepo.TestClientRepo Coverage Results" MODIFIED="1543681241951" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test/repo" />
+    <SUITE FILE_PATH="coverage/HW4$Unittests_for_TestList_TestList_test_iter.coverage" NAME="Unittests for TestList.TestList.test_iter Coverage Results" MODIFIED="1544453438382" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test/misc" />
     <SUITE FILE_PATH="coverage/HW4$Unittests_for_TestRentalFileRepository_TestRentalFileRepository.coverage" NAME="Unittests for TestRentalFileRepository.TestRentalFileRepository Coverage Results" MODIFIED="1543685874978" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test/repo/file" />
     <SUITE FILE_PATH="coverage/HW4$Unittests_for_TestRental_TestRental_test_setReturnedDate.coverage" NAME="Unittests for TestRental.TestRental.test_setReturnedDate Coverage Results" MODIFIED="1541193889396" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test/model" />
+    <SUITE FILE_PATH="coverage/HW4$Unittests_for_TestList_TestList_test_equals.coverage" NAME="Unittests for TestList.TestList.test_equals Coverage Results" MODIFIED="1544453166447" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test/misc" />
     <SUITE FILE_PATH="coverage/HW4$Unittests_for_TestRental_TestRental_test_setRentalIdSecondTime.coverage" NAME="Unittests for TestRental.TestRental.test_setRentalIdSecondTime Coverage Results" MODIFIED="1541193301097" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test/model" />
     <SUITE FILE_PATH="coverage/HW4$Unittests_in_TestMovieFileRepository_py.coverage" NAME="Unittests in TestMovieFileRepository.py Coverage Results" MODIFIED="1543848289635" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test/repo/file" />
     <SUITE FILE_PATH="coverage/HW4$Unittests_in_TestClient_py.coverage" NAME="Unittests in TestClient.py Coverage Results" MODIFIED="1543848287290" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test/model" />
     <SUITE FILE_PATH="coverage/HW4$Unittests_in_TestMovie_py.coverage" NAME="Unittests in TestMovie.py Coverage Results" MODIFIED="1543848287515" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test/model" />
+    <SUITE FILE_PATH="coverage/HW4$Unittests_for_TestList_TestList.coverage" NAME="Unittests for TestList.TestList Coverage Results" MODIFIED="1544452083004" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test/misc" />
     <SUITE FILE_PATH="coverage/HW4$MainWithTests.coverage" NAME="MainWithTests Coverage Results" MODIFIED="1543848290660" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
     <SUITE FILE_PATH="coverage/HW4$Unittests_for_TestStack_TestStack.coverage" NAME="Unittests for TestStack.TestStack Coverage Results" MODIFIED="1542870308063" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test/misc" />
     <SUITE FILE_PATH="coverage/HW4$Unittests_for_MovieTests_MovieTests_test_setMovieIdSecondTime.coverage" NAME="Unittests for MovieTests.MovieTests.test_setMovieIdSecondTime Coverage Results" MODIFIED="1541172132798" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test/model" />
@@ -68,6 +78,7 @@
     <SUITE FILE_PATH="coverage/HW4$Unittests_in_TestDate_py.coverage" NAME="Unittests in TestDate.py Coverage Results" MODIFIED="1543848286286" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test/model" />
     <SUITE FILE_PATH="coverage/HW4$Unittests_in_TestClientFileRepository_py.coverage" NAME="Unittests in TestClientFileRepository.py Coverage Results" MODIFIED="1543848289384" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test/repo/file" />
     <SUITE FILE_PATH="coverage/HW4$Unittests_for_TestMovieFileRepository_TestMovieFileRepository_test_getList.coverage" NAME="Unittests for TestMovieFileRepository.TestMovieFileRepository.test_getList Coverage Results" MODIFIED="1543683788303" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test/repo/file" />
+    <SUITE FILE_PATH="coverage/HW4$Unittests_for_TestList_TestList_test_get.coverage" NAME="Unittests for TestList.TestList.test_get Coverage Results" MODIFIED="1544451271340" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test/misc" />
     <SUITE FILE_PATH="coverage/HW4$Unittests_for_TestClientBinaryRepository_TestClientBinaryRepository.coverage" NAME="Unittests for TestClientBinaryRepository.TestClientBinaryRepository Coverage Results" MODIFIED="1543847063498" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test/repo/binary" />
     <SUITE FILE_PATH="coverage/HW4$Unittests_in_TestClientRepo_py.coverage" NAME="Unittests in TestClientRepo.py Coverage Results" MODIFIED="1543848286548" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test/repo" />
     <SUITE FILE_PATH="coverage/HW4$Unittests_for_TestRentalBinaryRepository_TestRentalBinaryRepository.coverage" NAME="Unittests for TestRentalBinaryRepository.TestRentalBinaryRepository Coverage Results" MODIFIED="1543848274704" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test/repo/binary" />
@@ -81,6 +92,7 @@
     <SUITE FILE_PATH="coverage/HW4$Test.coverage" NAME="Test Coverage Results" MODIFIED="1541170690541" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
     <SUITE FILE_PATH="coverage/HW4$Unittests_for_TestClientFileRepository_TestClientFileRepository_test_removeClient.coverage" NAME="Unittests for TestClientFileRepository.TestClientFileRepository.test_removeClient Coverage Results" MODIFIED="1543680972487" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test/repo/file" />
     <SUITE FILE_PATH="coverage/HW4$Unittests_in_controller.coverage" NAME="Unittests in controller Coverage Results" MODIFIED="1543232284158" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test/controller" />
+    <SUITE FILE_PATH="coverage/HW4$Unittests_for_TestList_TestList_test_setItem.coverage" NAME="Unittests for TestList.TestList.test_setItem Coverage Results" MODIFIED="1544451498211" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test/misc" />
     <SUITE FILE_PATH="coverage/HW4$Unittests_for_TestRental_TestRental_test_setRentalId.coverage" NAME="Unittests for TestRental.TestRental.test_setRentalId Coverage Results" MODIFIED="1541193616920" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test/model" />
     <SUITE FILE_PATH="coverage/HW4$Unittests_in_TestRentalRepo_py.coverage" NAME="Unittests in TestRentalRepo.py Coverage Results" MODIFIED="1543848287072" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test/repo" />
     <SUITE FILE_PATH="coverage/HW4$Unittests_for_TestUndoRunner_TestUndoRunner.coverage" NAME="Unittests for TestUndoRunner.TestUndoRunner Coverage Results" MODIFIED="1543502040479" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test/misc" />
@@ -89,10 +101,11 @@
     <SUITE FILE_PATH="coverage/HW4$Unittests_for_TestMovie_TestMovie.coverage" NAME="Unittests for TestMovie.TestMovie Coverage Results" MODIFIED="1541689051657" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test/model" />
     <SUITE FILE_PATH="coverage/HW4$Unittests_for_TestMovieBinaryRepository_TestMovieBinaryRepository_test_addMovie.coverage" NAME="Unittests for TestMovieBinaryRepository.TestMovieBinaryRepository.test_addMovie Coverage Results" MODIFIED="1543847857719" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test/repo/binary" />
     <SUITE FILE_PATH="coverage/HW4$Unittests_in_TestMovieRepo_py.coverage" NAME="Unittests in TestMovieRepo.py Coverage Results" MODIFIED="1543848286851" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test/repo" />
-    <SUITE FILE_PATH="coverage/HW4$Main.coverage" NAME="Main Coverage Results" MODIFIED="1543849468246" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
+    <SUITE FILE_PATH="coverage/HW4$Main.coverage" NAME="Main Coverage Results" MODIFIED="1544081106849" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
     <SUITE FILE_PATH="coverage/HW4$Unittests_in_RentalTests_py.coverage" NAME="Unittests in TestRental.py Coverage Results" MODIFIED="1541174782463" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test/model" />
     <SUITE FILE_PATH="coverage/HW4$Unittests_in_TestRental_py.coverage" NAME="Unittests in TestRental.py Coverage Results" MODIFIED="1543848287720" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test/model" />
     <SUITE FILE_PATH="coverage/HW4$Unittests_in_TestUndoRunner_py.coverage" NAME="Unittests in TestUndoRunner.py Coverage Results" MODIFIED="1543848289057" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test/misc" />
+    <SUITE FILE_PATH="coverage/HW4$Unittests_for_TestList_TestList_test_sort.coverage" NAME="Unittests for TestList.TestList.test_sort Coverage Results" MODIFIED="1544455762654" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test/misc" />
     <SUITE FILE_PATH="coverage/HW4$Unittests_for_TestDate_TestDate_test_equals.coverage" NAME="Unittests for TestDate.TestDate.test_equals Coverage Results" MODIFIED="1541185719238" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test/model" />
     <SUITE FILE_PATH="coverage/HW4$Unittests_for_MovieTests_MovieTests_test_init.coverage" NAME="Unittests for MovieTests.MovieTests.test_init Coverage Results" MODIFIED="1541173058944" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test/model" />
     <SUITE FILE_PATH="coverage/HW4$Unittests_in_TestMovieController_py.coverage" NAME="Unittests in TestMovieController.py Coverage Results" MODIFIED="1543848288127" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test/controller" />
@@ -121,6 +134,7 @@
     <SUITE FILE_PATH="coverage/HW4$Unittests_in_TestRentalFileRepository_py.coverage" NAME="Unittests in TestRentalFileRepository.py Coverage Results" MODIFIED="1543848289853" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test/repo/file" />
     <SUITE FILE_PATH="coverage/HW4$Unittests_for_TestRentalFileRepository_TestRentalFileRepository_test_getList.coverage" NAME="Unittests for TestRentalFileRepository.TestRentalFileRepository.test_getList Coverage Results" MODIFIED="1543686036665" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test/repo/file" />
     <SUITE FILE_PATH="coverage/HW4$Unittests_in_TestMovieBinaryRepository_py.coverage" NAME="Unittests in TestMovieBinaryRepository.py Coverage Results" MODIFIED="1543848290224" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test/repo/binary" />
+    <SUITE FILE_PATH="coverage/HW4$Unittests_for_TestList_TestList_test_filter.coverage" NAME="Unittests for TestList.TestList.test_filter Coverage Results" MODIFIED="1544456304220" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test/misc" />
     <SUITE FILE_PATH="coverage/HW4$Unittests_for_TestMovieFileRepository_TestMovieFileRepository.coverage" NAME="Unittests for TestMovieFileRepository.TestMovieFileRepository Coverage Results" MODIFIED="1543683814830" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test/repo/file" />
     <SUITE FILE_PATH="coverage/HW4$Unittests_for_TestRentalController_TestRentalController_test_return.coverage" NAME="Unittests for TestRentalController.TestRentalController.test_return Coverage Results" MODIFIED="1542206465906" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test/controller" />
     <SUITE FILE_PATH="coverage/HW4$Unittests_in_misc.coverage" NAME="Unittests in misc Coverage Results" MODIFIED="1543232279172" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test/misc" />
@@ -151,22 +165,22 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/test/repo/binary/TestMovieBinaryRepository.py">
+        <entry file="file://$PROJECT_DIR$/src/List.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="162">
-              <caret line="9" column="53" selection-start-line="9" selection-start-column="53" selection-end-line="9" selection-end-column="53" />
-              <folding>
-                <element signature="e#0#29#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="288">
+              <caret line="16" selection-start-line="16" selection-end-line="16" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/config.ini">
+        <entry file="file://$PROJECT_DIR$/test/misc/TestList.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="54">
-              <caret line="3" column="11" selection-start-line="3" selection-start-column="11" selection-end-line="3" selection-end-column="11" />
+            <state relative-caret-position="690">
+              <caret line="88" selection-start-line="88" selection-end-line="88" />
+              <folding>
+                <element signature="e#0#29#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -246,18 +260,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/main/dao/RentalDAO.py" />
-        <option value="$PROJECT_DIR$/main/dao/ClientDAO.py" />
-        <option value="$PROJECT_DIR$/main/repo/ClientRepo.py" />
-        <option value="$PROJECT_DIR$/main/repo/RentalRepo.py" />
-        <option value="$PROJECT_DIR$/main/repo/MovieRepo.py" />
-        <option value="$PROJECT_DIR$/main/controller/RentalController.py" />
-        <option value="$PROJECT_DIR$/main/ui/Printer.py" />
-        <option value="$PROJECT_DIR$/main/UndoRunner.py" />
-        <option value="$PROJECT_DIR$/main/ui/Console.py" />
-        <option value="$PROJECT_DIR$/main/Repository.py" />
-        <option value="$PROJECT_DIR$/main/ClientFileRepository.py" />
-        <option value="$PROJECT_DIR$/main/ClientBinaryRepository.py" />
         <option value="$PROJECT_DIR$/main/MovieBinaryRepository.py" />
         <option value="$PROJECT_DIR$/main/MovieFileRepository.py" />
         <option value="$PROJECT_DIR$/main/RentalBinaryRepository.py" />
@@ -268,7 +270,6 @@
         <option value="$PROJECT_DIR$/test/controller/TestRentalController.py" />
         <option value="$PROJECT_DIR$/test/misc/TestStack.py" />
         <option value="$PROJECT_DIR$/src/undo/RedoActionRunner.py" />
-        <option value="$PROJECT_DIR$/src/undo/UndoRunner.py" />
         <option value="$PROJECT_DIR$/test/TestClientFileRepository.py" />
         <option value="$PROJECT_DIR$/test/repo/TestClientRepo.py" />
         <option value="$PROJECT_DIR$/test/repo/file/clientTest.txt" />
@@ -276,52 +277,48 @@
         <option value="$PROJECT_DIR$/src/repo/file/ClientFileRepository.py" />
         <option value="$PROJECT_DIR$/test/repo/file/TestClientFileRepository.py" />
         <option value="$PROJECT_DIR$/src/dao/RentalDAO.py" />
-        <option value="$PROJECT_DIR$/src/Date.py" />
-        <option value="$PROJECT_DIR$/src/repo/inmemory/MovieRepo.py" />
         <option value="$PROJECT_DIR$/test/repo/file/TestMovieFileRepository.py" />
         <option value="$PROJECT_DIR$/src/repo/file/RentalFileRepository.py" />
         <option value="$PROJECT_DIR$/test/repo/file/TestRentalFileRepository.py" />
         <option value="$PROJECT_DIR$/src/settings.properties" />
-        <option value="$PROJECT_DIR$/res/txt/clients.txt" />
-        <option value="$PROJECT_DIR$/res/txt/movies.txt" />
         <option value="$PROJECT_DIR$/res/txt/rentals.txt" />
         <option value="$PROJECT_DIR$/src/repo/file/MovieFileRepository.py" />
         <option value="$PROJECT_DIR$/test.py" />
         <option value="$PROJECT_DIR$/test/repo/binary/TestClientBinaryRepository.py" />
-        <option value="$PROJECT_DIR$/src/repo/binary/ClientBinaryRepository.py" />
-        <option value="$PROJECT_DIR$/src/repo/binary/MovieBinaryRepository.py" />
-        <option value="$PROJECT_DIR$/src/repo/binary/RentalBinaryRepository.py" />
         <option value="$PROJECT_DIR$/test/repo/binary/TestMovieBinaryRepository.py" />
         <option value="$PROJECT_DIR$/test/repo/binary/TestRentalBinaryRepository.py" />
-        <option value="$PROJECT_DIR$/src/repo/inmemory/RentalRepo.py" />
-        <option value="$PROJECT_DIR$/src/controller/RentalController.py" />
-        <option value="$PROJECT_DIR$/src/Main.py" />
+        <option value="$PROJECT_DIR$/src/undo/UndoRunner.py" />
+        <option value="$PROJECT_DIR$/res/txt/clients.txt" />
+        <option value="$PROJECT_DIR$/res/txt/movies.txt" />
         <option value="$PROJECT_DIR$/src/config.ini" />
+        <option value="$PROJECT_DIR$/src/ui/Console.py" />
+        <option value="$PROJECT_DIR$/src/controller/ClientController.py" />
+        <option value="$PROJECT_DIR$/src/controller/MovieController.py" />
+        <option value="$PROJECT_DIR$/src/controller/RentalController.py" />
+        <option value="$PROJECT_DIR$/src/dao/ClientDAO.py" />
+        <option value="$PROJECT_DIR$/src/dao/MovieDAO.py" />
+        <option value="$PROJECT_DIR$/src/repo/binary/MovieBinaryRepository.py" />
+        <option value="$PROJECT_DIR$/src/repo/binary/ClientBinaryRepository.py" />
+        <option value="$PROJECT_DIR$/src/repo/binary/RentalBinaryRepository.py" />
+        <option value="$PROJECT_DIR$/src/repo/inmemory/MovieRepo.py" />
+        <option value="$PROJECT_DIR$/src/repo/inmemory/RentalRepo.py" />
+        <option value="$PROJECT_DIR$/src/ui/Printer.py" />
+        <option value="$PROJECT_DIR$/src/Constants.py" />
+        <option value="$PROJECT_DIR$/src/Date.py" />
+        <option value="$PROJECT_DIR$/src/Exception.py" />
+        <option value="$PROJECT_DIR$/src/Main.py" />
+        <option value="$PROJECT_DIR$/src/Utils.py" />
+        <option value="$PROJECT_DIR$/test/TestList.py" />
+        <option value="$PROJECT_DIR$/test/misc/TestList.py" />
+        <option value="$PROJECT_DIR$/src/List.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="1544" />
-    <option name="y" value="176" />
-    <option name="width" value="1366" />
-    <option name="height" value="768" />
-  </component>
-  <component name="ProjectInspectionProfilesVisibleTreeState">
-    <entry key="Project Default">
-      <profile-state>
-        <expanded-state>
-          <State />
-          <State>
-            <id>Python</id>
-          </State>
-        </expanded-state>
-        <selected-state>
-          <State>
-            <id>PyMethodMayBeStaticInspection</id>
-          </State>
-        </selected-state>
-      </profile-state>
-    </entry>
+    <option name="x" value="1634" />
+    <option name="y" value="215" />
+    <option name="width" value="1356" />
+    <option name="height" value="766" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -329,6 +326,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -344,46 +342,36 @@
             <path>
               <item name="HW4" type="b2602c69:ProjectViewProjectNode" />
               <item name="HW4" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="repo" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="HW4" type="b2602c69:ProjectViewProjectNode" />
               <item name="HW4" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="repo" type="462c0819:PsiDirectoryNode" />
-              <item name="binary" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="HW4" type="b2602c69:ProjectViewProjectNode" />
-              <item name="HW4" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="repo" type="462c0819:PsiDirectoryNode" />
-              <item name="inmemory" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="misc" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="SearchEverywhereHistoryKey" value="image&#9;ACTION&#9;Images.SetBackgroundImage&#10;ima&#9;ACTION&#9;Images.SetBackgroundImage&#10;background&#9;ACTION&#9;Images.SetBackgroundImage&#10;minimap&#9;ACTION&#9;Tool_External Tools_minimap&#10;install&#9;ACTION&#9;null" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/New Scratch File" value="TEXT" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/test/repo/binary" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/test" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="settings.editor.selected.configurable" value="preferences.toDoOptions" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/test/misc" />
       <recent name="$PROJECT_DIR$/test/repo/file" />
       <recent name="$PROJECT_DIR$/src/undo" />
       <recent name="$PROJECT_DIR$/src/repo" />
       <recent name="$PROJECT_DIR$/src/repo/binary" />
-      <recent name="$PROJECT_DIR$/src/repo/file" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -398,7 +386,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.Main">
+  <component name="RunManager" selected="Python tests.Unittests for TestList.TestList.test_filter">
     <configuration default="true" type="Applet" factoryName="Applet">
       <option name="WIDTH" value="400" />
       <option name="HEIGHT" value="300" />
@@ -549,78 +537,78 @@
         <option name="RunConfigurationTask" enabled="true" run_configuration_name="Unittests in TestRentalBinaryRepository.py" run_configuration_type="tests" />
       </method>
     </configuration>
-    <configuration name="Unittests for TestClientBinaryRepository.TestClientBinaryRepository" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
+    <configuration name="Unittests for TestList.TestList" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
       <module name="HW4" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/test/repo/binary" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/test/misc" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;TestClientBinaryRepository.TestClientBinaryRepository&quot;" />
+      <option name="_new_target" value="&quot;TestList.TestList&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
-    <configuration name="Unittests for TestClientBinaryRepository.TestClientBinaryRepository.test_addClient" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
+    <configuration name="Unittests for TestList.TestList.test_equals" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
       <module name="HW4" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/test/repo/binary" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/test/misc" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;TestClientBinaryRepository.TestClientBinaryRepository.test_addClient&quot;" />
+      <option name="_new_target" value="&quot;TestList.TestList.test_equals&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
-    <configuration name="Unittests for TestMovieBinaryRepository.TestMovieBinaryRepository" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
+    <configuration name="Unittests for TestList.TestList.test_filter" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
       <module name="HW4" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/test/repo/binary" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/test/misc" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;TestMovieBinaryRepository.TestMovieBinaryRepository&quot;" />
+      <option name="_new_target" value="&quot;TestList.TestList.test_filter&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
-    <configuration name="Unittests for TestMovieBinaryRepository.TestMovieBinaryRepository.test_addMovie" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
+    <configuration name="Unittests for TestList.TestList.test_iter" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
       <module name="HW4" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/test/repo/binary" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/test/misc" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;TestMovieBinaryRepository.TestMovieBinaryRepository.test_addMovie&quot;" />
+      <option name="_new_target" value="&quot;TestList.TestList.test_iter&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
-    <configuration name="Unittests for TestRentalBinaryRepository.TestRentalBinaryRepository" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
+    <configuration name="Unittests for TestList.TestList.test_sort" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
       <module name="HW4" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/test/repo/binary" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/test/misc" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;TestRentalBinaryRepository.TestRentalBinaryRepository&quot;" />
+      <option name="_new_target" value="&quot;TestList.TestList.test_sort&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
@@ -950,19 +938,19 @@
       <item itemvalue="Python tests.Unittests in TestClientBinaryRepository.py" />
       <item itemvalue="Python tests.Unittests in TestMovieBinaryRepository.py" />
       <item itemvalue="Python tests.Unittests in TestRentalBinaryRepository.py" />
-      <item itemvalue="Python tests.Unittests for TestClientBinaryRepository.TestClientBinaryRepository" />
-      <item itemvalue="Python tests.Unittests for TestClientBinaryRepository.TestClientBinaryRepository.test_addClient" />
-      <item itemvalue="Python tests.Unittests for TestMovieBinaryRepository.TestMovieBinaryRepository" />
-      <item itemvalue="Python tests.Unittests for TestMovieBinaryRepository.TestMovieBinaryRepository.test_addMovie" />
-      <item itemvalue="Python tests.Unittests for TestRentalBinaryRepository.TestRentalBinaryRepository" />
+      <item itemvalue="Python tests.Unittests for TestList.TestList" />
+      <item itemvalue="Python tests.Unittests for TestList.TestList.test_equals" />
+      <item itemvalue="Python tests.Unittests for TestList.TestList.test_iter" />
+      <item itemvalue="Python tests.Unittests for TestList.TestList.test_sort" />
+      <item itemvalue="Python tests.Unittests for TestList.TestList.test_filter" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Python tests.Unittests for TestRentalBinaryRepository.TestRentalBinaryRepository" />
-        <item itemvalue="Python tests.Unittests for TestMovieBinaryRepository.TestMovieBinaryRepository" />
-        <item itemvalue="Python tests.Unittests for TestMovieBinaryRepository.TestMovieBinaryRepository.test_addMovie" />
-        <item itemvalue="Python tests.Unittests for TestClientBinaryRepository.TestClientBinaryRepository" />
-        <item itemvalue="Python tests.Unittests for TestClientBinaryRepository.TestClientBinaryRepository.test_addClient" />
+        <item itemvalue="Python tests.Unittests for TestList.TestList.test_filter" />
+        <item itemvalue="Python tests.Unittests for TestList.TestList.test_sort" />
+        <item itemvalue="Python tests.Unittests for TestList.TestList.test_iter" />
+        <item itemvalue="Python tests.Unittests for TestList.TestList.test_equals" />
+        <item itemvalue="Python tests.Unittests for TestList.TestList" />
       </list>
     </recent_temporary>
   </component>
@@ -1000,44 +988,51 @@
       <workItem from="1543605342189" duration="1690000" />
       <workItem from="1543680786772" duration="8162000" />
       <workItem from="1543833401601" duration="1332000" />
-      <workItem from="1543842733936" duration="6132000" />
+      <workItem from="1543842733936" duration="6418000" />
+      <workItem from="1544019840858" duration="672000" />
+      <workItem from="1544076288452" duration="5343000" />
+      <workItem from="1544431846280" duration="605000" />
+      <workItem from="1544432580140" duration="161000" />
+      <workItem from="1544437639108" duration="159000" />
+      <workItem from="1544447215373" duration="2018000" />
+      <workItem from="1544450205191" duration="5999000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="Unittests_in_TestRentalController_py - 2018.12.03 at 16h 44m 48s.xml">
-      <configuration name="Unittests in TestRentalController.py" configurationId="tests" />
+    <history-entry file="Unittests_for_TestList_TestList_test_sort - 2018.12.10 at 17h 27m 03s.xml">
+      <configuration name="Unittests for TestList.TestList.test_sort" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittests_in_TestUtils_py - 2018.12.03 at 16h 44m 48s.xml">
-      <configuration name="Unittests in TestUtils.py" configurationId="tests" />
+    <history-entry file="Unittests_for_TestList_TestList_test_sort - 2018.12.10 at 17h 27m 35s.xml">
+      <configuration name="Unittests for TestList.TestList.test_sort" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittests_in_TestStack_py - 2018.12.03 at 16h 44m 49s.xml">
-      <configuration name="Unittests in TestStack.py" configurationId="tests" />
+    <history-entry file="Unittests_for_TestList_TestList_test_sort - 2018.12.10 at 17h 28m 26s.xml">
+      <configuration name="Unittests for TestList.TestList.test_sort" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittests_in_TestUndoRunner_py - 2018.12.03 at 16h 44m 49s.xml">
-      <configuration name="Unittests in TestUndoRunner.py" configurationId="tests" />
+    <history-entry file="Unittests_for_TestList_TestList_test_sort - 2018.12.10 at 17h 28m 53s.xml">
+      <configuration name="Unittests for TestList.TestList.test_sort" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittests_in_TestClientFileRepository_py - 2018.12.03 at 16h 44m 49s.xml">
-      <configuration name="Unittests in TestClientFileRepository.py" configurationId="tests" />
+    <history-entry file="Unittests_for_TestList_TestList_test_sort - 2018.12.10 at 17h 29m 22s.xml">
+      <configuration name="Unittests for TestList.TestList.test_sort" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittests_in_TestMovieFileRepository_py - 2018.12.03 at 16h 44m 49s.xml">
-      <configuration name="Unittests in TestMovieFileRepository.py" configurationId="tests" />
+    <history-entry file="Unittests_for_TestList_TestList_test_filter - 2018.12.10 at 17h 32m 19s.xml">
+      <configuration name="Unittests for TestList.TestList.test_filter" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittests_in_TestRentalFileRepository_py - 2018.12.03 at 16h 44m 50s.xml">
-      <configuration name="Unittests in TestRentalFileRepository.py" configurationId="tests" />
+    <history-entry file="Unittests_for_TestList_TestList_test_filter - 2018.12.10 at 17h 33m 03s.xml">
+      <configuration name="Unittests for TestList.TestList.test_filter" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittests_in_TestClientBinaryRepository_py - 2018.12.03 at 16h 44m 50s.xml">
-      <configuration name="Unittests in TestClientBinaryRepository.py" configurationId="tests" />
+    <history-entry file="Unittests_for_TestList_TestList_test_filter - 2018.12.10 at 17h 34m 05s.xml">
+      <configuration name="Unittests for TestList.TestList.test_filter" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittests_in_TestMovieBinaryRepository_py - 2018.12.03 at 16h 44m 50s.xml">
-      <configuration name="Unittests in TestMovieBinaryRepository.py" configurationId="tests" />
+    <history-entry file="Unittests_for_TestList_TestList_test_filter - 2018.12.10 at 17h 36m 13s.xml">
+      <configuration name="Unittests for TestList.TestList.test_filter" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittests_in_TestRentalBinaryRepository_py - 2018.12.03 at 16h 44m 50s.xml">
-      <configuration name="Unittests in TestRentalBinaryRepository.py" configurationId="tests" />
+    <history-entry file="Unittests_for_TestList_TestList_test_filter - 2018.12.10 at 17h 36m 42s.xml">
+      <configuration name="Unittests for TestList.TestList.test_filter" configurationId="tests" />
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="77468000" />
+    <option name="totallyTimeSpent" value="92711000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1050,13 +1045,14 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="1366" y="-1" width="1920" height="1080" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49895397" visible="true" weight="0.15688367" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49895397" visible="true" weight="0.1307364" />
       <window_info id="Structure" order="1" sideWeight="0.501046" side_tool="true" weight="0.17129135" />
       <window_info id="Favorites" order="2" sideWeight="0.501046" side_tool="true" weight="0.17129135" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3211297" />
-      <window_info anchor="bottom" x="0" y="0" width="1366" height="762" id="Run" order="2" sideWeight="0.4994664" type="FLOATING" weight="0.45759162" />
+      <window_info anchor="bottom" x="0" y="16" width="1366" height="734" id="Run" order="2" sideWeight="0.4994664" type="FLOATING" weight="0.45759162" />
       <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49924242" weight="0.54184103" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -1067,7 +1063,7 @@
       <window_info anchor="bottom" id="Statistic" order="10" weight="0.32919255" />
       <window_info anchor="bottom" id="Terminal" order="11" weight="0.16422594" />
       <window_info anchor="bottom" id="Event Log" order="12" sideWeight="0.5007576" side_tool="true" weight="0.54347825" />
-      <window_info anchor="bottom" id="Python Console" order="13" weight="0.32984293" />
+      <window_info anchor="bottom" id="Python Console" order="13" weight="0.3294979" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -1088,6 +1084,11 @@
           <line>55</line>
           <option name="timeStamp" value="3" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/test/misc/TestList.py</url>
+          <line>87</line>
+          <option name="timeStamp" value="8" />
+        </line-breakpoint>
       </breakpoints>
       <default-breakpoints>
         <breakpoint type="python-exception">
@@ -1099,7 +1100,12 @@
     </breakpoint-manager>
     <watches-manager>
       <configuration name="tests">
-        <watch expression="(self.movieBinaryRepository.getMovieWithId(1)).getTitle()" language="Python" />
+        <watch expression="i" language="Python" />
+        <watch expression="minimumIndex" language="Python" />
+        <watch expression="j" language="Python" />
+        <watch expression="listToSort[i]" language="Python" />
+        <watch expression="listToSort[j]" language="Python" />
+        <watch expression="compareFunction(listToSort[j], listToSort[minimumIndex])" language="Python" />
       </configuration>
       <configuration name="PythonConfigurationType">
         <watch expression="self.get" language="Python" />
@@ -1108,6 +1114,36 @@
   </component>
   <component name="debuggerHistoryManager">
     <expressions id="watch">
+      <expression>
+        <expression-string>compareFunction(listToSort[j], listToSort[minimumIndex])</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>listToSort[j]</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>listToSort[i]</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>j</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>minimumIndex</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>i</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
       <expression>
         <expression-string>(self.movieBinaryRepository.getMovieWithId(1)).getTitle()</expression-string>
         <language-id>Python</language-id>
@@ -1125,36 +1161,6 @@
       </expression>
       <expression>
         <expression-string>self.get</expression-string>
-        <language-id>Python</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>self.movieController</expression-string>
-        <language-id>Python</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>_ClientRepo__clientList</expression-string>
-        <language-id>Python</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>controller</expression-string>
-        <language-id>Python</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>self.clientController.getClientList()</expression-string>
-        <language-id>Python</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>self.stack</expression-string>
-        <language-id>Python</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>self.clientController</expression-string>
         <language-id>Python</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
@@ -1183,237 +1189,10 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/test/repo/file/clientTest.txt">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Date.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="616">
-          <caret line="36" column="94" selection-start-line="36" selection-start-column="94" selection-end-line="36" selection-end-column="94" />
-          <folding>
-            <element signature="e#0#25#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/repo/file/rentalTest.txt">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/repo/TestMovieRepo.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="54">
-          <caret line="3" column="13" lean-forward="true" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ui/Printer.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="702">
-          <caret line="42" column="8" selection-start-line="42" selection-start-column="8" selection-end-line="42" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/repo/file/movieTest.txt">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/repo/TestRentalRepo.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="234">
-          <caret line="13" column="4" selection-start-line="13" selection-start-column="4" selection-end-line="60" />
-          <folding>
-            <element signature="e#0#29#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/repo/TestClientRepo.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///usr/lib/python3.6/configparser.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="1233" selection-start-line="1233" selection-end-line="1233" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/controller/ClientController.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="137">
-          <caret line="41" selection-start-line="41" selection-end-line="41" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/repo/inmemory/ClientRepo.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="702">
-          <caret line="42" selection-start-line="42" selection-end-line="42" />
-          <folding>
-            <element signature="e#0#92#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/res/txt/clients.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="864">
-          <caret line="48" lean-forward="true" selection-start-line="48" selection-end-line="48" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/res/txt/movies.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1044">
-          <caret line="58" selection-start-line="58" selection-end-line="58" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/res/txt/rentals.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="9" column="25" selection-start-line="9" selection-start-column="25" selection-end-line="9" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/repo/file/ClientFileRepository.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1494">
-          <caret line="84" column="26" selection-start-line="6" selection-start-column="4" selection-end-line="84" selection-end-column="26" />
-          <folding>
-            <element signature="e#0#39#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/repo/file/MovieFileRepository.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1566">
-          <caret line="88" selection-start-line="6" selection-start-column="4" selection-end-line="88" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/repo/file/RentalFileRepository.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1656">
-          <caret line="94" selection-start-line="7" selection-start-column="4" selection-end-line="94" />
-          <folding>
-            <element signature="e#0#25#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ui/Console.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3312">
-          <caret line="328" column="63" selection-start-line="328" selection-start-column="63" selection-end-line="328" selection-end-column="63" />
-          <folding>
-            <element signature="e#0#35#0" expanded="true" />
-            <element signature="e#1075#1609#0" />
-            <element signature="e#2381#2759#0" />
-            <element signature="e#2800#3201#0" />
-            <element signature="e#3243#3647#0" />
-            <element signature="e#3689#4621#0" />
-            <element signature="e#4665#5532#0" />
-            <element signature="e#5577#6449#0" />
-            <element signature="e#6503#7645#0" />
-            <element signature="e#7700#8305#0" />
-            <element signature="e#9885#10034#0" />
-            <element signature="e#13041#13449#0" />
-            <element signature="e#13899#14010#0" />
-            <element signature="e#14768#15020#0" />
-            <element signature="e#16049#16149#0" />
-            <element signature="e#17264#17330#0" />
-            <element signature="e#18095#18248#0" />
-            <element signature="e#19302#19404#0" />
-            <element signature="e#19463#20071#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/controller/MovieController.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="576">
-          <caret line="33" column="8" selection-start-line="33" selection-start-column="8" selection-end-line="33" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/res/binary/clients.pickle">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/repo/binary/moviesTest.pickle">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/repo/binary/rentalsTest.pickle">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/repo/file/TestClientFileRepository.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="798">
-          <caret line="66" lean-forward="true" selection-start-line="9" selection-start-column="4" selection-end-line="66" />
-          <folding>
-            <element signature="e#0#29#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/repo/binary/clientsTest.pickle">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="8" column="33" lean-forward="true" selection-start-line="8" selection-start-column="33" selection-end-line="8" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/dao/ClientDAO.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="191">
-          <caret line="11" selection-start-line="11" selection-end-line="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/repo/binary/ClientBinaryRepository.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="456">
-          <caret line="53" selection-start-line="53" selection-end-line="71" selection-end-column="20" />
-          <folding>
-            <element signature="e#0#13#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/repo/file/TestMovieFileRepository.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="564">
-          <caret line="64" column="28" lean-forward="true" selection-start-line="64" selection-start-column="28" selection-end-line="64" selection-end-column="28" />
-          <folding>
-            <element signature="e#0#29#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/dao/MovieDAO.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="147">
-          <caret line="24" selection-start-line="24" selection-end-line="24" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file:///usr/lib/python3.6/contextlib.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="173">
           <caret line="87" selection-start-line="87" selection-end-line="87" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///usr/lib/python3.6/unittest/case.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="129">
-          <caret line="652" selection-start-line="652" selection-end-line="652" />
         </state>
       </provider>
     </entry>
@@ -1452,16 +1231,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/repo/binary/MovieBinaryRepository.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-908">
-          <caret line="7" column="8" selection-start-line="7" selection-start-column="8" selection-end-line="7" selection-end-column="8" />
-          <folding>
-            <element signature="e#0#13#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/test/repo/binary/TestClientBinaryRepository.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="306">
@@ -1479,16 +1248,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/repo/inmemory/MovieRepo.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="310">
-          <caret line="86" column="8" selection-start-line="86" selection-start-column="8" selection-end-line="86" selection-end-column="8" />
-          <folding>
-            <element signature="e#0#138#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/dao/RentalDAO.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="144">
@@ -1498,33 +1257,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/res/binary/rentals.pickle">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/repo/inmemory/RentalRepo.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="636">
-          <caret line="101" column="64" selection-start-line="101" selection-start-column="64" selection-end-line="101" selection-end-column="64" />
-          <folding>
-            <element signature="e#0#35#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/controller/RentalController.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="320">
-          <caret line="93" column="64" selection-start-line="93" selection-start-column="64" selection-end-line="93" selection-end-column="64" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Main.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="312">
-          <caret line="26" column="63" lean-forward="true" selection-start-line="26" selection-start-column="63" selection-end-line="26" selection-end-column="63" />
-          <folding>
-            <element signature="e#0#19#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/test/repo/binary/TestRentalBinaryRepository.py">
       <provider selected="true" editor-type-id="text-editor">
@@ -1546,16 +1278,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/repo/binary/RentalBinaryRepository.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="606">
-          <caret line="62" column="42" selection-start-line="62" selection-start-column="42" selection-end-line="62" selection-end-column="42" />
-          <folding>
-            <element signature="e#0#13#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/test/repo/binary/TestMovieBinaryRepository.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="162">
@@ -1566,19 +1288,292 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Constants.py">
+    <entry file="file://$PROJECT_DIR$/res/txt/rentals.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="e#0#51#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="162">
+          <caret line="9" column="25" selection-start-line="9" selection-start-column="25" selection-end-line="9" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/txt/clients.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="132">
+          <caret line="27" column="7" lean-forward="true" selection-start-line="27" selection-start-column="7" selection-end-line="27" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/txt/movies.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="420">
+          <caret line="53" column="29" selection-start-line="53" selection-start-column="29" selection-end-line="53" selection-end-column="29" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/config.ini">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="54">
-          <caret line="3" column="11" selection-start-line="3" selection-start-column="11" selection-end-line="3" selection-end-column="11" />
+        <state relative-caret-position="72">
+          <caret line="4" column="99" selection-start-line="4" selection-start-column="99" selection-end-line="4" selection-end-column="99" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ui/Console.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="292">
+          <caret line="391" column="21" selection-start-line="391" selection-start-column="21" selection-end-line="391" selection-end-column="21" />
+          <folding>
+            <element signature="e#0#35#0" expanded="true" />
+            <element signature="e#14768#15020#0" />
+            <element signature="e#16049#16149#0" />
+            <element signature="e#17264#17330#0" />
+            <element signature="e#18095#18248#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/controller/ClientController.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="65" column="8" selection-start-line="65" selection-start-column="8" selection-end-line="65" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/controller/MovieController.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="468">
+          <caret line="85" column="20" selection-start-line="85" selection-start-column="20" selection-end-line="85" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/controller/RentalController.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="320">
+          <caret line="94" column="64" selection-start-line="94" selection-start-column="64" selection-end-line="94" selection-end-column="64" />
+          <folding>
+            <element signature="e#0#15#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/dao/ClientDAO.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="486">
+          <caret line="60" lean-forward="true" selection-start-line="60" selection-end-line="60" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/dao/MovieDAO.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-410">
+          <caret line="24" selection-start-line="24" selection-end-line="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/repo/file/ClientFileRepository.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="396">
+          <caret line="76" column="26" lean-forward="true" selection-start-line="62" selection-start-column="4" selection-end-line="76" selection-end-column="26" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/repo/binary/ClientBinaryRepository.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="378">
+          <caret line="66" column="20" lean-forward="true" selection-start-line="66" selection-start-column="20" selection-end-line="66" selection-end-column="20" />
+          <folding>
+            <element signature="e#0#13#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/repo/binary/RentalBinaryRepository.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="294">
+          <caret line="44" column="26" lean-forward="true" selection-start-line="44" selection-start-column="26" selection-end-line="44" selection-end-column="26" />
+          <folding>
+            <element signature="e#0#13#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/repo/file/MovieFileRepository.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="96">
+          <caret line="61" lean-forward="true" selection-start-line="61" selection-end-line="61" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/repo/file/RentalFileRepository.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="472">
+          <caret line="94" lean-forward="true" selection-start-line="94" selection-end-line="94" />
+          <folding>
+            <element signature="e#0#25#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/repo/inmemory/RentalRepo.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="486">
+          <caret line="109" selection-start-line="109" selection-end-line="109" />
+          <folding>
+            <element signature="e#0#35#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/repo/inmemory/MovieRepo.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-918">
+          <caret line="85" column="8" selection-start-line="85" selection-start-column="8" selection-end-line="85" selection-end-column="8" />
+          <folding>
+            <element signature="e#0#138#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/repo/inmemory/ClientRepo.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1530">
+          <caret line="42" selection-start-line="42" selection-end-line="42" />
+          <folding>
+            <element signature="e#0#92#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/repo/Repository.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ui/Printer.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-324" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/undo/OppositeCommandGenerator.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/undo/RedoActionRunner.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/undo/Stack.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/binary/clients.pickle">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/undo/UndoRunner.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1242">
+          <caret line="72" column="17" selection-start-line="72" selection-start-column="17" selection-end-line="72" selection-end-column="17" />
+          <folding>
+            <element signature="e#0#25#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/undo/UndoActionRunner.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/.coverage">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="43" selection-start-column="43" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Constants.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#15#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Date.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Exception.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="828">
+          <caret line="46" column="8" selection-start-line="46" selection-start-column="8" selection-end-line="46" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/repo/binary/MovieBinaryRepository.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1044">
+          <caret line="60" column="41" selection-start-line="60" selection-start-column="41" selection-end-line="60" selection-end-column="41" />
+          <folding>
+            <element signature="e#0#13#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Main.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="432">
+          <caret line="40" column="32" selection-start-line="40" selection-start-column="32" selection-end-line="40" selection-end-column="32" />
+          <folding>
+            <element signature="e#0#19#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Validator.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="576">
+          <caret line="32" column="34" selection-start-line="32" selection-start-column="34" selection-end-line="32" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Utils.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$APPLICATION_HOME_DIR$/helpers/pycharm/teamcity/diff_tools.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="245">
+          <caret line="36" selection-start-line="36" selection-end-line="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/lib/python3.6/unittest/case.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="137">
+          <caret line="604" selection-start-line="604" selection-end-line="604" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/List.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="288">
+          <caret line="16" selection-start-line="16" selection-end-line="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/misc/TestList.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="690">
+          <caret line="88" selection-start-line="88" selection-end-line="88" />
+          <folding>
+            <element signature="e#0#29#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
