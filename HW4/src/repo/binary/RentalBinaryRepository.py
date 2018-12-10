@@ -1,5 +1,6 @@
 import pickle
 
+from src.List import List
 from src.repo.inmemory.RentalRepo import RentalRepo
 
 
@@ -56,7 +57,7 @@ class RentalBinaryRepository(RentalRepo):
         try:
             readRepo = pickle.load(file)
         except EOFError:
-            readRepo = []
+            readRepo = List()
         for rental in readRepo:
             super().addRentalWithId(rental)
         file.close()
@@ -68,5 +69,5 @@ class RentalBinaryRepository(RentalRepo):
 
     def cleanFile(self):
         file = open(self.__fileName, "wb")
-        pickle.dump([], file)
+        pickle.dump(List(), file)
         file.close()

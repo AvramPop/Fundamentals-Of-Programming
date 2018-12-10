@@ -1,4 +1,5 @@
 from src.Exception import MovieCurrentlyRentedException
+from src.List import List
 from src.Utils import stringsPartiallyMatch
 
 
@@ -53,7 +54,7 @@ class MovieController:
         """
         Get movies having title
         """
-        movieListWithPartialTitleCorresponding = []
+        movieListWithPartialTitleCorresponding = List()
         for movie in self.getMovieList():
             if stringsPartiallyMatch(movie.getTitle(), movieTitleToFind):
                 movieListWithPartialTitleCorresponding.append(movie)
@@ -63,7 +64,7 @@ class MovieController:
         """
         Get movies having genre
         """
-        movieListWithPartialGenreCorresponding = []
+        movieListWithPartialGenreCorresponding = List()
         for movie in self.getMovieList():
             if stringsPartiallyMatch(movie.getGenre(), movieGenreToFind):
                 movieListWithPartialGenreCorresponding.append(movie)
@@ -73,7 +74,7 @@ class MovieController:
         """
         Get movies having description
         """
-        movieListWithPartialDescriptionCorresponding = []
+        movieListWithPartialDescriptionCorresponding = List()
         for movie in self.getMovieList():
             if stringsPartiallyMatch(movie.getDescription(), movieDescriptionToFind):
                 movieListWithPartialDescriptionCorresponding.append(movie)

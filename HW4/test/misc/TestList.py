@@ -1,6 +1,7 @@
 from unittest import TestCase
 
-from src.List import List, sortList, filterList
+from src.List import List, sortList, filterList, sortListByObjectAttribute
+from src.dao.ClientDAO import ClientDAO
 
 
 class TestList(TestCase):
@@ -83,6 +84,17 @@ class TestList(TestCase):
         testList = List([1, -2, -3])
         sortList(testList, lambda a, b: True if a < b else False)
         self.assertEqual(testList, [-3, -2, 1])
+
+    def test_sortByAttribute(self):
+        client1 = ClientDAO("a")
+        client1.setClientId(1)
+        client2 = ClientDAO("b")
+        client2.setClientId(0)
+        testList = [client1, client2]
+        sortListByObjectAttribute(testList, lambda a, b: True if a < b else False, lambda a: a.getId())
+        self.assertEqual(testList, [client2, client1])
+        sortListByObjectAttribute(testList, lambda a, b: True if a > b else False, lambda a: a.getId())
+        self.assertEqual(testList, [client1, client2])
 
     def test_filter(self):
         self.assertEqual(filterList(self.testList, lambda a: True if a % 2 == 0 else False), [4, 10, 50])

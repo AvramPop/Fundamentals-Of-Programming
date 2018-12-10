@@ -1,4 +1,5 @@
 from src.Exception import ObjectNotInCollectionException, ObjectAlreadyInCollectionException
+from src.List import List, sortListByObjectAttribute
 from src.Utils import sortListById
 from src.dao.ClientDAO import ClientDAO
 from src.repo.Repository import Repository
@@ -7,7 +8,7 @@ from src.repo.Repository import Repository
 class ClientRepo(Repository):
 
     def __init__(self) -> None:
-        self.__clientList = []
+        self.__clientList = List()
 
     def hasClientWithId(self, clientId):
         """
@@ -28,7 +29,8 @@ class ClientRepo(Repository):
             if not ClientRepo.hasClientWithId(self, client.getId()):
                 client.setClientId(self.__maximumIndexInClientList() + 1)
                 self.__clientList.append(client)
-                sortListById(self.__clientList)
+                sortListByObjectAttribute(self.__clientList, lambda a, b: True if a < b else False, lambda a: a.getId())
+                # sortListById(self.__clientList)
                 # self.__sortClientList()
             else:
                 raise ObjectAlreadyInCollectionException
@@ -40,7 +42,7 @@ class ClientRepo(Repository):
 
     def addClientWithId(self, client):
         self.__clientList.append(client)
-        sortListById(self.__clientList)
+        sortListByObjectAttribute(self.__clientList, lambda a, b: True if a < b else False, lambda a: a.getId())
 
     def __maximumIndexInClientList(self):
         maximumIndex = -1
@@ -151,4 +153,4 @@ class ClientRepo(Repository):
         self.addClient(ClientDAO("AnisAAoara"))
 
     def clean(self):
-        self.__clientList = []
+        self.__clientList = List()

@@ -3,6 +3,7 @@ import operator
 from src.Constants import Constants
 from src.Exception import DatesNotOrderedException, ClientHasMoviesNotReturnedException, MovieNotAvailableException, \
     MovieNotCurrentlyRentedByClientException
+from src.List import List
 from src.dao.RentalDAO import RentalDAO
 
 
@@ -67,7 +68,7 @@ class RentalController:
             raise MovieNotCurrentlyRentedByClientException
 
     def __clientHasPassedDueDateMovies(self, clientId):
-        clientRentalList = []
+        clientRentalList = List()
         for rental in self.getRentalList():
             if rental.getClientId() == clientId:
                 clientRentalList.append(rental)
@@ -78,7 +79,7 @@ class RentalController:
         return False
 
     def __isMovieAvailable(self, movieId):  # TODO check if have to check if movie exist (probably handled in ui)
-        movieRentalList = []
+        movieRentalList = List()
         for rental in self.getRentalList():
             if rental.getMovieId() == movieId:
                 movieRentalList.append(rental)
@@ -108,7 +109,7 @@ class RentalController:
                 moviesDictionary[rental.getMovieId()] += 1
         sortedMovies = sorted(moviesDictionary.items(), key=operator.itemgetter(1))
         sortedMovies.reverse()
-        sortedMovieList = []
+        sortedMovieList = List()
         for movie in sortedMovies:
             sortedMovieList.append(movieRepo.getMovieWithId(movie[0]))
         return sortedMovieList
@@ -132,7 +133,7 @@ class RentalController:
                 moviesDictionary[rental.getMovieId()] += daysToAdd
         sortedMovies = sorted(moviesDictionary.items(), key=operator.itemgetter(1))
         sortedMovies.reverse()
-        sortedMovieList = []
+        sortedMovieList = List()
         for movie in sortedMovies:
             sortedMovieList.append(movieRepo.getMovieWithId(movie[0]))
         return sortedMovieList
@@ -156,7 +157,7 @@ class RentalController:
                 clientsDictionary[rental.getClientId()] += daysToAdd
         sortedClients = sorted(clientsDictionary.items(), key=operator.itemgetter(1))
         sortedClients.reverse()
-        sortedClientList = []
+        sortedClientList = List()
         for client in sortedClients:
             sortedClientList.append(clientRepo.getClientWithId(client[0]))
         return sortedClientList
@@ -165,7 +166,7 @@ class RentalController:
         """
         Get list of movie currently rented
         """
-        moviesRentedNow = []
+        moviesRentedNow = List()
         for rental in self.getRentalList():
             if rental.getReturnedDate() is None:
                 moviesRentedNow.append(movieRepo.getMovieWithId(rental.getMovieId()))
@@ -175,7 +176,7 @@ class RentalController:
         """
         Get list of movies past due date
         """
-        rentalsPassedDueDate = []
+        rentalsPassedDueDate = List()
         constants = Constants()
         for rental in self.getRentalList():
             if rental.getReturnedDate() is None and rental.getDueDate().isBeforeDate(self.__constants.currentDay()):
@@ -188,7 +189,7 @@ class RentalController:
                     rentalsPassedDueDate[i] = rentalsPassedDueDate[j]
                     rentalsPassedDueDate[j] = aux
 
-        moviesPassedDueDateSorted = []
+        moviesPassedDueDateSorted = List()
         for rental in rentalsPassedDueDate:
             moviesPassedDueDateSorted.append(movieRepo.getMovieWithId(rental.getMovieId()))
         return moviesPassedDueDateSorted

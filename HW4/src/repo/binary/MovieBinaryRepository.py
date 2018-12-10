@@ -1,5 +1,6 @@
 import pickle
 
+from src.List import List
 from src.repo.inmemory.MovieRepo import MovieRepo
 
 
@@ -56,7 +57,7 @@ class MovieBinaryRepository(MovieRepo):
         try:
             readRepo = pickle.load(file)
         except EOFError:
-            readRepo = []
+            readRepo = List()
         for movie in readRepo:
             super().addMovieWithId(movie)
         file.close()
@@ -68,5 +69,5 @@ class MovieBinaryRepository(MovieRepo):
 
     def cleanFile(self):
         file = open(self.__fileName, "wb")
-        pickle.dump([], file)
+        pickle.dump(List(), file)
         file.close()

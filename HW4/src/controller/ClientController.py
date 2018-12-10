@@ -1,5 +1,6 @@
 from src.Constants import Constants
 from src.Exception import ClientHasMoviesNotReturnedException
+from src.List import List
 from src.Utils import stringsPartiallyMatch
 
 
@@ -57,7 +58,7 @@ class ClientController:
         self.__clientRepo.populateWithMany()
 
     def listOfClientsWithName(self, clientNameToFind):
-        clientListWithPartialNameCorresponding = []
+        clientListWithPartialNameCorresponding = List()
         for client in self.getClientList():
             if stringsPartiallyMatch(client.getName(), clientNameToFind):
                 clientListWithPartialNameCorresponding.append(client)

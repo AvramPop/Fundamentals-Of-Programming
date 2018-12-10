@@ -1,6 +1,7 @@
 from src.Constants import Constants
 from src.Date import Date
 from src.Exception import ObjectAlreadyInCollectionException, ObjectNotInCollectionException
+from src.List import List, sortListByObjectAttribute
 from src.Utils import sortListById
 from src.dao.RentalDAO import RentalDAO
 from src.repo.Repository import Repository
@@ -10,7 +11,7 @@ class RentalRepo(Repository):
     __constants = Constants()
 
     def __init__(self) -> None:
-        self.__rentalList = []
+        self.__rentalList = List()
 
     def hasRentalWithId(self, rentalId):
         """
@@ -27,7 +28,8 @@ class RentalRepo(Repository):
                 rental.setRentalId(self.__maximumIndexInRentalList() + 1)
                 self.__rentalList.append(rental)
                 # self.__sortRentalList()
-                sortListById(self.__rentalList)
+                # sortListById(self.__rentalList)
+                sortListByObjectAttribute(self.__rentalList, lambda a, b: True if a < b else False, lambda a: a.getId())
             else:
                 raise ObjectAlreadyInCollectionException
         else:
@@ -103,7 +105,7 @@ class RentalRepo(Repository):
 
     def addRentalWithId(self, rental):
         self.__rentalList.append(rental)
-        sortListById(self.__rentalList)
+        sortListByObjectAttribute(self.__rentalList, lambda a, b: True if a < b else False, lambda a: a.getId())
 
     def clean(self):
-        self.__rentalList = []
+        self.__rentalList = List()

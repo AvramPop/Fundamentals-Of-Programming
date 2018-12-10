@@ -13,6 +13,18 @@ def sortList(listToSort, compareFunction):
             listToSort[i] = temp
 
 
+def sortListByObjectAttribute(listToSort, compareFunction, getAttribute):
+    for i in range(len(listToSort) - 1):
+        minimumIndex = i
+        for j in range(i + 1, len(listToSort)):
+            if compareFunction(getAttribute(listToSort[j]), getAttribute(listToSort[minimumIndex])):
+                minimumIndex = j
+        if minimumIndex != i:
+            temp = listToSort[minimumIndex]
+            listToSort[minimumIndex] = listToSort[i]
+            listToSort[i] = temp
+
+
 def filterList(listToFilter, filterFunction):
     filteredList = []
     for element in listToFilter:

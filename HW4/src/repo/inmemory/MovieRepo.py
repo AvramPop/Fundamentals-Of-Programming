@@ -1,4 +1,5 @@
 from src.Exception import ObjectNotInCollectionException, ObjectAlreadyInCollectionException
+from src.List import List, sortListByObjectAttribute
 from src.Utils import sortListById
 from src.dao.MovieDAO import MovieDAO
 from src.repo.Repository import Repository
@@ -7,7 +8,7 @@ from src.repo.Repository import Repository
 class MovieRepo(Repository):
 
     def __init__(self) -> None:
-        self.__movieList = []
+        self.__movieList = List()
 
     def hasMovieWithId(self, movieId):
         """
@@ -26,8 +27,9 @@ class MovieRepo(Repository):
             if not MovieRepo.hasMovieWithId(self, movie.getId()):
                 movie.setMovieId(self.__maximumIndexInMovieList() + 1)
                 self.__movieList.append(movie)
+                sortListByObjectAttribute(self.__movieList, lambda a, b: True if a < b else False, lambda a: a.getId())
                 # self.__sortMovieList()
-                sortListById(self.__movieList)
+                # sortListById(self.__movieList)
             else:
                 raise ObjectAlreadyInCollectionException
         else:
@@ -81,7 +83,7 @@ class MovieRepo(Repository):
 
     def addMovieWithId(self, movie):
         self.__movieList.append(movie)
-        sortListById(self.__movieList)
+        sortListByObjectAttribute(self.__movieList, lambda a, b: True if a < b else False, lambda a: a.getId())
 
     def populateWithFew(self):
         self.addMovie(MovieDAO("Titanic", "adventurous", "drama"))
@@ -160,4 +162,4 @@ class MovieRepo(Repository):
         self.addMovie(MovieDAO("BY~~1", "out of ideas", "romance"))
 
     def clean(self):
-        self.__movieList = []
+        self.__movieList = List()
