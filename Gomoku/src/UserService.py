@@ -8,6 +8,9 @@ class UserService:
         self.validator = validator
 
     def addPiece(self, x, y):
+        """
+        Add Piece(x, y) if not already on board.
+        """
         newPiece = Piece(x, y)
         if self.validator.isValid(newPiece):
             self.userPiecesRepository.add(newPiece)

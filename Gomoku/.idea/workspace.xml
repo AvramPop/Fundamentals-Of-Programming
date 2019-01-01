@@ -2,26 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="78536188-a4e4-4918-819e-2b28c6c297e1" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/Gomoku.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/other.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/AIService.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Console.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Exceptions.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/GameService.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Main.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Piece.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Printer.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Repository.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/UserService.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Validator.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AIService.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/AIService.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Console.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/Console.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../HW4/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../HW4/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../HW4/src/List.py" beforeDir="false" afterPath="$PROJECT_DIR$/../HW4/src/List.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../HW4/src/config.ini" beforeDir="false" afterPath="$PROJECT_DIR$/../HW4/src/config.ini" afterDir="false" />
@@ -39,17 +22,17 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/Gomoku$Main.coverage" NAME="Main Coverage Results" MODIFIED="1546267405157" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
+    <SUITE FILE_PATH="coverage/Gomoku$Main.coverage" NAME="Main Coverage Results" MODIFIED="1546340375646" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Main.py">
+        <entry file="file://$PROJECT_DIR$/src/AIService.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="324">
-              <caret line="18" column="79" lean-forward="true" selection-start-line="18" selection-start-column="79" selection-end-line="18" selection-end-column="79" />
+            <state relative-caret-position="2940">
+              <caret line="171" column="22" lean-forward="true" selection-start-line="171" selection-start-column="22" selection-end-line="171" selection-end-column="22" />
               <folding>
-                <element signature="e#0#35#0" expanded="true" />
+                <element signature="e#0#13#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -58,17 +41,17 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/GameService.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="762">
-              <caret line="49" column="20" lean-forward="true" selection-start-line="32" selection-start-column="8" selection-end-line="49" selection-end-column="20" />
+            <state relative-caret-position="882">
+              <caret line="49" column="20" selection-start-line="32" selection-start-column="8" selection-end-line="49" selection-end-column="20" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Console.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="162">
-              <caret line="28" selection-start-line="28" selection-end-line="28" />
+            <state relative-caret-position="330">
+              <caret line="49" column="48" selection-start-line="49" selection-start-column="48" selection-end-line="49" selection-end-column="48" />
               <folding>
                 <element signature="e#0#13#0" expanded="true" />
               </folding>
@@ -89,10 +72,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Printer.py">
+        <entry file="file://$PROJECT_DIR$/src/Piece.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="126">
-              <caret line="7" column="27" lean-forward="true" selection-start-line="7" selection-start-column="27" selection-end-line="7" selection-end-column="27" />
+            <state relative-caret-position="342">
+              <caret line="19" column="26" selection-start-line="19" selection-start-column="26" selection-end-line="19" selection-end-column="26" />
             </state>
           </provider>
         </entry>
@@ -100,33 +83,17 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Validator.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="162">
-              <caret line="9" column="24" lean-forward="true" selection-start-line="9" selection-start-column="24" selection-end-line="9" selection-end-column="24" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/AIService.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="174">
-              <caret line="39" column="88" lean-forward="true" selection-start-line="39" selection-start-column="64" selection-end-line="39" selection-end-column="88" />
-              <folding>
-                <element signature="e#0#13#0" expanded="true" />
-                <element signature="e#1656#3172#0" />
-                <element signature="e#1377#2357#0" />
-                <element signature="e#444#695#0" />
-                <element signature="e#3306#3741#0" />
-              </folding>
+            <state relative-caret-position="108">
+              <caret line="6" selection-start-line="6" selection-end-line="6" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Piece.py">
+        <entry file="file://$PROJECT_DIR$/src/Printer.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="307">
-              <caret line="19" column="26" selection-start-line="19" selection-start-column="26" selection-end-line="19" selection-end-column="26" />
+            <state relative-caret-position="126">
+              <caret line="7" column="27" selection-start-line="7" selection-start-column="27" selection-end-line="7" selection-end-column="27" />
             </state>
           </provider>
         </entry>
@@ -173,10 +140,10 @@
         <option value="$PROJECT_DIR$/src/Printer.py" />
         <option value="$PROJECT_DIR$/src/Validator.py" />
         <option value="$PROJECT_DIR$/src/GameService.py" />
-        <option value="$PROJECT_DIR$/src/Console.py" />
         <option value="$PROJECT_DIR$/src/Piece.py" />
         <option value="$PROJECT_DIR$/src/Main.py" />
         <option value="$PROJECT_DIR$/src/AIService.py" />
+        <option value="$PROJECT_DIR$/src/Console.py" />
       </list>
     </option>
   </component>
@@ -194,7 +161,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -216,6 +182,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -366,23 +333,25 @@
       <workItem from="1545221189300" duration="556000" />
       <workItem from="1545221821571" duration="210000" />
       <workItem from="1545285166055" duration="58000" />
-      <workItem from="1546240400197" duration="18870000" />
+      <workItem from="1546240400197" duration="19100000" />
+      <workItem from="1546337072883" duration="4190000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="21035000" />
+    <option name="totallyTimeSpent" value="25455000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1366" y="-1" width="1920" height="1080" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Structure" order="0" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="1" side_tool="true" />
-      <window_info content_ui="combo" id="Project" order="2" visible="true" weight="0.13233724" />
+      <window_info content_ui="combo" id="Project" order="2" visible="true" weight="0.1339381" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.43828452" />
-      <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.39958158" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.3294979" />
+      <window_info anchor="bottom" x="267" y="86" width="867" height="591" id="Run" order="2" type="FLOATING" weight="0.43828452" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.39958158" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -390,7 +359,7 @@
       <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
       <window_info anchor="bottom" id="Statistic" order="10" />
-      <window_info anchor="bottom" id="Terminal" order="11" />
+      <window_info anchor="bottom" id="Terminal" order="11" weight="0.3291536" />
       <window_info anchor="bottom" id="Event Log" order="12" side_tool="true" weight="0.3294979" />
       <window_info anchor="bottom" id="Python Console" order="13" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
@@ -405,24 +374,37 @@
     <option name="version" value="1" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/src/AIService.py</url>
-          <line>39</line>
-          <option name="timeStamp" value="4" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
     <watches-manager>
       <configuration name="PythonConfigurationType">
         <watch expression="startX + directionX[k * direction]" language="Python" />
         <watch expression="startY + directionY[k * direction]" language="Python" />
         <watch expression="i + temp * directionX[k]" language="Python" />
+        <watch expression="j + temp * directionY[k]" language="Python" />
+        <watch expression="Piece(i + temp * directionX[k], j + temp * directionY[k]) not in self.aiPiecesRepository.getList()" language="Python" />
+        <watch expression="Piece(i + temp * directionX[k], j + temp * directionY[k]) not in self.userPiecesRepository.getList()" language="Python" />
+        <watch expression="Piece(i + temp * directionX[k], j + temp * directionY[k]) not in self.aiPiecesRepository.getList()" language="Python" />
+        <watch expression="Piece(i + temp * directionX[k], j + temp * directionY[k]) not in self.userPiecesRepository.getList()" language="Python" />
       </configuration>
     </watches-manager>
   </component>
   <component name="debuggerHistoryManager">
+    <expressions id="watch">
+      <expression>
+        <expression-string>Piece(i + temp * directionX[k], j + temp * directionY[k]) not in self.userPiecesRepository.getList()</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>Piece(i + temp * directionX[k], j + temp * directionY[k]) not in self.aiPiecesRepository.getList()</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>j + temp * directionY[k]</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+    </expressions>
     <expressions id="evaluateExpression">
       <expression>
         <expression-string>i + temp * directionX[k]</expression-string>
@@ -442,16 +424,8 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/test.pickle">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="4" selection-start-column="4" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test.pickle" />
+    <entry file="file://$PROJECT_DIR$/src/test.txt" />
     <entry file="file://$PROJECT_DIR$/src/Exceptions.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="72">
@@ -459,24 +433,41 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Repository.py">
+    <entry file="file://$PROJECT_DIR$/src/GameService.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="14" column="26" selection-start-line="14" selection-start-column="26" selection-end-line="14" selection-end-column="26" />
+        <state relative-caret-position="882">
+          <caret line="49" column="20" selection-start-line="32" selection-start-column="8" selection-end-line="49" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Main.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="396">
+          <caret line="22" selection-start-line="22" selection-end-line="22" />
+          <folding>
+            <element signature="e#0#35#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Piece.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="342">
+          <caret line="19" column="26" selection-start-line="19" selection-start-column="26" selection-end-line="19" selection-end-column="26" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Printer.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="126">
-          <caret line="7" column="27" lean-forward="true" selection-start-line="7" selection-start-column="27" selection-end-line="7" selection-end-column="27" />
+          <caret line="7" column="27" selection-start-line="7" selection-start-column="27" selection-end-line="7" selection-end-column="27" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Validator.py">
+    <entry file="file://$PROJECT_DIR$/src/Repository.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="9" column="24" lean-forward="true" selection-start-line="9" selection-start-column="24" selection-end-line="9" selection-end-column="24" />
+        <state relative-caret-position="252">
+          <caret line="14" column="26" selection-start-line="14" selection-start-column="26" selection-end-line="14" selection-end-column="26" />
         </state>
       </provider>
     </entry>
@@ -490,50 +481,29 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/GameService.py">
+    <entry file="file://$PROJECT_DIR$/src/Validator.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="762">
-          <caret line="49" column="20" lean-forward="true" selection-start-line="32" selection-start-column="8" selection-end-line="49" selection-end-column="20" />
+        <state relative-caret-position="108">
+          <caret line="6" selection-start-line="6" selection-end-line="6" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Piece.py">
+    <entry file="file://$PROJECT_DIR$/src/AIService.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="307">
-          <caret line="19" column="26" selection-start-line="19" selection-start-column="26" selection-end-line="19" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Main.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="324">
-          <caret line="18" column="79" lean-forward="true" selection-start-line="18" selection-start-column="79" selection-end-line="18" selection-end-column="79" />
+        <state relative-caret-position="2940">
+          <caret line="171" column="22" lean-forward="true" selection-start-line="171" selection-start-column="22" selection-end-line="171" selection-end-column="22" />
           <folding>
-            <element signature="e#0#35#0" expanded="true" />
+            <element signature="e#0#13#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Console.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="28" selection-start-line="28" selection-end-line="28" />
+        <state relative-caret-position="330">
+          <caret line="49" column="48" selection-start-line="49" selection-start-column="48" selection-end-line="49" selection-end-column="48" />
           <folding>
             <element signature="e#0#13#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/AIService.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="174">
-          <caret line="39" column="88" lean-forward="true" selection-start-line="39" selection-start-column="64" selection-end-line="39" selection-end-column="88" />
-          <folding>
-            <element signature="e#0#13#0" expanded="true" />
-            <element signature="e#1656#3172#0" />
-            <element signature="e#1377#2357#0" />
-            <element signature="e#444#695#0" />
-            <element signature="e#3306#3741#0" />
           </folding>
         </state>
       </provider>

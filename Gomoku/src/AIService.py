@@ -8,107 +8,75 @@ class AIService:
         self.aiPiecesRepository = aiPiecesRepository
         self.validator = validator
         self.userPiecesRepository = userPiecesRepository
+        self.directionX = [-1, -1, -1, 0, 1, 1, 1, 0]
+        self.directionY = [-1, 0, 1, 1, 1, 0, -1, -1]
 
     def addPiece(self):
-        if not self.canBlockUserWin()[0]:
-            # block user win
-            self.moveToWin()
+        """
+        Add piece to board in best place, in the following order.
+        First, move to win. If not, but user can win, block.
+        Otherwise, continue the longest line done yet.
+        """
+        if self.__canMoveToWin():
+            print("move to win")
+            self.__moveToWin()
+        elif self.__canBlockUserWin():
+            print("block user win")
+            self.__blockUserWin()
         else:
-            # move to win
-            self.blockUserWin(self.canBlockUserWin()[1], self.canBlockUserWin()[2], self.canBlockUserWin()[3])
+            print("best piece")
+            self.__moveBestPiece()
 
-
-    def canBlockUserWin(self):
-        directionX = [-1, -1, -1, 0, 1, 1, 1, 0]
-        directionY = [-1, 0, 1, 1, 1, 0, -1, -1]
-        for i in range(0, 15):
-            for j in range(0, 15):
-                for k in range(0, 8):
-                    temporaryI = i + directionX[k]
-                    temporaryJ = j + directionY[k]
-                    count = 0
-                    moves = 5
-                    while moves > 0:
-                        if Piece(temporaryI, temporaryJ) in self.userPiecesRepository.getList():
-                            count += 1
-                        temporaryI += directionX[k]
-                        temporaryJ += directionY[k]
-                        moves -= 1
-                    print(i, j, k, count)
-                    if count == 4:
-                        for temp in range(0, 5):
-                            if (Piece(i + temp * directionX[k], j + temp * directionY[k]) not in self.aiPiecesRepository.getList() and Piece(i + temp * directionX[k], j + temp * directionY[k]) not in self.userPiecesRepository.getList()) and (Piece(i + temp * directionX[k], j + temp * directionY[k]) not in self.aiPiecesRepository.getList() and Piece(i + temp * directionX[k], j + temp * directionY[k]) not in self.userPiecesRepository.getList()):
-                                return True, i, j, k
-        return False, None
-
-    def blockUserWin(self, startX, startY, direction):
-        directionX = [-1, -1, -1, 0, 1, 1, 1, 0]
-        directionY = [-1, 0, 1, 1, 1, 0, -1, -1]
-        for k in range(0, 5):
-            if self.validator.isValid(Piece(startX + k * directionX[direction], startY + k * directionY[direction])):
-                self.aiPiecesRepository.add(Piece(startX + k * directionX[direction], startY + k * directionY[direction]))
-                return
-            elif self.validator.isValid(Piece(startX + k * directionX[abs(4 - direction)], startY + k * directionY[abs(4 - direction)])):
-                self.aiPiecesRepository.add(Piece(startX + k * directionX[abs(4 - direction)], startY + k * directionY[abs(4 - direction)]))
-                return
-
-    def moveToWin(self):
-        directionX = [-1, -1, -1, 0, 1, 1, 1, 0]
-        directionY = [-1, 0, 1, 1, 1, 0, -1, -1]
+    def __moveBestPiece(self):
+        """
+        Move piece following the longest line already done.
+        """
         if self.aiPiecesRepository.getList():
             piecesSorted = self.aiPiecesRepository.getList()
-            self.sortListByObjectAttribute(piecesSorted, lambda a, b: True if a < b else False,
-                                           lambda pieceTemporary: self.lengthFromPiece(pieceTemporary)[0])
+            self.__sortListByObjectAttribute(piecesSorted, lambda a, b: True if a < b else False,
+                                             lambda pieceTemporary: self.__maximumLengthFromPiece(pieceTemporary)[0])
             for piece in piecesSorted:
-                maximumLength = self.lengthFromPiece(piece)[0]
-                maximumDirection = self.lengthFromPiece(piece)[1]
-                print(str(piece))
-                print(self.lengthFromPiece(piece))
-                print(maximumLength)
-                newX = piece.getX() + maximumLength * directionX[maximumDirection]
-                newY = piece.getY() + maximumLength * directionY[maximumDirection]
+                maximumLength = self.__maximumLengthFromPiece(piece)[0]
+                maximumDirection = self.__maximumLengthFromPiece(piece)[1]
+                newX = piece.getX() + maximumLength * self.directionX[maximumDirection]
+                newY = piece.getY() + maximumLength * self.directionY[maximumDirection]
                 if self.validator.isValid(Piece(newX, newY)):
                     self.aiPiecesRepository.add(Piece(newX, newY))
                     return
-                newX = piece.getX() - maximumLength * directionX[maximumDirection]
-                newY = piece.getY() - maximumLength * directionY[maximumDirection]
+                newX = piece.getX() - maximumLength * self.directionX[maximumDirection]
+                newY = piece.getY() - maximumLength * self.directionY[maximumDirection]
                 if self.validator.isValid(Piece(newX, newY)):
                     self.aiPiecesRepository.add(Piece(newX, newY))
                     return
+        else:
+            xPool, yPool = self.__generatePools()
+            x = random.choice(xPool)
+            y = random.choice(yPool)
+            self.aiPiecesRepository.add(Piece(x, y))
 
-        xPool, yPool = self.generatePools()
-
-        x = random.choice(xPool)
-        y = random.choice(yPool)
-
-        self.aiPiecesRepository.add(Piece(x, y))
-
-    def lengthFromPiece(self, piece):
-        directionX = [-1, -1, -1, 0, 1, 1, 1, 0]
-        directionY = [-1, 0, 1, 1, 1, 0, -1, -1]
-        maximumConsecutivePoints = 0
-        direction = -1
+    def __maximumLengthFromPiece(self, piece):
+        """
+        Find the maximum line that can be done starting from piece.
+        """
+        maximumLength = 0
+        directionOfMaximum = None
+        startX = piece.getX()
+        startY = piece.getY()
+        count = 0
         for k in range(0, 8):
-            temporaryI = piece.getX()
-            temporaryJ = piece.getY()
-            consecutivePoints = 1
-            consecutive = True
-            inside = True
-            while inside and consecutive:
-                temporaryI += directionX[k]
-                temporaryJ += directionY[k]
-                if 0 > temporaryI or 0 > temporaryJ or 14 < temporaryI or 14 < temporaryJ:
-                    inside = False
-                elif not Piece(temporaryI, temporaryJ) in self.aiPiecesRepository.getList():
-                    consecutive = False
-                else:
-                    consecutivePoints += 1
-            if consecutivePoints > maximumConsecutivePoints:
-                maximumConsecutivePoints = consecutivePoints
-                direction = k
-        return maximumConsecutivePoints, direction
+            while Piece(startX, startY) in self.aiPiecesRepository.getList():
+                count += 1
+                startX += self.directionX[k]
+                startY += self.directionY[k]
+            if count > maximumLength:
+                maximumLength = count
+                directionOfMaximum = k
+        return maximumLength, directionOfMaximum
 
-    def generatePools(self):
+    def __generatePools(self):
+        """
+        Generate the pools of available empty positions.
+        """
         xPool = []
         yPool = []
         for i in range(0, 15):
@@ -118,10 +86,96 @@ class AIService:
                     yPool.append(j)
         return xPool, yPool
 
+    def __canBlockUserWin(self):
+        """
+        Check whether user win can be blocked.
+        """
+        for i in range(0, 15):
+            for j in range(0, 15):
+                for k in range(0, 8):
+                    if self.__areFiveConsecutiveWithOneEmpty(i, j, k, 0):
+                        return True
+        return False
+
+    def __canMoveToWin(self):
+        """
+        Check whether can move to win.
+        :return:
+        """
+        for i in range(0, 15):
+            for j in range(0, 15):
+                for k in range(0, 8):
+                    if self.__areFiveConsecutiveWithOneEmpty(i, j, k, 1):
+                        return True
+        return False
+
+    def __moveToWin(self):
+        """
+        Put piece to complete 5 length row.
+        """
+        for i in range(0, 15):
+            for j in range(0, 15):
+                for k in range(0, 8):
+                    if self.__areFiveConsecutiveWithOneEmpty(i, j, k, 1):
+                        self.aiPiecesRepository.add(Piece(self.__emptyPlaceInLine(i, j, k)[0], self.__emptyPlaceInLine(i, j, k)[1]))
+                        return
+
+    def __blockUserWin(self):
+        """
+        Block user win by placing piece to block row.
+        """
+        for i in range(0, 15):
+            for j in range(0, 15):
+                for k in range(0, 8):
+                    if self.__areFiveConsecutiveWithOneEmpty(i, j, k, 0):
+                        self.aiPiecesRepository.add(Piece(self.__emptyPlaceInLine(i, j, k)[0], self.__emptyPlaceInLine(i, j, k)[1]))
+                        return
+
+    def __areFiveConsecutiveWithOneEmpty(self, x, y, direction, value):
+        """
+        Checks whether there is a line of values value starting from (x, y) in direction of length 5 having a empty space.
+        """
+        moves = 5
+        piecesWithValue = 0
+        neutralPieces = 0
+        while moves > 0:
+            if x < 0 or x > 14 or y < 0 or y > 14:
+                return False
+            if value == 0:
+                if Piece(x, y) in self.userPiecesRepository.getList():
+                    piecesWithValue += 1
+                elif Piece(x, y) not in self.aiPiecesRepository.getList():
+                    neutralPieces += 1
+            else:
+                if Piece(x, y) in self.aiPiecesRepository.getList():
+                    piecesWithValue += 1
+                elif Piece(x, y) not in self.userPiecesRepository.getList():
+                    neutralPieces += 1
+            x += self.directionX[direction]
+            y += self.directionY[direction]
+            moves -= 1
+        if piecesWithValue == 4 and neutralPieces == 1:
+            return True
+        else:
+            return False
+
+    def __emptyPlaceInLine(self, startX, startY, direction):
+        """
+        Find the empty place in line of 5 from (startX, startY) in direction.
+        """
+        while True:
+            if Piece(startX, startY) not in self.userPiecesRepository.getList() and Piece(startX, startY) not in self.aiPiecesRepository.getList():
+                return startX, startY
+            startX += self.directionX[direction]
+            startY += self.directionY[direction]
+
     def getList(self):
         return self.aiPiecesRepository.getList()
 
-    def sortListByObjectAttribute(self, listToSort, compareFunction, getAttribute):
+    def __sortListByObjectAttribute(self, listToSort, compareFunction, getAttribute):
+        """
+        Sort listToSort via compareFunction by getAttribute.
+        """
         for i in range(len(listToSort) - 1):
             minimumIndex = i
             for j in range(i + 1, len(listToSort)):

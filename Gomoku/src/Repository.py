@@ -6,6 +6,10 @@ class Repository:
         self.__data = []
 
     def add(self, entry):
+        """
+        Add object entry in repository, if not already there.
+        Otherwise, raise RepositoryException
+        """
         if entry not in self.__data:
             self.__data.append(entry)
         else:

@@ -7,11 +7,17 @@ class GameService:
         self.aiPiecesService = aiPiecesService
 
     def isGameOver(self):
+        """
+        Checks whether game is over.
+        """
         if self.winner() is None:
             return False
         return True
 
     def winner(self):
+        """
+        Return the winner.
+        """
         for i in range(0, 15):
             for j in range(0, 15):
                 value = None
@@ -23,11 +29,14 @@ class GameService:
                     value = 1
                     pool = self.aiPiecesService.getList()
                 if value is not None:
-                    if self.isLineFromPoint(i, j, pool):
+                    if self.__isLineFromPoint(i, j, pool):
                         return value
         return None
 
-    def isLineFromPoint(self, i, j, pool):
+    def __isLineFromPoint(self, i, j, pool):
+        """
+        Checks whether line starting from Piece(i, j) is a winner.
+        """
         directionX = [-1, -1, -1, 0, 1, 1, 1, 0]
         directionY = [-1, 0, 1, 1, 1, 0, -1, -1]
         for k in range(0, 8):

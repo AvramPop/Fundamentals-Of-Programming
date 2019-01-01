@@ -21,48 +21,64 @@ class Console:
         while not boardFull and not gameWon:
             print(str(playerToMove) + " moves")
             if playerToMove == 0:
-                userInput = self.userInput()
-                while not self.isValidUserInput(userInput):
-                    userInput = self.userInput()
+                userInput = self.__userInput()
+                while not self.__isValidUserInput(userInput):
+                    userInput = self.__userInput()
                 self.userPiecesService.addPiece(int(userInput[0]), int(userInput[1]))
             else:
                 self.aiPiecesService.addPiece()
-            if self.isGameWon():
+            if self.__isGameWon():
                 gameWon = True
-                winner = self.winner()
-            if self.isBoardFull():
+                winner = self.__winner()
+            if self.__isBoardFull():
                 boardFull = True
                 draw = True
             playerToMove = 1 - playerToMove
             printer.printBoard(self.userPiecesService.getList(), self.aiPiecesService.getList())
-            if draw:
-                print("draw")
-                return
             if gameWon:
                 if winner == 0:
                     print("User won!")
                 else:
                     print("AI won!")
                 return
+            if draw:
+                print("draw")
+                return
 
-    def isBoardFull(self):
+    def __isBoardFull(self):
+        """
+        Check whether all board is full, that is, there are 225 (15x15) pieces on it.
+        :return:
+        """
         if len(self.userPiecesService.getList()) + len(self.aiPiecesService.getList()) == 225:
             return True
         return False
 
-    def isGameWon(self):
+    def __isGameWon(self):
+        """
+        Checks whether game is over.
+        """
         return self.gameService.isGameOver()
 
-    def winner(self):
-        return self.gameService.winner()
+    def __winner(self):
+        """
+        Return the winner.
+        """
+        return self.gameService.__winner()
 
-    def userInput(self):
+    def __userInput(self):
+        """
+        Take user input and format it.
+        """
         userInput = input("add new piece:")
         userInput.strip()
         userInput = userInput.split()
         return userInput
 
-    def isValidUserInput(self, userInput):
+    def __isValidUserInput(self, userInput):
+        """
+        Validate user input.
+        """
         if not len(userInput) == 2:
             print("input should be 2 ints")
             return False
