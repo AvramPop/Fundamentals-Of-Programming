@@ -17,3 +17,6 @@ class Repository:
 
     def getList(self):
         return self.__data
+
+    def cleanRepo(self):
+        self.__data = []

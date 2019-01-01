@@ -64,7 +64,7 @@ class Console:
         """
         Return the winner.
         """
-        return self.gameService.__winner()
+        return self.gameService.winner()
 
     def __userInput(self):
         """

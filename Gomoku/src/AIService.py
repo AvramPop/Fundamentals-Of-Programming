@@ -18,13 +18,10 @@ class AIService:
         Otherwise, continue the longest line done yet.
         """
         if self.__canMoveToWin():
-            print("move to win")
             self.__moveToWin()
         elif self.__canBlockUserWin():
-            print("block user win")
             self.__blockUserWin()
         else:
-            print("best piece")
             self.__moveBestPiece()
 
     def __moveBestPiece(self):
@@ -38,21 +35,20 @@ class AIService:
             for piece in piecesSorted:
                 maximumLength = self.__maximumLengthFromPiece(piece)[0]
                 maximumDirection = self.__maximumLengthFromPiece(piece)[1]
-                newX = piece.getX() + maximumLength * self.directionX[maximumDirection]
-                newY = piece.getY() + maximumLength * self.directionY[maximumDirection]
+                newX = piece.getX() + self.directionX[maximumDirection]
+                newY = piece.getY() + self.directionY[maximumDirection]
                 if self.validator.isValid(Piece(newX, newY)):
                     self.aiPiecesRepository.add(Piece(newX, newY))
                     return
-                newX = piece.getX() - maximumLength * self.directionX[maximumDirection]
-                newY = piece.getY() - maximumLength * self.directionY[maximumDirection]
+                newX = piece.getX() - self.directionX[maximumDirection]
+                newY = piece.getY() - self.directionY[maximumDirection]
                 if self.validator.isValid(Piece(newX, newY)):
                     self.aiPiecesRepository.add(Piece(newX, newY))
                     return
-        else:
-            xPool, yPool = self.__generatePools()
-            x = random.choice(xPool)
-            y = random.choice(yPool)
-            self.aiPiecesRepository.add(Piece(x, y))
+        xPool, yPool = self.__generatePools()
+        x = random.choice(xPool)
+        y = random.choice(yPool)
+        self.aiPiecesRepository.add(Piece(x, y))
 
     def __maximumLengthFromPiece(self, piece):
         """

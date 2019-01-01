@@ -1,7 +1,7 @@
 class Validator:
     def __init__(self, userPiecesRepository, aiPiecesRepository) -> None:
-        self.userPiecesRepository = userPiecesRepository
-        self.aiPiecesRepository = aiPiecesRepository
+        self.__userPiecesRepository = userPiecesRepository
+        self.__aiPiecesRepository = aiPiecesRepository
 
     def isValid(self, piece):
         """
@@ -9,6 +9,6 @@ class Validator:
         """
         if not 0 <= piece.getX() <= 14 or not 0 <= piece.getY() <= 14:
             return False
-        if piece in self.userPiecesRepository.getList() or piece in self.aiPiecesRepository.getList():
+        if (piece in self.__userPiecesRepository.getList()) or (piece in self.__aiPiecesRepository.getList()):
             return False
         return True
