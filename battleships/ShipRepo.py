@@ -1,0 +1,2 @@
+class ShipRepo:
+    pass
