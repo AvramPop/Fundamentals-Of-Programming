@@ -2,8 +2,23 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7f3b1750-8a59-42f8-974b-fce9e54222d0" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/ComplexNumbersDictionarySecond.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lab03/BusinessLogic/Expense.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lab03/BusinessLogic/Utils.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lab03/BusinessLogic/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lab03/Constants.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lab03/Frontend/ConsoleUI.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lab03/Frontend/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lab03/Test/CommandsTest.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lab03/Test/ExpenseTest.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lab03/Test/ExpenseValidationTest.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lab03/Test/Test.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lab03/Test/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lab03/Validation/CommandsValidation.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lab03/Validation/ExpenseValidation.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lab03/Validation/__init__.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab03/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../lab03/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab03/Main.py" beforeDir="false" afterPath="$PROJECT_DIR$/../lab03/Main.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -49,36 +64,37 @@
     <session id="1058700298">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="5" />
+          <entry key="project.closed" value="8" />
+          <entry key="project.open.time.1" value="2" />
           <entry key="project.open.time.19" value="2" />
           <entry key="project.open.time.20" value="1" />
           <entry key="project.open.time.43" value="1" />
           <entry key="project.open.time.5" value="1" />
           <entry key="project.open.time.6" value="1" />
           <entry key="project.open.time.7" value="1" />
-          <entry key="project.opened" value="7" />
+          <entry key="project.opened" value="9" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="dummy" value="12" />
-          <entry key="py" value="1907" />
+          <entry key="py" value="2041" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="PLAIN_TEXT" value="12" />
-          <entry key="Python" value="1907" />
+          <entry key="Python" value="2041" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="py" value="15" />
+          <entry key="py" value="21" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="Python" value="15" />
+          <entry key="Python" value="21" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.vcs.git.usages" />
@@ -86,16 +102,32 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ComplexNumbersDictionarySecond.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="305">
-              <caret line="146" column="23" selection-start-line="146" selection-start-column="23" selection-end-line="146" selection-end-column="23" />
+            <state>
+              <caret line="80" column="31" selection-start-line="80" selection-start-column="31" selection-end-line="80" selection-end-column="31" />
               <folding>
-                <element signature="e#72#215#0" />
-                <element signature="e#270#851#0" />
-                <element signature="e#916#1016#0" />
-                <marker date="1539869490088" expanded="true" signature="3336:3340" ph="..." />
+                <marker date="1539869833930" expanded="true" signature="3336:3340" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/ComplexNumbersList.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="18">
+              <caret line="1" column="49" selection-start-line="1" selection-start-column="49" selection-end-line="1" selection-end-column="49" />
+              <folding>
+                <element signature="e#859#1851#0" />
+                <marker date="1539792254852" expanded="true" signature="705:804" ph="..." />
+                <marker date="1539792254852" expanded="true" signature="1869:1899" ph="..." />
+                <marker date="1539792254852" expanded="true" signature="1940:1981" ph="..." />
+                <marker date="1539792254852" expanded="true" signature="2028:2072" ph="..." />
+                <marker date="1539792254852" expanded="true" signature="4060:4091" ph="..." />
+                <marker date="1539792254852" expanded="true" signature="5338:6379" ph="..." />
+                <marker date="1539792254852" expanded="true" signature="5368:5620" ph="..." />
               </folding>
             </state>
           </provider>
@@ -155,24 +187,14 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="Lab2" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Lab2" type="462c0819:PsiDirectoryNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
       <pane id="Scope" />
+      <pane id="ProjectPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="SearchEverywhereHistoryKey" value="set back&#9;ACTION&#9;Images.SetBackgroundImage&#10;font&#9;ACTION&#9;EditorDecreaseFontSize" />
     <property name="full.screen.before.presentation.mode" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/ComplexNumbersList.py" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
@@ -356,18 +378,18 @@
     <frame x="0" y="-1" width="1366" height="768" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" weight="0.24944155" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25316456" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.24986821" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32847425" />
-      <window_info anchor="bottom" x="0" y="50" width="1366" height="718" id="Run" order="2" type="WINDOWED" weight="0.2656904" />
+      <window_info anchor="bottom" x="195" y="144" width="975" height="449" id="Run" order="2" type="WINDOWED" weight="0.2656904" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39813375" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32919255" />
       <window_info anchor="bottom" id="Version Control" order="7" weight="0.32984293" />
-      <window_info anchor="bottom" id="Terminal" order="8" weight="0.32763976" />
+      <window_info anchor="bottom" id="Terminal" order="8" weight="0.32659408" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
       <window_info anchor="bottom" id="Python Console" order="10" weight="0.32919255" />
       <window_info anchor="bottom" id="Inspection Results" order="11" weight="0.32984293" />
@@ -397,6 +419,23 @@
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/test.py" />
+    <entry file="file://$PROJECT_DIR$/ComplexNumbersDictionary.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2070">
+          <caret line="137" column="24" selection-start-line="137" selection-start-column="24" selection-end-line="137" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ComplexNumbersDictionarySecond.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret line="80" column="31" selection-start-line="80" selection-start-column="31" selection-end-line="80" selection-end-column="31" />
+          <folding>
+            <marker date="1539869833930" expanded="true" signature="3336:3340" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/ComplexNumbersList.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="18">
@@ -410,29 +449,6 @@
             <marker date="1539792254852" expanded="true" signature="4060:4091" ph="..." />
             <marker date="1539792254852" expanded="true" signature="5338:6379" ph="..." />
             <marker date="1539792254852" expanded="true" signature="5368:5620" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ComplexNumbersDictionary.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2070">
-          <caret line="137" column="24" selection-start-line="137" selection-start-column="24" selection-end-line="137" selection-end-column="24" />
-          <folding>
-            <element signature="e#967#2255#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ComplexNumbersDictionarySecond.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="305">
-          <caret line="146" column="23" selection-start-line="146" selection-start-column="23" selection-end-line="146" selection-end-column="23" />
-          <folding>
-            <element signature="e#72#215#0" />
-            <element signature="e#270#851#0" />
-            <element signature="e#916#1016#0" />
-            <marker date="1539869490088" expanded="true" signature="3336:3340" ph="..." />
           </folding>
         </state>
       </provider>

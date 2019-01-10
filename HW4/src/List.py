@@ -1,7 +1,7 @@
-from collections import MutableSequence
-
-
 def sortList(listToSort, compareFunction):
+    """
+    Sort listToSort by the compareFunction given
+    """
     for i in range(len(listToSort) - 1):
         minimumIndex = i
         for j in range(i + 1, len(listToSort)):
@@ -14,6 +14,9 @@ def sortList(listToSort, compareFunction):
 
 
 def sortListByObjectAttribute(listToSort, compareFunction, getAttribute):
+    """
+    Sort listToSort by the compareFunction given, by attribute from getAttribute(listToSort[i])
+    """
     for i in range(len(listToSort) - 1):
         minimumIndex = i
         for j in range(i + 1, len(listToSort)):
@@ -26,6 +29,9 @@ def sortListByObjectAttribute(listToSort, compareFunction, getAttribute):
 
 
 def filterList(listToFilter, filterFunction):
+    """
+    Filter list by filterFunction
+    """
     filteredList = []
     for element in listToFilter:
         if filterFunction(element):
@@ -33,10 +39,12 @@ def filterList(listToFilter, filterFunction):
     return filteredList
 
 
-class List(MutableSequence):
-
+class List:
+    """
+    Wrapper around the basic List with full compatibility
+    """
     def __init__(self, data = None):
-        super(List, self).__init__()
+        self.__index = 0
         if data is not None:
             self.__list = list(data)
         else:
@@ -63,18 +71,25 @@ class List(MutableSequence):
     def __str__(self):
         return str(self.__list)
 
-    def __eq__(self, o: object) -> bool:
-        if not isinstance(o, list) and not isinstance(o, List):
+    def __eq__(self, objectToCompareTo: object) -> bool:
+        if not isinstance(objectToCompareTo, list) and not isinstance(objectToCompareTo, List):
             return False
 
-        if len(o) != len(self.__list):
+        if len(objectToCompareTo) != len(self.__list):
             return False
 
         for i in range(len(self.__list)):
-            if o[i] != self.__list[i]:
+            if objectToCompareTo[i] != self.__list[i]:
                 return False
 
         return True
 
     def __iter__(self):
-        return super().__iter__()
+        return self.__list.__iter__()
+
+    def __next__(self):
+        if self.__index > len(self.__list) - 1:
+            raise StopIteration
+        else:
+            self.__index += 1
+        return self.__list[self.__index]

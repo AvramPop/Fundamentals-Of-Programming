@@ -99,4 +99,3 @@ class TestList(TestCase):
     def test_filter(self):
         self.assertEqual(filterList(self.testList, lambda a: True if a % 2 == 0 else False), [4, 10, 50])
         self.assertEqual(filterList(List([1, -2, -3]), lambda a: True if a % 2 == 0 else False), [-2])
-

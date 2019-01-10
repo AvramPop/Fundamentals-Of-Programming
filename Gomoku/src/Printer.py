@@ -12,7 +12,14 @@ class Printer:
             board.itemset((piece.getX(), piece.getY()), 1)
         for piece in list2:
             board.itemset((piece.getX(), piece.getY()), 2)
+        print("   ", end="")
+        for i in range(0, 10):
+            print(i, sep=" ", end="   ")
+        print("10  11  12  13  14", end="")
+        print()
+        print("------------------------------------------------------------")
         for i in range(0, 15):
+            print(str(i) + "|", end=" ")
             for j in range(0, 15):
-                print(str(board.item((i, j))) + " ", end="")
+                print(str(board.item((i, j))) + " ", end="  ")
             print()

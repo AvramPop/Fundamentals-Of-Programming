@@ -33,7 +33,6 @@ class AIService:
             self.__sortListByObjectAttribute(piecesSorted, lambda a, b: True if a < b else False,
                                              lambda pieceTemporary: self.__maximumLengthFromPiece(pieceTemporary)[0])
             for piece in piecesSorted:
-                maximumLength = self.__maximumLengthFromPiece(piece)[0]
                 maximumDirection = self.__maximumLengthFromPiece(piece)[1]
                 newX = piece.getX() + self.directionX[maximumDirection]
                 newY = piece.getY() + self.directionY[maximumDirection]
@@ -45,6 +44,14 @@ class AIService:
                 if self.validator.isValid(Piece(newX, newY)):
                     self.aiPiecesRepository.add(Piece(newX, newY))
                     return
+
+            for piece in piecesSorted:
+                for direction in range(0, 8):
+                    newX = piece.getX() + self.directionX[direction]
+                    newY = piece.getY() + self.directionY[direction]
+                    if self.validator.isValid(Piece(newX, newY)):
+                        self.aiPiecesRepository.add(Piece(newX, newY))
+                        return
         xPool, yPool = self.__generatePools()
         x = random.choice(xPool)
         y = random.choice(yPool)
@@ -71,7 +78,7 @@ class AIService:
 
     def __generatePools(self):
         """
-        Generate the pools of available empty positions.
+        Generate the pools of available empty positions.1
         """
         xPool = []
         yPool = []
